@@ -1,0 +1,23 @@
+{
+  "name": "milestone-renovate-site",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Premium Australian renovation website and client enquiry platform for Milestone Renovate.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build:site": "python build_site.py",
+    "build:brand": "node scripts/make-brand-assets.mjs",
+    "dev": "python serve.py",
+    "test": "node --test tests/",
+    "audit": "npm audit --omit=dev"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.2.0",
+    "sharp": "^0.33.5"
+  }
+}
