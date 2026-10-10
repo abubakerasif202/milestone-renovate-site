@@ -1,0 +1,30 @@
+# dependencies / build
+node_modules/
+.vercel/
+.next/
+dist/
+coverage/
+playwright-report/
+test-results/
+
+# secrets / local env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# logs / temp
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+.tmp/
+scratch/
+*.zip
+
+# raw research / transcripts must never be committed
+research-raw/
+*.transcript.*
