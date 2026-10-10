@@ -1,5 +1,5 @@
 from pathlib import Path
-p=Path(__file__).parent/'assets'
+p=Path(__file__).parent/'public'/'assets'
 
 def svg(body,mode='INTENTIONAL SPACES'):
  return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 900" role="img" aria-label="Architectural illustration"><defs>
