@@ -262,7 +262,10 @@ def build():
                 {'key': 'Content-Security-Policy', 'value': csp},
             ]},
             {'source': '/assets/(.*)', 'headers': [{'key': 'Cache-Control', 'value': 'public, max-age=31536000, immutable'}]},
+            # keep preview / default *.vercel.app deployments out of search indexes
+            {'source': '/(.*)', 'has': [{'type': 'host', 'value': '.*\\.vercel\\.app'}], 'headers': [{'key': 'X-Robots-Tag', 'value': 'noindex, nofollow'}]},
         ],
+        'regions': ['syd1'],
     }
     (ROOT_DIR / 'vercel.json').write_text(json.dumps(vercel, indent=2) + '\n', encoding='utf-8')
     print('Generated', len(list(OUT.glob('*.html'))), 'pages; remote images in use:', uses_remote_images)
