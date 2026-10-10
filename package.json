@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Premium Australian renovation website and client enquiry platform for Milestone Renovate.",
   "engines": {
-    "node": ">=20"
+    "node": "24.x"
   },
   "scripts": {
     "build:site": "python build_site.py",

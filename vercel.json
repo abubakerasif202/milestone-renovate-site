@@ -73,5 +73,11 @@
   ],
   "regions": [
     "syd1"
+  ],
+  "crons": [
+    {
+      "path": "/api/notifications/retry",
+      "schedule": "0 20 * * *"
+    }
   ]
 }

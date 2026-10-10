@@ -1,4 +1,5 @@
 import { clearSessionKey, sessionKey, submitEnquiry } from './lib/enquiry-client.js';
+import { clearDraft, loadDraft, restoreDraft, saveDraft } from './lib/wizard-draft.js';
 import { clearErrors, setBusy, setStatus, showErrors, showSuccess, showSummary } from './lib/ui.js';
 import {
   CATEGORY_LABELS, OPTIONS, STEPS, TOTAL_STEPS, advance, back, buildPayload, initialState, progress, setCategory, validateStep,
@@ -17,17 +18,19 @@ function init(root) {
   const startedAt = Date.now();
   const params = new URLSearchParams(location.search);
   const source = params.get('from') === 'calculator' ? 'calculator' : 'wizard';
-  let state = prefill(initialState(), params);
+  const handedOff = params.has('category');
+  let state = handedOff ? prefill(initialState(), params) : restoreDraft(loadDraft(sessionStorage), initialState());
 
   root.classList.add('is-enhanced');
   syncFormFromState();
   render(false);
 
-  root.addEventListener('input', () => { state = readState(); });
+  root.addEventListener('input', () => { state = readState(); saveDraft(sessionStorage, state); });
   root.addEventListener('change', () => {
     const previous = state.category;
     state = readState();
     if (state.category !== previous) { state = setCategory(state, state.category); syncScope(); }
+    saveDraft(sessionStorage, state);
   });
 
   nextBtn.addEventListener('click', goNext);
@@ -66,6 +69,7 @@ function init(root) {
     setBusy(submitBtn, false);
     if (result.ok) {
       clearSessionKey(sessionStorage, 'wizard');
+      clearDraft(sessionStorage);
       root.hidden = true;
       showSuccess(result.reference);
       return;
@@ -86,6 +90,7 @@ function init(root) {
     nextBtn.hidden = last;
     submitBtn.hidden = !last;
     syncScope();
+    saveDraft(sessionStorage, state);
     if (moveFocus) fieldsets[state.step].querySelector('legend')?.focus();
   }
 
@@ -116,6 +121,14 @@ function init(root) {
     setRadio('layoutChange', state.layoutChange);
     setRadio('roomSize', state.roomSize);
     setRadio('finishLevel', state.finishLevel);
+    for (const name of ['propertyType', 'budgetRange', 'timeline']) {
+      const el = root.querySelector(`select[name="${name}"]`);
+      if (el && state[name]) el.value = state[name]; else setRadio(name, state[name]);
+    }
+    for (const name of ['suburb', 'postcode', 'details']) {
+      const el = root.querySelector(`[name="${name}"]`);
+      if (el && state[name]) el.value = state[name];
+    }
     state.scope.forEach((value) => { const el = root.querySelector(`input[name="scope"][value="${value}"]:not(:disabled)`) ?? root.querySelector(`input[name="scope"][value="${value}"]`); if (el) el.checked = true; });
   }
 }

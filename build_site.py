@@ -16,7 +16,7 @@ PHONE = '1800 008 883'
 PHONE_HREF = 'tel:1800008883'
 EMAIL = 'admin@milestonedevelopment.com.au'  # parent contact; approval for this brand still to be confirmed
 OG_IMAGE = f'{SITE}/assets/brand/og-image.png'
-TODAY = date.today().isoformat()
+PRIVACY_UPDATED = '2026-10-10'  # bump only when the privacy notice text actually changes (never use the build date)
 
 # --- images: prefer local copies in public/assets/img, fall back to the parent's public repo -------------------
 REMOTE_IMG = 'https://raw.githubusercontent.com/abubakerasif202/milestonedevelopment-site/main/public/assets/photography/{}.webp'
@@ -77,7 +77,7 @@ def webpage_ld(title, description, slug, home=False, crumbs=None):
             {'@type': 'WebSite', '@id': SITE + '/#website', 'name': 'Milestone Renovate', 'url': SITE + '/', 'inLanguage': 'en-AU'},
             {'@type': 'Organization', '@id': SITE + '/#organization', 'name': 'Milestone Renovate', 'url': SITE + '/', 'logo': SITE + '/assets/brand/icon-512.png',
              'parentOrganization': {'@type': 'Organization', 'name': 'Milestone Development', 'url': PARENT + '/'},
-             'contactPoint': {'@type': 'ContactPoint', 'telephone': '+61-1800-008-883', 'contactType': 'customer service', 'areaServed': 'AU', 'availableLanguage': 'en-AU'}},
+             'contactPoint': {'@type': 'ContactPoint', 'telephone': '1800 008 883', 'contactType': 'customer service', 'areaServed': 'AU', 'availableLanguage': 'en-AU'}},
             page,
         ]
     else:
@@ -161,7 +161,7 @@ contact_form = f'''<form class="quote-form" id="quote-form" data-enquiry-form no
 
 contact = f'''<section class="inner-hero contact-bg"><div class="wrap"><p class="eyebrow inverse">START A CONVERSATION</p><h1>Tell us what you <em>have in mind.</em></h1><p>A few details will help the Milestone team understand your renovation idea and the next practical steps.</p></div></section><section class="section contact-section"><div class="wrap contact-grid"><div><p class="eyebrow">RENOVATION ENQUIRIES</p><h2>Great spaces begin<br><em>with a conversation.</em></h2><p>Whether you have a detailed plan or a rough idea, share what you know. Prefer a guided approach? Try the <a class="inline-link" href="/plan-your-renovation">renovation questionnaire</a>.</p><div class="contact-info"><span>PHONE</span><a href="{PHONE_HREF}">{PHONE}</a><span>EMAIL</span><a href="mailto:{EMAIL}">{EMAIL}</a><span>BASED IN</span><p>North Sydney, NSW (Milestone Development)</p></div><p class="fine-print">Your details are used only to respond to your enquiry. See the <a class="inline-link" href="/privacy">privacy notice</a>.</p></div><div>{contact_form}</div></div></section>'''
 
-privacy = f'''<section class="inner-hero compact"><div class="wrap"><p class="eyebrow inverse">WEBSITE INFORMATION</p><h1>Privacy <em>notice.</em></h1></div></section><section class="section"><div class="wrap legal"><p class="fine-print">Last updated {TODAY}. This notice is a working draft and must be reviewed against the confirmed trading entity and legal advice before public launch.</p><h2>What we collect</h2><p>When you submit an enquiry we collect the details you enter: your name, phone number, email address, suburb and/or postcode, the type of renovation, optional budget and timing, your project notes and any questionnaire answers. We also record the time you agreed to be contacted, the page you submitted from, and a one-way hashed form of your IP address used only to limit abuse. We do not store your raw IP address.</p><h2>Why we collect it</h2><p>To respond to your enquiry, discuss your renovation and prepare any follow-up you request. We do not sell your information.</p><h2>Where it is stored and who sees it</h2><p>Enquiries are stored in a secured database hosted by Supabase, accessible only to authorised Milestone staff and our service providers. A notification email may be sent to the Milestone team through Resend so they can follow up. Our website is hosted on Vercel.</p><h2>Consent</h2><p>You must tick the consent box before an enquiry is accepted. You can ask us to correct or delete your enquiry at any time.</p><h2>Cookies and analytics</h2><p>This website does not currently use advertising cookies or analytics. Your browser may keep a temporary key in session storage so that retrying a failed submission does not create a duplicate enquiry.</p><h2>Images and fonts</h2><p>All images and fonts are served from this website. The images are AI-generated concept imagery, not photographs of completed projects.</p><h2>Contact us</h2><p>For privacy requests contact <a href="mailto:{EMAIL}">{EMAIL}</a> or call <a href="{PHONE_HREF}">{PHONE}</a>.</p></div></section>'''
+privacy = f'''<section class="inner-hero compact"><div class="wrap"><p class="eyebrow inverse">WEBSITE INFORMATION</p><h1>Privacy <em>notice.</em></h1></div></section><section class="section"><div class="wrap legal"><p class="fine-print">Last updated {PRIVACY_UPDATED}. This notice is a working draft and must be reviewed against the confirmed trading entity and legal advice before public launch.</p><h2>What we collect</h2><p>When you submit an enquiry we collect the details you enter: your name, phone number, email address, suburb and/or postcode, the type of renovation, optional budget and timing, your project notes and any questionnaire answers. We also record the time you agreed to be contacted, the page you submitted from, and a one-way hashed form of your IP address used only to limit abuse. We do not store your raw IP address.</p><h2>Why we collect it</h2><p>To respond to your enquiry, discuss your renovation and prepare any follow-up you request. We do not sell your information.</p><h2>Where it is stored and who sees it</h2><p>Enquiries are stored in a secured database hosted by Supabase, accessible only to authorised Milestone staff and our service providers. A notification email may be sent to the Milestone team through Resend so they can follow up. Our website is hosted on Vercel.</p><h2>Consent</h2><p>You must tick the consent box before an enquiry is accepted. You can ask us to correct or delete your enquiry at any time.</p><h2>Cookies and analytics</h2><p>This website does not currently use advertising cookies or analytics. Your browser may keep a temporary key in session storage so that retrying a failed submission does not create a duplicate enquiry.</p><h2>Images and fonts</h2><p>All images and fonts are served from this website. The images are AI-generated concept imagery, not photographs of completed projects.</p><h2>Contact us</h2><p>For privacy requests contact <a href="mailto:{EMAIL}">{EMAIL}</a> or call <a href="{PHONE_HREF}">{PHONE}</a>.</p></div></section>'''
 
 # --- service detail pages ----------------------------------------------------------------------------------
 pdetails = {
@@ -174,7 +174,7 @@ pdetails = {
 SERVICE_META = {
     'kitchen-renovations': 'Kitchen renovations in Sydney: plan layout, cabinetry, storage, lighting and finishes with Milestone Renovate, sister brand of Milestone Development.',
     'bathroom-renovations': 'Bathroom renovations in Sydney: plan space, storage, fixtures, waterproofing and finishes with Milestone Renovate, sister brand of Milestone Development.',
-    'home-renovations': 'Whole-home renovations in Sydney: rework flow, living spaces and finishes with practical planning from Milestone Renovate, sister brand of Milestone Development.',
+    'home-renovations': 'Whole-home renovations in Sydney: rework flow, living spaces and finishes with practical planning from Milestone Renovate.',
     'extensions': 'Home extensions and additions in Sydney: explore more space that respects your existing home with Milestone Renovate, sister brand of Milestone Development.',
 }
 
@@ -253,13 +253,13 @@ def build():
         write(slug + '.html', shell(seo_title, seo_desc, detail, 'Services', slug, crumbs=[('Home', '/'), ('Services', '/services'), (service, '/' + slug)]))
 
     pages = [
-        ('index.html', 'Milestone Renovate | Thoughtful Home Renovations Sydney', 'Renovation, considered from every angle. Thoughtful kitchen, bathroom, whole-home and extension renovations from Milestone Renovate, sister brand of Milestone Development.', home, 'Home', '', dict(home=True, scripts=['interactions.js'])),
+        ('index.html', 'Milestone Renovate | Thoughtful Home Renovations Sydney', 'Thoughtful kitchen, bathroom, whole-home and extension renovations for Sydney homes, from Milestone Renovate, sister brand of Milestone Development.', home, 'Home', '', dict(home=True, scripts=['interactions.js'])),
         ('services.html', 'Home Renovation Services Sydney | Milestone Renovate', 'Explore whole-home renovations, kitchens, bathrooms, and extensions with Milestone Renovate in Sydney.', services, 'Services', 'services', dict(crumbs=[('Home', '/'), ('Services', '/services')])),
-        ('about.html', 'About Milestone Renovate | Renovation-Focused Design & Delivery', 'Meet Milestone Renovate, the renovation-focused sister brand of Milestone Development, and explore our thoughtful approach.', about, 'Our Approach', 'about', dict(crumbs=[('Home', '/'), ('Our Approach', '/about')])),
-        ('inspiration.html', 'Renovation Inspiration & Design Concepts | Milestone Renovate', 'Explore AI-generated architectural design references and renovation ideas for Sydney homes.', inspiration, 'Inspiration', 'inspiration', dict(crumbs=[('Home', '/'), ('Inspiration', '/inspiration')], scripts=['interactions.js'])),
-        ('contact.html', 'Renovation Enquiries | Speak To Our Team | Milestone Renovate', 'Speak with Milestone Renovate about home renovations, kitchens, bathrooms and extensions. Send a short enquiry or call 1800 008 883.', contact, 'Contact', 'contact', dict(crumbs=[('Home', '/'), ('Contact', '/contact')], scripts=['enquiry-form.js'])),
+        ('about.html', 'About Milestone Renovate | Our Renovation Approach', 'Meet Milestone Renovate, the renovation-focused sister brand of Milestone Development, and explore our thoughtful approach.', about, 'Our Approach', 'about', dict(crumbs=[('Home', '/'), ('Our Approach', '/about')])),
+        ('inspiration.html', 'Renovation Inspiration & Concepts | Milestone Renovate', 'Explore AI-generated architectural design references and renovation ideas for Sydney homes.', inspiration, 'Inspiration', 'inspiration', dict(crumbs=[('Home', '/'), ('Inspiration', '/inspiration')], scripts=['interactions.js'])),
+        ('contact.html', 'Renovation Enquiries | Milestone Renovate', 'Speak with Milestone Renovate about home renovations, kitchens, bathrooms and extensions. Send a short enquiry or call 1800 008 883.', contact, 'Contact', 'contact', dict(crumbs=[('Home', '/'), ('Contact', '/contact')], scripts=['enquiry-form.js'])),
         ('privacy.html', 'Privacy Notice | Milestone Renovate', 'How Milestone Renovate collects, stores and uses the details you share when you make a renovation enquiry.', privacy, '', 'privacy', dict(crumbs=[('Home', '/'), ('Privacy', '/privacy')])),
-        ('plan-your-renovation.html', 'Plan Your Renovation | Guided Renovation Brief | Milestone Renovate', 'Answer a few short questions about your kitchen, bathroom, whole-home or extension renovation and share your brief with the Milestone Renovate team.', plan, '', 'plan-your-renovation', dict(crumbs=[('Home', '/'), ('Plan Your Renovation', '/plan-your-renovation')], scripts=['wizard-ui.js'])),
+        ('plan-your-renovation.html', 'Plan Your Renovation | Guided Brief | Milestone Renovate', 'Answer a few short questions about your kitchen, bathroom, whole-home or extension renovation and share your brief with the Milestone Renovate team.', plan, '', 'plan-your-renovation', dict(crumbs=[('Home', '/'), ('Plan Your Renovation', '/plan-your-renovation')], scripts=['wizard-ui.js'])),
         ('bathroom-renovation-cost.html', 'Bathroom Renovation Cost Planner | Milestone Renovate', 'Explore what shapes the scope of a bathroom renovation in Australia with this planning guide. Not a quote — approved pricing is not yet published.', calculator, 'Cost Planner', 'bathroom-renovation-cost', dict(crumbs=[('Home', '/'), ('Bathroom Cost Planner', '/bathroom-renovation-cost')], scripts=['calculator-ui.js'])),
     ]
     for filename, title, desc, content, active, slug, kw in pages:
@@ -268,7 +268,7 @@ def build():
 
     write('robots.txt', f'User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: {SITE}/sitemap.xml\n')
     urls = [''] + [p[5] for p in pages if p[5]] + list(pdetails)
-    write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'<url><loc>{xml_escape(SITE + "/" + u)}</loc><lastmod>{TODAY}</lastmod></url>\n' for u in urls) + '</urlset>\n')
+    write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'<url><loc>{xml_escape(SITE + "/" + u)}</loc></url>\n' for u in urls) + '</urlset>\n')
 
     img_src = " https://raw.githubusercontent.com" if uses_remote_images else ''
     csp = f"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:{img_src}; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
@@ -292,6 +292,8 @@ def build():
             {'source': '/(.*)', 'has': [{'type': 'host', 'value': '.*\\.vercel\\.app'}], 'headers': [{'key': 'X-Robots-Tag', 'value': 'noindex, nofollow'}]},
         ],
         'regions': ['syd1'],
+        # Daily backstop that re-sends failed staff notifications (needs CRON_SECRET; see docs/DEPLOYMENT.md). Daily = valid on every Vercel plan.
+        'crons': [{'path': '/api/notifications/retry', 'schedule': '0 20 * * *'}],
     }
     (ROOT_DIR / 'vercel.json').write_text(json.dumps(vercel, indent=2) + '\n', encoding='utf-8')
     print('Generated', len(list(OUT.glob('*.html'))), 'pages; remote images in use:', uses_remote_images)
