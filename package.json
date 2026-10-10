@@ -10,6 +10,7 @@
   "scripts": {
     "build:site": "python build_site.py",
     "build:brand": "node scripts/make-brand-assets.mjs",
+    "build:images": "node scripts/make-responsive-images.mjs",
     "dev": "node scripts/dev-server.mjs",
     "test": "node --test tests/*.test.js",
     "test:e2e": "playwright test",

@@ -77,7 +77,7 @@ test.describe('routes, metadata and assets', () => {
 
   test('home page carries the approved proposition and CTAs', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator('h1')).toContainText('Renovation, considered from every angle.');
+    await expect(page.locator('h1')).toContainText('Space to live. Room to become.');
     await expect(page.getByText('Explore thoughtful kitchen, bathroom, whole-home and extension renovations')).toBeVisible();
     await expect(page.locator('.hero').getByRole('link', { name: /Plan Your Renovation/ })).toHaveAttribute('href', '/plan-your-renovation');
     await expect(page.locator('.hero').getByRole('link', { name: /Speak To Our Team/ })).toHaveAttribute('href', '/contact');
