@@ -1,39 +1,36 @@
 # Milestone Renovate
 
-A renovation-focused sister website to Milestone Development, built as lightweight static HTML, CSS and JavaScript. No build step or package install is required.
+Premium Australian renovation website and enquiry platform for **Milestone Renovate**, sister brand of Milestone Development.
+Static HTML/CSS/JS + one Vercel function + Supabase. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and
+[docs/IMPLEMENTATION-ROADMAP.md](docs/IMPLEMENTATION-ROADMAP.md).
 
-## Included
-- Responsive premium editorial homepage
-- Dedicated service overview and four service detail pages
-- About, visual inspiration, contact and privacy pages
-- Click-to-call and an accessible email-based renovation enquiry form
-- Search metadata, sitemap, robots.txt, Vercel clean URLs and responsive menu
-- Official supplied Milestone architectural logo mark displayed in the header, footer and favicon
-- Visual design references linked to the existing public Milestone Development GitHub repository, with offline SVG illustration fallbacks
+> **Do not attach this repo to the Milestone Development Vercel project or repository.** Create a separate Vercel project.
 
-## Preview locally
-
-From the project folder:
+## Develop
 
 ```bash
-python serve.py
+npm install
+npm run dev          # http://127.0.0.1:8765 — leads go to an IN-MEMORY store (dev only, nothing persisted or emailed)
+npm run build:site   # regenerate public/*.html from build_site.py
+npm run build:brand  # regenerate favicons / OG image from the logo pack
 ```
 
-Open http://localhost:8765/ . The bundled preview server supports clean routes such as `/about`. Vercel also serves clean routes using `vercel.json`.
+Edit page content in `build_site.py`, then rebuild. Styles live in `public/css`, behaviour in `public/js`.
 
-## Deploy on Vercel
+## Test
 
-Create a **new** Vercel project for this sister website. Upload or connect the contents of this folder; framework preset should be **Other** and output directory `.` (no build command). Add `milestonerenovate.com` and `www.milestonerenovate.com` to the project, then configure DNS according to your project-specific Vercel instructions.
+```bash
+npm test             # unit + integration (service, handler, real-migration RLS on PGlite, wizard, client, planner)
+npm run test:e2e     # Playwright against the dev server using installed Chrome
+npm run audit        # production dependency audit
+```
 
-**Do not attach or deploy this site to the existing Milestone Development Vercel project.**
+## Configure production (Vercel project → Environment Variables)
+
+Copy `.env.example` for the full list. Required for enquiries to work: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`,
+`IP_HASH_SECRET`. Optional (staff emails): `RESEND_API_KEY`, `NOTIFY_TO_EMAIL`, `NOTIFY_FROM_EMAIL`.
+Apply `supabase/migrations/*.sql` to the Supabase project. Without configuration the API returns `503 not_configured`
+(it never pretends to save).
 
 ## Before launch
-1. Confirm the legal trading name and permission to use Milestone Development's brand, phone and email (`1800 008 883`, `admin@milestonedevelopment.com.au`).
-2. Replace the source images with owned, licensed renovation images; the current linked images are concept/illustrative references, not completed projects.
-3. Replace the email-app-based enquiry with a secure server-side submission handler and test deliverability, spam prevention and consent/privacy copy.
-4. Update the privacy notice if adding analytics, tracking, or a backend.
-5. Verify `milestonerenovate.com` is owned and DNS points to this **new** project before launch.
-6. Add real projects, testimonials, licences, reviews and warranty statements only with client-approved proof.
-
-## Maintenance
-Run `python build_site.py` only if modifying the optional generator. HTML output is already included. The site's source of truth is the generated `.html`, `css/site.css` and `js/site.js`.
+See "Business facts requiring verification" in the roadmap. Images are currently illustrative concepts, not completed projects.
