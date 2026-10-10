@@ -38,7 +38,7 @@ Newsreader (display, italic accents) and Inter (UI, body), both self-hosted vari
 CSS only: staggered hero entrance, scroll-driven reveal and hero image drift (`animation-timeline`, progressive enhancement), transform/opacity only. All disabled under `prefers-reduced-motion`.
 
 ## Rules
-- Illustrative imagery is always labelled; no fabricated projects, counts, testimonials, awards, guarantees or phone numbers.
+- AI-generated concept imagery is always labelled; no fabricated projects, counts, testimonials, awards, guarantees or phone numbers.
 - Generated pages come from `build_site.py`; run `python build_site.py` after edits. Regenerate image variants with `npm run build:images`.
 
 Original Stitch reference: `architectural_atelier/DESIGN.md` inside the exported ZIP (kept outside the repo).
