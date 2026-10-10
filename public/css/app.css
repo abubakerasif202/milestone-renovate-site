@@ -1,5 +1,5 @@
 /* Milestone Renovate — brand layer, forms, questionnaire and planner. Loaded after site.css. */
-:root{--gold:#ddb45c;--gold-hover:#e8c57a;--gold-ink:#8a6a1f;--forest:#073e2b;--error:#9b2c2c;--font:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+:root{--gold:#ddb45c;--gold-hover:#e8c57a;--gold-ink:#755713;--forest:#073e2b;--error:#9b2c2c;--font:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
 
 html{scroll-padding-top:110px}
 /* Brand header: gold logo on forest green (gold on cream fails contrast). */
@@ -36,6 +36,18 @@ html{scroll-padding-top:110px}
 .tool-card p{color:#5d6a63;margin:0;max-width:44ch}
 .tool-card .text-link{margin-top:auto;align-self:flex-start}
 .tool-tag{font-size:.66rem;letter-spacing:.18em;font-weight:700;color:var(--gold-ink)}
+
+/* Accent text on light surfaces: darker gold-ink keeps >= 4.5:1 (the bright gold is for dark surfaces only). */
+.eyebrow:not(.inverse),.contact-info span,.service-row>span:first-child,.gallery-card span,.value-grid article>span,.principles b,.faq-list summary:after,.text-link-accent{color:var(--gold-ink)}
+.hero .eyebrow{color:#d9bd8e}
+h1 em,h2 em{color:var(--gold-ink)}
+.hero h1 em,.inner-hero h1 em,.footer h2 em,.cta-grid h2 em{color:inherit}
+.hero h1 em{color:var(--gold)}
+.inner-hero h1 em{color:#e6dccd}
+.footer h2 em{color:#dfc9a5}
+.cta-grid h2 em{color:#e4d9c9}
+
+.image-note,.principles p{color:#4f5d55}
 
 /* Forms */
 .field{display:flex;flex-direction:column;gap:9px;min-width:0}
