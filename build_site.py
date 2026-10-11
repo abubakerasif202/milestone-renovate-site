@@ -7,7 +7,19 @@ from html import escape
 from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
 import json
-from site_experiences import postcode_entry, platform_tools, studio_page, planner_page, CONCEPTS, concept_gallery, concept_page
+from site_experiences import (
+    postcode_entry,
+    platform_tools,
+    studio_page,
+    planner_page,
+    CONCEPTS,
+    concept_gallery,
+    concept_page,
+    trust_ribbon,
+    booking_page,
+    quote_audit_page,
+    approvals_page,
+)
 
 ROOT_DIR = Path(__file__).parent
 OUT = ROOT_DIR / 'public'
@@ -101,16 +113,17 @@ def picture(key, alt, klass='', loading='lazy', sizes='100vw', priority=False):
 
 
 # --- shared chrome -----------------------------------------------------------------------------------------
-NAV = [('Home', '/'), ('Services', '/services'), ('Our Approach', '/about'), ('Inspiration', '/inspiration'), ('Cost Planner', '/bathroom-renovation-cost'), ('Design Studio', '/renovation-design-studio'), ('Contact', '/contact')]
+NAV = [('Home', '/'), ('Services', '/services'), ('Our Approach', '/about'), ('Inspiration', '/inspiration'), ('Cost Planner', '/bathroom-renovation-cost'), ('Approvals', '/approvals-guide'), ('Design Studio', '/renovation-design-studio'), ('Contact', '/contact')]
 
 
 def header(active=''):
     links = ''.join(f'<a href="{url}"' + (' aria-current="page"' if active == title else '') + f'>{title}</a>' for title, url in NAV)
-    return f'''<a class="skip" href="#content">Skip to content</a><header class="header" id="header"><div class="wrap nav-inner"><a class="brand" href="/" aria-label="Milestone Renovate home"><img src="/assets/brand/logo-gold.svg" alt="Milestone Renovate" width="205" height="40"></a><nav class="nav" id="navigation" aria-label="Main navigation">{links}<a class="nav-cta" href="/plan-your-renovation">Plan your renovation</a></nav><div class="nav-actions"><a class="call-top" href="{PHONE_HREF}">{PHONE}</a><a href="/plan-your-renovation" class="btn btn-small btn-ruby">Plan your renovation <span aria-hidden="true">↗</span></a><button class="menu-toggle" type="button" aria-controls="navigation" aria-expanded="false" aria-label="Open navigation" data-menu><span></span><span></span></button></div></div></header>'''
+    return f'''<a class="skip" href="#content">Skip to content</a><header class="header" id="header"><div class="wrap nav-inner"><a class="brand" href="/" aria-label="Milestone Renovate home"><img src="/assets/brand/logo-gold.svg" alt="Milestone Renovate" width="205" height="40"></a><nav class="nav" id="navigation" aria-label="Main navigation">{links}<a class="nav-cta" href="/plan-your-renovation">Plan your renovation</a><a class="nav-booking-link" href="/booking">Book 15-min call</a></nav><div class="nav-actions"><a class="call-top" href="{PHONE_HREF}">{PHONE}</a><a href="/booking" class="btn btn-small btn-gold">Book Call <span aria-hidden="true">↗</span></a><a href="/plan-your-renovation" class="btn btn-small btn-ruby">Plan your renovation <span aria-hidden="true">↗</span></a><button class="menu-toggle" type="button" aria-controls="navigation" aria-expanded="false" aria-label="Open navigation" data-menu><span></span><span></span></button></div></div></header>'''
 
 
 def footer():
-    return f'''<footer class="footer"><div class="wrap"><div class="footer-top"><div><p class="eyebrow">YOUR NEXT MILESTONE BEGINS HERE</p><h2>Let’s make space for<br><em>what comes next.</em></h2><a href="/plan-your-renovation" class="btn btn-ruby">Plan your renovation <span aria-hidden="true">↗</span></a></div><div class="footer-aside"><p>Thoughtful home renovations and extensions, connected to the expertise of Milestone Development.</p><a href="{PHONE_HREF}">{PHONE}</a><a href="mailto:{EMAIL}">{EMAIL}</a></div></div></div><div class="footer-bar"><div class="wrap footer-bottom"><a class="footer-brand" href="/" aria-label="Milestone Renovate home"><img src="/assets/brand/logo-gold.svg" alt="Milestone Renovate" width="168" height="33"></a><div class="footer-links"><a href="/services">Services</a><a href="/inspiration">Inspiration</a><a href="/bathroom-renovation-cost">Cost Planner</a><a href="/renovation-design-studio">Design Studio</a><a href="/about">About</a><a href="/privacy">Privacy</a><a href="{PARENT}" target="_blank" rel="noopener">Milestone Development ↗</a></div><small>© {date.today().year} Milestone Renovate. All rights reserved.</small></div></div></footer>'''
+    return f'''<footer class="footer"><div class="wrap"><div class="footer-top"><div><p class="eyebrow">YOUR NEXT MILESTONE BEGINS HERE</p><h2>Let’s make space for<br><em>what comes next.</em></h2><div class="footer-cta-row"><a href="/plan-your-renovation" class="btn btn-ruby">Plan your renovation <span aria-hidden="true">↗</span></a><a href="/booking" class="btn btn-gold">Book 15-min call <span aria-hidden="true">↗</span></a></div></div><div class="footer-aside"><p>Thoughtful home renovations and extensions, connected to the expertise of Milestone Development.</p><a href="{PHONE_HREF}">{PHONE}</a><a href="mailto:{EMAIL}">{EMAIL}</a></div></div></div><div class="footer-bar"><div class="wrap footer-bottom"><a class="footer-brand" href="/" aria-label="Milestone Renovate home"><img src="/assets/brand/logo-gold.svg" alt="Milestone Renovate" width="168" height="33"></a><div class="footer-links"><a href="/services">Services</a><a href="/inspiration">Inspiration</a><a href="/bathroom-renovation-cost">Cost Planner</a><a href="/approvals-guide">Approvals Guide</a><a href="/renovation-design-studio">Design Studio</a><a href="/booking">Book Call</a><a href="/quote-audit">Quote Audit</a><a href="/about">About</a><a href="/privacy">Privacy</a><a href="{PARENT}" target="_blank" rel="noopener">Milestone Development ↗</a></div><small>© {date.today().year} Milestone Renovate. All rights reserved.</small></div></div></footer><div class="mobile-cta-bar" aria-label="Quick contact actions"><a href="{PHONE_HREF}" class="mobile-cta-btn mobile-cta-call"><span class="mobile-cta-icon">📞</span><span>Call 1800 008 883</span></a><a href="/booking" class="mobile-cta-btn mobile-cta-book"><span class="mobile-cta-icon">📅</span><span>Book 15-Min Call</span></a></div>'''
+
 
 
 def head(title, description, slug, ldjson, scripts=(), noindex=False):
@@ -158,6 +171,7 @@ def cta():
 # --- pages -------------------------------------------------------------------------------------------------
 home = f'''<section class="hero"><div class="wrap hero-grid"><div class="hero-copy">{kicker('THE RENOVATION CHAPTER OF MILESTONE')}<h1>Space to live. <em>Room to become.</em></h1><p>Explore thoughtful kitchen, bathroom, whole-home and extension renovations, with practical guidance from the first idea to the next conversation.</p>{postcode_entry()}<div class="hero-buttons"><a class="text-link" href="/renovation-design-studio">Explore the Design Studio <span aria-hidden="true">↗</span></a></div><p class="hero-phone">Prefer to talk? Call <a href="{PHONE_HREF}">{PHONE}</a></p></div><div class="hero-media"><span class="hero-corner" aria-hidden="true"></span><div class="hero-media-inner">{picture('hero-home', 'AI-generated concept of a contemporary Australian home with timber cladding and a native garden', 'hero-image', 'eager', '(max-width:1020px) 92vw, 52vw', True)}</div><div class="hero-chip">01 / RENOVATION-LED THINKING<span>SYDNEY • NSW · AI-GENERATED CONCEPT</span></div></div></div></section>
 <section class="ticker"><div class="wrap ticker-inner"><span>CONSIDERED DESIGN</span><i></i><span>SMARTER SPACES</span><i></i><span>QUALITY-FOCUSED DETAIL</span><i></i><span>PRACTICAL PLANNING</span></div></section>
+{trust_ribbon()}
 {platform_tools(picture)}
 <section class="section intro"><div class="wrap intro-grid reveal"><div>{kicker('A HOME, REIMAGINED')}<h2>Not a new address.<br><em>A new perspective.</em></h2></div><div><p class="lead">Sometimes the home you love simply needs to evolve with you.</p><p>Milestone Renovate is a renovation-focused sister brand of Milestone Development. We bring the same thoughtful approach to planning and delivery into existing homes — reworking spaces, reconsidering layouts and elevating everyday living.</p><a class="text-link" href="/about">Discover our approach <span aria-hidden="true">↗</span></a></div></div></section>
 <section class="section services-surface"><div class="wrap">{split_header('WHAT WE DO', 'Every space has <em>possibility.</em>', 'From one considered room to a home-wide transformation, start with what matters most to you.')}<div class="service-grid reveal"><a class="service-tile featured" href="/home-renovations">{picture('staircase', 'AI-generated concept of an architectural staircase and foyer', '', 'lazy', '(max-width:870px) 92vw, 34vw')}<div class="tile-overlay"><span class="service-number">01 / WHOLE HOME</span><h3>Whole-home<br>renovations</h3><span class="circle-arrow" aria-hidden="true">↗</span></div></a><a class="service-tile" href="/kitchen-renovations">{picture('kitchen-after', 'AI-generated concept of a light, renovated kitchen with stone and timber', '', 'lazy', '(max-width:870px) 92vw, 34vw')}<div class="tile-overlay"><span class="service-number">02 / KITCHENS</span><h3>Kitchen<br>renovations</h3><span class="circle-arrow" aria-hidden="true">↗</span></div></a><a class="service-tile" href="/bathroom-renovations">{picture('bathroom-after', 'AI-generated concept of a calm bathroom with a stone bath and sage tiles', '', 'lazy', '(max-width:870px) 92vw, 34vw')}<div class="tile-overlay"><span class="service-number">03 / BATHROOMS</span><h3>Bathroom<br>renovations</h3><span class="circle-arrow" aria-hidden="true">↗</span></div></a><a class="service-tile" href="/extensions">{picture('terrace', 'AI-generated concept of a sheltered harbour terrace', '', 'lazy', '(max-width:870px) 92vw, 68vw')}<div class="tile-overlay"><span class="service-number">04 / EXTENSIONS</span><h3>Extensions &amp;<br>additions</h3><span class="circle-arrow" aria-hidden="true">↗</span></div></a></div><p class="image-note">Images are AI-generated concept imagery for design discussion, not a portfolio of completed Milestone Renovate projects.</p><a class="text-link center-link" href="/services">All renovation services <span aria-hidden="true">↗</span></a></div></section>
@@ -285,6 +299,9 @@ plan = f'''<section class="inner-hero compact"><div class="wrap"><p class="eyebr
 # --- interactive planning experiences ---------------------------------------------------------------------
 calculator = planner_page(field)
 studio = studio_page({room: concept_image_data(key) for room, key in [('bathroom', 'bathroom'), ('kitchen', 'kitchen'), ('living', 'whole-home'), ('workspace', 'workspace')]}, bathroom_style_imagery())
+booking = booking_page(field)
+quote_audit = quote_audit_page(field)
+approvals = approvals_page()
 
 not_found = '''<section class="inner-hero compact"><div class="wrap"><p class="eyebrow inverse">PAGE NOT FOUND</p><h1>That page has <em>moved.</em></h1><p>Try the links below, or call us.</p><a class="btn btn-ruby" href="/">Back to home <span aria-hidden="true">↗</span></a></div></section>'''
 
@@ -313,6 +330,9 @@ def build():
         ('privacy.html', 'Privacy Notice | Milestone Renovate', 'How Milestone Renovate collects, stores and uses the details you share when you make a renovation enquiry.', privacy, '', 'privacy', dict(crumbs=[('Home', '/'), ('Privacy', '/privacy')])),
         ('plan-your-renovation.html', 'Plan Your Renovation | Guided Brief | Milestone Renovate', 'Answer a few short questions about your kitchen, bathroom, whole-home or extension renovation and share your brief with the Milestone Renovate team.', plan, '', 'plan-your-renovation', dict(crumbs=[('Home', '/'), ('Plan Your Renovation', '/plan-your-renovation')], scripts=['wizard-ui.js'])),
         ('bathroom-renovation-cost.html', 'Bathroom Renovation Cost Planner | Milestone Renovate', 'Explore bathroom renovation scope in Sydney. Compare layouts, finishes and site considerations before a site assessment. Planning guidance, not a quote.', calculator, 'Cost Planner', 'bathroom-renovation-cost', dict(crumbs=[('Home', '/'), ('Bathroom Cost Planner', '/bathroom-renovation-cost')], scripts=['calculator-ui.js'])),
+        ('booking.html', 'Book a 15-Minute Strategy Call | Milestone Renovate', 'Schedule a complimentary 15-minute phone strategy session with a senior Milestone renovation consultant. Review plans, costs and approvals.', booking, '', 'booking', dict(crumbs=[('Home', '/'), ('Book Consultation', '/booking')], scripts=['booking-ui.js'])),
+        ('quote-audit.html', 'Complimentary Renovation Quote & Scope Audit | Milestone Renovate', 'Have an existing builder quote reviewed by Sydney construction estimators. Uncover prime cost allowances, omitted certifications, and compliance gaps.', quote_audit, '', 'quote-audit', dict(crumbs=[('Home', '/'), ('Quote Audit', '/quote-audit')], scripts=['quote-audit-ui.js'])),
+        ('approvals-guide.html', 'NSW Council DA vs CDC Approvals Checker | Milestone Renovate', 'Check if your Sydney renovation qualifies for fast-track 20-day Complying Development (CDC) or requires a Council DA under NSW Housing Code.', approvals, 'Approvals', 'approvals-guide', dict(crumbs=[('Home', '/'), ('Approvals Guide', '/approvals-guide')], scripts=['approvals-checker.js'])),
     ]
     pages.append(('renovation-design-studio.html', 'Renovation Design Studio Sydney | Milestone Renovate', 'Create a visual renovation moodboard for your Sydney bathroom, kitchen or living space. Explore materials, colours and layout priorities, then share your brief.', studio, 'Design Studio', 'renovation-design-studio', dict(crumbs=[('Home', '/'), ('Design Studio', '/renovation-design-studio')], scripts=['design-studio.js'])))
     for concept in CONCEPTS:

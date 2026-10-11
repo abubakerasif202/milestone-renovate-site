@@ -30,5 +30,6 @@ research-raw/
 *.transcript.*
 
 .vercel
-
 supabase/.temp/
+.codex/
+incoming-images/

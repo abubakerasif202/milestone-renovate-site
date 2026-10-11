@@ -47,18 +47,6 @@ function render() {
   const meter = document.createElement('meter');
   meter.min = 1; meter.max = 20; meter.value = Math.min(result.scopeScore, 20);
   meter.setAttribute('aria-label', 'Relative scope level');
-  output.append(meter);
-  if (result.mode === 'priced') {
-    const currency = new Intl.NumberFormat('en-AU', { style: 'currency', currency: 'AUD', maximumFractionDigits: 0 });
-    output.append(el('h3', `${currency.format(result.lowAud)}–${currency.format(result.highAud)}`, 'calc-subhead'));
-    output.append(el('p', `Indicative range · GST ${result.gstTreatment === 'inclusive' ? 'included' : 'excluded'} · rate card ${result.rateCardVersion} · source ${result.sourceDate}`, 'fine-print'));
-    const pricing = el('ul', undefined, 'calc-drivers');
-    [...result.pricingAssumptions, ...result.pricingExclusions].forEach((item) => pricing.append(el('li', item)));
-    output.append(pricing);
-  } else {
-    output.append(el('p', 'Scope planning mode: Milestone has not approved a rate card. Dollar estimates are unavailable until pricing assumptions are approved.', 'fine-print'));
-  }
-
   output.append(el('h3', 'What is shaping this scope', 'calc-subhead'));
   const list = el('ul', undefined, 'calc-drivers');
   (result.drivers.length ? result.drivers : ['A like-for-like refresh with no major site considerations.']).forEach((d) => list.append(el('li', d)));
@@ -81,13 +69,19 @@ function render() {
   result.exclusions.forEach((item) => exclusions.append(el('li', item)));
   output.append(exclusions);
 
-  output.append(el('p', 'This is a planning guide, not a quote. Costs depend on a site assessment, product selections and current trade pricing.', 'fine-print'));
+  output.append(el('p', 'This is a planning guide, not a formal quote. Costs depend on on-site inspection, material choices and engineering sign-offs.', 'fine-print'));
+
+  const actions = el('div', undefined, 'calc-actions');
   const cta = el('a', 'Request a site assessment ↗', 'btn btn-dark');
   cta.href = `/plan-your-renovation?${toQuestionnaireParams(input)}`;
   cta.addEventListener('click', () => {
     try { savePlanningContext(sessionStorage, { planner: input }); } catch { /* The query handoff remains available when browser storage is blocked. */ }
   });
-  output.append(cta);
+  const printBtn = el('button', 'Print planning profile', 'calc-print-btn');
+  printBtn.type = 'button';
+  printBtn.addEventListener('click', () => window.print());
+  actions.append(cta, printBtn);
+  output.append(actions);
 }
 
 form?.addEventListener('submit', (event) => { event.preventDefault(); render(); form.querySelector('[aria-invalid="true"]')?.focus(); });
