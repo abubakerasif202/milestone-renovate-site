@@ -11,7 +11,7 @@ const allowed = (name) => new Set(OPTIONS[name].map(([value]) => value));
  */
 export function serializeDraft(state) {
   return {
-    v: VERSION, step: state.step, category: state.category, suburb: state.suburb, postcode: state.postcode,
+    v: VERSION, step: state.step, category: state.category, postcode: /^\d{4}$/.test(state.postcode ?? '') && Number(state.postcode) >= 200 ? state.postcode : '',
     propertyType: state.propertyType, scope: state.scope, layoutChange: state.layoutChange, roomSize: state.roomSize,
     finishLevel: state.finishLevel, budgetRange: state.budgetRange, timeline: state.timeline,
   };
@@ -23,14 +23,13 @@ export function restoreDraft(draft, base) {
   const pick = (name, value) => (allowed(name).has(value) ? value : '');
   const category = Object.hasOwn(CATEGORY_LABELS, draft.category) ? draft.category : '';
   const scopeOptions = SCOPE_BY_CATEGORY[category] ?? [];
-  const text = (value, max) => String(value ?? '').slice(0, max);
   const step = Number.isInteger(draft.step) ? Math.min(Math.max(draft.step, 0), TOTAL_STEPS - 1) : 0;
   return {
     ...base,
     step: category ? step : 0,
     category,
-    suburb: text(draft.suburb, 80),
-    postcode: /^\d{4}$/.test(draft.postcode ?? '') ? draft.postcode : '',
+    suburb: '',
+    postcode: /^\d{4}$/.test(draft.postcode ?? '') && Number(draft.postcode) >= 200 ? draft.postcode : '',
     propertyType: pick('propertyType', draft.propertyType),
     scope: Array.isArray(draft.scope) ? draft.scope.filter((value) => scopeOptions.includes(value)) : [],
     layoutChange: pick('layoutChange', draft.layoutChange),

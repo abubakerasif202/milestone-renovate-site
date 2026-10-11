@@ -50,7 +50,7 @@ test('mobile nav: opening moves focus into the menu, Tab stays in it, Escape ret
   await expect(toggle).toBeFocused();
 });
 
-test('questionnaire keeps answers across a reload but never stores contact details', async ({ page }) => {
+test('questionnaire keeps approved answers across reload but never stores free text or contact details', async ({ page }) => {
   await page.goto('/plan-your-renovation');
   await page.locator('input[name="category"][value="kitchen"]').check({ force: true });
   await page.locator('[data-next]').click();
@@ -58,7 +58,7 @@ test('questionnaire keeps answers across a reload but never stores contact detai
   await page.locator('input[name="postcode"]').fill('2150');
   await page.reload();
   await expect(page.locator('#wizard-step-label')).toHaveText('Step 2 of 9');
-  await expect(page.locator('input[name="suburb"]')).toHaveValue('Parramatta');
+  await expect(page.locator('input[name="suburb"]')).toHaveValue('');
   await page.locator('[data-back]').click();
   await expect(page.locator('input[name="category"][value="kitchen"]')).toBeChecked();
   const stored = await page.evaluate(() => JSON.stringify({ ...sessionStorage }));

@@ -1,14 +1,17 @@
+import { clearPlanningContext, loadPlanningContext, planningEntries, sanitizePlanningContext, savePlanningContext } from './lib/planning-context.js';
 import { clearSessionKey, sessionKey, submitEnquiry } from './lib/enquiry-client.js';
-import { clearDraft, loadDraft, restoreDraft, saveDraft } from './lib/wizard-draft.js';
+import { clearDraft, loadDraft, restoreDraft, saveDraft, serializeDraft } from './lib/wizard-draft.js';
 import { clearErrors, setBusy, setStatus, showErrors, showSuccess, showSummary } from './lib/ui.js';
 import {
-  CATEGORY_LABELS, OPTIONS, STEPS, TOTAL_STEPS, advance, back, buildPayload, initialState, progress, setCategory, validateStep,
+  applyPlanningContext, answeredSteps, CATEGORY_LABELS, OPTIONS, STEPS, TOTAL_STEPS, advance, back, buildPayload, initialState, progress, setCategory, validateStep,
 } from './lib/wizard.js';
 
 const form = document.querySelector('[data-wizard]');
 if (form) init(form);
 
 function init(root) {
+  let storage;
+  try { storage = window.sessionStorage; } catch { storage = null; }
   const fieldsets = [...root.querySelectorAll('.wizard-step')];
   const label = root.querySelector('#wizard-step-label');
   const bar = root.querySelector('#wizard-progress');
@@ -16,21 +19,86 @@ function init(root) {
   const nextBtn = root.querySelector('[data-next]');
   const submitBtn = root.querySelector('[data-submit]');
   const startedAt = Date.now();
+  const idempotencyKey = sessionKey(storage, 'wizard');
   const params = new URLSearchParams(location.search);
   const source = params.get('from') === 'calculator' ? 'calculator' : 'wizard';
-  const handedOff = params.has('category');
-  let state = handedOff ? prefill(initialState(), params) : restoreDraft(loadDraft(sessionStorage), initialState());
+  const handedOff = params.has('category') || params.has('postcode') || ['calculator', 'design-studio', 'postcode'].includes(params.get('from'));
+  const draft = loadDraft(storage);
+  let state = handedOff ? prefill(initialState(), params) : restoreDraft(draft, initialState());
 
+  let planning = loadPlanningContext(storage);
+  for (const section of ['studio', 'planner']) {
+    const encoded = params.get(section);
+    if (encoded && encoded.length <= 2000) { try { planning = sanitizePlanningContext({ ...planning, [section]: JSON.parse(encoded) }); } catch { /* Invalid handoff is ignored. */ } }
+  }
+  if (params.has('postcode')) planning = sanitizePlanningContext({ ...planning, postcode: params.get('postcode') });
+  if (params.get('from') === 'design-studio' && planning.studio?.room !== 'bathroom') delete planning.planner;
+  if (params.get('from') === 'calculator' && planning.studio?.room !== 'bathroom') delete planning.studio;
+  if (params.has('category') && params.get('from') !== 'calculator') {
+    if (params.get('category') !== 'bathroom') delete planning.planner;
+    const studioCategory = { bathroom: 'bathroom', kitchen: 'kitchen', living: 'whole_home' }[planning.studio?.room];
+    if (studioCategory && studioCategory !== params.get('category')) delete planning.studio;
+  }
+  state = (handedOff || !draft) ? applyPlanningContext(state, planning) : { ...state, planning };
+  const importedSteps = (planning.planner || planning.studio || planning.postcode) ? answeredSteps(state) : new Set();
+  if (handedOff || (!draft && importedSteps.size)) {
+    while (state.step < TOTAL_STEPS - 1 && importedSteps.has(STEPS[state.step].id)) state.step += 1;
+  }
+  const review = document.createElement('section');
+  review.className = 'planning-review';
+  review.setAttribute('aria-label', 'Your carried-over renovation plans');
+  root.prepend(review);
+  if (importedSteps.size) {
+    const heading = document.createElement('h2'); heading.textContent = 'Your planning brief'; review.append(heading);
+    const explanation = document.createElement('p'); explanation.textContent = 'Your selections are included below. Already answered steps are skipped; you can edit any answer before sending.'; review.append(explanation);
+    const entries = planningEntries(planning);
+    if (planning.postcode) entries.unshift(['Postcode', planning.postcode]);
+    const list = document.createElement('dl');
+    for (const [key, value] of entries) { const dt = document.createElement('dt'); dt.textContent = key; const dd = document.createElement('dd'); dd.textContent = value; list.append(dt, dd); }
+    const details = document.createElement('details');
+    const summary = document.createElement('summary'); summary.textContent = 'Review included planning selections';
+    details.append(summary, list); review.append(details);
+    for (const [section, url] of [['planner', '/bathroom-renovation-cost'], ['studio', '/renovation-design-studio']]) {
+      if (planning[section]) { const link = document.createElement('a'); link.href = url; link.textContent = section === 'planner' ? 'Edit bathroom plan' : 'Edit design preferences'; review.append(link); }
+    }
+    for (const stepId of importedSteps) {
+      const button = document.createElement('button'); button.type = 'button'; button.className = 'btn btn-outline'; button.textContent = `Edit ${stepId}`;
+      button.addEventListener('click', () => { state = { ...readState(), step: STEPS.findIndex(step => step.id === stepId) }; clearErrors(root); render(true); }); review.append(button);
+    }
+  } else review.hidden = true;
   root.classList.add('is-enhanced');
   syncFormFromState();
   render(false);
+  if (handedOff && storage) {
+    try {
+      savePlanningContext(storage, planning);
+      if (JSON.stringify(loadDraft(storage)) === JSON.stringify(serializeDraft(state)) && JSON.stringify(loadPlanningContext(storage)) === JSON.stringify(sanitizePlanningContext(planning))) history.replaceState(null, '', location.pathname);
+    } catch { /* Handoff remains in the URL when storage cannot retain it. */ }
+  }
 
-  root.addEventListener('input', () => { state = readState(); saveDraft(sessionStorage, state); });
+  root.addEventListener('input', event => {
+    if (event.target.name === 'category') return;
+    state = readState(); saveDraft(storage, state);
+  });
   root.addEventListener('change', () => {
     const previous = state.category;
     state = readState();
-    if (state.category !== previous) { state = setCategory(state, state.category); syncScope(); }
-    saveDraft(sessionStorage, state);
+    if (state.category !== previous) {
+      state = setCategory(state, state.category);
+      if (planning.planner && state.category !== 'bathroom') {
+        delete planning.planner;
+        state = { ...state, roomSize: '', finishLevel: '', layoutChange: '', propertyType: '', timeline: '' };
+      }
+      const studioCategory = { bathroom: 'bathroom', kitchen: 'kitchen', living: 'whole_home' }[planning.studio?.room];
+      if (studioCategory && studioCategory !== state.category) delete planning.studio;
+      state.planning = planning;
+      savePlanningContext(storage, { planner: planning.planner, studio: planning.studio });
+      importedSteps.clear();
+      if (state.postcode && state.postcode === planning.postcode) importedSteps.add('location');
+      review.hidden = true;
+      syncFormFromState(); syncScope();
+    }
+    saveDraft(storage, state);
   });
 
   nextBtn.addEventListener('click', goNext);
@@ -48,6 +116,7 @@ function init(root) {
     const result = advance(state);
     if (Object.keys(result.errors).length > 0) { showErrors(root, result.errors)?.focus(); return; }
     state = result.state;
+    while (state.step < TOTAL_STEPS - 1 && importedSteps.has(STEPS[state.step].id)) state.step += 1;
     render(true);
   }
 
@@ -64,12 +133,13 @@ function init(root) {
     }
     setBusy(submitBtn, true);
     setStatus(root, 'Sending your brief…');
-    const payload = { ...buildPayload(state, { idempotencyKey: sessionKey(sessionStorage, 'wizard'), startedAt, source }), website: String(new FormData(root).get('website') ?? '') };
+    const payload = { ...buildPayload(state, { idempotencyKey, startedAt, source: planning.planner ? 'calculator' : source }), website: String(new FormData(root).get('website') ?? '') };
     const result = await submitEnquiry(payload);
     setBusy(submitBtn, false);
     if (result.ok) {
-      clearSessionKey(sessionStorage, 'wizard');
-      clearDraft(sessionStorage);
+      clearSessionKey(storage, 'wizard');
+      clearDraft(storage);
+      clearPlanningContext(storage);
       root.hidden = true;
       showSuccess(result.reference);
       return;
@@ -90,7 +160,7 @@ function init(root) {
     nextBtn.hidden = last;
     submitBtn.hidden = !last;
     syncScope();
-    saveDraft(sessionStorage, state);
+    saveDraft(storage, state);
     if (moveFocus) fieldsets[state.step].querySelector('legend')?.focus();
   }
 
@@ -116,6 +186,7 @@ function init(root) {
   }
 
   function syncFormFromState() {
+    root.querySelectorAll('input[type=radio],input[name=scope]').forEach(input => { input.checked = false; });
     const setRadio = (name, value) => { const el = root.querySelector(`input[name="${name}"][value="${value}"]`); if (el && value) el.checked = true; };
     setRadio('category', state.category);
     setRadio('layoutChange', state.layoutChange);
@@ -123,7 +194,7 @@ function init(root) {
     setRadio('finishLevel', state.finishLevel);
     for (const name of ['propertyType', 'budgetRange', 'timeline']) {
       const el = root.querySelector(`select[name="${name}"]`);
-      if (el && state[name]) el.value = state[name]; else setRadio(name, state[name]);
+      if (el) el.value = state[name] ?? ''; else setRadio(name, state[name]);
     }
     for (const name of ['suburb', 'postcode', 'details']) {
       const el = root.querySelector(`[name="${name}"]`);
@@ -138,7 +209,8 @@ function prefill(state, params) {
   const allowed = (key, name) => OPTIONS[name]?.some(([value]) => value === params.get(key)) ? params.get(key) : '';
   let next = { ...state };
   const category = params.get('category');
-  if (category in CATEGORY_LABELS) next = { ...setCategory(next, category), step: 1 };
+  if (Object.hasOwn(CATEGORY_LABELS, category)) next = { ...setCategory(next, category), step: 1 };
+  if (/^\d{4}$/.test(params.get('postcode') ?? '') && Number(params.get('postcode')) >= 200) next.postcode = params.get('postcode');
   next.finishLevel = allowed('finish', 'finishLevel');
   next.layoutChange = allowed('layout', 'layoutChange');
   next.roomSize = allowed('size', 'roomSize');

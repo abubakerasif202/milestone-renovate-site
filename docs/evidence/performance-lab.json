@@ -1,0 +1,65 @@
+{
+  "conditions": "Local unthrottled Chrome, fresh contexts, 1 second settled, no field CWV claim",
+  "results": [
+    {
+      "path": "/",
+      "width": 390,
+      "lcpMs": 628,
+      "cls": 0,
+      "domContentLoadedMs": 93,
+      "resources": 16,
+      "totalTransferBytes": 378832,
+      "javascriptTransferBytes": 25352
+    },
+    {
+      "path": "/bathroom-renovation-cost",
+      "width": 390,
+      "lcpMs": 576,
+      "cls": 0.04652108850704337,
+      "domContentLoadedMs": 92,
+      "resources": 14,
+      "totalTransferBytes": 274984,
+      "javascriptTransferBytes": 30550
+    },
+    {
+      "path": "/renovation-design-studio",
+      "width": 390,
+      "lcpMs": 256,
+      "cls": 0.0037367204811649254,
+      "domContentLoadedMs": 78,
+      "resources": 15,
+      "totalTransferBytes": 327997,
+      "javascriptTransferBytes": 36197
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "lcpMs": 476,
+      "cls": 0.03672551891604242,
+      "domContentLoadedMs": 402,
+      "resources": 17,
+      "totalTransferBytes": 478692,
+      "javascriptTransferBytes": 25352
+    },
+    {
+      "path": "/bathroom-renovation-cost",
+      "width": 1440,
+      "lcpMs": 604,
+      "cls": 0.002878983410493827,
+      "domContentLoadedMs": 188,
+      "resources": 14,
+      "totalTransferBytes": 274984,
+      "javascriptTransferBytes": 30550
+    },
+    {
+      "path": "/renovation-design-studio",
+      "width": 1440,
+      "lcpMs": 336,
+      "cls": 0.002877806712962963,
+      "domContentLoadedMs": 93,
+      "resources": 15,
+      "totalTransferBytes": 327997,
+      "javascriptTransferBytes": 36197
+    }
+  ]
+}

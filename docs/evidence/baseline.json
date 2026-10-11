@@ -1,0 +1,146 @@
+[
+  {
+    "name": "home",
+    "width": 390,
+    "status": 200,
+    "title": "Milestone Renovate | Thoughtful Home Renovations Sydney",
+    "headings": [
+      "Space to live. Room to become.",
+      "Not a new address.A new perspective.",
+      "Every space has possibility.",
+      "From first idea to next step.",
+      "A different way to read a home.",
+      "Two ways to begin.",
+      "Good renovations begin before the first wall moves.",
+      "A little inspiration.A lot of possibility.",
+      "Wondering whereto begin?",
+      "Have a space in mind?Let’s explore the possibilities.",
+      "Let’s make space forwhat comes next."
+    ],
+    "overflow": false,
+    "controls": 2
+  },
+  {
+    "name": "home",
+    "width": 1440,
+    "status": 200,
+    "title": "Milestone Renovate | Thoughtful Home Renovations Sydney",
+    "headings": [
+      "Space to live. Room to become.",
+      "Not a new address.A new perspective.",
+      "Every space has possibility.",
+      "From first idea to next step.",
+      "A different way to read a home.",
+      "Two ways to begin.",
+      "Good renovations begin before the first wall moves.",
+      "A little inspiration.A lot of possibility.",
+      "Wondering whereto begin?",
+      "Have a space in mind?Let’s explore the possibilities.",
+      "Let’s make space forwhat comes next."
+    ],
+    "overflow": false,
+    "controls": 2
+  },
+  {
+    "name": "planner",
+    "width": 390,
+    "status": 200,
+    "title": "Bathroom Renovation Cost Planner | Milestone Renovate",
+    "headings": [
+      "What shapes the scope?",
+      "Your bathroom",
+      "Moderate scope",
+      "How this works",
+      "Let’s make space forwhat comes next."
+    ],
+    "overflow": false,
+    "controls": 11
+  },
+  {
+    "name": "planner",
+    "width": 1440,
+    "status": 200,
+    "title": "Bathroom Renovation Cost Planner | Milestone Renovate",
+    "headings": [
+      "What shapes the scope?",
+      "Your bathroom",
+      "Moderate scope",
+      "How this works",
+      "Let’s make space forwhat comes next."
+    ],
+    "overflow": false,
+    "controls": 11
+  },
+  {
+    "name": "questionnaire",
+    "width": 390,
+    "status": 200,
+    "title": "Plan Your Renovation | Guided Brief | Milestone Renovate",
+    "headings": [
+      "Let’s shape your brief.",
+      "Thank you — we have your brief.",
+      "Let’s make space forwhat comes next."
+    ],
+    "overflow": false,
+    "controls": 66
+  },
+  {
+    "name": "questionnaire",
+    "width": 1440,
+    "status": 200,
+    "title": "Plan Your Renovation | Guided Brief | Milestone Renovate",
+    "headings": [
+      "Let’s shape your brief.",
+      "Thank you — we have your brief.",
+      "Let’s make space forwhat comes next."
+    ],
+    "overflow": false,
+    "controls": 66
+  },
+  {
+    "name": "reference-cost",
+    "width": 390,
+    "status": 200,
+    "title": "Dream Renovations | Licensed Builders Australia-Wide",
+    "headings": [
+      "Renovation Cost & Timeline Calculator"
+    ],
+    "overflow": false,
+    "controls": 20
+  },
+  {
+    "name": "reference-cost",
+    "width": 1440,
+    "status": 200,
+    "title": "Dream Renovations | Licensed Builders Australia-Wide",
+    "headings": [
+      "Renovation Cost & Timeline Calculator"
+    ],
+    "overflow": false,
+    "controls": 20
+  },
+  {
+    "name": "reference-design",
+    "width": 390,
+    "status": 200,
+    "title": "AI Bathroom Designer | Dream Renovations",
+    "headings": [
+      "Design Your Dream Bathroom with AI",
+      "Overall Style / Vibe"
+    ],
+    "overflow": false,
+    "controls": 11
+  },
+  {
+    "name": "reference-design",
+    "width": 1440,
+    "status": 200,
+    "title": "AI Bathroom Designer | Dream Renovations",
+    "headings": [
+      "Design Your Dream Bathroom with AI",
+      "Overall Style / Vibe"
+    ],
+    "overflow": false,
+    "controls": 11
+  }
+]

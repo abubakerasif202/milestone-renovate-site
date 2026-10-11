@@ -1,0 +1,257 @@
+{
+  "conditions": "Unthrottled local Chrome, 600ms initial settling, reduced motion, no field CWV claims",
+  "metrics": [
+    {
+      "name": "home",
+      "width": 320,
+      "lcpMs": 812,
+      "initialCls": 0
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "lcpMs": 464,
+      "initialCls": 0.05125975234449193
+    },
+    {
+      "name": "home",
+      "width": 768,
+      "lcpMs": 376,
+      "initialCls": 0.009524086934156378
+    },
+    {
+      "name": "home",
+      "width": 1024,
+      "lcpMs": 344,
+      "initialCls": 0.06088712321387397
+    },
+    {
+      "name": "home",
+      "width": 1440,
+      "lcpMs": 276,
+      "initialCls": 0.060822687931348596
+    },
+    {
+      "name": "home",
+      "width": 1920,
+      "lcpMs": 292,
+      "initialCls": 0.0411693825804157
+    },
+    {
+      "name": "kitchen",
+      "width": 320,
+      "lcpMs": 140,
+      "initialCls": 0.0014539544753086422
+    },
+    {
+      "name": "kitchen",
+      "width": 390,
+      "lcpMs": 152,
+      "initialCls": 0.001516587527698639
+    },
+    {
+      "name": "kitchen",
+      "width": 768,
+      "lcpMs": 156,
+      "initialCls": 0.0014844794881687243
+    },
+    {
+      "name": "kitchen",
+      "width": 1024,
+      "lcpMs": 136,
+      "initialCls": 0.0021973927815755207
+    },
+    {
+      "name": "kitchen",
+      "width": 1440,
+      "lcpMs": 156,
+      "initialCls": 0.001427416087962963
+    },
+    {
+      "name": "kitchen",
+      "width": 1920,
+      "lcpMs": 152,
+      "initialCls": 0.0009027416087962962
+    },
+    {
+      "name": "bathroom",
+      "width": 320,
+      "lcpMs": 156,
+      "initialCls": 0.021517435739776235
+    },
+    {
+      "name": "bathroom",
+      "width": 390,
+      "lcpMs": 192,
+      "initialCls": 0.0015000633111744224
+    },
+    {
+      "name": "bathroom",
+      "width": 768,
+      "lcpMs": 248,
+      "initialCls": 0.0014837480709876544
+    },
+    {
+      "name": "bathroom",
+      "width": 1024,
+      "lcpMs": 256,
+      "initialCls": 0.002196807861328125
+    },
+    {
+      "name": "bathroom",
+      "width": 1440,
+      "lcpMs": 252,
+      "initialCls": 0.0014269579475308643
+    },
+    {
+      "name": "bathroom",
+      "width": 1920,
+      "lcpMs": 220,
+      "initialCls": 0.0009024522569444444
+    },
+    {
+      "name": "extensions",
+      "width": 320,
+      "lcpMs": 244,
+      "initialCls": 0.001736844135802469
+    },
+    {
+      "name": "extensions",
+      "width": 390,
+      "lcpMs": 260,
+      "initialCls": 0.0015000633111744224
+    },
+    {
+      "name": "extensions",
+      "width": 768,
+      "lcpMs": 264,
+      "initialCls": 0.0014837480709876544
+    },
+    {
+      "name": "extensions",
+      "width": 1024,
+      "lcpMs": 268,
+      "initialCls": 0.0025582122802734375
+    },
+    {
+      "name": "extensions",
+      "width": 1440,
+      "lcpMs": 232,
+      "initialCls": 0.001980102237654321
+    },
+    {
+      "name": "extensions",
+      "width": 1920,
+      "lcpMs": 260,
+      "initialCls": 0.001421778549382716
+    },
+    {
+      "name": "wholehome",
+      "width": 320,
+      "lcpMs": 208,
+      "initialCls": 0.001434375
+    },
+    {
+      "name": "wholehome",
+      "width": 390,
+      "lcpMs": 224,
+      "initialCls": 0.0011975941753719532
+    },
+    {
+      "name": "wholehome",
+      "width": 768,
+      "lcpMs": 224,
+      "initialCls": 0.0014837480709876544
+    },
+    {
+      "name": "wholehome",
+      "width": 1024,
+      "lcpMs": 240,
+      "initialCls": 0.002196807861328125
+    },
+    {
+      "name": "wholehome",
+      "width": 1440,
+      "lcpMs": 248,
+      "initialCls": 0.0014269579475308643
+    },
+    {
+      "name": "wholehome",
+      "width": 1920,
+      "lcpMs": 272,
+      "initialCls": 0.0009024522569444444
+    },
+    {
+      "name": "studio",
+      "width": 320,
+      "lcpMs": 320,
+      "initialCls": 0.003314351851851852
+    },
+    {
+      "name": "studio",
+      "width": 390,
+      "lcpMs": 220,
+      "initialCls": 0.0037367204811649254
+    },
+    {
+      "name": "studio",
+      "width": 768,
+      "lcpMs": 208,
+      "initialCls": 0.0035272955246913582
+    },
+    {
+      "name": "studio",
+      "width": 1024,
+      "lcpMs": 232,
+      "initialCls": 0.0032522074381510415
+    },
+    {
+      "name": "studio",
+      "width": 1440,
+      "lcpMs": 264,
+      "initialCls": 0.002877806712962963
+    },
+    {
+      "name": "studio",
+      "width": 1920,
+      "lcpMs": 244,
+      "initialCls": 0.0022205102237654317
+    },
+    {
+      "name": "inspiration",
+      "width": 320,
+      "lcpMs": 192,
+      "initialCls": 0.0020203703703703707
+    },
+    {
+      "name": "inspiration",
+      "width": 390,
+      "lcpMs": 212,
+      "initialCls": 0.0031241880341880343
+    },
+    {
+      "name": "inspiration",
+      "width": 768,
+      "lcpMs": 228,
+      "initialCls": 0.003279441550925926
+    },
+    {
+      "name": "inspiration",
+      "width": 1024,
+      "lcpMs": 196,
+      "initialCls": 0.0035205078125
+    },
+    {
+      "name": "inspiration",
+      "width": 1440,
+      "lcpMs": 216,
+      "initialCls": 0.004291298010973937
+    },
+    {
+      "name": "inspiration",
+      "width": 1920,
+      "lcpMs": 264,
+      "initialCls": 0.0030542417173032408
+    }
+  ]
+}

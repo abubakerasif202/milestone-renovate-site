@@ -179,7 +179,7 @@ test.describe('bathroom cost planner', () => {
     await page.selectOption('#plumbing', 'major');
     await page.check('input[name="strata"]');
     await expect(result.locator('.calc-level')).not.toHaveText(first);
-    await expect(result.locator('.calc-drivers')).toContainText('Strata');
+    await expect(result.locator('.calc-drivers').first()).toContainText('Strata');
     expect(await result.textContent()).not.toMatch(/\$\s?\d/);
 
     await page.fill('#lengthM', '0');
@@ -187,7 +187,7 @@ test.describe('bathroom cost planner', () => {
     await expect(page.locator('#lengthM-error')).toContainText('between 1 and 10');
     await page.fill('#lengthM', '3');
 
-    const cta = result.getByRole('link', { name: /questionnaire/ });
+    const cta = result.getByRole('link', { name: /site assessment/ });
     await expect(cta).toHaveAttribute('href', /category=bathroom.*from=calculator.*finish=premium/);
     await cta.click();
     await expect(page).toHaveURL(/plan-your-renovation/);

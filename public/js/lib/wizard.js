@@ -1,3 +1,4 @@
+import { sanitizePlanningContext } from './planning-context.js';
 import { isAuPhone, isAuPostcode, isEmail, normalisePhone } from './au.js';
 
 export const CATEGORY_LABELS = {
@@ -54,7 +55,7 @@ const clean = (value) => String(value ?? '').trim();
 /** @returns {Record<string,string>} field -> message; empty object means the step is valid. */
 export function validateStep(state, stepId) {
   const errors = {};
-  if (stepId === 'category' && !(state.category in CATEGORY_LABELS)) errors.category = 'Please choose what you would like to renovate.';
+  if (stepId === 'category' && !Object.hasOwn(CATEGORY_LABELS, state.category)) errors.category = 'Please choose what you would like to renovate.';
   if (stepId === 'location') {
     const suburb = clean(state.suburb);
     const postcode = clean(state.postcode);
@@ -92,6 +93,8 @@ export const progress = (state) => ({ current: state.step + 1, total: TOTAL_STEP
 /** Build the POST /api/enquiries body. Optional blanks are omitted. */
 export function buildPayload(state, { idempotencyKey, startedAt, source = 'wizard', sourcePage = '/plan-your-renovation' }) {
   const wizard = {};
+  const planning = sanitizePlanningContext(state.planning);
+  if (planning.planner || planning.studio) wizard.planning = planning;
   if (state.propertyType) wizard.propertyType = state.propertyType;
   if (state.scope.length) wizard.scope = [...state.scope];
   if (state.roomSize) wizard.roomSize = state.roomSize;
@@ -110,4 +113,44 @@ export function buildPayload(state, { idempotencyKey, startedAt, source = 'wizar
     if (value) payload[key] = value;
   }
   return payload;
+}
+
+/** Map planning choices to existing questionnaire fields without manufacturing answers. */
+export function applyPlanningContext(state, context) {
+  const planning = sanitizePlanningContext(context);
+  const planner = planning.planner;
+  const studio = planning.studio;
+  let next = { ...state, planning };
+  if (planning.postcode) next.postcode = planning.postcode;
+  if (planner) {
+    next = setCategory(next, 'bathroom');
+    if (planner.finish) next.finishLevel = planner.finish;
+    if (planner.renovationType) next.layoutChange = planner.renovationType === 'full_refit_layout' ? 'major' : 'none';
+    const area = planner.areaInputM2 ?? (planner.lengthM && planner.widthM ? planner.lengthM * planner.widthM : null);
+    if (area) next.roomSize = area <= 4 ? 'small' : area <= 8 ? 'medium' : 'large';
+    const picks = [...next.scope];
+    if (planner.plumbing && planner.plumbing !== 'none') picks.push('relocate_plumbing');
+    if (planner.waterproofing === 'replace') picks.push('waterproofing');
+    if (planner.tiling && planner.tiling !== 'retain') picks.push('new_tiling');
+    if (planner.shower === 'walk_in') picks.push('walk_in_shower');
+    if (planner.accessibility) picks.push('accessibility');
+    if (planner.renovationType === 'full_refit_layout') picks.push('new_layout');
+    next.scope = [...new Set(picks)];
+    if (planner.access === 'apartment') next.propertyType = 'apartment';
+    const timeline = { exploring: 'exploring', '0_3': 'asap', '3_6': '3_6_months', '6_12': '6_plus_months', '12_plus': '6_plus_months' };
+    if (planner.timeframe) next.timeline = timeline[planner.timeframe];
+  }
+  if (studio?.room) {
+    next = setCategory(next, { bathroom: 'bathroom', kitchen: 'kitchen', living: 'whole_home' }[studio.room]);
+    if (studio.layout) next.layoutChange = studio.layout === 'retain' ? 'none' : 'major';
+  }
+  return next;
+}
+export function answeredSteps(state) {
+  return new Set([
+    ...(state.category ? ['category'] : []), ...(state.postcode ? ['location'] : []),
+    ...(state.propertyType ? ['property'] : []), ...(state.scope.length && state.layoutChange ? ['scope'] : []),
+    ...(state.roomSize ? ['size'] : []), ...(state.finishLevel ? ['finish'] : []),
+    ...(state.budgetRange && state.timeline ? ['budget'] : []),
+  ]);
 }
