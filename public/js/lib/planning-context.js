@@ -2,7 +2,7 @@ import { PLANNER_CHOICES, PLANNER_FLAGS, RENOVATION_TYPES, FINISH_LEVELS, PLUMBI
 
 export const PLANNER_OPTIONS = { ...PLANNER_CHOICES, renovationType: RENOVATION_TYPES, finish: FINISH_LEVELS, plumbing: PLUMBING_CHANGES };
 export const STUDIO_OPTIONS = {
- room: ['bathroom','kitchen','living'], style: ['contemporary-australian','warm-minimalism','modern-luxury','scandinavian','mediterranean','timeless-classic','stone-timber','monochrome'],
+ room: ['bathroom','kitchen','living'], style: ['contemporary-australian','warm-minimalism','modern-luxury','scandinavian','mediterranean','timeless-classic','industrial','stone-timber','monochrome'],
  palette: ['warm-neutral','sage-cream','stone-charcoal','coastal-sand'], walls: ['painted','porcelain','textured','stone'], floor: ['porcelain','timber-look','engineered-timber','stone'],
  cabinetry: ['timber','painted','fluted','none'], surfaces: ['quartz','porcelain','natural-stone','timber','none'], fixtures: ['chrome','brushed-nickel','brass','matte-black','none'],
  lighting: ['balanced','warm-layered','task-led','statement'], layout: ['retain','reconfigure','open-plan'], storage: ['essential','concealed','generous'],

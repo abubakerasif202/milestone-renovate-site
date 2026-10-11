@@ -42,6 +42,27 @@ def concept_image_data(key):
     }
 
 
+BATHROOM_STYLE_MANIFEST = json.loads((ROOT_DIR / 'assets' / 'bathroom-styles.json').read_text(encoding='utf-8'))
+
+
+def bathroom_style_imagery():
+    """Six photographed bathroom directions for the Design Studio, keyed by style value. Missing files fail the build."""
+    styles = {}
+    for image in BATHROOM_STYLE_MANIFEST['images']:
+        for variant in image['variants']:
+            if not (OUT / variant['src'].lstrip('/')).is_file():
+                raise FileNotFoundError(f"Missing bathroom style variant: {variant['src']}")
+        styles[image['style']] = {
+            'label': image['label'], 'summary': image['summary'], 'alt': image['alt'],
+            'src': next(v['src'] for v in image['variants'] if v['width'] == 768),
+            'srcset': ', '.join(f"{v['src']} {v['width']}w" for v in image['variants']),
+            'width': image['width'], 'height': image['height'],
+        }
+    if len(styles) != 6:
+        raise ValueError('The Design Studio needs exactly six bathroom styles.')
+    return styles
+
+
 # --- images: prefer local copies in public/assets/img, fall back to the parent's public repo -------------------
 REMOTE_IMG = 'https://raw.githubusercontent.com/abubakerasif202/milestonedevelopment-site/main/public/assets/photography/{}.webp'
 IMAGE_KEYS = ['hero-home', 'kitchen-after', 'bathroom-after', 'whole-home-living', 'extension-rear', 'compare-before', 'compare-after', 'inspo-materials', 'inspo-entry', 'inspo-outdoor', 'inspo-bedroom', 'about-planning']
@@ -263,7 +284,7 @@ plan = f'''<section class="inner-hero compact"><div class="wrap"><p class="eyebr
 
 # --- interactive planning experiences ---------------------------------------------------------------------
 calculator = planner_page(field)
-studio = studio_page({room: concept_image_data(key) for room, key in [('bathroom', 'bathroom'), ('kitchen', 'kitchen'), ('living', 'whole-home'), ('workspace', 'workspace')]})
+studio = studio_page({room: concept_image_data(key) for room, key in [('bathroom', 'bathroom'), ('kitchen', 'kitchen'), ('living', 'whole-home'), ('workspace', 'workspace')]}, bathroom_style_imagery())
 
 not_found = '''<section class="inner-hero compact"><div class="wrap"><p class="eyebrow inverse">PAGE NOT FOUND</p><h1>That page has <em>moved.</em></h1><p>Try the links below, or call us.</p><a class="btn btn-ruby" href="/">Back to home <span aria-hidden="true">↗</span></a></div></section>'''
 

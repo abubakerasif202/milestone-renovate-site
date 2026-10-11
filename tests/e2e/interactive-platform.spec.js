@@ -22,7 +22,7 @@ test('studio completes, recovers, shares and hands safe preferences to questionn
  await page.locator('[data-choice="bathroom"]').click();
  await page.locator('[data-next]').click();
  await expect(page.locator('[data-step-heading]')).toBeFocused();
- await page.locator('[data-choice="warm-minimalism"]').click();
+ await page.locator('[data-choice="scandinavian"]').click();
  await page.locator('[data-next]').click();
  await page.locator('[data-choice="sage-cream"]').click();
  await page.reload();
@@ -36,7 +36,7 @@ test('studio completes, recovers, shares and hands safe preferences to questionn
  await expect(page.locator('.studio-preview')).toContainText('not completed work');
  await page.locator('[data-enquire]').click();
  await expect(page).toHaveURL(/plan-your-renovation/);
- await expect(page.locator('.planning-review')).toContainText('Warm minimalism');
+ await expect(page.locator('.planning-review')).toContainText('Scandinavian');
  const stored=await page.evaluate(()=>JSON.stringify({...sessionStorage}));
  expect(stored).not.toMatch(/email|phone|consent|"name"|details|suburb/i);
 });

@@ -124,3 +124,34 @@
 @media(max-width:375px){.studio-option-grid{grid-template-columns:1fr}.calc-form,.calc-result{padding:22px 18px}.studio-controls,.studio-preview{padding:20px 16px}}
 @media(prefers-reduced-motion:reduce){.studio-option{transition:none}.studio-option:hover{transform:none}}
 @media print{.studio-controls,.studio-actions,.postcode-entry,.planning-index{display:none!important}.studio-layout,.case-study-grid{display:block}.studio-preview{position:static;border:0;box-shadow:none;padding:0}.studio-concept-image{max-height:250px;object-fit:contain}.studio-summary-row{break-inside:avoid}.studio-palette,.studio-swatch{print-color-adjust:exact;-webkit-print-color-adjust:exact}.calc-grid{display:block}.calc-form{display:none}.calc-result{position:static;color:var(--color-ink);background:var(--color-white);border:1px solid var(--color-line)}.calc-result *{color:var(--color-ink)!important}}
+
+/* Bathroom style selector: six photographed directions as a responsive card grid */
+.style-step-intro{max-width:62ch;margin:14px 0 0;color:var(--color-ink-soft);line-height:1.7}
+.style-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.8vw,24px);margin-top:26px}
+.style-card{position:relative;display:block;width:100%;padding:0;aspect-ratio:4/5;overflow:hidden;border:0;border-radius:var(--radius);background:var(--color-forest-deep);color:var(--color-white);text-align:left;cursor:pointer;isolation:isolate;box-shadow:var(--shadow-soft);transition:transform .45s var(--ease-out),box-shadow .45s var(--ease-out)}
+.style-card-media,.style-card-media img{position:absolute;inset:0;display:block;width:100%;height:100%}
+.style-card-media img{object-fit:cover;transition:transform .9s var(--ease-out)}
+.style-card::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(7,62,43,0) 50%,rgba(7,62,43,.52) 74%,rgba(7,62,43,.9) 100%)}
+.style-card-body{position:absolute;z-index:2;left:0;right:0;bottom:0;display:grid;gap:6px;padding:clamp(16px,2vw,24px)}
+.style-card-title{font:500 clamp(1.45rem,2vw,1.85rem)/1.1 var(--font-display);transition:color .3s}
+.style-card-note{font:400 .84rem/1.5 var(--font-body);color:#F3EEDD}
+.style-card-tag{position:absolute;z-index:2;top:12px;left:12px;padding:4px 8px;background:rgba(251,249,243,.94);color:var(--color-forest-deep);font:700 .62rem var(--font-body);letter-spacing:.12em;text-transform:uppercase}
+.style-card-check{position:absolute;z-index:2;top:10px;right:10px;display:none;width:34px;height:34px;border-radius:50%;background:var(--color-gold);border:2px solid var(--color-white)}
+.style-card-check::after{content:"";position:absolute;left:10px;top:5px;width:8px;height:14px;border:solid var(--color-forest-deep);border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.style-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+.style-card:hover .style-card-media img{transform:scale(1.045)}
+.style-card[aria-pressed="true"]{box-shadow:0 0 0 3px var(--color-ruby),0 0 0 6px var(--color-gold),var(--shadow-lift)}
+.style-card[aria-pressed="true"] .style-card-title{color:var(--color-gold-pale)}
+.style-card[aria-pressed="true"] .style-card-check{display:block;animation:style-check .38s var(--ease-out)}
+.style-card:focus-visible{outline:3px solid var(--color-forest-deep);outline-offset:9px}
+.style-selection-note{margin:22px 0 0;font-size:.9rem;line-height:1.6;color:var(--color-ink-soft)}
+.style-selection-note strong{color:var(--color-ruby-deep)}
+.studio-style-image{object-position:50% 55%;animation:style-fade .6s var(--ease-out)}
+.studio-layout--styles{grid-template-columns:1fr}
+.studio-layout--styles .studio-preview{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(20px,4vw,48px);align-items:start}
+.studio-layout--styles .studio-style-image{aspect-ratio:4/5}
+@keyframes style-check{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+@keyframes style-fade{from{opacity:0;transform:scale(1.02)}to{opacity:1;transform:none}}
+@media(max-width:1020px){.style-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.studio-layout--styles .studio-preview{grid-template-columns:1fr}}
+@media(max-width:600px){.style-grid{grid-template-columns:1fr}.style-card{aspect-ratio:1/1}.style-card:focus-visible{outline-offset:7px}}
+@media(prefers-reduced-motion:reduce){.style-card,.style-card-media img,.style-card-title{transition:none}.style-card:hover,.style-card:hover .style-card-media img{transform:none}.style-card[aria-pressed="true"] .style-card-check,.studio-style-image{animation:none}}

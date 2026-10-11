@@ -1,7 +1,7 @@
 const options = (items) => items.map(([value, label]) => ({ value, label }));
 export const DESIGN_STEPS = [
   { key: 'room', title: 'Which space are you imagining?', options: options([['bathroom','Bathroom'],['kitchen','Kitchen'],['living','Living space']]) },
-  { key: 'style', title: 'Choose your design direction', options: options([['contemporary-australian','Contemporary Australian'],['warm-minimalism','Warm minimalism'],['modern-luxury','Modern luxury'],['scandinavian','Scandinavian'],['mediterranean','Mediterranean-inspired'],['timeless-classic','Timeless classic'],['stone-timber','Natural stone & timber'],['monochrome','Architectural monochrome']]) },
+  { key: 'style', title: 'Choose your design direction', options: options([['contemporary-australian','Contemporary Australian'],['warm-minimalism','Warm minimalism'],['modern-luxury','Modern luxury'],['scandinavian','Scandinavian'],['mediterranean','Mediterranean'],['timeless-classic','Timeless classic'],['industrial','Industrial'],['stone-timber','Natural stone & timber'],['monochrome','Architectural monochrome']]) },
   { key: 'palette', title: 'Set the colour story', options: options([['warm-neutral','Warm neutrals'],['sage-cream','Sage & cream'],['stone-charcoal','Stone & charcoal'],['coastal-sand','Coastal sand']]) },
   { key: 'walls', title: 'Consider the wall finish', options: options([['painted','Painted walls'],['porcelain','Porcelain tile'],['textured','Textured finish'],['stone','Natural stone']]) },
   { key: 'floor', title: 'Ground the room', options: options([['porcelain','Porcelain tile'],['timber-look','Timber-look porcelain'],['engineered-timber','Engineered timber'],['stone','Natural stone']]) },
@@ -21,7 +21,12 @@ export const PALETTES = {
   'stone-charcoal': ['#DFDBD3','#96928C','#393D3C'],
   'coastal-sand': ['#F1E9D9','#CAB99D','#708A8A'],
 };
+// Bathrooms choose from six photographed directions, shown in this order.
+export const BATHROOM_STYLES = ['contemporary-australian','industrial','mediterranean','modern-luxury','timeless-classic','scandinavian'];
 export function visibleOptions(step, config) {
+  if (step.key === 'style' && config.room === 'bathroom') {
+    return BATHROOM_STYLES.map((style) => step.options.find(({ value }) => value === style));
+  }
   return step.options.filter(({ value }) => {
     if (step.key === 'floor' && config.room === 'bathroom') return value !== 'engineered-timber';
     if (step.key === 'layout' && config.room === 'bathroom') return value !== 'open-plan';

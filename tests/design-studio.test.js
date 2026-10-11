@@ -1,8 +1,22 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {activeSteps,cleanDesign,decodeDesign,designRecommendations,designSummary,encodeDesign,visibleOptions,DESIGN_STEPS} from '../public/js/lib/design-studio.js';
+import {activeSteps,BATHROOM_STYLES,cleanDesign,decodeDesign,designRecommendations,designSummary,encodeDesign,labelFor,visibleOptions,DESIGN_STEPS} from '../public/js/lib/design-studio.js';
 test('design config excludes unknown and personal information',()=>{
- assert.deepEqual(cleanDesign({room:'bathroom',style:'monochrome',email:'private@example.com',notes:'Personal notes',floor:'engineered-timber',luxury:'island'}),{room:'bathroom',style:'monochrome'});
+ assert.deepEqual(cleanDesign({room:'bathroom',style:'industrial',email:'private@example.com',notes:'Personal notes',floor:'engineered-timber',luxury:'island'}),{room:'bathroom',style:'industrial'});
+ assert.deepEqual(cleanDesign({room:'kitchen',style:'monochrome',email:'private@example.com'}),{room:'kitchen',style:'monochrome'});
+});
+test('bathrooms offer exactly the six photographed styles in display order',()=>{
+ const styleStep=DESIGN_STEPS.find(s=>s.key==='style');
+ const offered=visibleOptions(styleStep,{room:'bathroom'});
+ assert.deepEqual(offered.map(o=>o.value),['contemporary-australian','industrial','mediterranean','modern-luxury','timeless-classic','scandinavian']);
+ assert.deepEqual(offered.map(o=>o.value),BATHROOM_STYLES);
+ assert.ok(offered.every(o=>o.label));
+ assert.equal(labelFor('style','industrial'),'Industrial');
+ assert.ok(visibleOptions(styleStep,{room:'kitchen'}).some(o=>o.value==='warm-minimalism'));
+});
+test('a retired bathroom style is dropped from saved and shared state',()=>{
+ assert.deepEqual(cleanDesign({room:'bathroom',style:'warm-minimalism'}),{room:'bathroom'});
+ assert.deepEqual(decodeDesign('room=bathroom&style=scandinavian'),{room:'bathroom',style:'scandinavian'});
 });
 test('living board omits wet-area surfaces and fittings steps and data',()=>{
  const config=cleanDesign({room:'living',surfaces:'quartz',fixtures:'chrome'});
