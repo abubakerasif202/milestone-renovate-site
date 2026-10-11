@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-const PAGES = ['/', '/services', '/about', '/inspiration', '/contact', '/privacy', '/plan-your-renovation', '/bathroom-renovation-cost', '/kitchen-renovations', '/bathroom-renovations', '/home-renovations', '/extensions', '/no-such-page'];
+const PAGES = ['/', '/services', '/about', '/inspiration', '/contact', '/privacy', '/terms', '/estimate-disclaimer', '/plan-your-renovation', '/bathroom-renovation-cost', '/kitchen-renovations', '/bathroom-renovations', '/home-renovations', '/extensions', '/no-such-page'];
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 
 for (const width of [1440, 390]) {

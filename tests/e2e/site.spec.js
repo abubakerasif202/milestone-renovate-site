@@ -3,7 +3,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
 const PUBLIC = join(import.meta.dirname, '..', '..', 'public');
-const PAGES = ['/', '/services', '/about', '/inspiration', '/contact', '/privacy', '/plan-your-renovation', '/bathroom-renovation-cost', '/kitchen-renovations', '/bathroom-renovations', '/home-renovations', '/extensions'];
+const PAGES = ['/', '/services', '/about', '/inspiration', '/contact', '/privacy', '/terms', '/estimate-disclaimer', '/plan-your-renovation', '/bathroom-renovation-cost', '/kitchen-renovations', '/bathroom-renovations', '/home-renovations', '/extensions'];
 const SITE = 'https://milestonerenovate.com';
 const VIEWPORTS = [{ name: 'desktop', width: 1440, height: 900 }, { name: 'tablet', width: 768, height: 1024 }, { name: 'mobile', width: 390, height: 844 }, { name: 'small', width: 320, height: 640 }];
 

@@ -13,6 +13,7 @@ npm install
 npm run dev          # http://127.0.0.1:8765 — leads go to an IN-MEMORY store (dev only, nothing persisted or emailed)
 npm run build:site   # regenerate public/*.html from build_site.py
 npm run build:brand  # regenerate favicons / OG image from the logo pack
+npm run build:team   # regenerate responsive team portrait variants from assets/team/
 ```
 
 Edit page content in `build_site.py`, then rebuild. Styles live in `public/css`, behaviour in `public/js`.

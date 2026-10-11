@@ -94,7 +94,7 @@ export const progress = (state) => ({ current: state.step + 1, total: TOTAL_STEP
 export function buildPayload(state, { idempotencyKey, startedAt, source = 'wizard', sourcePage = '/plan-your-renovation' }) {
   const wizard = {};
   const planning = sanitizePlanningContext(state.planning);
-  if (planning.planner || planning.studio) wizard.planning = planning;
+  if (planning.planner || planning.studio || planning.estimate) wizard.planning = planning;
   if (state.propertyType) wizard.propertyType = state.propertyType;
   if (state.scope.length) wizard.scope = [...state.scope];
   if (state.roomSize) wizard.roomSize = state.roomSize;
@@ -120,8 +120,23 @@ export function applyPlanningContext(state, context) {
   const planning = sanitizePlanningContext(context);
   const planner = planning.planner;
   const studio = planning.studio;
+  const estimate = planning.estimate;
   let next = { ...state, planning };
   if (planning.postcode) next.postcode = planning.postcode;
+  if (estimate) {
+    next = setCategory(next, estimate.project);
+    next.finishLevel = estimate.finish;
+    if (estimate.project === 'bathroom') {
+      next.roomSize = estimate.size;
+      if (estimate.access === 'apartment') next.propertyType = 'apartment';
+    }
+    next.layoutChange = estimate.layoutChange || estimate.wallRemoval ? 'major' : 'none';
+    const picks = [...next.scope];
+    if (estimate.layoutChange && estimate.project === 'bathroom') picks.push('relocate_plumbing');
+    if (estimate.layoutChange) picks.push('new_layout');
+    if (estimate.wallRemoval) picks.push('structural_changes');
+    next.scope = [...new Set(picks)].filter((item) => (estimate.project === 'bathroom' ? true : item !== 'relocate_plumbing'));
+  }
   if (planner) {
     next = setCategory(next, 'bathroom');
     if (planner.finish) next.finishLevel = planner.finish;

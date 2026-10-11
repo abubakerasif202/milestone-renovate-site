@@ -20,23 +20,8 @@
 .postcode-entry>label{display:block;margin-bottom:10px;font-size:.85rem;font-weight:600}
 .postcode-start .btn{min-height:50px}
 .postcode-entry .hint{display:block;margin-top:10px}
-.calc-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,4vw,56px)}
-.calc-form,.calc-result{min-width:0}
-.calc-result{position:static}
-.calc-scenario{padding:16px 0;border-top:1px solid var(--color-line-green)}
-.calc-scenario h4{font:500 1.35rem var(--font-display);margin:0 0 8px;color:var(--color-white)}
-.calc-scenario p{font-size:.85rem;line-height:1.6;margin:0}
-.planner-section{border:0;border-top:1px solid var(--color-line-green);margin:28px 0 0;padding:24px 0 0;min-width:0}
-.planner-section legend{font:500 1.55rem var(--font-display);color:var(--color-forest-deep);padding:0 14px 0 0;max-width:100%}
-.planner-section .field-grid{margin-top:12px}
-.planner-presets{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}
 [data-calc-preset]{min-height:44px;border:1px solid var(--color-field-border);background:var(--color-paper);color:var(--color-forest-deep);padding:10px 15px;font:600 .8rem var(--font-body);cursor:pointer;border-radius:var(--radius)}
 [data-calc-preset]:hover,[data-calc-preset][aria-pressed="true"]{border-color:var(--color-ruby);background:var(--color-ruby-soft);color:var(--color-ruby-deep)}
-.calc-result p,.calc-result li{overflow-wrap:anywhere}
-.calc-result dl{margin:20px 0}
-.calc-result dt{font-weight:600;margin-top:14px}
-.calc-result dd{margin:4px 0 0;color:var(--color-sage)}
-.scenario-comparison,.planner-comparison,.calc-comparison{margin-top:40px;min-width:0}
 .scenario-grid,.comparison-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .scenario-card,.comparison-card{padding:24px;background:var(--color-paper);border:1px solid var(--color-line-green);min-width:0}
 .scenario-card h3,.comparison-card h3{font-size:1.5rem;margin-bottom:12px}
@@ -118,10 +103,10 @@
 .planning-review>a{display:inline-flex;align-items:center;min-height:44px;margin-right:18px;font-size:.8rem;font-weight:600;color:var(--color-ruby-deep);text-decoration:underline;text-underline-offset:4px}
 .planning-review>.btn{min-height:44px;font-size:.75rem;padding:10px 14px;margin:6px 8px 0 0}
 @media(max-width:390px){.planning-review{padding:16px}.planning-review dl{grid-template-columns:1fr;gap:3px}.planning-review dd{margin-bottom:10px}.planning-review>.btn{width:100%;margin-right:0}}
-@media(max-width:1020px){.calc-grid,.studio-layout{grid-template-columns:1fr}.studio-preview{position:static}.scenario-grid,.comparison-grid{grid-template-columns:1fr}.studio-preview{max-width:100%}}
+@media(max-width:1020px){.studio-layout{grid-template-columns:1fr}.studio-preview{position:static}.scenario-grid,.comparison-grid{grid-template-columns:1fr}.studio-preview{max-width:100%}}
 @media(min-width:871px) and (max-width:1500px){.nav{gap:14px}.nav a{font-size:.76rem;letter-spacing:0}.nav-inner{gap:18px}.nav-actions{gap:12px}.call-top{display:none}}
 @media(max-width:700px){.platform-tools,.case-study-grid,.case-study-grid:has(>.case-study){grid-template-columns:1fr}.platform-card{padding:24px}.studio-option-grid{gap:9px}.studio-option{padding:14px;font-size:.85rem}.studio-actions .btn{flex:1 1 140px}.postcode-start .btn{flex:1 1 180px}.studio-summary-row{grid-template-columns:1fr;gap:3px}.planner-section legend{font-size:1.35rem}}
-@media(max-width:375px){.studio-option-grid{grid-template-columns:1fr}.calc-form,.calc-result{padding:22px 18px}.studio-controls,.studio-preview{padding:20px 16px}}
+@media(max-width:375px){.studio-option-grid{grid-template-columns:1fr}.studio-controls,.studio-preview{padding:20px 16px}}
 @media(prefers-reduced-motion:reduce){.studio-option{transition:none}.studio-option:hover{transform:none}}
 @media print{.studio-controls,.studio-actions,.postcode-entry,.planning-index{display:none!important}.studio-layout,.case-study-grid{display:block}.studio-preview{position:static;border:0;box-shadow:none;padding:0}.studio-concept-image{max-height:250px;object-fit:contain}.studio-summary-row{break-inside:avoid}.studio-palette,.studio-swatch{print-color-adjust:exact;-webkit-print-color-adjust:exact}.calc-grid{display:block}.calc-form{display:none}.calc-result{position:static;color:var(--color-ink);background:var(--color-white);border:1px solid var(--color-line)}.calc-result *{color:var(--color-ink)!important}}
 

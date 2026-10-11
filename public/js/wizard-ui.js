@@ -27,7 +27,7 @@ function init(root) {
   let state = handedOff ? prefill(initialState(), params) : restoreDraft(draft, initialState());
 
   let planning = loadPlanningContext(storage);
-  for (const section of ['studio', 'planner']) {
+  for (const section of ['studio', 'planner', 'estimate']) {
     const encoded = params.get(section);
     if (encoded && encoded.length <= 2000) { try { planning = sanitizePlanningContext({ ...planning, [section]: JSON.parse(encoded) }); } catch { /* Invalid handoff is ignored. */ } }
   }
@@ -36,11 +36,12 @@ function init(root) {
   if (params.get('from') === 'calculator' && planning.studio?.room !== 'bathroom') delete planning.studio;
   if (params.has('category') && params.get('from') !== 'calculator') {
     if (params.get('category') !== 'bathroom') delete planning.planner;
+    if (planning.estimate && planning.estimate.project !== params.get('category')) delete planning.estimate;
     const studioCategory = { bathroom: 'bathroom', kitchen: 'kitchen', living: 'whole_home' }[planning.studio?.room];
     if (studioCategory && studioCategory !== params.get('category')) delete planning.studio;
   }
   state = (handedOff || !draft) ? applyPlanningContext(state, planning) : { ...state, planning };
-  const importedSteps = (planning.planner || planning.studio || planning.postcode) ? answeredSteps(state) : new Set();
+  const importedSteps = (planning.planner || planning.studio || planning.estimate || planning.postcode) ? answeredSteps(state) : new Set();
   if (handedOff || (!draft && importedSteps.size)) {
     while (state.step < TOTAL_STEPS - 1 && importedSteps.has(STEPS[state.step].id)) state.step += 1;
   }
@@ -58,8 +59,8 @@ function init(root) {
     const details = document.createElement('details');
     const summary = document.createElement('summary'); summary.textContent = 'Review included planning selections';
     details.append(summary, list); review.append(details);
-    for (const [section, url] of [['planner', '/bathroom-renovation-cost'], ['studio', '/renovation-design-studio']]) {
-      if (planning[section]) { const link = document.createElement('a'); link.href = url; link.textContent = section === 'planner' ? 'Edit bathroom plan' : 'Edit design preferences'; review.append(link); }
+    for (const [section, url, label] of [['planner', '/bathroom-renovation-cost', 'Edit bathroom plan'], ['estimate', '/bathroom-renovation-cost', 'Edit cost estimate'], ['studio', '/renovation-design-studio', 'Edit design preferences']]) {
+      if (planning[section]) { const link = document.createElement('a'); link.href = url; link.textContent = label; review.append(link); }
     }
     for (const stepId of importedSteps) {
       const button = document.createElement('button'); button.type = 'button'; button.className = 'btn btn-outline'; button.textContent = `Edit ${stepId}`;
@@ -85,14 +86,16 @@ function init(root) {
     state = readState();
     if (state.category !== previous) {
       state = setCategory(state, state.category);
-      if (planning.planner && state.category !== 'bathroom') {
+      const staleEstimate = Boolean(planning.estimate && planning.estimate.project !== state.category);
+      if (staleEstimate) delete planning.estimate;
+      if ((planning.planner && state.category !== 'bathroom') || staleEstimate) {
         delete planning.planner;
         state = { ...state, roomSize: '', finishLevel: '', layoutChange: '', propertyType: '', timeline: '' };
       }
       const studioCategory = { bathroom: 'bathroom', kitchen: 'kitchen', living: 'whole_home' }[planning.studio?.room];
       if (studioCategory && studioCategory !== state.category) delete planning.studio;
       state.planning = planning;
-      savePlanningContext(storage, { planner: planning.planner, studio: planning.studio });
+      savePlanningContext(storage, { planner: planning.planner, studio: planning.studio, estimate: planning.estimate });
       importedSteps.clear();
       if (state.postcode && state.postcode === planning.postcode) importedSteps.add('location');
       review.hidden = true;
@@ -133,7 +136,7 @@ function init(root) {
     }
     setBusy(submitBtn, true);
     setStatus(root, 'Sending your brief…');
-    const payload = { ...buildPayload(state, { idempotencyKey, startedAt, source: planning.planner ? 'calculator' : source }), website: String(new FormData(root).get('website') ?? '') };
+    const payload = { ...buildPayload(state, { idempotencyKey, startedAt, source: planning.planner || planning.estimate ? 'calculator' : source }), website: String(new FormData(root).get('website') ?? '') };
     const result = await submitEnquiry(payload);
     setBusy(submitBtn, false);
     if (result.ok) {

@@ -9,19 +9,12 @@ The implementation keeps the Python generator, static HTML/CSS, vanilla modules,
 - `/`: postcode-first entry and prominent planner/studio cards.
 - `/concepts/warm-kitchen`, `/concepts/calm-bathroom`, `/concepts/connected-living`: generator-backed concept studies linked from inspiration. Every study is explicitly conceptual; no suburb, client attribution or completed-project claim is invented.
 
-## Calculator methodology and approval gate
+## Calculator methodology
 
-`public/js/lib/estimate.js` is the version-controlled configuration interface. `RATE_CARD.approved` remains false. Floor area is supplied directly or calculated as length Ã— width. Unitless scope weights classify light, moderate, substantial or complex coordination. They are editorial planning assumptions, not monetary rates, probabilities or an engineering assessment. Existing access and accessibility requirements remain in comparison scenarios.
-
-No construction-duration assumptions are approved. Intended timing is the homeowner's preference; the result does not promise a build duration.
-
-To prepare approved pricing, populate the `RATE_CARD` configuration through a reviewed code change, supplying:
-
-- Version and source date, approval evidence and explicit GST treatment (`inclusive` or `exclusive`).
-- Assumptions and exclusions, positive rounding increment, and approved uncertainty range.
-- Per-square-metre rates for renovation/finish combinations, plumbing adjustments, flat site/upgrades and explicit adjustments for every extended selection (including zero where approved).
-
-The engine rejects missing/invalid approved inputs. It returns low/high values with provenance and assumptions only for an approved card. A reviewed rendering change and tests are also required to activate the public priced view; the present UI intentionally renders scope guidance only. Never publish a fixture test card. No estimate is a binding quote.
+The cost calculator shows indicative Sydney ranges in AUD (GST inclusive) for bathrooms and kitchens, built from
+published 2026 guides. The configuration, engine and the full method, source list, assumption register and
+competitor-observation notes are in `docs/PRICING-METHODOLOGY.md`. The ranges are not approved Milestone rates; an
+approved rate card is still required before they are presented as Milestone pricing.
 
 ## AI and imagery
 

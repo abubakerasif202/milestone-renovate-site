@@ -1,4 +1,6 @@
 import { PLANNER_CHOICES, PLANNER_FLAGS, RENOVATION_TYPES, FINISH_LEVELS, PLUMBING_CHANGES } from './estimate.js';
+import { ESTIMATE_CHOICES, ESTIMATE_FLAGS } from './pricing-config.js';
+import { estimateProject, formatRange } from './price-estimate.js';
 
 export const PLANNER_OPTIONS = { ...PLANNER_CHOICES, renovationType: RENOVATION_TYPES, finish: FINISH_LEVELS, plumbing: PLUMBING_CHANGES };
 export const STUDIO_OPTIONS = {
@@ -33,6 +35,11 @@ export function sanitizePlanningContext(input) {
  }
  const studio = choices(input.studio, STUDIO_OPTIONS);
  if (Object.keys(studio).length) result.studio = studio;
+ if (object(input.estimate)) {
+  const estimate = choices(input.estimate, ESTIMATE_CHOICES);
+  for (const key of ESTIMATE_FLAGS) if (typeof input.estimate[key] === 'boolean') estimate[key] = input.estimate[key];
+  if (estimateProject(estimate).ok) result.estimate = estimate;
+ }
  return result;
 }
 export function loadPlanningContext(storage) {
@@ -59,8 +66,19 @@ const readable = value => {
  const text = VALUE_LABELS[value] ?? String(value).replace(/[_-]/g, ' ');
  return text.charAt(0).toUpperCase() + text.slice(1);
 };
+const ESTIMATE_LABELS = { project: 'Project', finish: 'Finish level', size: 'Bathroom size', floor: 'Floor construction', access: 'Site access', supply: 'Fixtures and finishes', layoutChange: 'Layout change', wallRemoval: 'Wall removal', recessedNiche: 'Recessed niche', diyDemolition: 'Client demolishes', olderHome: 'Older home' };
+const ESTIMATE_VALUES = { essential: 'Standard', mid_range: 'Mid-range', supply_install: 'Milestone supplies and installs', own_supply: 'Client supplies own fixtures', concrete: 'Concrete slab', timber: 'Timber or on stumps', ground: 'Ground floor', apartment: 'Apartment' };
+function estimateEntries(values) {
+ const entries = Object.entries(values).map(([key, value]) => [`Estimate · ${ESTIMATE_LABELS[key] ?? key}`, typeof value === 'boolean' ? (value ? 'Yes' : 'No') : (ESTIMATE_VALUES[value] ?? readable(value))]);
+ const result = estimateProject(values);
+ if (result.ok) entries.push(['Estimate · Indicative range shown (incl. GST)', formatRange(result)], ['Estimate · Pricing version', result.pricingVersion]);
+ return entries;
+}
 export function planningEntries(context) {
  const clean = sanitizePlanningContext(context);
- return Object.entries(clean).flatMap(([section, values]) => section === 'planner' || section === 'studio'
-  ? Object.entries(values).map(([key,value]) => [`${section === 'planner' ? 'Bathroom' : 'Design'} · ${FIELD_LABELS[key] ?? key}`, typeof value === 'boolean' ? (value ? 'Yes' : 'No') : readable(value)]) : []);
+ return Object.entries(clean).flatMap(([section, values]) => {
+  if (section === 'estimate') return estimateEntries(values);
+  if (section !== 'planner' && section !== 'studio') return [];
+  return Object.entries(values).map(([key,value]) => [`${section === 'planner' ? 'Bathroom' : 'Design'} · ${FIELD_LABELS[key] ?? key}`, typeof value === 'boolean' ? (value ? 'Yes' : 'No') : readable(value)]);
+ });
 }

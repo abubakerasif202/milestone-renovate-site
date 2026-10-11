@@ -75,12 +75,14 @@ migration on in-process Postgres (PGlite) and attempt every operation as `anon` 
 additionally allows `raw.githubusercontent.com` for images **only while** local copies of the parent-brand
 photography are missing.
 
-## Planner
+## Cost calculator
 
-`public/js/lib/estimate.js` is a pure module with a configurable rate card. No rate card is approved, so it returns a
-*planning profile* (unitless scope points → light/moderate/substantial/complex) and never currency. Dollar output
-requires an approved card (`approved: true`); that path is covered by tests using a fixture explicitly labelled as
-not-real data.
+`public/js/lib/pricing-config.js` holds the indicative Sydney pricing configuration (sources, tier ranges,
+adjustments, timelines, GST) and `public/js/lib/price-estimate.js` is the pure engine used by the browser and by the
+server (staff notification). Ranges are market benchmarks, not approved Milestone rates; every adjustment is tagged
+`source` or `assumption`. See `docs/PRICING-METHODOLOGY.md`. `public/js/lib/estimate.js` is the earlier
+planning-profile engine; it is retained only for the legacy `planner` planning-context section accepted by the
+questionnaire and server schema.
 
 ## Decisions to revisit
 

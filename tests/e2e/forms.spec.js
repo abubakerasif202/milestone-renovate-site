@@ -164,35 +164,3 @@ test.describe('renovation questionnaire', () => {
     expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(0);
   });
 });
-
-test.describe('bathroom cost planner', () => {
-  test('is clearly a planning guide: no dollar figures, updates with choices, hands off to the questionnaire', async ({ page }) => {
-    await page.goto('/bathroom-renovation-cost');
-    await expect(page.locator('.planning-banner')).toContainText('not a quote');
-    const result = page.locator('#calc-result');
-    await expect(result.locator('.calc-level')).toBeVisible();
-    expect(await result.textContent()).not.toMatch(/\$\s?\d/);
-    const first = await result.locator('.calc-level').textContent();
-
-    await page.selectOption('#renovationType', 'full_refit_layout');
-    await page.selectOption('#finish', 'premium');
-    await page.selectOption('#plumbing', 'major');
-    await page.check('input[name="strata"]');
-    await expect(result.locator('.calc-level')).not.toHaveText(first);
-    await expect(result.locator('.calc-drivers').first()).toContainText('Strata');
-    expect(await result.textContent()).not.toMatch(/\$\s?\d/);
-
-    await page.fill('#lengthM', '0');
-    await page.getByRole('button', { name: /Update planning guide/ }).click();
-    await expect(page.locator('#lengthM-error')).toContainText('between 1 and 10');
-    await page.fill('#lengthM', '3');
-
-    const cta = result.getByRole('link', { name: /site assessment/ });
-    await expect(cta).toHaveAttribute('href', /category=bathroom.*from=calculator.*finish=premium/);
-    await cta.click();
-    await expect(page).toHaveURL(/plan-your-renovation/);
-    await expect(page.locator('#wizard-step-label')).toHaveText('Step 2 of 9');
-    await page.getByRole('button', { name: 'Back' }).click();
-    await expect(page.locator('input[name="category"][value="bathroom"]')).toBeChecked();
-  });
-});

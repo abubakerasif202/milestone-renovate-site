@@ -85,3 +85,27 @@ Engine reviewed in full (`public/js/lib/estimate.js`); 10 new tests in `tests/es
 5. Supply an approved rate card (with GST treatment) if dollar ranges are wanted.
 6. Supply licensed real project photography.
 7. Register the site in Google Search Console and submit the sitemap.
+
+---
+
+## Follow-up implementation (12 Oct 2026)
+
+Supersedes findings A1, A2, A3 and A5 above.
+
+* **Team (A1):** portraits published unchanged on `/about#team` with the supplied titles and biographies; blocker removed
+  per the owner's explicit approval. Individual consent has not been independently verified. The privacy policy and
+  terms disclose that team portraits are AI-edited.
+* **Legal (A2):** Privacy Policy rewritten; new Website Terms of Use (`/terms`) and Cost Estimate Disclaimer
+  (`/estimate-disclaimer`); all linked from every footer and in the sitemap. No draft language remains (tested).
+  Unresolved facts, deliberately not invented: trading entity name, ABN, postal address, data-retention periods,
+  Supabase region.
+* **Email (A3):** all site contact points, JSON-LD, privacy, terms and mailto links now use
+  `admin@milestonerenovate.com`. Staff notification recipient stays in the `NOTIFY_TO_EMAIL` Vercel variable and was
+  **not changed**. DNS shows Microsoft 365 MX and a verified Resend sending domain, but mailbox existence cannot be
+  verified without sending mail. The phone number is still the parent brand's.
+* **Calculator (A5):** indicative AUD ranges for bathrooms and kitchens with timelines, GST statement, exclusions and a
+  visible method. Not approved Milestone rates. See `docs/PRICING-METHODOLOGY.md` (sources, assumption register,
+  competitor observations).
+* **Bug found and fixed during QA:** a saved calculator estimate overrode an explicit `category=` hand-off in the
+  questionnaire; covered by a regression test.
+* **Tests:** 117 unit, 148 Playwright (8 skipped: live-site specs, deliberately not run). Local mocks only for writes.

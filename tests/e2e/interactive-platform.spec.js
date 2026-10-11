@@ -71,9 +71,9 @@ test('calculator handoff replaces an incompatible design even when storage write
 });
 test('editing imported category clears incompatible bathroom planning and survives reload',async({page})=>{
  await page.goto('/bathroom-renovation-cost');
- await page.locator('[data-calc-preset="large"]').click();
- await page.selectOption('#finish','premium');
- await page.locator('#calc-result').getByRole('link',{name:/site assessment/}).click();
+ await page.locator('label.calc-card:has(input[name="size"][value="large"])').click();
+ await page.locator('label.calc-card:has(input[name="finish"][value="premium"])').click();
+ await page.locator('#calc-result').getByRole('link',{name:/detailed quote/}).click();
  await expect(page.locator('.planning-review')).toBeVisible();
  await expect.poll(()=>page.evaluate(()=>JSON.parse(sessionStorage.getItem('mr-wizard-draft'))?.roomSize)).toBe('large');
  const before=await page.evaluate(()=>JSON.parse(sessionStorage.getItem('mr-wizard-draft')));

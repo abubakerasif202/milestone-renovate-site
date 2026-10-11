@@ -1,6 +1,5 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync } from 'node:fs';
 import { FINISH_LEVELS, PLUMBING_CHANGES, RENOVATION_TYPES, areaM2, estimateBathroom, validateInputs } from '../public/js/lib/estimate.js';
 
 const base = (over = {}) => ({ lengthM: 2.5, widthM: 2, renovationType: 'full_refit', finish: 'mid_range', plumbing: 'none', ...over });
@@ -73,12 +72,4 @@ test('priced mode (fixture card) is finite, non-negative, ordered and rounded to
 
 test('invalid inputs never reach the pricing arithmetic even with an approved card', () => {
   assert.equal(estimateBathroom(base({ lengthM: Infinity }), fixtureCard).ok, false);
-});
-
-test('team portraits stay unpublished until approved (identity/branding sign-off pending)', () => {
-  const approved = /^TEAM_PORTRAITS_APPROVED = True/m.test(readFileSync(new URL('../build_site.py', import.meta.url), 'utf8'));
-  const about = readFileSync(new URL('../public/about.html', import.meta.url), 'utf8');
-  assert.equal(about.includes('team-card'), approved);
-  assert.equal(existsSync(new URL('../public/assets/img/team/mohammad-mohsini-800.webp', import.meta.url)), approved);
-  assert.equal(existsSync(new URL('../public/assets/fallback-james-creswick.svg', import.meta.url)), false);
 });
