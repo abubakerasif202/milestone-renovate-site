@@ -1,0 +1,496 @@
+{
+  "version": 1,
+  "widths": [
+    480,
+    768,
+    1024,
+    1280,
+    1448
+  ],
+  "images": [
+    {
+      "id": "living-hero",
+      "source": "incoming-images/renovation-concepts/warm_modern_living_space_with_garden_views.png",
+      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_13_28-1.png",
+      "filename": "luxury-sydney-home-renovation",
+      "width": 1448,
+      "height": 1086,
+      "status": "ai-generated-concept",
+      "alt": "AI architectural concept of a warm living space with stone finishes and garden views",
+      "placement": "Homepage hero",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-480.webp",
+          "bytes": 32326
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-768.webp",
+          "bytes": 76138
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-1024.webp",
+          "bytes": 124000
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-1280.webp",
+          "bytes": 177146
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation.webp",
+          "bytes": 218482
+        }
+      ]
+    },
+    {
+      "id": "kitchen",
+      "source": "incoming-images/renovation-concepts/elegant_olive_green_kitchen_overlooking_water.png",
+      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_14_35-2.png",
+      "filename": "modern-sage-green-kitchen",
+      "width": 1448,
+      "height": 1086,
+      "status": "ai-generated-concept",
+      "alt": "AI architectural concept of an olive-green kitchen with a stone island and water views",
+      "placement": "Kitchen renovations",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-480.webp",
+          "bytes": 20574
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-768.webp",
+          "bytes": 44424
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-1024.webp",
+          "bytes": 70242
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-1280.webp",
+          "bytes": 98756
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen.webp",
+          "bytes": 118044
+        }
+      ]
+    },
+    {
+      "id": "bathroom",
+      "source": "incoming-images/renovation-concepts/serene_luxury_spa_bathroom_with_garden_views.png",
+      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_14_38-3.png",
+      "filename": "luxury-stone-bathroom",
+      "width": 1448,
+      "height": 1086,
+      "status": "ai-generated-concept",
+      "alt": "AI architectural concept of a stone spa bathroom with a freestanding bath and garden views",
+      "placement": "Bathroom renovations",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-480.webp",
+          "bytes": 33514
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-768.webp",
+          "bytes": 76210
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-1024.webp",
+          "bytes": 124036
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-1280.webp",
+          "bytes": 174282
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/renovation-concepts/luxury-stone-bathroom.webp",
+          "bytes": 209582
+        }
+      ]
+    },
+    {
+      "id": "extension",
+      "source": "incoming-images/renovation-concepts/golden_waterfront_indoor_outdoor_living.png",
+      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_14_42-4.png",
+      "filename": "indoor-outdoor-home-extension",
+      "width": 1448,
+      "height": 1086,
+      "status": "ai-generated-concept",
+      "alt": "AI architectural concept of connected indoor and outdoor living with waterfront views",
+      "placement": "Extensions",
+      "position": "55% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-480.webp",
+          "bytes": 42734
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-768.webp",
+          "bytes": 98764
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-1024.webp",
+          "bytes": 164216
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-1280.webp",
+          "bytes": 236096
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension.webp",
+          "bytes": 280724
+        }
+      ]
+    },
+    {
+      "id": "workspace",
+      "source": "incoming-images/renovation-concepts/luxury_coastal_design_workspace.png",
+      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_14_44-5.png",
+      "filename": "renovation-design-consultation",
+      "width": 1448,
+      "height": 1086,
+      "status": "ai-generated-concept",
+      "alt": "AI architectural concept of a renovation planning table with material samples in a coastal interior",
+      "placement": "Renovation Design Studio",
+      "position": "50% 65%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/renovation-concepts/renovation-design-consultation-480.webp",
+          "bytes": 38294
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/renovation-concepts/renovation-design-consultation-768.webp",
+          "bytes": 76012
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/renovation-concepts/renovation-design-consultation-1024.webp",
+          "bytes": 112590
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/renovation-concepts/renovation-design-consultation-1280.webp",
+          "bytes": 149226
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/renovation-concepts/renovation-design-consultation.webp",
+          "bytes": 171028
+        }
+      ]
+    },
+    {
+      "id": "whole-home",
+      "source": "incoming-images/renovation-concepts/golden_hour_luxury_open_plan_interior.png",
+      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_14_47-6.png",
+      "filename": "warm-open-plan-home-renovation",
+      "width": 1448,
+      "height": 1086,
+      "status": "ai-generated-concept",
+      "alt": "AI architectural concept of an open-plan living and dining interior in warm afternoon light",
+      "placement": "Whole-home renovations",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-480.webp",
+          "bytes": 38526
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-768.webp",
+          "bytes": 91102
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-1024.webp",
+          "bytes": 150086
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-1280.webp",
+          "bytes": 216914
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation.webp",
+          "bytes": 256760
+        }
+      ]
+    },
+    {
+      "id": "bedroom",
+      "source": "incoming-images/renovation-concepts/sunlit_coastal_luxury_bedroom.png",
+      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_16_57-1.png",
+      "filename": "coastal-bedroom-design",
+      "width": 1448,
+      "height": 1086,
+      "status": "ai-generated-concept",
+      "alt": "AI architectural concept of a sunlit coastal bedroom with timber detailing and a garden outlook",
+      "placement": "Inspiration gallery - Bedroom",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/renovation-concepts/coastal-bedroom-design-480.webp",
+          "bytes": 33484
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/renovation-concepts/coastal-bedroom-design-768.webp",
+          "bytes": 80834
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/renovation-concepts/coastal-bedroom-design-1024.webp",
+          "bytes": 135002
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/renovation-concepts/coastal-bedroom-design-1280.webp",
+          "bytes": 194918
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/renovation-concepts/coastal-bedroom-design.webp",
+          "bytes": 239934
+        }
+      ]
+    },
+    {
+      "id": "entrance",
+      "source": "incoming-images/renovation-concepts/golden_hour_mediterranean_modern_entrance.png",
+      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_17_01-2.png",
+      "filename": "mediterranean-modern-home-entrance",
+      "width": 1448,
+      "height": 1086,
+      "status": "ai-generated-concept",
+      "alt": "AI architectural concept of a Mediterranean-inspired entrance with stone cladding and landscaped planting",
+      "placement": "Inspiration gallery - Exteriors",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-480.webp",
+          "bytes": 52950
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-768.webp",
+          "bytes": 125808
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-1024.webp",
+          "bytes": 208914
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-1280.webp",
+          "bytes": 295068
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance.webp",
+          "bytes": 356838
+        }
+      ]
+    },
+    {
+      "id": "vanity",
+      "source": "incoming-images/renovation-concepts/sunlit_marble_double_vanity.png",
+      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_17_05-3.png",
+      "filename": "marble-double-vanity-bathroom",
+      "width": 1448,
+      "height": 1086,
+      "status": "ai-generated-concept",
+      "alt": "AI architectural concept of a marble double vanity with brass fittings and timber cabinetry",
+      "placement": "Inspiration gallery - Bathrooms",
+      "position": "50% 55%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-480.webp",
+          "bytes": 36930
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-768.webp",
+          "bytes": 74926
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-1024.webp",
+          "bytes": 109900
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-1280.webp",
+          "bytes": 145806
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom.webp",
+          "bytes": 168592
+        }
+      ]
+    },
+    {
+      "id": "staircase",
+      "source": "incoming-images/renovation-concepts/luxurious_curved_staircase_foyer.png",
+      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_17_07-4.png",
+      "filename": "curved-staircase-interior",
+      "width": 1448,
+      "height": 1086,
+      "status": "ai-generated-concept",
+      "alt": "AI architectural concept of a curved staircase foyer with sculptural lighting and stone finishes",
+      "placement": "Inspiration gallery - Interiors",
+      "position": "60% 45%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/renovation-concepts/curved-staircase-interior-480.webp",
+          "bytes": 27580
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/renovation-concepts/curved-staircase-interior-768.webp",
+          "bytes": 60650
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/renovation-concepts/curved-staircase-interior-1024.webp",
+          "bytes": 98440
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/renovation-concepts/curved-staircase-interior-1280.webp",
+          "bytes": 136304
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/renovation-concepts/curved-staircase-interior.webp",
+          "bytes": 163348
+        }
+      ]
+    },
+    {
+      "id": "terrace",
+      "source": "incoming-images/renovation-concepts/golden_hour_harbour_terrace.png",
+      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_17_11-5.png",
+      "filename": "harbour-terrace-outdoor-living",
+      "width": 1448,
+      "height": 1086,
+      "status": "ai-generated-concept",
+      "alt": "AI architectural concept of a covered harbour-view terrace with outdoor dining and lounge seating",
+      "placement": "Inspiration gallery - Outdoor living",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-480.webp",
+          "bytes": 44810
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-768.webp",
+          "bytes": 102258
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-1024.webp",
+          "bytes": 165100
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-1280.webp",
+          "bytes": 232434
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living.webp",
+          "bytes": 278018
+        }
+      ]
+    }
+  ]
+}

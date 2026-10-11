@@ -1,0 +1,38 @@
+/* Approved architectural concepts: focal positions mirror assets/renovation-concepts.json. */
+.concept-image{object-fit:cover;object-position:50% 50%;border-radius:var(--radius)}
+.concept-image-living-hero,.concept-image-kitchen,.concept-image-bathroom,
+.concept-image-whole-home,.concept-image-bedroom,.concept-image-entrance,
+.concept-image-terrace{object-position:50% 50%}
+.concept-image-extension{object-position:55% 50%}
+.concept-image-workspace{object-position:50% 65%}
+.concept-image-vanity{object-position:50% 55%}
+.concept-image-staircase{object-position:60% 45%}
+/* Retain the complete architectural composition rather than a tall centre crop. */
+.hero-media:has(.concept-image-living-hero){aspect-ratio:4/3}
+.hero-image.concept-image{height:100%;animation:none;transform:none}
+.hero-media-inner:has(.concept-image){border-radius:var(--radius)}
+.inner-hero-image .concept-image{height:100%;width:100%}
+.gallery-card .concept-image,.inspo-card .concept-image{aspect-ratio:4/3}
+.inspo-card .frame:has(.concept-image){aspect-ratio:4/3}
+.philosophy-media:has(.concept-image-workspace){min-height:0;aspect-ratio:4/3}
+.platform-card .frame:has(.concept-image){aspect-ratio:4/3}
+.case-study .frame:has(.concept-image){aspect-ratio:4/3}
+.gallery-card .frame:has(.concept-image),.inspo-card .frame:has(.concept-image),
+.platform-card .frame:has(.concept-image),.case-study .frame:has(.concept-image){background:var(--color-sage);border-radius:var(--radius);overflow:hidden}
+.platform-card .concept-image,.case-study .concept-image{transition:transform .7s var(--ease-out)}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .platform-card:hover .concept-image,.case-study:hover .concept-image{transform:scale(1.025)}
+}
+@media(max-width:1020px){.hero-media:has(.concept-image-living-hero){max-width:100%;aspect-ratio:4/3}}
+@media(max-width:600px){
+  .hero-media:has(.concept-image-living-hero){aspect-ratio:4/3}
+  .inner-hero-image:has(.concept-image){height:auto;aspect-ratio:4/3}
+  .philosophy-media:has(.concept-image-workspace){min-height:0;aspect-ratio:4/3}
+}
+@media(prefers-reduced-motion:reduce){
+  .concept-image{transition:none!important;animation:none!important}
+  .service-tile:hover .concept-image,.gallery-card:hover .concept-image,
+  .inspo-card:hover .concept-image,.platform-card:hover .concept-image,
+  .case-study:hover .concept-image{transform:none}
+  .hero-media-inner:has(.concept-image){animation:none}
+}
