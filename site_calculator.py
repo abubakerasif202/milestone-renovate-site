@@ -23,8 +23,9 @@ def _card(name: str, value: str, title: str, meta: str, checked: bool = False) -
             f'<span class="calc-card-body"><span class="calc-card-title">{escape(title)}</span><span class="calc-card-meta">{escape(meta)}</span></span></label>')
 
 
-def _toggle(name: str, label: str, hint: str, group: str) -> str:
-    return (f'<label class="calc-toggle" data-for="{group}"><input type="checkbox" name="{name}">'
+def _toggle(name: str, label: str, hint: str, group: str, off: bool = False) -> str:
+    # `off` renders the inactive project's controls hidden and disabled in the HTML so JS never causes layout shift.
+    return (f'<label class="calc-toggle" data-for="{group}"{" hidden" if off else ""}><input type="checkbox" name="{name}"{" disabled" if off else ""}>'
             f'<span class="calc-toggle-ui" aria-hidden="true"></span>'
             f'<span class="calc-toggle-text"><strong>{escape(label)}</strong><small>{escape(hint)}</small></span></label>')
 
@@ -104,8 +105,8 @@ def calculator_page(pricing: dict, cta_html: str) -> str:
         _toggle('olderHome', 'Older home', 'Bathroom is original or from before the 1990s; allows for hidden conditions', 'bathroom'),
     ])
     toggles_k = ''.join([
-        _toggle('layoutChange', 'Change the layout', 'Not separately priced; confirmed in your quote', 'kitchen'),
-        _toggle('wallRemoval', 'Remove a wall', 'Not separately priced; needs a structural assessment', 'kitchen'),
+        _toggle('layoutChange', 'Change the layout', 'Not separately priced; confirmed in your quote', 'kitchen', True),
+        _toggle('wallRemoval', 'Remove a wall', 'Not separately priced; needs a structural assessment', 'kitchen', True),
     ])
     finish = ''.join([
         _card('finish', 'essential', 'Standard', 'Budget-friendly fittings, existing layout'),
@@ -121,10 +122,10 @@ def calculator_page(pricing: dict, cta_html: str) -> str:
         _step(4, 'Finish level', f'<div class="cc-grid cc-grid-3">{finish}</div>'),
         _step(5, 'Materials and inclusions', f'<div class="cc-grid cc-grid-2">{supply}</div><div class="calc-toggles">{diy}</div><p class="calc-note" data-for="kitchen" hidden>Kitchen appliances (fridge, cooktop, oven, dishwasher, rangehood) are not included in the range.</p>'),
     ])
-    hero = '<section class="inner-hero compact calc-hero"><div class="wrap"><p class="eyebrow inverse">COST PLANNER</p><h1>Renovation cost <em>calculator.</em></h1><p>Indicative Sydney ranges in Australian dollars, with timelines and the assumptions behind them. No sign-up needed.</p></div></section>'
+    hero = '<section class="inner-hero compact calc-hero"><div class="wrap"><p class="eyebrow inverse">COST PLANNER</p><h1>Renovation cost<br><em>calculator.</em></h1><p>Indicative Sydney ranges in Australian dollars, with timelines and the assumptions behind them. No sign-up needed.</p></div></section>'
     app = f'''<section class="section calc-section"><div class="wrap">
 <div class="planning-banner calc-banner" role="note"><strong>Indicative estimate, not a quote.</strong> Ranges are market benchmarks, not Milestone prices. Actual costs depend on inspection, plans, selections, site conditions and a written quotation. <a href="/estimate-disclaimer">Read the disclaimer</a>.</div>
 <noscript><p class="form-error-summary">The calculator needs JavaScript. You can still <a href="/plan-your-renovation">share your brief</a> or call us for a detailed quote.</p></noscript>
-<div class="calc-layout"><form class="cc-form" id="calculator" data-calculator aria-label="Renovation cost calculator" novalidate>{steps}</form>
+<div class="calc-layout"><form class="cc-form" id="calculator" data-calculator aria-label="Renovation cost calculator" novalidate><a class="cc-live" href="#calc-result" aria-label="Jump to your full estimate">Estimating…</a>{steps}</form>
 <aside class="calc-summary" id="calc-result" aria-label="Your estimate" tabindex="-1"><div class="calc-summary-inner" data-result><p class="calc-loading" role="status">Loading your estimate…</p></div></aside></div></div></section>'''
     return hero + app + _methodology(pricing) + cta_html

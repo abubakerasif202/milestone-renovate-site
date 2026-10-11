@@ -52,7 +52,7 @@
 /* Summary */
 .calc-summary{position:sticky;top:96px;align-self:start;background:var(--color-forest-deep);color:var(--color-cream);border-top:3px solid var(--color-gold);border-radius:var(--radius);box-shadow:0 24px 50px rgba(7,62,43,.22);max-height:calc(100vh - 120px);overflow:auto}
 .calc-summary:focus{outline:3px solid var(--color-gold);outline-offset:2px}
-.calc-summary-inner{padding:28px 26px 30px}
+.calc-summary-inner{padding:28px 26px 30px;min-height:560px}
 .calc-loading{margin:0;color:rgba(248,246,240,.8)}
 .calc-eyebrow{margin:0 0 6px;color:var(--color-gold);font-size:.72rem;font-weight:700;letter-spacing:.17em}
 .calc-range{margin:0;font-family:var(--font-display);font-size:clamp(1.9rem,2.4vw,2.35rem);line-height:1.1;white-space:nowrap;color:var(--color-white);font-variant-numeric:tabular-nums}
@@ -88,6 +88,43 @@
 .cc-print{background:none;border:1px solid rgba(248,246,240,.4);color:var(--color-cream);padding:12px 18px;border-radius:var(--radius);cursor:pointer;font:inherit;min-height:48px}
 .cc-print:hover{border-color:var(--color-gold);color:var(--color-white)}
 .cc-print:focus-visible{outline:3px solid var(--color-gold);outline-offset:2px}
+
+
+/* Position utilities for the animated bars (classes, not inline styles, to stay CSP-clean) */
+.cc-lo-0{--lo:0}.cc-w-0{--w:0}.cc-lo-1{--lo:1}.cc-w-1{--w:1}.cc-lo-2{--lo:2}.cc-w-2{--w:2}.cc-lo-3{--lo:3}.cc-w-3{--w:3}.cc-lo-4{--lo:4}.cc-w-4{--w:4}.cc-lo-5{--lo:5}.cc-w-5{--w:5}.cc-lo-6{--lo:6}.cc-w-6{--w:6}.cc-lo-7{--lo:7}.cc-w-7{--w:7}.cc-lo-8{--lo:8}.cc-w-8{--w:8}.cc-lo-9{--lo:9}.cc-w-9{--w:9}.cc-lo-10{--lo:10}.cc-w-10{--w:10}.cc-lo-11{--lo:11}.cc-w-11{--w:11}.cc-lo-12{--lo:12}.cc-w-12{--w:12}.cc-lo-13{--lo:13}.cc-w-13{--w:13}.cc-lo-14{--lo:14}.cc-w-14{--w:14}.cc-lo-15{--lo:15}.cc-w-15{--w:15}.cc-lo-16{--lo:16}.cc-w-16{--w:16}.cc-lo-17{--lo:17}.cc-w-17{--w:17}.cc-lo-18{--lo:18}.cc-w-18{--w:18}.cc-lo-19{--lo:19}.cc-w-19{--w:19}.cc-lo-20{--lo:20}.cc-w-20{--w:20}.cc-lo-21{--lo:21}.cc-w-21{--w:21}.cc-lo-22{--lo:22}.cc-w-22{--w:22}.cc-lo-23{--lo:23}.cc-w-23{--w:23}.cc-lo-24{--lo:24}.cc-w-24{--w:24}.cc-lo-25{--lo:25}.cc-w-25{--w:25}.cc-lo-26{--lo:26}.cc-w-26{--w:26}.cc-lo-27{--lo:27}.cc-w-27{--w:27}.cc-lo-28{--lo:28}.cc-w-28{--w:28}.cc-lo-29{--lo:29}.cc-w-29{--w:29}.cc-lo-30{--lo:30}.cc-w-30{--w:30}.cc-lo-31{--lo:31}.cc-w-31{--w:31}.cc-lo-32{--lo:32}.cc-w-32{--w:32}.cc-lo-33{--lo:33}.cc-w-33{--w:33}.cc-lo-34{--lo:34}.cc-w-34{--w:34}.cc-lo-35{--lo:35}.cc-w-35{--w:35}.cc-lo-36{--lo:36}.cc-w-36{--w:36}.cc-lo-37{--lo:37}.cc-w-37{--w:37}.cc-lo-38{--lo:38}.cc-w-38{--w:38}.cc-lo-39{--lo:39}.cc-w-39{--w:39}.cc-lo-40{--lo:40}.cc-w-40{--w:40}.cc-lo-41{--lo:41}.cc-w-41{--w:41}.cc-lo-42{--lo:42}.cc-w-42{--w:42}.cc-lo-43{--lo:43}.cc-w-43{--w:43}.cc-lo-44{--lo:44}.cc-w-44{--w:44}.cc-lo-45{--lo:45}.cc-w-45{--w:45}.cc-lo-46{--lo:46}.cc-w-46{--w:46}.cc-lo-47{--lo:47}.cc-w-47{--w:47}.cc-lo-48{--lo:48}.cc-w-48{--w:48}.cc-lo-49{--lo:49}.cc-w-49{--w:49}.cc-lo-50{--lo:50}.cc-w-50{--w:50}.cc-lo-51{--lo:51}.cc-w-51{--w:51}.cc-lo-52{--lo:52}.cc-w-52{--w:52}.cc-lo-53{--lo:53}.cc-w-53{--w:53}.cc-lo-54{--lo:54}.cc-w-54{--w:54}.cc-lo-55{--lo:55}.cc-w-55{--w:55}.cc-lo-56{--lo:56}.cc-w-56{--w:56}.cc-lo-57{--lo:57}.cc-w-57{--w:57}.cc-lo-58{--lo:58}.cc-w-58{--w:58}.cc-lo-59{--lo:59}.cc-w-59{--w:59}.cc-lo-60{--lo:60}.cc-w-60{--w:60}.cc-lo-61{--lo:61}.cc-w-61{--w:61}.cc-lo-62{--lo:62}.cc-w-62{--w:62}.cc-lo-63{--lo:63}.cc-w-63{--w:63}.cc-lo-64{--lo:64}.cc-w-64{--w:64}.cc-lo-65{--lo:65}.cc-w-65{--w:65}.cc-lo-66{--lo:66}.cc-w-66{--w:66}.cc-lo-67{--lo:67}.cc-w-67{--w:67}.cc-lo-68{--lo:68}.cc-w-68{--w:68}.cc-lo-69{--lo:69}.cc-w-69{--w:69}.cc-lo-70{--lo:70}.cc-w-70{--w:70}.cc-lo-71{--lo:71}.cc-w-71{--w:71}.cc-lo-72{--lo:72}.cc-w-72{--w:72}.cc-lo-73{--lo:73}.cc-w-73{--w:73}.cc-lo-74{--lo:74}.cc-w-74{--w:74}.cc-lo-75{--lo:75}.cc-w-75{--w:75}.cc-lo-76{--lo:76}.cc-w-76{--w:76}.cc-lo-77{--lo:77}.cc-w-77{--w:77}.cc-lo-78{--lo:78}.cc-w-78{--w:78}.cc-lo-79{--lo:79}.cc-w-79{--w:79}.cc-lo-80{--lo:80}.cc-w-80{--w:80}.cc-lo-81{--lo:81}.cc-w-81{--w:81}.cc-lo-82{--lo:82}.cc-w-82{--w:82}.cc-lo-83{--lo:83}.cc-w-83{--w:83}.cc-lo-84{--lo:84}.cc-w-84{--w:84}.cc-lo-85{--lo:85}.cc-w-85{--w:85}.cc-lo-86{--lo:86}.cc-w-86{--w:86}.cc-lo-87{--lo:87}.cc-w-87{--w:87}.cc-lo-88{--lo:88}.cc-w-88{--w:88}.cc-lo-89{--lo:89}.cc-w-89{--w:89}.cc-lo-90{--lo:90}.cc-w-90{--w:90}.cc-lo-91{--lo:91}.cc-w-91{--w:91}.cc-lo-92{--lo:92}.cc-w-92{--w:92}.cc-lo-93{--lo:93}.cc-w-93{--w:93}.cc-lo-94{--lo:94}.cc-w-94{--w:94}.cc-lo-95{--lo:95}.cc-w-95{--w:95}.cc-lo-96{--lo:96}.cc-w-96{--w:96}.cc-lo-97{--lo:97}.cc-w-97{--w:97}.cc-lo-98{--lo:98}.cc-w-98{--w:98}.cc-lo-99{--lo:99}.cc-w-99{--w:99}.cc-lo-100{--lo:100}.cc-w-100{--w:100}
+.cc-grow-1{--grow:1}.cc-grow-2{--grow:2}.cc-grow-3{--grow:3}.cc-grow-4{--grow:4}.cc-grow-5{--grow:5}.cc-grow-6{--grow:6}.cc-grow-7{--grow:7}.cc-grow-8{--grow:8}.cc-grow-9{--grow:9}.cc-grow-10{--grow:10}.cc-grow-11{--grow:11}.cc-grow-12{--grow:12}.cc-grow-13{--grow:13}.cc-grow-14{--grow:14}.cc-grow-15{--grow:15}.cc-grow-16{--grow:16}.cc-grow-17{--grow:17}.cc-grow-18{--grow:18}.cc-grow-19{--grow:19}.cc-grow-20{--grow:20}.cc-grow-21{--grow:21}.cc-grow-22{--grow:22}.cc-grow-23{--grow:23}.cc-grow-24{--grow:24}.cc-grow-25{--grow:25}.cc-grow-26{--grow:26}.cc-grow-27{--grow:27}.cc-grow-28{--grow:28}.cc-grow-29{--grow:29}.cc-grow-30{--grow:30}.cc-grow-31{--grow:31}.cc-grow-32{--grow:32}.cc-grow-33{--grow:33}.cc-grow-34{--grow:34}.cc-grow-35{--grow:35}.cc-grow-36{--grow:36}.cc-grow-37{--grow:37}.cc-grow-38{--grow:38}.cc-grow-39{--grow:39}.cc-grow-40{--grow:40}
+
+/* Animated range bar (transform only) */
+.cc-scale{margin:0 0 22px}
+.cc-scale-track{position:relative;height:18px;border-radius:9px;background:rgba(255,255,255,.1);overflow:hidden}
+.cc-zone,.cc-fill{position:absolute;inset:0;transform-origin:left center;transform:translateX(calc(var(--lo,0) * 1%)) scaleX(calc(var(--w,0) / 100))}
+.cc-zone{background:rgba(248,246,240,.13);transition:transform .7s cubic-bezier(.22,.8,.24,1),background-color .3s ease}
+.cc-zone-2{background:rgba(248,246,240,.2)}
+.cc-zone.is-active{background:rgba(221,180,92,.3)}
+.cc-fill{background:linear-gradient(90deg,var(--color-gold),var(--color-gold-light));transition:transform .7s cubic-bezier(.22,.8,.24,1)}
+.cc-scale:not(.is-in) .cc-fill{transform:translateX(calc(var(--lo,0) * 1%)) scaleX(0)}
+.cc-scale-track::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 40%,rgba(255,255,255,.4) 50%,transparent 60%);transform:translateX(-100%);animation:cc-shine 4s ease-in-out 1.2s infinite;pointer-events:none}
+.cc-scale-ticks{display:flex;justify-content:space-between;margin-top:6px;font-size:.72rem;color:rgba(248,246,240,.7);font-variant-numeric:tabular-nums}
+.cc-scale-legend{margin:8px 0 0;font-size:.74rem;color:rgba(248,246,240,.65)}
+@keyframes cc-shine{0%,55%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+/* Where the money goes */
+.cc-breakdown[hidden]{display:none}
+.cc-breakdown{margin:0 0 4px}
+.cc-stack{display:flex;gap:2px;height:22px;overflow:hidden;clip-path:inset(0 100% 0 0 round 11px);transition:clip-path 1s cubic-bezier(.22,.8,.24,1)}
+.cc-stack.is-in{clip-path:inset(0 0 0 0 round 11px)}
+.cc-seg{flex:var(--grow,1) 1 0}
+.cc-seg-1{background:#DDB45C}.cc-seg-2{background:#EBC678}.cc-seg-3{background:#9FC9B0}.cc-seg-4{background:#6FAA8A}.cc-seg-5{background:#F6E1AE}.cc-seg-6{background:#4F8F72}
+.cc-stack-key{list-style:none;margin:12px 0 8px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px;font-size:.8rem;color:rgba(248,246,240,.9)}
+.cc-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:baseline}
+
+/* Card polish */
+.calc-card{transition:border-color .2s ease,background-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.calc-card:hover{transform:translateY(-2px)}
+.calc-step{animation:cc-rise .5s ease both}
+.calc-step:nth-of-type(2){animation-delay:.05s}.calc-step:nth-of-type(3){animation-delay:.1s}.calc-step:nth-of-type(4){animation-delay:.15s}.calc-step:nth-of-type(5){animation-delay:.2s}
+@keyframes cc-rise{from{transform:translateY(10px)}to{transform:none}}
+@media (prefers-reduced-motion:reduce){.cc-zone,.cc-fill,.cc-stack,.calc-card{transition:none}.cc-scale-track::after{animation:none;display:none}.calc-step{animation:none}.calc-card:hover{transform:none}.cc-stack{clip-path:none}}
 
 /* Methodology */
 .calc-method{background:var(--color-paper)}

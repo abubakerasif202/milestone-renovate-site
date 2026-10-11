@@ -110,3 +110,20 @@ export const ESTIMATE_CHOICES = Object.freeze({
 export const ESTIMATE_FLAGS = Object.freeze(['layoutChange', 'wallRemoval', 'recessedNiche', 'diyDemolition', 'olderHome']);
 
 export const TIERS_LABELS = Object.freeze({ essential: 'Standard', mid_range: 'Mid-range', premium: 'Premium' });
+
+/**
+ * Published bathroom line items (Sydney 2026, wtd-breakdown). Used only to show the indicative SHARE of a
+ * typical bathroom budget; electrical and project management are not priced by the source and are excluded.
+ */
+export const BATHROOM_BREAKDOWN = Object.freeze({
+  source: 'wtd-breakdown',
+  items: Object.freeze([
+    { id: 'tiling', label: 'Tiling', low: 3225, high: 8600 },
+    { id: 'plumbing', label: 'Plumbing rough-in', low: 2300, high: 5750 },
+    { id: 'waterproofing', label: 'Waterproofing', low: 805, high: 4025 },
+    { id: 'demolition', label: 'Demolition and disposal', low: 1150, high: 3450 },
+    { id: 'vanity', label: 'Vanity', low: 575, high: 4025 },
+    { id: 'screen', label: 'Shower screen', low: 920, high: 2875 },
+  ]),
+});
+export const SCALE_MAX_AUD = 120000; // visual scale for the range bar only

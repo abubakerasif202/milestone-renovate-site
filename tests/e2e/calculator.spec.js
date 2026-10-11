@@ -19,8 +19,10 @@ test.describe('renovation cost calculator', () => {
     await toggle(page, 'layoutChange').click();
     await expect(range(page)).toHaveText('$44,500 – $84,000');
     await card(page, 'size', 'small').click();
+    await page.waitForTimeout(700); // let the count-up animation settle
     const small = nums(await range(page).textContent());
     await card(page, 'size', 'large').click();
+    await page.waitForTimeout(700);
     const large = nums(await range(page).textContent());
     expect(small[1]).toBeLessThan(large[1]);
     expect(await page.locator('#calc-result').textContent()).not.toMatch(/NaN|Infinity|undefined/);
@@ -120,6 +122,27 @@ test.describe('renovation cost calculator', () => {
     expect(body.source).toBe('calculator');
     expect(body.wizard.planning.estimate).toMatchObject({ project: 'bathroom', finish: 'premium', access: 'apartment', layoutChange: true });
     expect(JSON.stringify(body)).not.toMatch(/lowAud|highAud/);
+  });
+
+  test('the animated range bar moves with the selection and uses no inline styles', async ({ page }) => {
+    await page.goto('/bathroom-renovation-cost');
+    const fill = page.locator('.cc-fill');
+    await expect(fill).toHaveClass(/cc-lo-\d+/);
+    const before = await fill.getAttribute('class');
+    await card(page, 'finish', 'premium').click();
+    await expect.poll(() => fill.getAttribute('class')).not.toBe(before);
+    await expect(page.locator('.cc-scale')).toHaveAttribute('aria-label', /Estimated range \$4\d,\d{3} to \$7\d,\d{3}/);
+    await expect(page.locator('.cc-stack .cc-seg')).toHaveCount(6);
+    expect(await page.locator('[style]').count()).toBe(0);
+    await card(page, 'project', 'kitchen').click();
+    await expect(page.locator('.cc-breakdown')).toBeHidden();
+  });
+
+  test('reduced motion shows the final range immediately', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto('/bathroom-renovation-cost');
+    await card(page, 'finish', 'premium').click();
+    await expect(range(page)).toHaveText('$42,500 – $77,000', { timeout: 300 });
   });
 
   test('selections survive a reload in the same session', async ({ page }) => {
