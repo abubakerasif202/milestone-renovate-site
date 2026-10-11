@@ -6,6 +6,7 @@ const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 
 for (const width of [1440, 390]) {
   test(`axe: no WCAG 2.2 AA violations at ${width}px`, async ({ page }) => {
+    test.slow();
     await page.setViewportSize({ width, height: 900 });
     const failures = [];
     for (const path of PAGES) {

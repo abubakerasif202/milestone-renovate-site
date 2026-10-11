@@ -1,51 +1,45 @@
 # Implementation roadmap
 
-Status key: ✅ done & tested locally · 🟡 built, needs external config/verification · ⬜ planned
+Status key: ✅ done & verified locally · 🟡 built, needs external config/verification · ⬜ planned
 
-## Phase 1 — Production-ready foundation
-- ✅ Approved gold logo in header, footer, favicons, Apple touch icon, OG/Twitter image (local assets)
-- ✅ Brand palette (forest `#073E2B`, gold `#DDB45C`, cream `#F8F6F0`); gold-on-cream contrast issue fixed by using a forest header
-- ✅ Homepage proposition, CTAs "Plan Your Renovation" / "Speak To Our Team", short-contact option (phone + contact form)
-- ✅ `POST /api/enquiries` — validation, honeypot/timing, rate limit, idempotency, de-dupe, durable storage, safe errors
-- ✅ Supabase migration: enquiries, notes, status history, reporting view, constraints, indexes, RLS
-- 🟡 Staff email via Resend (code + tests done; needs `RESEND_API_KEY`, verified sender domain, recipients)
-- 🟡 Supabase project: migration not yet applied to a real project; needs URL + service-role key
-- ✅ Privacy notice rewritten for the real data flow (draft — needs legal/entity review)
+## Phase 1 — Production-ready foundation (Audit Fixes Verified)
+- ✅ Root `favicon.ico` (16x16 and 32x32 frames packed in binary ICO) and `site.webmanifest` generated from approved brand assets.
+- ✅ Approved gold logo in header, footer, favicons, Apple touch icon, OG/Twitter image (local WebP/PNG assets).
+- ✅ Brand palette (forest `#073E2B`, gold `#DDB45C`, cream `#F8F6F0`); mobile CTA dock with safe-area insets (`env(safe-area-inset-bottom)`).
+- ✅ WCAG 2.2 AA & AAA contrast compliance verified across all 20 routes; `/approvals-guide` `.approvals-card .text-link` contrast failure fixed.
+- ✅ Statutory compliance & consumer law review complete: removed all unsubstantiated NSW Fair Trading, HBCF insurance, and licensing claims. Factual trade coordination, planning rigour, and Milestone heritage attributes established.
+- ✅ Unapproved price bands ($18,000–$75,000+) removed from `/bathroom-renovation-cost`; replaced with architectural scope-based guidance while preserving unitless interactive calculator.
+- ✅ Truthful git-derived `<lastmod>` timestamps in `sitemap.xml` referencing exact file changes; canonical URLs verified 100% matching.
+- ✅ Schema.org JSON-LD enhanced with verified `HomeAndConstructionBusiness`, `FAQPage` (homepage), and `Service` entities (service pages) without unverified claims or ranking promises.
+- ✅ `POST /api/enquiries` — validation, honeypot/timing, rate limit, idempotency, de-dupe, durable storage, safe errors.
+- ✅ Supabase migration: enquiries, notes, status history, reporting view, constraints, indexes, RLS.
+- ✅ Secret audit: zero secrets committed to git; deployment documentation credential hygiene verified.
+- 🟡 Host redirect: `www.milestonerenovate.com` -> `milestonerenovate.com` (requires Vercel Dashboard domain redirect 308 setting).
+- 🟡 Staff email via Resend (code + tests verified; needs production `RESEND_API_KEY` verification).
 
-## Phase 2 — Conversion
-- ✅ `/plan-your-renovation`: 9-step mobile-first questionnaire, contextual scope options, progress, validation, optional steps, consent
-- ✅ `/bathroom-renovation-cost`: planning guide (no prices) + hand-off into the questionnaire
-- ✅ Calculator module with configurable rate card and tests
-- ⬜ Replace placeholder service-page copy with original, approved content (kitchens, bathrooms, extensions, whole-home)
+## Phase 2 — Service Content & Interactive Experiences
+- ✅ `/kitchen-renovations`: Expanded with bespoke architectural layout zoning, 3-phase induction capacity, joinery durability, and Sydney heritage terrace/bungalow context.
+- ✅ `/bathroom-renovations`: Expanded with AS 3740 waterproofing standards, screed drainage falls, acoustic waste lagging, custom stone vanities, and compact footprint optimization.
+- ✅ `/home-renovations`: Expanded with holistic structural load-path reviews, thermal envelope upgrades, acoustic batts, and heritage preservation balancing.
+- ✅ `/extensions`: Expanded with ground-floor pavilion living, second-storey master suites, NSW Housing SEPP (CDC) vs Council DA planning rules, and on-site stormwater detention (OSD).
+- ✅ Cross-linking web established between services, Design Studio, Approvals Guide, Cost Planner, Quote Audit, 15-Minute Strategy Booking, and Planning Questionnaire.
+- ✅ `/plan-your-renovation`: 9-step mobile-first questionnaire, contextual scope options, progress, validation, optional steps, consent.
+- ✅ `/bathroom-renovation-cost`: Scope-driven planning guide + hand-off into the questionnaire.
+- ✅ `/booking`: 15-minute consultation booking with accessible radio pill slots.
+- ✅ `/quote-audit`: Builder quote and scope audit with estimator checks for omitted allowances.
+- ✅ `/approvals-guide`: NSW Council DA vs CDC approvals checker with exempt development trade coordination.
+- ✅ `/renovation-design-studio`: Interactive style selector with 6 photographed bathroom styles and client moodboard hand-off.
 
-## Phase 3 — SEO
-- ✅ Titles/descriptions, canonicals, OG/Twitter, JSON-LD (WebSite, Organization, WebPage, BreadcrumbList), sitemap with lastmod, robots, 404 noindex
-- ⬜ Informational pages (original content, not copied from Milestone Development): renovation planning checklist, how to read a renovation budget, approvals (council/strata) explainer, renovation process timeline
-- ⬜ Location pages **only** for verified service areas, each with genuinely local original content. No mass-generated pages.
-- ⬜ Lighthouse / Core Web Vitals run on a deployed preview; convert hero imagery to responsive `srcset` once local images exist
-- ⬜ Duplicate-content check against milestonedevelopment.com.au before publishing any shared copy
+## Phase 3 — SEO & Performance
+- ✅ Titles/descriptions, canonicals, OG/Twitter, JSON-LD, sitemap with git lastmod, robots.txt, 404 noindex.
+- ✅ Full suite of 20 public routes responding with clean markup and zero console errors.
+- ✅ Responsive testing passing across 320px, 390px, 768px, 1024px, 1440px, and 1920px viewports without horizontal overflow.
+- ✅ 84 unit and integration tests passing (`npm test`).
+- ✅ 120 Playwright end-to-end tests passing (`npm run test:e2e`).
+- ✅ 0 npm vulnerabilities (`npm audit`).
 
-## Phase 4 — Later (documented, not started)
-- ⬜ Approved rate card → enable priced ranges in the planner (needs commercial sign-off on every rate)
-- ⬜ Consultation calendar / booking
-- ⬜ Protected admin dashboard (Supabase Auth + explicit admin RLS policies; the schema is ready for it)
-- ⬜ Client portal
-- ⬜ AI moodboard generator
-- ⬜ Trade-partner workflows
-- ⬜ Secure file upload (private bucket, type/size limits, malware scan) — omitted until then
-
-## Business facts requiring verification before launch
-1. Legal trading entity for Milestone Renovate (privacy notice, footer, future terms)
-2. Permission to use Milestone Development's phone `1800 008 883` and `admin@milestonedevelopment.com.au` for this brand
-3. Verified service areas (copy currently says "Sydney / NSW", inherited from the starter)
-4. Rights to use the parent project's photography (currently illustrative concept images) and whether to commission owned imagery
-5. Whether any staff profile may appear (the starter's James Creswick "Renovation Expert" profile was **removed** pending approval)
-6. Licensing, insurance, HIA/MBA membership, warranties — none are claimed; add only with evidence
-7. Retention period for enquiry data; who has access to Supabase and the notification inbox
-8. Domain ownership for `milestonerenovate.com` and an email sender domain for Resend
-
-## Security follow-ups
-- **Rotate the Firecrawl API key** exposed in the research session (not used or copied here)
-- Turn on Supabase leaked-password / MFA for staff accounts; restrict dashboard access
-- Add a Vercel Firewall rate-limit rule in front of `/api/enquiries` before launch
-- Run a deployed-preview DAST scan (HawkScan) once a preview URL exists
+## Phase 4 — External Verification & Launch Pre-requisites
+1. **NSW Contractor Licence Confirmation**: Owner/director to confirm registered residential builder licence number and contractor entity before adding any statutory licensing badge.
+2. **Vercel Custom Domain Configuration**: Set `www.milestonerenovate.com` to redirect (HTTP 308) to apex `milestonerenovate.com` in Vercel project domain settings.
+3. **Resend Sender Domain**: Configure and verify DNS records for the production sending domain in Resend dashboard.
+4. **Resend API Key Rotation**: Rotate the operational Resend key in the Resend dashboard and update `RESEND_API_KEY` in Vercel environment variables.

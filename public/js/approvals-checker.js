@@ -42,8 +42,8 @@ if (root) {
       turnaround = 'Immediate start (trades can begin upon contract sign-off)';
       checklist = [
         'No formal Council DA or Certifier approval needed.',
-        'Licensed trades required (Waterproofing AS 3740 certificate, electrical and plumbing compliance).',
-        'Home Building Compensation Fund (HBCF) cover mandatory for residential works over $20,000.',
+        'Applies to internal layout updates, non-structural joinery and finishes.',
+        'Standard trade coordination for plumbing, electrical and wet-area detailing.',
       ];
     } else if (heritage === 'yes' || setbacks === 'non_compliant' || lotSize === 'small' || scope === 'second_storey') {
       pathway = 'da';

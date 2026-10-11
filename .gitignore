@@ -28,6 +28,7 @@ scratch/
 # raw research / transcripts must never be committed
 research-raw/
 *.transcript.*
+logs/
 
 .vercel
 supabase/.temp/
