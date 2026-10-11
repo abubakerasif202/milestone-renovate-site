@@ -113,7 +113,7 @@ def quote_audit_page(field: Callable[..., str]) -> str:
   <p class="eyebrow">WHY GET A SECOND OPINION</p>
   <h2>Protect your home from <em>hidden exclusions.</em></h2>
   <div class="value-grid prep-value-grid">
-    <article><span>CHECK 01</span><h3>Unrealistic Prime Cost (PC) Allowances</h3><p>Builders often quote unrealistically low fixture allowances that blowout by $15k–$30k when you actually pick tiles and fittings.</p></article>
+    <article><span>CHECK 01</span><h3>Unrealistic Prime Cost (PC) Allowances</h3><p>Builders often quote unrealistically low fixture allowances that result in significant cost variations when you actually pick tiles and fittings.</p></article>
     <article><span>CHECK 02</span><h3>Omitted Fees &amp; Certifier Allowances</h3><p>We check whether required certifier fees, engineering sign-offs, and essential trade allowances were omitted from the scope.</p></article>
     <article><span>CHECK 03</span><h3>Structural &amp; Subfloor Assumptions</h3><p>Discover whether waste relocations, joist strengthening, and subfloor ventilation are properly specified or left as open-ended variations.</p></article>
   </div>
@@ -130,7 +130,7 @@ def quote_audit_page(field: Callable[..., str]) -> str:
       {field('phone', 'Phone *', '<input id="phone" name="phone" autocomplete="tel" type="tel" inputmode="tel" required maxlength="20">')}
       {field('email', 'Email *', '<input id="email" name="email" autocomplete="email" type="email" required maxlength="254">')}
       {field('category', 'Renovation scope *', '<select id="category" name="category" required><option value="whole_home">Whole-home renovation</option><option value="kitchen">Kitchen renovation</option><option value="bathroom">Bathroom renovation</option><option value="extension">Extension or addition</option><option value="other">Other renovation</option></select>')}
-      {field('quotedAmount', 'Quoted total (AUD)', '<input id="quotedAmount" name="quotedAmount" placeholder="e.g. $85,000">')}
+      {field('quotedAmount', 'Quoted total (AUD)', '<input id="quotedAmount" name="quotedAmount" placeholder="e.g. 85,000">')}
       {field('builderName', 'Quoting builder (optional)', '<input id="builderName" name="builderName" placeholder="Builder or company name">')}
       {field('suburb', 'Suburb', '<input id="suburb" name="suburb" autocomplete="address-level2" maxlength="80">')}
       {field('postcode', 'Postcode', '<input id="postcode" name="postcode" autocomplete="postal-code" inputmode="numeric" maxlength="4" pattern="[0-9]{4}">', 'Suburb or postcode required.')}

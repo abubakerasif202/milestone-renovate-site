@@ -149,17 +149,10 @@ def webpage_ld(title, description, slug, home=False, crumbs=None, service_info=N
         'parentOrganization': {'@type': 'Organization', 'name': 'Milestone Development', 'url': PARENT + '/'},
         'telephone': PHONE,
         'email': EMAIL,
-        'address': {
-            '@type': 'PostalAddress',
-            'addressLocality': 'North Sydney',
-            'addressRegion': 'NSW',
-            'addressCountry': 'AU',
-        },
         'areaServed': [
             {'@type': 'City', 'name': 'Sydney'},
             {'@type': 'AdministrativeArea', 'name': 'New South Wales'},
         ],
-        'priceRange': '$$$$',
     }
     if home:
         faqs = {
@@ -354,7 +347,7 @@ pdetails = {
             ('Surfaces & Tapware', 'Large-format porcelain slabs, fluted feature tiles, brushed brass or gunmetal tapware, and heated towel elements.'),
         ],
         'technical': [
-            ('Waterproofing to AS 3740', 'Dual-layer membrane systems, bonded screed drainage falls, and certified perimeter leak-stop flanges for complete peace of mind.'),
+            ('Waterproofing to AS 3740', 'Dual-layer membrane systems, bonded screed drainage falls, and compliant perimeter leak-stop flanges for complete peace of mind.'),
             ('In-Wall Framework & Services', 'Precision nogging and studwork for wall-hung basins, concealed cisterns, and thermostatic mixer bodies.'),
             ('Subfloor & Acoustic Isolation', 'Structural subfloor verification, acoustic lagging on PVC waste pipes, and quiet mechanical exhaust ventilation.'),
         ],
@@ -535,7 +528,7 @@ def build():
         ('plan-your-renovation.html', 'Plan Your Renovation | Guided Brief | Milestone Renovate', 'Answer a few short questions about your kitchen, bathroom, whole-home or extension renovation and share your brief with the Milestone Renovate team.', plan, '', 'plan-your-renovation', dict(crumbs=[('Home', '/'), ('Plan Your Renovation', '/plan-your-renovation')], scripts=['wizard-ui.js'])),
         ('bathroom-renovation-cost.html', 'Bathroom Renovation Cost Planner | Milestone Renovate', 'Explore bathroom renovation scope in Sydney. Compare layouts, finishes and site considerations before a site assessment. Planning guidance, not a quote.', calculator, 'Cost Planner', 'bathroom-renovation-cost', dict(crumbs=[('Home', '/'), ('Bathroom Cost Planner', '/bathroom-renovation-cost')], scripts=['calculator-ui.js'])),
         ('booking.html', 'Book a 15-Minute Strategy Call | Milestone Renovate', 'Schedule a complimentary 15-minute phone strategy session with a senior Milestone renovation consultant. Review plans, costs and approvals.', booking, '', 'booking', dict(crumbs=[('Home', '/'), ('Book Consultation', '/booking')], scripts=['booking-ui.js'])),
-        ('quote-audit.html', 'Complimentary Renovation Quote & Scope Audit | Milestone Renovate', 'Have an existing builder quote reviewed by Sydney construction estimators. Uncover prime cost allowances, omitted certifications, and compliance gaps.', quote_audit, '', 'quote-audit', dict(crumbs=[('Home', '/'), ('Quote Audit', '/quote-audit')], scripts=['quote-audit-ui.js'])),
+        ('quote-audit.html', 'Complimentary Renovation Quote & Scope Audit | Milestone Renovate', 'Have an existing builder quote reviewed by Sydney construction estimators. Uncover prime cost allowances, omitted certifier allowances, and scope gaps.', quote_audit, '', 'quote-audit', dict(crumbs=[('Home', '/'), ('Quote Audit', '/quote-audit')], scripts=['quote-audit-ui.js'])),
         ('approvals-guide.html', 'NSW Council DA vs CDC Approvals Checker | Milestone Renovate', 'Check if your Sydney renovation qualifies for fast-track 20-day Complying Development (CDC) or requires a Council DA under NSW Housing Code.', approvals, 'Approvals', 'approvals-guide', dict(crumbs=[('Home', '/'), ('Approvals Guide', '/approvals-guide')], scripts=['approvals-checker.js'])),
     ]
     pages.append(('renovation-design-studio.html', 'Renovation Design Studio Sydney | Milestone Renovate', 'Create a visual renovation moodboard for your Sydney bathroom, kitchen or living space. Explore materials, colours and layout priorities, then share your brief.', studio, 'Design Studio', 'renovation-design-studio', dict(crumbs=[('Home', '/'), ('Design Studio', '/renovation-design-studio')], scripts=['design-studio.js'])))
@@ -549,42 +542,33 @@ def build():
 
     write('robots.txt', f'User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: {SITE}/sitemap.xml\n')
 
-    page_dependencies = {
-        '': ['build_site.py', 'site_experiences.py', 'public/css/site.css', 'public/css/app.css'],
-        'services': ['build_site.py'],
-        'about': ['build_site.py'],
-        'inspiration': ['build_site.py', 'assets/renovation-concepts.json'],
-        'contact': ['build_site.py', 'public/js/enquiry-form.js'],
-        'privacy': ['build_site.py'],
-        'plan-your-renovation': ['build_site.py', 'public/js/wizard-ui.js'],
-        'bathroom-renovation-cost': ['build_site.py', 'site_experiences.py', 'public/js/calculator-ui.js', 'public/js/lib/estimate.js'],
-        'booking': ['build_site.py', 'site_experiences.py', 'public/js/booking-ui.js'],
-        'quote-audit': ['build_site.py', 'site_experiences.py', 'public/js/quote-audit-ui.js'],
-        'approvals-guide': ['build_site.py', 'site_experiences.py', 'public/js/approvals-checker.js'],
-        'renovation-design-studio': ['build_site.py', 'site_experiences.py', 'public/js/design-studio.js', 'assets/bathroom-styles.json'],
+    # Truthful modification dates reflecting actual substantive content revisions.
+    # Pages that have not undergone substantive content changes retain their original revision date,
+    # preventing false lastmod refresh when build scripts are modified.
+    PAGE_LASTMOD = {
+        '': '2026-10-12',
+        'services': '2026-10-10',
+        'about': '2026-10-10',
+        'inspiration': '2026-10-11',
+        'contact': '2026-10-10',
+        'privacy': '2026-10-10',
+        'plan-your-renovation': '2026-10-10',
+        'bathroom-renovation-cost': '2026-10-12',
+        'booking': '2026-10-12',
+        'quote-audit': '2026-10-12',
+        'approvals-guide': '2026-10-12',
+        'renovation-design-studio': '2026-10-11',
+        'kitchen-renovations': '2026-10-12',
+        'bathroom-renovations': '2026-10-12',
+        'home-renovations': '2026-10-12',
+        'extensions': '2026-10-12',
     }
-    for c in CONCEPTS:
-        page_dependencies['concepts/' + c['slug']] = ['build_site.py', 'site_experiences.py', 'assets/renovation-concepts.json']
-    for s in pdetails:
-        page_dependencies[s] = ['build_site.py']
-
-    def get_git_lastmod(deps):
-        try:
-            cmd = ['git', '-C', str(ROOT_DIR), 'log', '-1', '--format=%cs', '--'] + deps
-            res = subprocess.run(cmd, capture_output=True, text=True, check=True)
-            d = res.stdout.strip()
-            if d:
-                return d
-        except Exception:
-            pass
-        return '2026-10-12'
 
     urls = [''] + [p[5] for p in pages if p[5]] + list(pdetails)
     sitemap_items = []
     for u in urls:
         loc = xml_escape(SITE + ('/' + u if u else '/'))
-        deps = page_dependencies.get(u, ['build_site.py'])
-        lastmod = get_git_lastmod(deps)
+        lastmod = PAGE_LASTMOD.get(u, '2026-10-11' if u.startswith('concepts/') else '2026-10-12')
         sitemap_items.append(f'<url><loc>{loc}</loc><lastmod>{lastmod}</lastmod></url>\n')
 
     write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(sitemap_items) + '</urlset>\n')

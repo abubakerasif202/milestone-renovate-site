@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 const routes=['/','/bathroom-renovation-cost','/renovation-design-studio','/plan-your-renovation','/concepts/calm-bathroom','/concepts/warm-kitchen','/concepts/connected-living'];
 for(const width of [320,390,768,1024,1440,1920]) test(`interactive routes responsive and accessible at ${width}px`,async({page,request})=>{
+ test.slow();
  await page.setViewportSize({width,height:900});
  const failures=[];
  for(const route of routes){

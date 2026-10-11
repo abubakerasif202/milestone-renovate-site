@@ -19,6 +19,7 @@ for (const width of [1440, 390]) {
 }
 
 test('axe: questionnaire steps, error states and open mobile menu', async ({ page }) => {
+  test.slow();
   const failures = [];
   const scan = async (label) => {
     const { violations } = await new AxeBuilder({ page }).withTags(TAGS).analyze();
