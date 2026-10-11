@@ -109,3 +109,23 @@ Supersedes findings A1, A2, A3 and A5 above.
 * **Bug found and fixed during QA:** a saved calculator estimate overrode an explicit `category=` hand-off in the
   questionnaire; covered by a regression test.
 * **Tests:** 117 unit, 148 Playwright (8 skipped: live-site specs, deliberately not run). Local mocks only for writes.
+
+---
+
+## Business identity, privacy and cron verification (12 Oct 2026)
+
+* **Operating model (owner-confirmed):** Milestone Renovate operates under Milestone Development; shared phone
+  1800 008 883; brand email admin@milestonerenovate.com. The site no longer says "sister brand" and does not
+  describe a separate legal entity.
+* **Registration lookup (not verified):** milestonedevelopment.com.au publishes no legal entity name, ABN, ACN or
+  licence number (only the address Level 14, 275 Alfred St North, North Sydney NSW 2060). An ABN Lookup name
+  search for "milestone development" returned 17 active records and **no entity named Milestone Development in
+  NSW 2060**. The nearest, MILESTONE CONSTRUCTION AND DEVELOPMENT PTY LTD (ABN 62 697 166 715, NSW 2160), is a
+  different postcode with no evidence linking it to this business, so it is **not** used. The NSW licence register
+  is an interactive tool that could not be queried. **No entity, ABN or licence number is published.**
+* **Privacy:** states the Supabase database is in Sydney (ap-southeast-2, confirmed via the Supabase project),
+  Resend notification processing in Japan (ap-northeast-1), hosting-network and Microsoft 365 processing in other
+  countries.
+* **Cron:** `vercel crons ls` shows `/api/notifications/retry` at `0 20 * * *`, enabled, nothing undeployed or
+  modified. Logs show one scheduled run, 2026-10-11 20:00:48 UTC, HTTP 200, `notify.retry_run` claimed=0 sent=0
+  failed=0; all other hits are unauthenticated 401 probes. Not triggered manually.

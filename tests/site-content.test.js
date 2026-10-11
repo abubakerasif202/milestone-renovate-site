@@ -75,3 +75,40 @@ test('the official business email is milestonerenovate.com and no Milestone Deve
   assert.match(html('privacy.html'), /mailto:admin@milestonerenovate\.com/);
   assert.match(html('terms.html'), /mailto:admin@milestonerenovate\.com/);
 });
+
+test('legal pages present Milestone Renovate as a brand operated under Milestone Development, not a separate entity', () => {
+  for (const f of ['privacy.html', 'terms.html']) {
+    const t = html(f);
+    assert.match(t, /renovation brand operated under/, f);
+    assert.match(t, /Milestone Development operating as Milestone Renovate/, f);
+    assert.doesNotMatch(t, /sister brand|sister website|Milestone Renovate Pty|Milestone Renovate Limited|\bABN\b|licence (no|number)\.? ?\d|Lic(ence)? ?#? ?\d{4,}/i, f);
+  }
+  for (const f of pages) assert.doesNotMatch(html(f), /sister (brand|website)/i, f);
+});
+
+test('contracts and quotations are described as issued by the responsible contracting entity', () => {
+  for (const f of ['terms.html', 'estimate-disclaimer.html']) {
+    assert.match(html(f), /issued by the contracting entity\s+responsible for the work|issued by the contracting entity responsible for the work/, f);
+  }
+});
+
+test('privacy policy states the Sydney database and the real overseas processing arrangements', () => {
+  const t = html('privacy.html');
+  assert.match(t, /hosted in Sydney, Australia/);
+  assert.match(t, /Japan \(Tokyo\)/);
+  assert.match(t, /Microsoft 365/);
+  assert.match(t, /may be handled in other countries/);
+  assert.doesNotMatch(t, /such as the United States/);
+});
+
+test('the shared phone 1800 008 883 is used everywhere and no other number appears', () => {
+  for (const f of pages) {
+    const t = html(f);
+    for (const m of t.matchAll(/href="tel:([^"]+)"/g)) assert.equal(m[1], '1800008883', f);
+    assert.doesNotMatch(t.replace(/1800 ?008 ?883/g, '').replace(/1300 363 992/g, '') /* OAIC complaints line, privacy page only */, /\b1[38]00[ -]?\d{3}[ -]?\d{3}\b|\b0[2378] ?\d{4} ?\d{4}\b/, f);
+  }
+  assert.match(html('index.html'), /"telephone": "1800 008 883"/);
+  for (const f of ['public/js/lib/enquiry-client.js', 'public/js/booking-ui.js']) {
+    assert.match(readFileSync(new URL(`../${f}`, import.meta.url), 'utf8'), /1800 008 883/, f);
+  }
+});

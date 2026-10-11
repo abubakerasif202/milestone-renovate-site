@@ -1,6 +1,6 @@
 # Milestone Renovate
 
-Premium Australian renovation website and enquiry platform for **Milestone Renovate**, sister brand of Milestone Development.
+Premium Australian renovation website and enquiry platform for **Milestone Renovate**, renovation brand of Milestone Development.
 Static HTML/CSS/JS + one Vercel function + Supabase. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and
 [docs/IMPLEMENTATION-ROADMAP.md](docs/IMPLEMENTATION-ROADMAP.md).
 
