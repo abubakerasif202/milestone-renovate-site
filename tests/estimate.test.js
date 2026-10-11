@@ -1,12 +1,13 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { RATE_CARD, areaM2, estimateBathroom, toQuestionnaireParams, validateInputs } from '../public/js/lib/estimate.js';
+import { RATE_CARD, areaM2, estimateBathroom, toQuestionnaireParams, validateInputs, compareScenarios } from '../public/js/lib/estimate.js';
 
 const input = (over = {}) => ({ lengthM: 2.5, widthM: 2, renovationType: 'full_refit', finish: 'mid_range', plumbing: 'none', ...over });
 
 // TEST FIXTURE ONLY — these numbers are NOT Milestone prices.
 const FIXTURE_CARD = {
   approved: true, version: 'fixture-1', roundTo: 100, rangePct: 0.1,
+  sourceDate: '2026-01-01', gstTreatment: 'inclusive', assumptions: ['Test fixture only'], exclusions: [],
   perM2: { refresh: { essential: 1, mid_range: 2, premium: 3 }, full_refit: { essential: 10, mid_range: 20, premium: 30 }, full_refit_layout: { essential: 11, mid_range: 21, premium: 31 } },
   plumbing: { none: 0, minor: 100, major: 1000 },
   flat: { accessibility: 50, strata: 0, olderHome: 0, limitedAccess: 0 },
@@ -19,6 +20,36 @@ test('ships with no approved rate card, so it never produces dollar figures', ()
   assert.equal(result.lowAud, undefined);
   assert.equal(result.highAud, undefined);
   assert.ok(result.drivers.length > 0);
+});
+
+test('direct area and extended planning selections are validated', () => {
+  const result = estimateBathroom(input({ areaInputM2: 9, floorConstruction: 'timber', access: 'apartment', structural: 'wall_removal', shower: 'walk_in', tiling: 'full_height', customStorage: true }));
+  assert.equal(result.areaM2, 9);
+  assert.equal(result.level, 'complex');
+  assert.ok(result.drivers.some((driver) => driver.includes('Timber')));
+  assert.ok(result.savings.some((saving) => saving.includes('tiling')));
+  assert.equal(result.lowAud, undefined);
+  assert.equal(estimateBathroom(input({ floorConstruction: 'invented' })).ok, false);
+  assert.equal(estimateBathroom(input({ areaInputM2: Infinity })).ok, false);
+  assert.equal(estimateBathroom(input({ strata: 'yes' })).ok, false);
+});
+
+test('approved pricing refuses unpriced extended selections and absent provenance', () => {
+  assert.throws(() => estimateBathroom(input({ access: 'apartment' }), FIXTURE_CARD), /adjustment/);
+  assert.throws(() => estimateBathroom(input(), { ...FIXTURE_CARD, sourceDate: undefined }), /source date/);
+  assert.throws(() => estimateBathroom(input(), { ...FIXTURE_CARD, roundTo: 0 }), /configuration/);
+});
+
+test('scenario comparison simplifies scope without introducing prices or mutating selections', () => {
+  const selected = input({ renovationType: 'full_refit_layout', plumbing: 'major', structural: 'structural', finish: 'premium', underfloorHeating: true });
+  const snapshot = structuredClone(selected);
+  const scenarios = compareScenarios(selected);
+  assert.equal(scenarios.length, 3);
+  assert.ok(scenarios[1].scopeScore < scenarios[0].scopeScore);
+  assert.ok(scenarios[2].scopeScore < scenarios[0].scopeScore);
+  assert.ok(scenarios.every((scenario) => scenario.mode === 'planning' && scenario.lowAud === undefined));
+  assert.deepEqual(selected, snapshot);
+  assert.deepEqual(compareScenarios(input({ lengthM: -1 })), []);
 });
 
 test('planning level rises with scope', () => {
@@ -60,4 +91,16 @@ test('questionnaire hand-off carries only whitelisted values', () => {
   assert.equal(params.get('finish'), 'premium');
   assert.equal(params.get('layout'), 'major');
   assert.equal(params.get('plumbing'), '1');
+});
+
+test('full query handoff preserves planning choices and excludes personal or injected values', () => {
+  const selected = input({ areaInputM2: 8, access: 'apartment', floorConstruction: 'timber', structural: 'none', shower: 'walk_in', bath: 'freestanding', vanity: 'custom', toilet: 'concealed', waterproofing: 'replace', tiling: 'full_height', timeframe: '3_6', accessibility: true, strata: true, olderHome: false, limitedAccess: false, customStorage: true, underfloorHeating: true, featureLighting: true });
+  const query = toQuestionnaireParams({ ...selected, email: 'private@example.test', notes: 'Private text', consent: true, postcode: '2000', unknown: 'x'.repeat(10000) });
+  assert.deepEqual(JSON.parse(new URLSearchParams(query).get('planner')), selected);
+  assert.ok(query.length < 2000);
+  assert.ok(!query.includes('private') && !query.includes('consent') && !query.includes('unknown'));
+  const filtered = JSON.parse(new URLSearchParams(toQuestionnaireParams(input({ access: '<script>', strata: 'yes', areaInputM2: Infinity }))).get('planner'));
+  assert.equal(filtered.access, undefined);
+  assert.equal(filtered.strata, undefined);
+  assert.equal(filtered.areaInputM2, undefined);
 });

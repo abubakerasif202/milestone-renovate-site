@@ -37,7 +37,7 @@ test('saving then restoring round-trips the answers and the step', () => {
   const restored = restoreDraft(loadDraft(storage), initialState());
   assert.equal(restored.step, 4);
   assert.equal(restored.category, 'bathroom');
-  assert.equal(restored.suburb, 'Parramatta');
+  assert.equal(restored.suburb, '', 'free-text suburb is never persisted');
   assert.deepEqual(restored.scope, ['waterproofing', 'new_tiling']);
   assert.equal(restored.name, '');
   assert.equal(restored.consent, false);
@@ -49,7 +49,7 @@ test('tampered or stale storage cannot inject unknown values or crash', () => {
   assert.equal(restored.category, '');
   assert.equal(restored.propertyType, '');
   assert.equal(restored.postcode, '');
-  assert.equal(restored.suburb.length, 80);
+  assert.equal(restored.suburb, '');
   assert.equal(restored.details, '', 'free text is never restored');
   assert.ok(restored.step >= 0 && restored.step <= 8);
   assert.deepEqual(restored.scope, [], 'scope is dropped when the category is not valid');
@@ -67,4 +67,9 @@ test('clearing removes the draft; unavailable storage never throws', () => {
   const broken = { getItem() { throw new Error('denied'); }, setItem() { throw new Error('denied'); }, removeItem() { throw new Error('denied'); } };
   assert.doesNotThrow(() => { saveDraft(broken, filled()); clearDraft(broken); });
   assert.equal(loadDraft(broken), null);
+});
+
+test('postcode drafts never retain free-text personal information or invalid postcode ranges', () => {
+  assert.equal(serializeDraft({ ...filled(), postcode: 'Call Jo on 0412999888' }).postcode, '');
+  assert.equal(serializeDraft({ ...filled(), postcode: '0100' }).postcode, '');
 });
