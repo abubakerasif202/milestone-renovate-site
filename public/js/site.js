@@ -9,7 +9,12 @@
     menuButton?.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
   }
 
-  menuButton?.addEventListener('click', () => setMenu(!nav?.classList.contains('open')));
+  menuButton?.addEventListener('click', () => {
+    const open = !nav?.classList.contains('open');
+    setMenu(open);
+    // The menu sits before the toggle in tab order, so hand focus to it; otherwise Tab skips the links just revealed.
+    if (open) nav?.querySelector('a')?.focus();
+  });
   nav?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && nav?.classList.contains('open')) {

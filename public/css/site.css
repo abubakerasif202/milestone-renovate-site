@@ -365,4 +365,11 @@ p{line-height:1.7}
   .field-grid .wide{grid-column:auto}
   .footer-bottom{align-items:flex-start;flex-direction:column}
 }
+/* Touch targets: standalone links and buttons reach 44px on phones and tablets (inline text links are exempt). */
+@media (pointer:coarse),(max-width:870px){
+  .footer-links{gap:0 22px}
+  .footer-links a,.footer-aside a,.footer-brand,.text-link{display:inline-flex;align-items:center;min-height:44px}
+  .footer-links a{padding:0}
+  .text-link{padding-bottom:0;box-sizing:border-box}
+}
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
