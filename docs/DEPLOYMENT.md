@@ -38,7 +38,7 @@ Values are never committed or logged. `.env*` is git-ignored except `.env.exampl
 - Domain `milestonerenovate.com` is verified (sending enabled, ap-northeast-1). Staff emails go to `NOTIFY_TO_EMAIL`, from `enquiries@milestonerenovate.com`, with `reply_to` set to the enquirer.
 - Domain verified, sending enabled, region `ap-northeast-1`, open/click tracking off (checked 2026-10-13).
 - A sending-only API key restricted to this domain was created for the site. **Its value passed through an AI session transcript when it was created.**
-  **Status 2026-10-13: not rotated.** The account holds one site key, "milestone-renovate-site-vercel (send only)", created 2026-10-10 05:09 UTC,
+  **Status 2026-10-13: not rotated — deferred by the owner; keep using the current key until they rotate it.** The account holds one site key, "milestone-renovate-site-vercel (send only)", created 2026-10-10 05:09 UTC,
   and the Vercel `RESEND_API_KEY` variables were created the same day. Rotate: Resend → API keys → create a new send-only key for
   `milestonerenovate.com` → update `RESEND_API_KEY` in Vercel Production **and** Preview → redeploy → delete the old key.
   (A second key, "Supabase Integration", created 2026-10-10 10:05 UTC, is not used by the site; confirm whether it is still needed.)

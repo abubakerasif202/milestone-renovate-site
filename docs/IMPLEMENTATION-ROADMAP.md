@@ -41,7 +41,7 @@ evidence behind each status live in [`STATUS.md`](STATUS.md); counts are not rep
 1. ✅ **NSW contractor licence**: 501094C (Builder) for Milestone Construction and Development Pty Ltd, register link in the footer *(verified 2026-10-12 per `site_constants.py`; not re-checked)*.
 2. ✅ **www → apex redirect** (308).
 3. ✅ **Resend sending domain** verified.
-4. 🔴 **Resend API key rotation**: not done. The key whose value passed through a session transcript is still the only site key. See `DEPLOYMENT.md`.
+4. 🟡 **Resend API key rotation**: deferred by the owner (2026-10-13); the current key stays in use until then. The key whose value passed through a session transcript is still the only site key. See `DEPLOYMENT.md`.
 5. 🔴 **Preview deployments use production secrets**: previews write to the production database and email staff. Decide whether to give Preview its own Supabase project/Resend key or remove those variables from Preview.
 6. 🟡 **Approved rate card**: needed before calculator ranges can be presented as Milestone pricing.
 7. 🟡 **Real project photography**: all imagery is labelled AI concept art.
