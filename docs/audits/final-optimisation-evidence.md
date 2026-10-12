@@ -148,4 +148,23 @@ No Supabase records, tables, integrations, backend API handlers or deployment co
 
 Build and unit results: build generates 22 pages; 121 unit tests pass; dependency audit has zero production vulnerabilities. Browser and production results are appended after the release gates complete.
 
-Full trace artifacts remain locally in .tmp/lh/<group>-<run>/report-0.trace.json and corresponding devtools logs.
+Earlier investigation traces were inspected and summarised above; another session subsequently cleaned their temporary directories. The independent production traces retained here are .tmp/live-final-1 through .tmp/live-final-8, each with report.json, report-0.trace.json and report-0.devtoolslog.json.
+
+## Independent production verification
+
+Implementation commit: aec1d3c7f77044d60e077c0af8d0f2a8fe1dc26a. Vercel deployment dpl_7MWkiLVkXgjgjxL1tj5ozoss9xWV is Ready and aliased to milestonerenovate.com.
+
+| Run | Performance | Accessibility | Best practices | SEO | LCP s | TBT ms | CLS |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| 1 | 99 | 100 | 100 | 100 | 1.995 | 0 | 0.000 |
+| 2 | 99 | 100 | 100 | 100 | 2.149 | 1 | 0.000 |
+| 3 | 98 | 100 | 100 | 100 | 2.132 | 0 | 0.000 |
+| 4 | 99 | 100 | 100 | 100 | 1.965 | 0 | 0.000 |
+| 5 | 99 | 100 | 100 | 100 | 1.971 | 0 | 0.000 |
+| 6 | 99 | 100 | 100 | 100 | 1.963 | 0 | 0.000 |
+| 7 | 99 | 100 | 100 | 100 | 2.119 | 0 | 0.000 |
+| 8 | 99 | 100 | 100 | 100 | 1.964 | 0 | 0.000 |
+
+Medians: performance 99; accessibility/best practices/SEO 100; LCP 1.983s; TBT 0ms; CLS 0.000.
+
+Independent local verification: 121 unit tests pass, build generates 22 pages, zero production dependency vulnerabilities. Full browser run passed 175 checks; 13 interrupted/failing checks were rerun. Twelve passed immediately; the remaining enquiry test passed after refreshing the disposable local store (the existing test data correctly triggered duplicate protection). Thus all 188 active checks passed across the run and reruns, with 8 skipped. These were not claimed as one uninterrupted green run. No live submissions or database changes.
