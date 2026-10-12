@@ -147,5 +147,7 @@
   .mobile-cta-book:hover,.mobile-cta-book:focus-visible{background:var(--color-ruby-deep)}
   .mobile-cta-icon{flex:0 0 auto}
 }
+/* Narrow phones: keep each label on one line. */
+@media(max-width:360px){.mobile-cta-btn{font-size:.76rem;gap:6px;padding:0 6px;white-space:nowrap}}
 
 

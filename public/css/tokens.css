@@ -1,9 +1,18 @@
 /* Milestone Renovate — design tokens (Light Forest × Ruby × Gold).
    Single source of truth: change colours, type and spacing here, nowhere else. */
 
-@font-face{font-family:"Newsreader";font-style:normal;font-weight:200 800;font-display:swap;src:url(/assets/fonts/newsreader-latin-wght-normal.woff2) format("woff2")}
-@font-face{font-family:"Newsreader";font-style:italic;font-weight:200 800;font-display:swap;src:url(/assets/fonts/newsreader-latin-wght-italic.woff2) format("woff2")}
-@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(/assets/fonts/inter-latin-wght-normal.woff2) format("woff2")}
+/* Web fonts: Inter 400-900 and Newsreader 400-500 are the weights the site uses (see scripts/instance_fonts.py). */
+@font-face{font-family:"Newsreader";font-style:normal;font-weight:400 500;font-display:swap;src:url(/assets/fonts/newsreader-latin-400-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Newsreader";font-style:italic;font-weight:400 500;font-display:swap;src:url(/assets/fonts/newsreader-latin-400-500-italic.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:400 900;font-display:swap;src:url(/assets/fonts/inter-latin-400-900-normal.woff2) format("woff2")}
+
+/* Metric-matched fallbacks: until a web font arrives, the system font is scaled to occupy the same space, so the
+   swap does not move the layout. size-adjust is the median width ratio measured in Chrome over the site's own
+   headings and paragraphs; ascent/descent come from the web fonts' tables divided by size-adjust. */
+@font-face{font-family:"Newsreader Fallback";font-style:normal;font-weight:400 500;src:local("Times New Roman"),local("Times"),local("Liberation Serif");size-adjust:104.68%;ascent-override:70.21%;descent-override:25.31%;line-gap-override:0%}
+@font-face{font-family:"Newsreader Fallback";font-style:italic;font-weight:400 500;src:local("Times New Roman Italic"),local("TimesNewRomanPS-ItalicMT"),local("Times Italic"),local("Liberation Serif Italic");size-adjust:97.69%;ascent-override:75.25%;descent-override:27.13%;line-gap-override:0%}
+@font-face{font-family:"Inter Fallback";font-weight:400 500;src:local("Arial"),local("Helvetica"),local("Liberation Sans");size-adjust:107.01%;ascent-override:90.53%;descent-override:22.54%;line-gap-override:0%}
+@font-face{font-family:"Inter Fallback";font-weight:600 900;src:local("Arial Bold"),local("Arial-BoldMT"),local("Helvetica Bold"),local("Liberation Sans Bold");size-adjust:101.06%;ascent-override:95.86%;descent-override:23.87%;line-gap-override:0%}
 
 :root{
   /* Brand palette */
@@ -44,8 +53,8 @@
   --color-notice-ink:#4A3A0E;
 
   /* Typography */
-  --font-display:"Newsreader",Georgia,"Times New Roman",serif;
-  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --font-display:"Newsreader","Newsreader Fallback",Georgia,"Times New Roman",serif;
+  --font-body:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --text-hero:clamp(2.5rem,8vw,3.5rem);
   --text-hero-lg:clamp(3.5rem,6vw,5.5rem);
   --text-h2:clamp(2.1rem,4.2vw,3.75rem);

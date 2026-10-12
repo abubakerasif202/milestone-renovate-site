@@ -6,7 +6,9 @@ const respond = (status, body) => async () => ({ ok: status < 300, status, json:
 
 test('a request that never completes ends as a retryable, honest "cannot confirm" result instead of hanging', async () => {
   const hang = (url, init) => new Promise((_, reject) => init.signal.addEventListener('abort', () => reject(init.signal.reason)));
-  const result = await submitEnquiry({}, { fetchImpl: hang, timeoutMs: 30 });
+  // AbortSignal.timeout() timers are unref'd, so on some Node versions (e.g. 22) the loop would otherwise exit while this test waits.
+  const keepAlive = setTimeout(() => {}, 2000);
+  const result = await submitEnquiry({}, { fetchImpl: hang, timeoutMs: 30 }).finally(() => clearTimeout(keepAlive));
   assert.equal(result.ok, false);
   assert.equal(result.kind, 'network');
   assert.equal(result.retryable, true);

@@ -5,7 +5,7 @@
 .platform-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .platform-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;padding:clamp(24px,4vw,52px);background:var(--color-paper);border:1px solid var(--color-line-green);border-top:3px solid var(--color-gold);min-width:0}
 .platform-card h3{margin:16px 0;font-size:clamp(1.8rem,3vw,2.7rem)}
-.platform-card p{color:var(--color-ink-soft);max-width:46ch}
+.platform-card p{color:var(--color-ink-soft);max-width:29.02em}
 .platform-card .btn{margin-top:auto}
 .platform-card .frame{width:100%;margin-bottom:28px;aspect-ratio:16/10;overflow:hidden}
 .platform-card .frame img{width:100%;height:100%;object-fit:cover}
@@ -111,7 +111,7 @@
 @media print{.studio-controls,.studio-actions,.postcode-entry,.planning-index{display:none!important}.studio-layout,.case-study-grid{display:block}.studio-preview{position:static;border:0;box-shadow:none;padding:0}.studio-concept-image{max-height:250px;object-fit:contain}.studio-summary-row{break-inside:avoid}.studio-palette,.studio-swatch{print-color-adjust:exact;-webkit-print-color-adjust:exact}.calc-grid{display:block}.calc-form{display:none}.calc-result{position:static;color:var(--color-ink);background:var(--color-white);border:1px solid var(--color-line)}.calc-result *{color:var(--color-ink)!important}}
 
 /* Bathroom style selector: six photographed directions as a responsive card grid */
-.style-step-intro{max-width:62ch;margin:14px 0 0;color:var(--color-ink-soft);line-height:1.7}
+.style-step-intro{max-width:39.11em;margin:14px 0 0;color:var(--color-ink-soft);line-height:1.7}
 .style-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.8vw,24px);margin-top:26px}
 .style-card{position:relative;display:block;width:100%;padding:0;aspect-ratio:4/5;overflow:hidden;border:0;border-radius:var(--radius);background:var(--color-forest-deep);color:var(--color-white);text-align:left;cursor:pointer;isolation:isolate;box-shadow:var(--shadow-soft);transition:transform .45s var(--ease-out),box-shadow .45s var(--ease-out)}
 .style-card-media,.style-card-media img{position:absolute;inset:0;display:block;width:100%;height:100%}

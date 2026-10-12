@@ -24,31 +24,51 @@
           "width": 480,
           "height": 360,
           "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-480.webp",
-          "bytes": 32326
+          "bytes": 32326,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-480.avif",
+            "bytes": 24542
+          }
         },
         {
           "width": 768,
           "height": 576,
           "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-768.webp",
-          "bytes": 76138
+          "bytes": 76138,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-768.avif",
+            "bytes": 57569
+          }
         },
         {
           "width": 1024,
           "height": 768,
           "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-1024.webp",
-          "bytes": 124000
+          "bytes": 124000,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-1024.avif",
+            "bytes": 95460
+          }
         },
         {
           "width": 1280,
           "height": 960,
           "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-1280.webp",
-          "bytes": 177146
+          "bytes": 177146,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-1280.avif",
+            "bytes": 119173
+          }
         },
         {
           "width": 1448,
           "height": 1086,
           "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation.webp",
-          "bytes": 218482
+          "bytes": 218482,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation.avif",
+            "bytes": 144910
+          }
         }
       ]
     },
@@ -68,31 +88,51 @@
           "width": 480,
           "height": 360,
           "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-480.webp",
-          "bytes": 20574
+          "bytes": 20574,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-480.avif",
+            "bytes": 13062
+          }
         },
         {
           "width": 768,
           "height": 576,
           "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-768.webp",
-          "bytes": 44424
+          "bytes": 44424,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-768.avif",
+            "bytes": 26804
+          }
         },
         {
           "width": 1024,
           "height": 768,
           "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-1024.webp",
-          "bytes": 70242
+          "bytes": 70242,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-1024.avif",
+            "bytes": 42755
+          }
         },
         {
           "width": 1280,
           "height": 960,
           "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-1280.webp",
-          "bytes": 98756
+          "bytes": 98756,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-1280.avif",
+            "bytes": 51284
+          }
         },
         {
           "width": 1448,
           "height": 1086,
           "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen.webp",
-          "bytes": 118044
+          "bytes": 118044,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen.avif",
+            "bytes": 61169
+          }
         }
       ]
     },
@@ -112,31 +152,51 @@
           "width": 480,
           "height": 360,
           "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-480.webp",
-          "bytes": 33514
+          "bytes": 33514,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-480.avif",
+            "bytes": 25824
+          }
         },
         {
           "width": 768,
           "height": 576,
           "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-768.webp",
-          "bytes": 76210
+          "bytes": 76210,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-768.avif",
+            "bytes": 59498
+          }
         },
         {
           "width": 1024,
           "height": 768,
           "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-1024.webp",
-          "bytes": 124036
+          "bytes": 124036,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-1024.avif",
+            "bytes": 84893
+          }
         },
         {
           "width": 1280,
           "height": 960,
           "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-1280.webp",
-          "bytes": 174282
+          "bytes": 174282,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-1280.avif",
+            "bytes": 118318
+          }
         },
         {
           "width": 1448,
           "height": 1086,
           "src": "/assets/img/renovation-concepts/luxury-stone-bathroom.webp",
-          "bytes": 209582
+          "bytes": 209582,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/luxury-stone-bathroom.avif",
+            "bytes": 128462
+          }
         }
       ]
     },
@@ -156,31 +216,51 @@
           "width": 480,
           "height": 360,
           "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-480.webp",
-          "bytes": 42734
+          "bytes": 42734,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-480.avif",
+            "bytes": 32353
+          }
         },
         {
           "width": 768,
           "height": 576,
           "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-768.webp",
-          "bytes": 98764
+          "bytes": 98764,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-768.avif",
+            "bytes": 75079
+          }
         },
         {
           "width": 1024,
           "height": 768,
           "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-1024.webp",
-          "bytes": 164216
+          "bytes": 164216,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-1024.avif",
+            "bytes": 117719
+          }
         },
         {
           "width": 1280,
           "height": 960,
           "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-1280.webp",
-          "bytes": 236096
+          "bytes": 236096,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-1280.avif",
+            "bytes": 163598
+          }
         },
         {
           "width": 1448,
           "height": 1086,
           "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension.webp",
-          "bytes": 280724
+          "bytes": 280724,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension.avif",
+            "bytes": 174461
+          }
         }
       ]
     },
@@ -200,31 +280,51 @@
           "width": 480,
           "height": 360,
           "src": "/assets/img/renovation-concepts/renovation-design-consultation-480.webp",
-          "bytes": 38294
+          "bytes": 38294,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/renovation-design-consultation-480.avif",
+            "bytes": 27713
+          }
         },
         {
           "width": 768,
           "height": 576,
           "src": "/assets/img/renovation-concepts/renovation-design-consultation-768.webp",
-          "bytes": 76012
+          "bytes": 76012,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/renovation-design-consultation-768.avif",
+            "bytes": 48349
+          }
         },
         {
           "width": 1024,
           "height": 768,
           "src": "/assets/img/renovation-concepts/renovation-design-consultation-1024.webp",
-          "bytes": 112590
+          "bytes": 112590,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/renovation-design-consultation-1024.avif",
+            "bytes": 72249
+          }
         },
         {
           "width": 1280,
           "height": 960,
           "src": "/assets/img/renovation-concepts/renovation-design-consultation-1280.webp",
-          "bytes": 149226
+          "bytes": 149226,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/renovation-design-consultation-1280.avif",
+            "bytes": 83618
+          }
         },
         {
           "width": 1448,
           "height": 1086,
           "src": "/assets/img/renovation-concepts/renovation-design-consultation.webp",
-          "bytes": 171028
+          "bytes": 171028,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/renovation-design-consultation.avif",
+            "bytes": 98335
+          }
         }
       ]
     },
@@ -244,31 +344,51 @@
           "width": 480,
           "height": 360,
           "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-480.webp",
-          "bytes": 38526
+          "bytes": 38526,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-480.avif",
+            "bytes": 29461
+          }
         },
         {
           "width": 768,
           "height": 576,
           "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-768.webp",
-          "bytes": 91102
+          "bytes": 91102,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-768.avif",
+            "bytes": 81118
+          }
         },
         {
           "width": 1024,
           "height": 768,
           "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-1024.webp",
-          "bytes": 150086
+          "bytes": 150086,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-1024.avif",
+            "bytes": 112572
+          }
         },
         {
           "width": 1280,
           "height": 960,
           "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-1280.webp",
-          "bytes": 216914
+          "bytes": 216914,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-1280.avif",
+            "bytes": 157639
+          }
         },
         {
           "width": 1448,
           "height": 1086,
           "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation.webp",
-          "bytes": 256760
+          "bytes": 256760,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation.avif",
+            "bytes": 168790
+          }
         }
       ]
     },
@@ -288,31 +408,51 @@
           "width": 480,
           "height": 360,
           "src": "/assets/img/renovation-concepts/coastal-bedroom-design-480.webp",
-          "bytes": 33484
+          "bytes": 33484,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/coastal-bedroom-design-480.avif",
+            "bytes": 25975
+          }
         },
         {
           "width": 768,
           "height": 576,
           "src": "/assets/img/renovation-concepts/coastal-bedroom-design-768.webp",
-          "bytes": 80834
+          "bytes": 80834,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/coastal-bedroom-design-768.avif",
+            "bytes": 63703
+          }
         },
         {
           "width": 1024,
           "height": 768,
           "src": "/assets/img/renovation-concepts/coastal-bedroom-design-1024.webp",
-          "bytes": 135002
+          "bytes": 135002,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/coastal-bedroom-design-1024.avif",
+            "bytes": 103260
+          }
         },
         {
           "width": 1280,
           "height": 960,
           "src": "/assets/img/renovation-concepts/coastal-bedroom-design-1280.webp",
-          "bytes": 194918
+          "bytes": 194918,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/coastal-bedroom-design-1280.avif",
+            "bytes": 128423
+          }
         },
         {
           "width": 1448,
           "height": 1086,
           "src": "/assets/img/renovation-concepts/coastal-bedroom-design.webp",
-          "bytes": 239934
+          "bytes": 239934,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/coastal-bedroom-design.avif",
+            "bytes": 157843
+          }
         }
       ]
     },
@@ -332,31 +472,51 @@
           "width": 480,
           "height": 360,
           "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-480.webp",
-          "bytes": 52950
+          "bytes": 52950,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-480.avif",
+            "bytes": 46373
+          }
         },
         {
           "width": 768,
           "height": 576,
           "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-768.webp",
-          "bytes": 125808
+          "bytes": 125808,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-768.avif",
+            "bytes": 111370
+          }
         },
         {
           "width": 1024,
           "height": 768,
           "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-1024.webp",
-          "bytes": 208914
+          "bytes": 208914,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-1024.avif",
+            "bytes": 181066
+          }
         },
         {
           "width": 1280,
           "height": 960,
           "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-1280.webp",
-          "bytes": 295068
+          "bytes": 295068,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-1280.avif",
+            "bytes": 217846
+          }
         },
         {
           "width": 1448,
           "height": 1086,
           "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance.webp",
-          "bytes": 356838
+          "bytes": 356838,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance.avif",
+            "bytes": 251261
+          }
         }
       ]
     },
@@ -376,31 +536,51 @@
           "width": 480,
           "height": 360,
           "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-480.webp",
-          "bytes": 36930
+          "bytes": 36930,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-480.avif",
+            "bytes": 27025
+          }
         },
         {
           "width": 768,
           "height": 576,
           "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-768.webp",
-          "bytes": 74926
+          "bytes": 74926,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-768.avif",
+            "bytes": 52053
+          }
         },
         {
           "width": 1024,
           "height": 768,
           "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-1024.webp",
-          "bytes": 109900
+          "bytes": 109900,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-1024.avif",
+            "bytes": 67098
+          }
         },
         {
           "width": 1280,
           "height": 960,
           "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-1280.webp",
-          "bytes": 145806
+          "bytes": 145806,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-1280.avif",
+            "bytes": 86033
+          }
         },
         {
           "width": 1448,
           "height": 1086,
           "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom.webp",
-          "bytes": 168592
+          "bytes": 168592,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom.avif",
+            "bytes": 100741
+          }
         }
       ]
     },
@@ -420,31 +600,51 @@
           "width": 480,
           "height": 360,
           "src": "/assets/img/renovation-concepts/curved-staircase-interior-480.webp",
-          "bytes": 27580
+          "bytes": 27580,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/curved-staircase-interior-480.avif",
+            "bytes": 20360
+          }
         },
         {
           "width": 768,
           "height": 576,
           "src": "/assets/img/renovation-concepts/curved-staircase-interior-768.webp",
-          "bytes": 60650
+          "bytes": 60650,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/curved-staircase-interior-768.avif",
+            "bytes": 43156
+          }
         },
         {
           "width": 1024,
           "height": 768,
           "src": "/assets/img/renovation-concepts/curved-staircase-interior-1024.webp",
-          "bytes": 98440
+          "bytes": 98440,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/curved-staircase-interior-1024.avif",
+            "bytes": 69477
+          }
         },
         {
           "width": 1280,
           "height": 960,
           "src": "/assets/img/renovation-concepts/curved-staircase-interior-1280.webp",
-          "bytes": 136304
+          "bytes": 136304,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/curved-staircase-interior-1280.avif",
+            "bytes": 82260
+          }
         },
         {
           "width": 1448,
           "height": 1086,
           "src": "/assets/img/renovation-concepts/curved-staircase-interior.webp",
-          "bytes": 163348
+          "bytes": 163348,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/curved-staircase-interior.avif",
+            "bytes": 99186
+          }
         }
       ]
     },
@@ -464,31 +664,51 @@
           "width": 480,
           "height": 360,
           "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-480.webp",
-          "bytes": 44810
+          "bytes": 44810,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-480.avif",
+            "bytes": 34558
+          }
         },
         {
           "width": 768,
           "height": 576,
           "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-768.webp",
-          "bytes": 102258
+          "bytes": 102258,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-768.avif",
+            "bytes": 75854
+          }
         },
         {
           "width": 1024,
           "height": 768,
           "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-1024.webp",
-          "bytes": 165100
+          "bytes": 165100,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-1024.avif",
+            "bytes": 121230
+          }
         },
         {
           "width": 1280,
           "height": 960,
           "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-1280.webp",
-          "bytes": 232434
+          "bytes": 232434,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-1280.avif",
+            "bytes": 155140
+          }
         },
         {
           "width": 1448,
           "height": 1086,
           "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living.webp",
-          "bytes": 278018
+          "bytes": 278018,
+          "avif": {
+            "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living.avif",
+            "bytes": 177261
+          }
         }
       ]
     }

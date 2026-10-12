@@ -25,6 +25,8 @@ function init(root) {
   const handedOff = params.has('category') || params.has('postcode') || ['calculator', 'design-studio', 'postcode'].includes(params.get('from'));
   const draft = loadDraft(storage);
   let state = handedOff ? prefill(initialState(), params) : restoreDraft(draft, initialState());
+  let shownStep = 0; // the step currently on screen, used to pick the transition direction
+  const stepMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   let planning = loadPlanningContext(storage);
   for (const section of ['studio', 'planner', 'estimate']) {
@@ -152,8 +154,21 @@ function init(root) {
     showSummary(root, result.retryable ? `${result.message} You can press “Send my brief” again — it will not create a duplicate.` : result.message);
   }
 
+  /** The incoming step wipes in from the side it is reached from (CSS only; skipped under reduced motion). */
+  function transitionTo(step) {
+    if (stepMotion.matches || step === shownStep) { shownStep = step; return; }
+    root.dataset.stepDir = step > shownStep ? 'forward' : 'back';
+    const incoming = fieldsets[step];
+    incoming.classList.remove('is-entering');
+    void incoming.offsetWidth; // restart the animation when the same step is revisited
+    incoming.classList.add('is-entering');
+    incoming.addEventListener('animationend', () => incoming.classList.remove('is-entering'), { once: true });
+    shownStep = step;
+  }
+
   function render(moveFocus) {
     fieldsets.forEach((fs, i) => { fs.hidden = i !== state.step; });
+    if (moveFocus) transitionTo(state.step); else shownStep = state.step;
     const p = progress(state);
     label.textContent = `Step ${p.current} of ${p.total}`;
     bar.value = p.current;

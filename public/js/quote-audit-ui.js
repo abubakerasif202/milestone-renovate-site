@@ -1,6 +1,6 @@
 import { isAuPhone, isAuPostcode, isEmail, normalisePhone } from './lib/au.js';
 import { clearSessionKey, sessionKey, submitEnquiry } from './lib/enquiry-client.js';
-import { clearErrors, setBusy, setStatus, showErrors } from './lib/ui.js';
+import { clearErrors, revealSuccess, setBusy, setStatus, showErrors } from './lib/ui.js';
 
 const form = document.querySelector('[data-quote-audit-form]');
 const startedAt = Date.now();
@@ -86,10 +86,9 @@ if (form) {
       form.hidden = true;
       const successEl = document.querySelector('#quote-audit-success');
       if (successEl) {
-        successEl.hidden = false;
         const refEl = successEl.querySelector('[data-reference]');
         if (refEl) refEl.textContent = result.reference;
-        successEl.focus();
+        revealSuccess(successEl);
       }
     } else {
       setStatus(form, result.error || 'Unable to submit right now. Please call 1800 008 883.');

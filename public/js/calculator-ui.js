@@ -148,6 +148,14 @@ function init() {
     ui.scale.setAttribute('aria-label', `Estimated range ${formatAud(result.lowAud)} to ${formatAud(result.highAud)} on a scale from $0 to ${formatAud(SCALE_MAX_AUD)}`);
   }
 
+  /** One-shot gold sweep under the range whenever a changed selection moves the estimate. */
+  function sweepRange() {
+    ui.range.classList.remove('is-updating');
+    void ui.range.offsetWidth;
+    ui.range.classList.add('is-updating');
+    ui.range.addEventListener('animationend', () => ui.range.classList.remove('is-updating'), { once: true });
+  }
+
   function render() {
     const input = read();
     const result = estimateProject(input);
@@ -163,6 +171,7 @@ function init() {
     bar.textContent = `Estimate ${formatRange(result)} ↓`;
     ui.meta.textContent = `${result.gstNote.split('.')[0]} · Sydney 2026 benchmarks · reviewed ${result.reviewed}`;
     updateScale(input, result);
+    if (revealed && !reducedMotion() && (result.lowAud !== shown.low || result.highAud !== shown.high)) sweepRange();
     animateRange(result);
     if (!revealed) {
       revealed = true;
@@ -261,6 +270,8 @@ function init() {
 
   form.addEventListener('change', (event) => {
     if (event.target.name === 'project') syncPairs(event.target.value);
+    // The calculator opens with sensible defaults, so a step only earns its tick once the visitor has made a choice in it.
+    if (event.target.matches('input[type="radio"]')) event.target.closest('.calc-step')?.setAttribute('data-complete', '');
     render();
   });
   form.addEventListener('submit', (event) => event.preventDefault());
