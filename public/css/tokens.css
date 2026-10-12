@@ -18,7 +18,7 @@
   /* Brand palette */
   --color-forest:#17624B;
   --color-forest-hover:#1F6B54;
-  --color-forest-deep:#073E2B;
+  --color-forest-deep:#0F201D;
   --color-ruby:#9B2144;
   --color-ruby-deep:#8B1838;
   --color-ruby-soft:#F9E9ED;
@@ -33,7 +33,7 @@
   --color-white:#FFFFFF;
 
   /* Masthead: deep forest so the transparent gold logo reads (gold on cream is ~1.8:1). */
-  --color-masthead:#073E2B;
+  --color-masthead:#0F201D;
   --color-masthead-ink:#EEEAE0;
   --color-masthead-line:rgba(221,180,92,.24);
 
@@ -68,8 +68,8 @@
   --radius:2px;
 
   /* Elevation */
-  --shadow-soft:0 18px 60px rgba(7,62,43,.08);
-  --shadow-lift:0 26px 70px rgba(7,62,43,.14);
+  --shadow-soft:0 18px 60px rgba(15,32,29,.08);
+  --shadow-lift:0 26px 70px rgba(15,32,29,.14);
 
   /* Motion */
   --ease-out:cubic-bezier(.16,1,.3,1);
