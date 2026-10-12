@@ -10,7 +10,7 @@ All colour, type, spacing and motion tokens live in **`public/css/tokens.css`** 
 | `--color-cream` / `--color-paper` | `#F8F6F0` / `#FBF9F3` | Main reading surfaces |
 | `--color-sage` | `#E9F1EB` | Alternating section surface, ticker, footer |
 | `--color-forest` | `#17624B` | Lighter forest panels, form buttons, calculator result |
-| `--color-forest-deep` | `#073E2B` | Compact brand moments only: logo block, footer bar |
+| `--color-forest-deep` | `#0F201D` | Deep brand surfaces: masthead, mobile navigation, footer bar |
 | `--color-ruby` / `-deep` / `-soft` | `#9B2144` / `#8B1838` / `#F9E9ED` | Primary CTA, eyebrows, italic accents, active nav, filters, slider handle, selected options, progress |
 | `--color-gold` / `-light` / `-pale` | `#DDB45C` / `#EBC678` / `#F6E1AE` | Logo, accents on deep forest only |
 | `--color-gold-ink` | `#755713` | Small gold-toned labels on light surfaces |
@@ -19,7 +19,7 @@ All colour, type, spacing and motion tokens live in **`public/css/tokens.css`** 
 
 Distribution target: ~65% cream/sage, ~25% forest and green tints, ~10% ruby + gold.
 
-Contrast (WCAG AA): white on ruby 7.8:1, white on forest 7.3:1, gold on `#073E2B` 6.2:1. Gold is never used as body text on light surfaces; gold on `#17624B` is limited to large text. Automated axe (WCAG 2.2 AA) passes on every page at 1440 and 390px.
+Contrast (WCAG AA): white on ruby 7.8:1, white on forest 7.3:1, gold on `#0F201D` exceeds 7:1. Gold is never used as body text on light surfaces; gold on `#17624B` is limited to large text. Automated axe (WCAG 2.2 AA) passes on every page at 1440 and 390px.
 
 ## Typography
 Newsreader (display, italic accents) and Inter (UI, body), both OFL variable fonts self-hosted as WOFF2 in `public/assets/fonts/` (the CSP allows `font-src 'self'` only). The files are axis-limited to the weights the CSS uses (Inter 400-900, Newsreader 400-500; `scripts/instance_fonts.py`, sources in `assets/fonts-src/`), 117KB in total against 171KB, with identical outlines at every weight. All three (Inter, Newsreader, Newsreader italic) are preloaded; `font-display: swap`.
