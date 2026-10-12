@@ -6,6 +6,8 @@ established (trading entity, ABN, postal address, retention periods) are deliber
 """
 from __future__ import annotations
 
+from site_constants import ACN, COMPANY, LICENCE, LICENCE_URL
+
 LEGAL_UPDATED = '12 October 2026'
 OAIC_PHONE = '1300 363 992'
 
@@ -25,7 +27,7 @@ def _contact(email: str, phone: str, phone_href: str) -> str:
 def privacy_page(email: str, phone: str, phone_href: str, parent_url: str) -> str:
     contact = _contact(email, phone, phone_href)
     body = f'''<p class="fine-print">Effective {LEGAL_UPDATED}.</p>
-<p>This Privacy Policy explains how personal information is handled when you use milestonerenovate.com. Milestone Renovate is a renovation brand operated under <a href="{parent_url}" target="_blank" rel="noopener">Milestone Development</a>. In this policy, “we” and “us” means Milestone Development operating as Milestone Renovate. We follow the principles in the Privacy Act 1988 (Cth), including the Australian Privacy Principles, in how we collect, use, store and disclose personal information.</p>
+<p>This Privacy Policy explains how personal information is handled when you use milestonerenovate.com. Milestone Renovate is a renovation brand operated under <a href="{parent_url}" target="_blank" rel="noopener">Milestone Development</a>. In this policy, “we” and “us” means Milestone Development operating as Milestone Renovate. Renovation building work is contracted by {COMPANY} (ACN {ACN}), NSW Contractor Licence <a href="{LICENCE_URL}" target="_blank" rel="noopener">{LICENCE}</a>. We follow the principles in the Privacy Act 1988 (Cth), including the Australian Privacy Principles, in how we collect, use, store and disclose personal information.</p>
 <h2>1. What we collect</h2>
 <p>You can browse this website without giving us any personal information. We collect personal information only when you choose to send us an enquiry through the contact form, the renovation questionnaire, the 15-minute call booking form or the quote audit form. That information is:</p>
 <ul><li>your name, phone number and email address;</li><li>your suburb and/or postcode;</li><li>the type of renovation, and optionally your budget range and preferred timing;</li><li>anything you write about your project, and the planning or cost-calculator selections you choose to carry into your enquiry;</li><li>a record of your consent (the time you agreed, the version of the consent wording and the page you submitted from).</li></ul>
@@ -61,7 +63,7 @@ def privacy_page(email: str, phone: str, phone_href: str, parent_url: str) -> st
 def terms_page(email: str, phone: str, phone_href: str, parent_url: str) -> str:
     contact = _contact(email, phone, phone_href)
     body = f'''<p class="fine-print">Effective {LEGAL_UPDATED}.</p>
-<p>These Terms of Use apply to your use of milestonerenovate.com (the “website”). Milestone Renovate is a renovation brand operated under <a href="{parent_url}" target="_blank" rel="noopener">Milestone Development</a>, and “we” and “us” means Milestone Development operating as Milestone Renovate. By using the website you agree to them. If you do not agree, please do not use the website.</p>
+<p>These Terms of Use apply to your use of milestonerenovate.com (the “website”). Milestone Renovate is a renovation brand operated under <a href="{parent_url}" target="_blank" rel="noopener">Milestone Development</a>, and “we” and “us” means Milestone Development operating as Milestone Renovate. Renovation building work is contracted by {COMPANY} (ACN {ACN}), NSW Contractor Licence <a href="{LICENCE_URL}" target="_blank" rel="noopener">{LICENCE}</a>. By using the website you agree to them. If you do not agree, please do not use the website.</p>
 <h2>1. General information only</h2>
 <p>The website provides general information about renovation planning, approvals and costs. It is not professional, legal, engineering, financial or building advice, and you should not rely on it as a substitute for advice about your property. Approvals, planning controls and building rules vary by property and change over time, so check requirements with your council, certifier or other qualified professional.</p>
 <h2>2. No contract from the website</h2>

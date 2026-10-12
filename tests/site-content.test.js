@@ -50,7 +50,9 @@ test('legal pages exist, are linked from every footer, and are in the sitemap', 
 test('privacy policy describes the real providers and does not invent registration or retention facts', () => {
   const t = html('privacy.html');
   for (const must of ['Supabase', 'Resend', 'Vercel', 'oaic.gov.au', '1300 363 992', 'Australian Privacy Principles', 'Spam Act 2003', 'does not use advertising cookies']) assert.ok(t.includes(must), must);
-  assert.doesNotMatch(t, /\bABN\b|ACN|\b\d{2} \d{3} \d{3} \d{3}\b|retain(ed)? for \d+|\d+ (years|months)/i);
+  assert.doesNotMatch(t, /\bABN\b|\b\d{2} \d{3} \d{3} \d{3}\b|retain(ed)? for \d+|\d+ (years|months)/i);
+  // The only company number allowed is the one verified on the NSW Fair Trading register (licence 501094C).
+  for (const [, acn] of t.matchAll(/ACN\s+([\d ]{9,11})/g)) assert.equal(acn.trim(), '697 166 715');
 });
 
 test('terms and disclaimer keep consumer-law rights, separate website terms from building contracts, and call estimates indicative', () => {

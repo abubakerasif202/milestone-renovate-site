@@ -39,8 +39,9 @@
 }
 
 /* 2. Scroll reveals (tagged by motion.js) */
-.m-reveal{transition:opacity var(--dur-reveal) var(--ease-out) var(--m-delay,0ms),transform var(--dur-reveal) var(--ease-out) var(--m-delay,0ms)}
-.m-reveal:not(.is-in){opacity:0;transform:translateY(var(--m-rise))}
+/* Blocks rise out of a mask (no opacity fade), so any text that is visible is always at full contrast. */
+.m-reveal{clip-path:polygon(-10% -20%,110% -20%,110% 120%,-10% 120%);transition:clip-path var(--dur-reveal) var(--ease-out) var(--m-delay,0ms),transform var(--dur-reveal) var(--ease-out) var(--m-delay,0ms)}
+.m-reveal:not(.is-in){clip-path:polygon(-10% 120%,110% 120%,110% 120%,-10% 120%);transform:translateY(var(--m-rise))}
 /* Stagger steps set by motion.js (data attributes, not inline styles, to stay within the CSP). */
 [data-m-step="1"]{--m-delay:80ms}[data-m-step="2"]{--m-delay:160ms}[data-m-step="3"]{--m-delay:240ms}[data-m-step="4"]{--m-delay:320ms}[data-m-step="5"]{--m-delay:400ms}[data-m-step="6"]{--m-delay:480ms}
 
@@ -51,10 +52,10 @@
 /* Journey: the ruby rule draws across, then each step lands in sequence. */
 .journey-list::after{content:"";position:absolute;left:0;right:0;top:28px;height:1px;background:var(--color-ruby);transform-origin:left;transition:transform 1.6s var(--ease-in-out) .15s}
 .journey-list.m-reveal{transition:none}
-.journey-list.m-reveal:not(.is-in){opacity:1;transform:none}
+.journey-list.m-reveal,.journey-list.m-reveal:not(.is-in){clip-path:none;transform:none}
 .journey-list.m-reveal:not(.is-in)::after{transform:scaleX(0)}
-.journey-list.m-reveal li{transition:opacity var(--dur-reveal) var(--ease-out),transform var(--dur-reveal) var(--ease-out)}
-.journey-list.m-reveal:not(.is-in) li{opacity:0;transform:translateY(var(--m-rise))}
+.journey-list.m-reveal li{transition:clip-path var(--dur-reveal) var(--ease-out),transform var(--dur-reveal) var(--ease-out);clip-path:polygon(-10% -20%,110% -20%,110% 120%,-10% 120%)}
+.journey-list.m-reveal:not(.is-in) li{clip-path:polygon(-10% 120%,110% 120%,110% 120%,-10% 120%);transform:translateY(var(--m-rise))}
 .journey-list.m-reveal li:nth-child(2){transition-delay:.25s}
 .journey-list.m-reveal li:nth-child(3){transition-delay:.5s}
 .journey-list.m-reveal li:nth-child(4){transition-delay:.75s}

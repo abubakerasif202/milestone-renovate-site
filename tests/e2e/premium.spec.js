@@ -62,6 +62,26 @@ test.describe('brand presentation', () => {
     expect(svg).not.toMatch(/<rect/); // the artwork itself carries no background plate
   });
 
+  test('the verified NSW contractor licence is shown in the footer, contact page and structured data, with no personal details', async ({ page }) => {
+    const VERIFY = 'https://verify.licence.nsw.gov.au/details/Contractor%20Licence/1-4KGQO2L';
+    await page.goto('/');
+    const line = page.locator('.footer-licence');
+    await expect(line).toContainText('Milestone Construction and Development Pty Ltd');
+    await expect(line).toContainText('ACN 697 166 715');
+    await expect(line.locator('a')).toHaveAttribute('href', VERIFY);
+    await expect(line.locator('a')).toHaveText('501094C');
+    const ld = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
+    const org = ld['@graph'].find((n) => n['@type'] === 'HomeAndConstructionBusiness');
+    expect(org.legalName).toBe('Milestone Construction and Development Pty Ltd');
+    expect(org.identifier.map((i) => i.value)).toEqual(['697 166 715', '501094C']);
+    await page.goto('/contact');
+    await expect(page.locator('.contact-info')).toContainText('501094C');
+    for (const route of ['/', '/contact', '/about', '/terms', '/privacy']) {
+      await page.goto(route);
+      expect(await page.content()).not.toMatch(/Merrylands|Henson St|Omarkhili|Zain Ul Abidin/);
+    }
+  });
+
   test('the masthead keeps its height when the page scrolls (no layout jump)', async ({ page }) => {
     await page.goto('/');
     const before = await page.locator('#header').boundingBox();

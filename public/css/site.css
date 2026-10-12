@@ -238,6 +238,8 @@ p{line-height:1.7}
 .footer-links a{font-size:.78rem;color:#e8efe9;padding:6px 0}
 .footer-links a:hover{color:var(--color-gold-light);text-decoration:underline}
 .footer-bottom small{font-size:.74rem;color:#c9d8ce}
+.footer-licence{flex-basis:100%;margin:0;font-size:.74rem;line-height:1.6;color:#c9d8ce}
+.footer-licence a{color:var(--color-gold-light);text-decoration:underline;text-underline-offset:3px}
 .footer-bar :focus-visible{outline-color:var(--color-gold);box-shadow:none}
 
 /* Inner heroes — light, image-led */
