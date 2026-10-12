@@ -11,6 +11,10 @@
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (reduced.matches || !('IntersectionObserver' in window)) return;
 
+  // Clear the entrance once interaction starts; retain the state so moving focus cannot replay it.
+  const heroCopy = document.querySelector('.hero-copy');
+  heroCopy?.addEventListener('focusin', () => heroCopy.classList.add('opening-interacted'), { once: true });
+
   // Blocks that rise in on first view. Siblings that share a parent are staggered.
   const REVEAL = [
     '.reveal', '.section-header', '.intro-grid > div', '.service-tile', '.journey-list', '.tool-card',
