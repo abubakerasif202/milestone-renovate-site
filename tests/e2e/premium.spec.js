@@ -55,7 +55,7 @@ test.describe('brand presentation', () => {
     });
     expect(brand.bg).toBe('rgba(0, 0, 0, 0)');
     expect(brand.border).toBe('0px');
-    expect(brand.header).toBe('rgb(7, 62, 43)');
+    expect(brand.header).toBe('rgb(15, 32, 29)');
     await expect(page.locator('header .brand img')).toHaveAttribute('src', '/assets/brand/logo-gold.svg');
     expect(await page.locator('.footer-brand').evaluate((el) => getComputedStyle(el).backgroundColor)).toBe('rgba(0, 0, 0, 0)');
     const svg = readFileSync(join(PUBLIC, 'assets', 'brand', 'logo-gold.svg'), 'utf8');
