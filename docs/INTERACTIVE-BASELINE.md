@@ -1,5 +1,8 @@
 # Interactive platform baseline
 
+> **Historical record.** Dated evidence from an earlier phase; test counts, palette and deployment statements below are as of that date and are superseded by [`STATUS.md`](STATUS.md) (current verified status) and [`DESIGN.md`](../DESIGN.md).
+
+
 Captured 2026-10-11 with installed Chrome through Playwright. Read-only visits; no production enquiry, email, database write or provider call.
 
 ## Production baseline

@@ -1,5 +1,8 @@
 # Milestone Renovate — Full Production Audit (12 Oct 2026)
 
+> **Historical record.** Dated evidence from an earlier phase; test counts, palette and deployment statements below are as of that date and are superseded by [`STATUS.md`](../STATUS.md) (current verified status) and [`DESIGN.md`](../../DESIGN.md). In particular: the contractor entity and licence 501094C were later verified against the NSW register (2026-10-12) and are now published in the footer, superseding the "No entity, ABN or licence number is published" line; the palette is now forest `#0F201D` with gold `#DDB45C` (ruby retired).
+
+
 Scope: https://milestonerenovate.com/ and this repository (`abubakerasif202/milestone-renovate-site`, `main`).
 The Milestone Development sister site was not touched.
 

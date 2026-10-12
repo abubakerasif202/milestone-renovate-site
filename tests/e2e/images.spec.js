@@ -1,18 +1,26 @@
 import {test,expect} from '@playwright/test';
-import {readFileSync} from 'node:fs';
+import {readFileSync,existsSync} from 'node:fs';
 import sharp from 'sharp';
 const manifest=JSON.parse(readFileSync(new URL('../../assets/renovation-concepts.json',import.meta.url)));
 const paths=['/','/kitchen-renovations','/bathroom-renovations','/extensions','/home-renovations','/renovation-design-studio','/inspiration'];
-test('approved image manifest and WebP variants retain measured dimensions',async()=>{
+// The PNG masters are private and git-ignored (incoming-images/), so a fresh clone or CI run cannot read them.
+// Everything that is committed and served is validated unconditionally; the masters are checked only where present.
+const mastersPresent=manifest.images.every(image=>existsSync(image.source));
+test('committed WebP and AVIF variants retain the manifest dimensions and are never upscaled',async()=>{
  expect(manifest.images).toHaveLength(11);
  for(const image of manifest.images){
   expect(image.status).toBe('ai-generated-concept');
-  const original=await sharp(image.source).metadata();expect(original.width).toBe(image.width);expect(original.height).toBe(image.height);
+  expect(image.variants.map(v=>v.width).at(-1),image.id).toBe(image.width); // a full-width variant preserves the master's measured size
   for(const variant of image.variants){const meta=await sharp(`public${variant.src}`).metadata();expect(meta.format).toBe('webp');expect(meta.width).toBe(variant.width);expect(meta.height).toBe(variant.height);expect(variant.width).toBeLessThanOrEqual(image.width);
+   expect(Math.abs(variant.width/variant.height-image.width/image.height),variant.src).toBeLessThan(0.01);
    // Every WebP has an AVIF sibling of identical dimensions (scripts/build-concept-avif.mjs) that is smaller than the WebP.
    const avif=await sharp(`public${variant.avif.src}`).metadata();expect(avif.format).toBe('heif');expect(avif.compression).toBe('av1');expect(avif.width).toBe(variant.width);expect(avif.height).toBe(variant.height);
    expect(variant.avif.bytes).toBeLessThan(variant.bytes);}
  }
+});
+test('private PNG masters match the manifest (runs only where incoming-images/ is present)',async()=>{
+ test.skip(!mastersPresent,'incoming-images/ masters are git-ignored and not present in this checkout');
+ for(const image of manifest.images){const original=await sharp(image.source).metadata();expect(original.width,image.id).toBe(image.width);expect(original.height,image.id).toBe(image.height);}
 });
 for(const width of [320,390,768,1024,1440,1920])test(`approved image network, crops and semantics at ${width}px`,async({page})=>{
  await page.setViewportSize({width,height:900});

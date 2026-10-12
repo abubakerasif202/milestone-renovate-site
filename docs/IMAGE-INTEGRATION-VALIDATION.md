@@ -1,5 +1,8 @@
 # Architectural image integration validation
 
+> **Historical record.** Dated evidence from an earlier phase; test counts, palette and deployment statements below are as of that date and are superseded by [`STATUS.md`](STATUS.md) (current verified status) and [`DESIGN.md`](../DESIGN.md). These images are now in production.
+
+
 Captured 2026-10-11. No live enquiry, provider generation, email or database write performed.
 
 ## Scope and evidence

@@ -1,5 +1,8 @@
 # Platform preview validation
 
+> **Historical record.** Dated evidence from an earlier phase; test counts, palette and deployment statements below are as of that date and are superseded by [`STATUS.md`](STATUS.md) (current verified status) and [`DESIGN.md`](../DESIGN.md). The feature validated here is now in production.
+
+
 Deployment: https://milestone-renovate-site-mxxnc78in-abubakerasif202s-projects.vercel.app
 
 Platform commit: `52fa3a6` (deployment reported READY by release coordination).

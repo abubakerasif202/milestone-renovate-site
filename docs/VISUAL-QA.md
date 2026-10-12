@@ -1,5 +1,8 @@
 # Visual QA record
 
+> **Historical record.** Dated evidence from an earlier phase; test counts, palette and deployment statements below are as of that date and are superseded by [`STATUS.md`](STATUS.md) (current verified status) and [`DESIGN.md`](../DESIGN.md).
+
+
 ## Automated (local, Chrome via Playwright)
 - Unit/integration: 40/40 pass. Playwright: 43 pass, 8 skipped (opt-in live/deployed checks).
 - axe WCAG 2.2 AA: no violations on all pages at 1440px and 390px, including wizard steps, error states and open mobile menu.

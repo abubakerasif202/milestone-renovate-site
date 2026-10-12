@@ -33,6 +33,6 @@ Browser session drafts contain only validated choices, dimensions and postcode. 
 3. Choose a room in the studio. Select a direction, palette and finishes, then review the board. Print or copy its share link. Discuss the design to transfer the selections to the questionnaire.
 4. Reload an incomplete questionnaire; safe choices recover, while contact details, consent and free-text notes do not.
 
-## Release boundary
+## Release status
 
-Feature-branch preview only. Do not merge or promote without approval. Production enquiries/emails, migrations, environment changes and DNS changes require separate explicit approval. Local form tests use the in-memory dev store and mock notifier; those tests do not prove live production delivery. See `INTERACTIVE-VALIDATION.md` for final evidence and limitations.
+In production (all routes above return 200; checked 2026-10-13). Production enquiries/emails, migrations, environment changes and DNS changes still require explicit approval. Local form tests use the in-memory dev store and mock notifier; live delivery evidence is in `STATUS.md`.

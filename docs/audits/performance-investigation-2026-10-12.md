@@ -1,5 +1,8 @@
 # Mobile performance investigation — 12 Oct 2026
 
+> **Historical record.** Dated evidence from an earlier phase; test counts, palette and deployment statements below are as of that date and are superseded by [`STATUS.md`](../STATUS.md) (current verified status) and [`DESIGN.md`](../../DESIGN.md).
+
+
 Starting point: production `c19a69f`, mobile Lighthouse scores that swung between 80 and 97 run to run (TBT 0 to 480ms, CLS 0 or 0.044, LCP 2.4 to 2.9s).
 
 ## Method

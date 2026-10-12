@@ -1,5 +1,8 @@
 # Stitch integration
 
+> **Historical record.** Dated evidence from an earlier phase; test counts, palette and deployment statements below are as of that date and are superseded by [`STATUS.md`](STATUS.md) (current verified status) and [`DESIGN.md`](../DESIGN.md). The ruby accent described below was retired in PR #11.
+
+
 Source: `stitch_milestone_renovate_design_system (1).zip` (extracted outside the repo; nothing from it is shipped verbatim).
 
 ## What was taken from each prototype
