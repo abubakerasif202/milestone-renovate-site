@@ -67,8 +67,8 @@
 @keyframes m-lift{from{transform:translateY(.3em);clip-path:polygon(-6% 150%,106% 150%,106% 150%,-6% 150%)}to{transform:none;clip-path:polygon(-6% -40%,106% -40%,106% 150%,-6% 150%)}}
 .m-mask.is-in{animation:m-lift var(--dur-reveal) var(--ease-out) var(--m-delay,0ms) backwards}
 
-/* Journey: the ruby rule draws across, then each step lands in sequence. */
-.journey-list::after{content:"";position:absolute;left:0;right:0;top:28px;height:1px;background:var(--color-ruby);transform-origin:left;transition:transform 1.6s var(--ease-in-out) .15s}
+/* Journey: the forest rule draws across, then each step lands in sequence. */
+.journey-list::after{content:"";position:absolute;left:0;right:0;top:28px;height:1px;background:var(--color-accent);transform-origin:left;transition:transform 1.6s var(--ease-in-out) .15s}
 .journey-list.m-reveal:not(.is-in){opacity:1}
 .journey-list.m-reveal.is-in{animation:none}
 .journey-list.m-reveal:not(.is-in)::after{transform:scaleX(0)}

@@ -89,7 +89,7 @@ if (root) {
             </ul>
           </div>
           <div class="approvals-card-footer">
-            <a href="/booking" class="btn btn-ruby btn-small">Discuss Approvals on a Strategy Call <span aria-hidden="true">↗</span></a>
+            <a href="/booking" class="btn btn-primary btn-small">Discuss Approvals on a Strategy Call <span aria-hidden="true">↗</span></a>
             <a href="/plan-your-renovation" class="text-link">Start renovation brief ↗</a>
           </div>
         </div>
