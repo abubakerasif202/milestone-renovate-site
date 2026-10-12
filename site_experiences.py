@@ -2,6 +2,7 @@
 from html import escape
 from typing import Callable, TypedDict
 import json
+from site_constants import PHONE, PHONE_HREF
 
 
 class ConceptRecord(TypedDict):
@@ -51,7 +52,7 @@ def booking_page(field: Callable[..., str]) -> str:
     <article><span>02 / BUDGET</span><h3>Realistic Cost Benchmarks</h3><p>Review realistic Sydney market figures for your chosen finish level.</p></article>
     <article><span>03 / APPROVALS</span><h3>Fast-Track CDC vs DA</h3><p>Identify whether your project qualifies for 20-day private certifier approval.</p></article>
   </div>
-  <div class="contact-info"><span>PREFER TO CALL DIRECTLY?</span><a href="tel:1800008883">1800 008 883</a><p>Monday to Friday, 8:30am – 5:30pm AEST</p></div>
+  <div class="contact-info"><span>PREFER TO CALL DIRECTLY?</span><a href="{PHONE_HREF}">{PHONE}</a><p>Monday to Friday, 8:30am – 5:30pm AEST</p></div>
 </div>
 <div>
   <form class="quote-form" id="booking-form" data-booking-form novalidate>
@@ -99,7 +100,7 @@ def booking_page(field: Callable[..., str]) -> str:
     <p class="eyebrow">CONSULTATION CONFIRMED</p>
     <h3>Your strategy call is booked.</h3>
     <p>We look forward to speaking with you on <strong data-confirmed-time>Tomorrow at 9:00 AM</strong>. Your reference is <strong data-reference></strong>.</p>
-    <p class="fine-print">A senior consultant will call your provided number at the scheduled time. Need to reschedule? Call us on <a href="tel:1800008883">1800 008 883</a> quoting your reference.</p>
+    <p class="fine-print">A senior consultant will call your provided number at the scheduled time. Need to reschedule? Call us on <a href="{PHONE_HREF}">{PHONE}</a> quoting your reference.</p>
     <a class="btn btn-dark" href="/">Back to home ↗</a>
   </div>
 </div>
@@ -155,7 +156,7 @@ def quote_audit_page(field: Callable[..., str]) -> str:
     <p class="eyebrow">QUOTE RECEIVED FOR AUDIT</p>
     <h3>Thank you — our estimators are reviewing your scope.</h3>
     <p>Your quote audit reference is <strong data-reference></strong>.</p>
-    <p class="fine-print">A senior construction estimator will review your breakdown against current NSW trade pricing and get back to you with our scope assessment. Quote <a href="tel:1800008883">1800 008 883</a> for priority queries.</p>
+    <p class="fine-print">A senior construction estimator will review your breakdown against current NSW trade pricing and get back to you with our scope assessment. Quote <a href="{PHONE_HREF}">{PHONE}</a> for priority queries.</p>
     <a class="btn btn-dark" href="/">Back to home ↗</a>
   </div>
 </div>

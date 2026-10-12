@@ -9,7 +9,7 @@
 .concept-image-staircase{object-position:60% 45%}
 /* Retain the complete architectural composition rather than a tall centre crop. */
 .hero-media:has(.concept-image-living-hero){aspect-ratio:4/3}
-.hero-image.concept-image{height:100%;animation:none;transform:none}
+.hero-image.concept-image{height:100%}
 .hero-media-inner:has(.concept-image){border-radius:var(--radius)}
 .inner-hero-image .concept-image{height:100%;width:100%}
 .gallery-card .concept-image,.inspo-card .concept-image{aspect-ratio:4/3}

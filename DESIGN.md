@@ -25,7 +25,8 @@ Contrast (WCAG AA): white on ruby 7.8:1, white on forest 7.3:1, gold on `#073E2B
 Newsreader (display, italic accents) and Inter (UI, body), both self-hosted variable WOFF2 in `public/assets/fonts/` (the CSP allows `font-src 'self'` only). Hero `clamp(3.5rem,6vw,5.5rem)` desktop / `clamp(2.5rem,8vw,3.5rem)` mobile. Two critical fonts are preloaded; `font-display: swap`.
 
 ## Components
-- **Masthead**: light cream bar; the gold logo sits in a compact deep-forest block with a ruby underline (gold fails contrast on cream). Active link: ruby underline.
+- **Masthead**: full-width deep-forest bar (`--color-masthead`). The approved transparent gold logo sits directly on it — no tile, plate or boxed treatment (gold on cream is ~1.8:1, so the logo is only ever placed on deep forest). Cream links; gold hover/active underline (ruby fails contrast on deep forest). Logo hover changes brightness only, never scale. Once scrolled it gains a shadow; its height never changes.
+- **Mobile menu**: full-height deep-forest panel under the masthead, display-serif links staggered in, toggle morphs to ×, Tab loops inside while open, Escape closes, page scroll locks and the mobile dock slides away.
 - **Buttons**: `.btn-ruby` primary; `.btn-dark` (forest) for forms; `.btn-gold` only on deep forest; hairline `.text-link` with ruby rule. Arrow nudges on hover.
 - **Service tiles**: image-led, cream caption plate with ruby left rule (no dark scrim).
 - **Journey**: `<ol>`; horizontal timeline on desktop, vertical on mobile.
@@ -35,7 +36,12 @@ Newsreader (display, italic accents) and Inter (UI, body), both self-hosted vari
 - **Footer**: sage body, compact deep-forest bar for logo and links.
 
 ## Motion
-CSS only: staggered hero entrance, scroll-driven reveal and hero image drift (`animation-timeline`, progressive enhancement), transform/opacity only. All disabled under `prefers-reduced-motion`.
+One shared system: `css/motion.css` + `js/motion.js` (no libraries; CSP-safe). Tokens: `--ease-out`, `--ease-in-out`, `--dur-*`, `--m-rise` in `tokens.css`.
+- **Hero entrance (CSS only)**: eyebrow, then the headline line by line through masks (`.h-line`, authored in `build_site.py`), then copy and CTA; the image unveils top-down and settles from 1.08 scale to its full composition. Inner heroes use the same sequence.
+- **Scroll reveals (JS-gated)**: `motion.js` tags blocks below the fold (`.m-reveal`, `.m-mask` for headings), staggers siblings and reveals each once via IntersectionObserver. Nothing on screen at load is ever hidden; without JS, or with reduced motion, nothing is hidden at all. Print shows everything.
+- **Depth**: `[data-parallax]` layers drift by their value in px using the `translate` property, one rAF per scroll frame, only while on screen and only ≥761px.
+- **Details**: journey rule draws in ruby, then steps land; cards draw a gold top rule on hover/focus; page-to-page cross-fade via `@view-transition` where supported.
+- Transform / opacity / clip-path only. Everything is off under `prefers-reduced-motion`.
 
 ## Rules
 - AI-generated concept imagery is always labelled; no fabricated projects, counts, testimonials, awards, guarantees or phone numbers.
