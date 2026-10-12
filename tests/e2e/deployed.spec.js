@@ -3,7 +3,14 @@ import { test, expect } from '@playwright/test';
 // Runs only against a deployed URL:  DEPLOYED_URL=https://… npx playwright test tests/e2e/deployed.spec.js
 const base = process.env.DEPLOYED_URL;
 test.skip(!base, 'set DEPLOYED_URL to run deployed-site checks');
-test.use({ baseURL: base });
+test.use({ baseURL: base, serviceWorkers: 'block' });
+
+// Deployment checks must never write production data. Form responses are mocked below.
+test.beforeEach(async ({ context }) => {
+  await context.route('**/*', (route) => ['GET', 'HEAD', 'OPTIONS'].includes(route.request().method())
+    ? route.continue()
+    : route.abort('blockedbyclient'));
+});
 
 test('headers: security set present, noindex on vercel.app, no external image hosts', async ({ request }) => {
   const res = await request.get('/');
@@ -28,7 +35,13 @@ test('home page images load from the site itself under the CSP with no console e
   expect(errors).toEqual([]);
 });
 
-test('without server configuration the form reports failure honestly and never shows success', async ({ page }) => {
+test('an unavailable API shows an honest form error without submitting live data', async ({ page }) => {
+  let mockedSubmissions = 0;
+  await page.route('**/api/enquiries', async (route) => {
+    expect(route.request().method()).toBe('POST');
+    mockedSubmissions += 1;
+    await route.fulfill({ status: 503, contentType: 'application/json', body: JSON.stringify({ ok: false, message: 'Enquiries are temporarily unavailable. Your details have not been sent.' }) });
+  });
   await page.goto('/contact');
   await page.fill('#name', 'Deploy Check');
   await page.fill('#phone', '0412345678');
@@ -42,6 +55,7 @@ test('without server configuration the form reports failure honestly and never s
   await expect(page.locator('#form-error')).toContainText(/temporarily unavailable|not been sent|could not save/i);
   await expect(page.locator('#form-success')).toBeHidden();
   await expect(page.locator('#quote-form')).toBeVisible();
+  expect(mockedSubmissions).toBe(1);
 });
 
 test('API routing: wrong method 405, JSON error shape, edge rule is not tripped by normal use', async ({ request }) => {
