@@ -37,7 +37,8 @@ DEPLOYED_URL=https://milestonerenovate.com npx playwright test tests/e2e/deploye
 
 The e2e suite reads the private PNG image masters from `incoming-images/` (git-ignored) only where they exist; in a fresh
 clone or CI those two master checks are skipped and the committed WebP/AVIF variants are still validated. The
-`integration.spec.js` live-pipeline test is opt-in (`INTEGRATION=1`) because it creates real leads and sends real email.
+`integration.spec.js` live-pipeline tests are opt-in (`INTEGRATION=1`) because they create real leads and send real email. The dev server refuses to start when `NODE_ENV=production`;
+if that is set globally on your machine, run the suite with `NODE_ENV=test`.
 
 ## Configure production (Vercel project → Environment Variables)
 

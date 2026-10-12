@@ -54,6 +54,9 @@ served, unconditionally: WebP and AVIF formats, measured dimensions, aspect rati
 to the manifest size, AVIF smaller than WebP, and the six bathroom styles visibly distinct (now compared on the committed
 full-width variants). The master-dimension checks still exist and run wherever `incoming-images/` is present; elsewhere
 they are reported as skipped with the reason, never silently passed.
+On the owner's machine, where the masters exist, all five image-validation tests (including both master checks) pass
+(2026-10-13, Windows, installed Chrome). That machine has `NODE_ENV=production` set globally, which makes the dev server refuse
+to start (by design); run the e2e suite there with `NODE_ENV=test`.
 
 ## Enquiry system (read-only)
 
@@ -88,5 +91,4 @@ stored; it is not a claim of any certification.
 ## Not verified on 2026-10-13
 
 The firewall rate limit and the real submit-to-email pipeline (both need POSTs that create data); Safari/Firefox rendering
-(Chromium only); field Core Web Vitals; Search Console indexing; that the private masters still match the manifest (they are
-on the owner's machine; the tests run them there).
+(Chromium only); field Core Web Vitals; Search Console indexing.
