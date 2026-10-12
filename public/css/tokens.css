@@ -1,4 +1,4 @@
-/* Milestone Renovate — design tokens (Light Forest × Ruby × Gold).
+/* Milestone Renovate — design tokens (Forest × Cream × Gold).
    Single source of truth: change colours, type and spacing here, nowhere else. */
 
 /* Web fonts: Inter 400-900 and Newsreader 400-500 are the weights the site uses (see scripts/instance_fonts.py). */
@@ -15,14 +15,12 @@
 @font-face{font-family:"Inter Fallback";font-weight:600 900;src:local("Arial Bold"),local("Arial-BoldMT"),local("Helvetica Bold"),local("Liberation Sans Bold");size-adjust:101.06%;ascent-override:95.86%;descent-override:23.87%;line-gap-override:0%}
 
 :root{
-  /* Brand palette */
-  --color-forest:#17624B;
-  --color-forest-hover:#1F6B54;
+  /* Brand palette. Primary forest #0F201D leads; the secondary green shares its hue (166°) at a lighter value. */
   --color-forest-deep:#0F201D;
-  --color-ruby:#9B2144;
-  --color-ruby-deep:#8B1838;
-  --color-ruby-soft:#F9E9ED;
-  --color-gold:#DDB45C;
+  --color-forest:#2A5A4F;
+  --color-forest-hover:#234D43;
+  --color-forest-tint:#E4EDE8;
+  --color-gold:#DDB45C; /* sampled from the official logo artwork */
   --color-gold-light:#EBC678;
   --color-gold-ink:#755713;
   --color-gold-pale:#F6E1AE;
@@ -31,6 +29,15 @@
   --color-paper:#FBF9F3;
   --color-ink:#202523;
   --color-white:#FFFFFF;
+
+  /* Semantic roles. Accent = interactive/selected state; emphasis = the one italic word in a headline;
+     detail = decorative gold rules. Ruby has been retired from the identity. */
+  --color-accent:var(--color-forest);
+  --color-accent-deep:var(--color-forest-deep);
+  --color-accent-soft:var(--color-forest-tint);
+  --color-emphasis:var(--color-forest);
+  --color-detail:var(--color-gold);
+  --color-label:var(--color-gold-ink);
 
   /* Masthead: deep forest so the transparent gold logo reads (gold on cream is ~1.8:1). */
   --color-masthead:#0F201D;
@@ -42,9 +49,9 @@
   --color-line:#D7D8CE;
   --color-line-green:#C4D6CA;
   --color-field:#F7F6F0;
-  --color-field-border:#8F9D92;
+  --color-field-border:#77867B;
 
-  /* Semantic feedback — deliberately distinct from ruby */
+  /* Semantic feedback — error red is reserved for errors and never used as a brand accent */
   --color-error:#B42318;
   --color-error-bg:#FDECEA;
   --color-success:#1E6B47;
@@ -60,6 +67,9 @@
   --text-h2:clamp(2.1rem,4.2vw,3.75rem);
   --text-h3:clamp(1.5rem,2.4vw,2.2rem);
   --text-lead:clamp(1.3rem,1.9vw,1.75rem);
+
+  /* Breakpoints (reference only — custom properties cannot drive @media): 600px phone, 760px phone hero,
+     870px mobile navigation, 1020px single-column hero, 1160px compact masthead. */
 
   /* Layout */
   --wrap:1360px;
