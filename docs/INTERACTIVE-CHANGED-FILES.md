@@ -1,5 +1,8 @@
 # Changed files
 
+> **Historical record.** Dated evidence from an earlier phase; test counts, palette and deployment statements below are as of that date and are superseded by [`STATUS.md`](STATUS.md) (current verified status) and [`DESIGN.md`](../DESIGN.md).
+
+
 Feature: `feat/interactive-renovation-experience`
 
 Scoped implementation, generated output, regression tests and review evidence. Existing untracked agent folders, newly supplied unused image assets and external reference screenshots are excluded from the commit.

@@ -1,5 +1,7 @@
 # Milestone Renovate — Design System (Forest × Cream × Gold)
 
+*Matches production `76bdba2` (PR #11), verified 2026-10-13.*
+
 An architectural renovation studio, not a builder template: warm cream and pale sage carry the reading surfaces, primary forest `#0F201D` anchors the masthead, footer, primary buttons and feature panels, and the official gold logo colour supplies the detail. Ruby has been retired from the identity.
 
 ## Tokens

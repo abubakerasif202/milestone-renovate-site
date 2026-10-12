@@ -1,5 +1,8 @@
 # Interactive platform validation
 
+> **Historical record.** Dated evidence from an earlier phase; test counts, palette and deployment statements below are as of that date and are superseded by [`STATUS.md`](STATUS.md) (current verified status) and [`DESIGN.md`](../DESIGN.md). The platform is now in production.
+
+
 ## Evidence
 
 Production baseline: `INTERACTIVE-BASELINE.md` and `evidence/before-{home,planner,questionnaire}-*.png`. Local completed implementation: `evidence/after-{home,planner,questionnaire,studio}-{320,390,1440}.png`. Demonstrations: `evidence/demo-design-summary-1440.png` and `evidence/demo-planner-complex-1440.png`.

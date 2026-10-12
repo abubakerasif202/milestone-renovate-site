@@ -1,5 +1,8 @@
 # Final optimisation evidence — 12 October 2026
 
+> **Historical record.** Dated evidence from an earlier phase; test counts, palette and deployment statements below are as of that date and are superseded by [`STATUS.md`](../STATUS.md) (current verified status) and [`DESIGN.md`](../../DESIGN.md).
+
+
 Baseline: production commit c19a69f. Chrome mobile Lighthouse 12, default simulated throttling, cold browser per run; identical machine and interleaved HTTP/2 Brotli replicas. Scores are laboratory measurements, not field INP.
 
 ## Findings

@@ -8,4 +8,8 @@ Primary placements: living homepage hero; olive kitchen kitchen page; spa bathro
 
 Generator source owns all responsive references. Images have srcset/sizes, intrinsic dimensions, focal crops, stable frames and lazy loading below the fold. Only justified page hero imagery uses high loading priority. Reduced-motion preferences disable image effects. Original logo, typography, palette, business facts, existing comparative concepts and API/database contracts remain intact.
 
-See `IMAGE-INTEGRATION-VALIDATION.md` for screenshots and test evidence; `PLATFORM-PREVIEW-VALIDATION.md` distinguishes authenticated preview HTML checks from browser protection limitations. Neither feature branch was merged into main or promoted to production.
+The images are in production. AVIF siblings of every WebP are built by `scripts/build-concept-avif.mjs` and offered first.
+
+## Masters and tests
+
+The PNG masters live only in `incoming-images/` (git-ignored, never deployed; about 49 MB for 19 files on the owner's machine). `tests/e2e/images.spec.js` and `tests/e2e/bathroom-styles.spec.js` validate the committed WebP/AVIF variants unconditionally (format, measured dimensions, aspect ratio, no upscaling, a full-width variant equal to the manifest size, AVIF smaller than WebP, six visibly distinct style images). The master-dimension checks run only where `incoming-images/` is present and are reported as skipped elsewhere, so a fresh clone or CI run is reproducible. Before replacing a master, keep `width`/`height` in the manifest in step and rebuild the variants.

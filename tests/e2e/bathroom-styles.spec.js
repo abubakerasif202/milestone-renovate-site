@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import {readFileSync} from 'node:fs';
+import {readFileSync,existsSync} from 'node:fs';
 import sharp from 'sharp';
 
 const manifest=JSON.parse(readFileSync(new URL('../../assets/bathroom-styles.json',import.meta.url)));
@@ -14,11 +14,13 @@ async function openStyleStep(page,room='bathroom'){
 }
 const loadAll=(page)=>page.locator('img').evaluateAll(imgs=>Promise.all(imgs.map(i=>{i.loading='eager';return i.decode().catch(()=>{});})));
 
-test('six style masters and WebP variants are real, readable and not upscaled',async()=>{
+// The PNG masters are private and git-ignored (incoming-images/), so a fresh clone or CI run cannot read them.
+// The committed variants are validated unconditionally; the masters are checked only where present.
+const mastersPresent=manifest.images.every(image=>existsSync(image.source));
+const fullWidth=image=>`public${image.variants.find(v=>v.width===image.width).src}`;
+test('six style WebP variants are real, readable and not upscaled',async()=>{
  expect(manifest.images.map(i=>i.style)).toEqual(ORDER);
  for(const image of manifest.images){
-  const master=await sharp(image.source).metadata();
-  expect(master.width,image.style).toBe(image.width);expect(master.height,image.style).toBe(image.height);
   expect(image.alt).toMatch(/^AI-generated concept/);
   expect(image.variants.map(v=>v.width)).toEqual([480,768,image.width]);
   for(const variant of image.variants){
@@ -28,8 +30,14 @@ test('six style masters and WebP variants are real, readable and not upscaled',a
  }
 });
 
+test('private PNG style masters match the manifest (runs only where incoming-images/ is present)',async()=>{
+ test.skip(!mastersPresent,'incoming-images/ masters are git-ignored and not present in this checkout');
+ for(const image of manifest.images){const master=await sharp(image.source).metadata();expect(master.width,image.style).toBe(image.width);expect(master.height,image.style).toBe(image.height);}
+});
+
 test('the six photographs are genuinely different rooms, not recoloured copies',async()=>{
- const thumbs=await Promise.all(manifest.images.map(async image=>sharp(image.source).resize(24,30,{fit:'fill'}).greyscale().normalise().raw().toBuffer()));
+ // Compared on the committed full-width variant, which is what visitors actually see.
+ const thumbs=await Promise.all(manifest.images.map(async image=>sharp(fullWidth(image)).resize(24,30,{fit:'fill'}).greyscale().normalise().raw().toBuffer()));
  for(let a=0;a<thumbs.length;a++)for(let b=a+1;b<thumbs.length;b++){
   let diff=0;for(let i=0;i<thumbs[a].length;i++)diff+=Math.abs(thumbs[a][i]-thumbs[b][i]);
   expect(diff/thumbs[a].length,`${ORDER[a]} vs ${ORDER[b]}`).toBeGreaterThan(20);
