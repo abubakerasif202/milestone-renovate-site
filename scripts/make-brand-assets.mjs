@@ -3,7 +3,7 @@
 import sharp from 'sharp';
 import { readFileSync, writeFileSync } from 'node:fs';
 
-const FOREST = '#073E2B';
+const FOREST = '#0F201D';
 const brand = (name) => new URL(`../public/assets/brand/${name}`, import.meta.url);
 const out = (name) => new URL(`../public/assets/brand/${name}`, import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1');
 
