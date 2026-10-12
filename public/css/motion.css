@@ -38,27 +38,29 @@
   .inner-hero-image{animation:m-unveil 1.2s var(--ease-out) both}
 }
 
-/* 2. Scroll reveals (tagged by motion.js) */
-/* Blocks rise out of a mask (no opacity fade), so any text that is visible is always at full contrast. */
-.m-reveal{clip-path:polygon(-10% -20%,110% -20%,110% 120%,-10% 120%);transition:clip-path var(--dur-reveal) var(--ease-out) var(--m-delay,0ms),transform var(--dur-reveal) var(--ease-out) var(--m-delay,0ms)}
-.m-reveal:not(.is-in){clip-path:polygon(-10% 120%,110% 120%,110% 120%,-10% 120%);transform:translateY(var(--m-rise))}
+/* 2. Scroll reveals (tagged by motion.js)
+   Waiting blocks are only transparent: they keep their full box, so lazy images inside them still start loading
+   early and the observer can see them. On arrival they rise out of a mask (no opacity fade), so visible text is
+   always at full contrast. */
+.m-reveal:not(.is-in),.m-mask:not(.is-in){opacity:0}
+.m-reveal.is-in{animation:m-rise var(--dur-reveal) var(--ease-out) var(--m-delay,0ms) backwards}
 /* Stagger steps set by motion.js (data attributes, not inline styles, to stay within the CSP). */
 [data-m-step="1"]{--m-delay:80ms}[data-m-step="2"]{--m-delay:160ms}[data-m-step="3"]{--m-delay:240ms}[data-m-step="4"]{--m-delay:320ms}[data-m-step="5"]{--m-delay:400ms}[data-m-step="6"]{--m-delay:480ms}
 
-/* Masked headings: a clip window larger than the box (so italics and descenders are never cut) lifts the text in. */
-.m-mask{clip-path:polygon(-6% -40%,106% -40%,106% 150%,-6% 150%);transition:clip-path var(--dur-reveal) var(--ease-out) var(--m-delay,0ms),transform var(--dur-reveal) var(--ease-out) var(--m-delay,0ms)}
-.m-mask:not(.is-in){clip-path:polygon(-6% 150%,106% 150%,106% 150%,-6% 150%);transform:translateY(.3em)}
+/* Masked headings: the text lifts out of a clip window larger than its box, so italics and descenders are never cut. */
+@keyframes m-lift{from{transform:translateY(.3em);clip-path:polygon(-6% 150%,106% 150%,106% 150%,-6% 150%)}to{transform:none;clip-path:polygon(-6% -40%,106% -40%,106% 150%,-6% 150%)}}
+.m-mask.is-in{animation:m-lift var(--dur-reveal) var(--ease-out) var(--m-delay,0ms) backwards}
 
 /* Journey: the ruby rule draws across, then each step lands in sequence. */
 .journey-list::after{content:"";position:absolute;left:0;right:0;top:28px;height:1px;background:var(--color-ruby);transform-origin:left;transition:transform 1.6s var(--ease-in-out) .15s}
-.journey-list.m-reveal{transition:none}
-.journey-list.m-reveal,.journey-list.m-reveal:not(.is-in){clip-path:none;transform:none}
+.journey-list.m-reveal:not(.is-in){opacity:1}
+.journey-list.m-reveal.is-in{animation:none}
 .journey-list.m-reveal:not(.is-in)::after{transform:scaleX(0)}
-.journey-list.m-reveal li{transition:clip-path var(--dur-reveal) var(--ease-out),transform var(--dur-reveal) var(--ease-out);clip-path:polygon(-10% -20%,110% -20%,110% 120%,-10% 120%)}
-.journey-list.m-reveal:not(.is-in) li{clip-path:polygon(-10% 120%,110% 120%,110% 120%,-10% 120%);transform:translateY(var(--m-rise))}
-.journey-list.m-reveal li:nth-child(2){transition-delay:.25s}
-.journey-list.m-reveal li:nth-child(3){transition-delay:.5s}
-.journey-list.m-reveal li:nth-child(4){transition-delay:.75s}
+.journey-list.m-reveal:not(.is-in) li{opacity:0}
+.journey-list.m-reveal.is-in li{animation:m-rise var(--dur-reveal) var(--ease-out) backwards}
+.journey-list.m-reveal.is-in li:nth-child(2){animation-delay:.25s}
+.journey-list.m-reveal.is-in li:nth-child(3){animation-delay:.5s}
+.journey-list.m-reveal.is-in li:nth-child(4){animation-delay:.75s}
 
 @media(max-width:1020px){.journey-list::after{display:none}}
 @media(max-width:600px){
@@ -77,7 +79,8 @@
 .tool-card:focus-visible::after,.platform-card:focus-visible::after{transform:scaleX(1)}
 
 @media(prefers-reduced-motion:reduce){
-  .m-reveal,.m-mask,.journey-list li,.journey-list::after{transition:none}
+  .m-reveal,.m-mask,.journey-list li{animation:none!important}
+  .journey-list::after{transition:none}
   .m-reveal,.m-mask,.journey-list li{opacity:1;transform:none;clip-path:none}
   .journey-list::after{transform:none}
   [data-parallax]{translate:none}
