@@ -18,7 +18,7 @@ if (root) {
         resultPanel.innerHTML = `
           <div class="approvals-card default-state">
             <h3>Answer the questions to check your approval pathway</h3>
-            <p>Select your property constraints to determine whether your project qualifies for fast-track CDC or requires a Council DA.</p>
+            <p>Select your property constraints for a general idea of whether your project may suit complying development (CDC) or needs a Council DA.</p>
           </div>
         `;
       }
@@ -35,15 +35,15 @@ if (root) {
 
     if (scope === 'internal_only' && heritage === 'no') {
       pathway = 'exempt';
-      title = 'Exempt Development (No Council Approval Required)';
-      badge = 'Zero Council Delay';
+      title = 'Possibly Exempt Development';
+      badge = 'Exempt development (conditions apply)';
       badgeClass = 'badge-success';
-      description = 'Most internal non-structural residential renovations (kitchen updates, bathroom refits, joinery, and non-load-bearing wall changes) are classified as Exempt Development under NSW SEPP.';
-      turnaround = 'Immediate start (trades can begin upon contract sign-off)';
+      description = 'Many internal, non-structural renovations (such as kitchen updates, bathroom refits and joinery) can be exempt development under the Codes SEPP when its standards are met. Strata, heritage and structural or services work can still need approval, so confirm with your council or an accredited certifier first.';
+      turnaround = 'No development consent is needed when the exempt standards are met';
       checklist = [
-        'No formal Council DA or Certifier approval needed.',
-        'Applies to internal layout updates, non-structural joinery and finishes.',
-        'Standard trade coordination for plumbing, electrical and wet-area detailing.',
+        'No development consent is needed when the exempt development standards are met.',
+        'Usually covers internal, non-structural updates such as joinery and finishes.',
+        'Plumbing, electrical and wet-area work must still be done by suitably licensed trades.',
       ];
     } else if (heritage === 'yes' || setbacks === 'non_compliant' || lotSize === 'small' || scope === 'second_storey') {
       pathway = 'da';
@@ -51,25 +51,25 @@ if (root) {
       badge = 'Local Council Assessment';
       badgeClass = 'badge-warning';
       description = 'Because your project involves heritage conservation, boundary setback variations, or complex two-storey geometry, it exceeds standard Complying Development criteria and must be assessed under your Local Environmental Plan (LEP).';
-      turnaround = 'Approx. 60 – 120 days depending on your local Sydney council';
+      turnaround = 'Generally longer than a CDC, and it varies by council and site';
       checklist = [
         'Detailed architectural drawings, site survey, and shadow diagrams.',
         'Statement of Environmental Effects (SEE) and Heritage Impact Statement (if applicable).',
-        'Council neighbour notification period (usually 14–21 days).',
+        'Council neighbour notification or exhibition, which usually applies.',
         'Construction Certificate (CC) required after DA consent before work begins.',
       ];
     } else {
       pathway = 'cdc';
-      title = 'Eligible for Fast-Track CDC (Complying Development Certificate)';
-      badge = 'Fast-Track 20-Day Approval';
+      title = 'May Suit Complying Development (CDC)';
+      badge = 'Possible CDC pathway';
       badgeClass = 'badge-primary';
-      description = 'Your project meets standard NSW Housing Code criteria under the Codes SEPP. You can bypass council backlogs completely by using an Accredited Private Certifier.';
-      turnaround = 'Approx. 20 – 30 business days through an accredited certifier';
+      description = 'Your answers suggest the project may meet the complying development standards in the Codes SEPP. A council or an accredited certifier can assess a CDC. Eligibility depends on your zoning, lot and the specific standards, so it needs to be confirmed for your site.';
+      turnaround = 'NSW Planning says fast-tracked approvals can be issued in as little as 20 days, plus any neighbour notification';
       checklist = [
-        'Fast-track approval with zero Council committee delays.',
-        'Complies with standard lot size, building height, and landscape ratios.',
-        'Certifier issues approval directly with statutory 14-day neighbor notification.',
-        'Requires Section 10.7 Planning Certificate, structural engineering sign-off, and site survey.',
+        'A council or accredited certifier assesses the application against the standards.',
+        'Needs to meet the lot size, building height and landscape standards for your zone.',
+        'Neighbour notification applies (the standard process allows 14 days).',
+        'Typically needs a Section 10.7 planning certificate, a site survey and engineering input.',
       ];
     }
 

@@ -2,7 +2,7 @@
 from html import escape
 from typing import Callable, TypedDict
 import json
-from site_constants import PHONE, PHONE_HREF
+from site_constants import EMAIL, PHONE, PHONE_HREF
 
 
 class ConceptRecord(TypedDict):
@@ -33,7 +33,7 @@ def trust_ribbon() -> str:
 
 
 def platform_tools(picture: Callable[..., str]) -> str:
-    return f'''<section class="section platform-intro"><div class="wrap"><div class="section-header"><div><p class="eyebrow">YOUR HOME. YOUR POSSIBILITIES.</p><h2>A clearer picture.<br><em>A considered plan.</em></h2></div><p>Explore a design direction, understand your bathroom scope, check council approvals, then bring the details together in one useful brief. Start wherever you feel ready.</p></div><div class="platform-tools"><a class="platform-card" href="/renovation-design-studio"><div class="frame">{picture('inspo-materials', 'AI-generated concept of timber, stone and brass material samples', sizes='(max-width:768px) 90vw, 42vw')}</div><div><span class="eyebrow">01 / DESIGN STUDIO</span><h3>Find the feeling<br><em>of home.</em></h3><p>Build a visual moodboard with colours, materials, lighting and practical priorities.</p><span class="text-link">Create your design direction ↗</span><small>Interactive moodboard · concept references</small></div></a><a class="platform-card" href="/bathroom-renovation-cost"><div class="frame">{picture('vanity', 'AI-generated bathroom concept with a marble double vanity', sizes='(max-width:768px) 90vw, 42vw')}</div><div><span class="eyebrow">02 / BATHROOM PLANNER</span><h3>Understand the<br><em>moving parts.</em></h3><p>Compare scope choices, explore layout drivers and prepare for a site assessment.</p><span class="text-link">Explore your bathroom scope ↗</span><small>Scope planning · practical guide</small></div></a><a class="platform-card" href="/approvals-guide"><div class="frame">{picture('about-planning', 'Architectural plans and council planning drawings', sizes='(max-width:768px) 90vw, 42vw')}</div><div><span class="eyebrow">03 / APPROVALS CHECKER</span><h3>Do I need a<br><em>DA or CDC?</em></h3><p>Check if your renovation qualifies for fast-track 20-day Complying Development or requires Council DA.</p><span class="text-link">Check approval pathway ↗</span><small>NSW Housing Code · SEPP guide</small></div></a><a class="platform-card" href="/quote-audit"><div class="frame">{picture('kitchen-after', 'Detailed kitchen and joinery finishes', sizes='(max-width:768px) 90vw, 42vw')}</div><div><span class="eyebrow">04 / QUOTE AUDIT</span><h3>Get an expert<br><em>second opinion.</em></h3><p>Have an existing builder quote? We’ll review the line items and PC allowances to uncover hidden exclusions.</p><span class="text-link">Request a quote audit ↗</span><small>Free scope check · Sydney estimators</small></div></a></div><div class="planning-index"><div><span>05 / 15-MIN STRATEGY CALL</span><p>Want direct advice before putting hammer to nail?</p><a class="text-link" href="/booking">Book a strategy call ↗</a></div><div><span>06 / COMPLETE BRIEF</span><p>Ready to get started? Send your project brief.</p><a class="text-link" href="/plan-your-renovation">Plan your renovation ↗</a></div></div></div></section>'''
+    return f'''<section class="section platform-intro"><div class="wrap"><div class="section-header"><div><p class="eyebrow">YOUR HOME. YOUR POSSIBILITIES.</p><h2>A clearer picture.<br><em>A considered plan.</em></h2></div><p>Explore a design direction, understand your bathroom scope, check council approvals, then bring the details together in one useful brief. Start wherever you feel ready.</p></div><div class="platform-tools"><a class="platform-card" href="/renovation-design-studio"><div class="frame">{picture('inspo-materials', 'AI-generated concept of timber, stone and brass material samples', sizes='(max-width:768px) 90vw, 42vw')}</div><div><span class="eyebrow">01 / DESIGN STUDIO</span><h3>Find the feeling<br><em>of home.</em></h3><p>Build a visual moodboard with colours, materials, lighting and practical priorities.</p><span class="text-link">Create your design direction ↗</span><small>Interactive moodboard · concept references</small></div></a><a class="platform-card" href="/bathroom-renovation-cost"><div class="frame">{picture('vanity', 'AI-generated bathroom concept with a marble double vanity', sizes='(max-width:768px) 90vw, 42vw')}</div><div><span class="eyebrow">02 / BATHROOM PLANNER</span><h3>Understand the<br><em>moving parts.</em></h3><p>Compare scope choices, explore layout drivers and prepare for a site assessment.</p><span class="text-link">Explore your bathroom scope ↗</span><small>Scope planning · practical guide</small></div></a><a class="platform-card" href="/approvals-guide"><div class="frame">{picture('about-planning', 'Architectural plans and council planning drawings', sizes='(max-width:768px) 90vw, 42vw')}</div><div><span class="eyebrow">03 / APPROVALS CHECKER</span><h3>Do I need a<br><em>DA or CDC?</em></h3><p>Check whether your renovation may suit complying development (CDC) or needs a Council DA.</p><span class="text-link">Check approval pathway ↗</span><small>NSW approvals · general guide</small></div></a><a class="platform-card" href="/quote-audit"><div class="frame">{picture('kitchen-after', 'Detailed kitchen and joinery finishes', sizes='(max-width:768px) 90vw, 42vw')}</div><div><span class="eyebrow">04 / QUOTE AUDIT</span><h3>Get an expert<br><em>second opinion.</em></h3><p>Have an existing builder quote? We’ll review the line items and PC allowances to uncover hidden exclusions.</p><span class="text-link">Request a quote audit ↗</span><small>Free scope check · Quote review</small></div></a></div><div class="planning-index"><div><span>05 / 15-MIN STRATEGY CALL</span><p>Want direct advice before putting hammer to nail?</p><a class="text-link" href="/booking">Book a strategy call ↗</a></div><div><span>06 / COMPLETE BRIEF</span><p>Ready to get started? Send your project brief.</p><a class="text-link" href="/plan-your-renovation">Plan your renovation ↗</a></div></div></div></section>'''
 
 
 def booking_page(field: Callable[..., str]) -> str:
@@ -42,7 +42,7 @@ def booking_page(field: Callable[..., str]) -> str:
     date_pills = ''.join(f'<button type="button" class="slot-pill" data-slot-date="{v}" aria-pressed="{"true" if i==0 else "false"}">{l}</button>' for i, (v, l) in enumerate(date_slots))
     time_pills = ''.join(f'<button type="button" class="slot-pill" data-slot-time="{v}" aria-pressed="{"true" if i==0 else "false"}">{l}</button>' for i, (v, l) in enumerate(time_slots))
 
-    return f'''<section class="inner-hero compact"><div class="wrap"><p class="eyebrow">15-MINUTE STRATEGY CALL</p><h1>Schedule your <em>consultation.</em></h1><p>Speak directly with a senior Milestone renovation consultant. Review your plans, discuss budget parameters and understand council feasibility before committing.</p></div></section>
+    return f'''<section class="inner-hero compact"><div class="wrap"><p class="eyebrow">15-MINUTE STRATEGY CALL</p><h1>Schedule your <em>consultation.</em></h1><p>Request a call with the Milestone Renovate team. Talk through your plans, budget priorities and council approval pathways before committing to anything.</p></div></section>
 <section class="section"><div class="wrap contact-grid">
 <div>
   <p class="eyebrow">PRE-CONSULTATION PREPARATION</p>
@@ -50,14 +50,14 @@ def booking_page(field: Callable[..., str]) -> str:
   <div class="value-grid prep-value-grid">
     <article><span>01 / FEASIBILITY</span><h3>Scope &amp; Space Review</h3><p>Discuss the rooms you want to rework, layout possibilities, and structural walls.</p></article>
     <article><span>02 / BUDGET</span><h3>Realistic Cost Benchmarks</h3><p>Review realistic Sydney market figures for your chosen finish level.</p></article>
-    <article><span>03 / APPROVALS</span><h3>Fast-Track CDC vs DA</h3><p>Identify whether your project qualifies for 20-day private certifier approval.</p></article>
+    <article><span>03 / APPROVALS</span><h3>CDC vs DA</h3><p>Talk through whether your project may suit complying development (CDC) or needs a Council DA.</p></article>
   </div>
-  <div class="contact-info"><span>PREFER TO CALL DIRECTLY?</span><a href="{PHONE_HREF}">{PHONE}</a><p>Monday to Friday, 8:30am – 5:30pm AEST</p></div>
+  <div class="contact-info"><span>PREFER TO CALL DIRECTLY?</span><a href="{PHONE_HREF}">{PHONE}</a><p>Or email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p></div>
 </div>
 <div>
   <form class="quote-form" id="booking-form" data-booking-form novalidate>
-    <h3>Choose your consultation time</h3>
-    <p>Select a slot and share a few details so we can prepare your review.</p>
+    <h3>Choose a preferred time</h3>
+    <p>Pick the day and time that suits you and share a few details. The team will contact you to confirm a time.</p>
     <div class="form-error-summary" id="form-error" role="alert" tabindex="-1" hidden></div>
     
     <fieldset class="slot-group">
@@ -67,7 +67,7 @@ def booking_page(field: Callable[..., str]) -> str:
     </fieldset>
 
     <fieldset class="slot-group">
-      <legend class="slot-label">2. Preferred Time Slot (AEST) *</legend>
+      <legend class="slot-label">2. Preferred Time Slot (Sydney time) *</legend>
       <div class="slot-pill-grid">{time_pills}</div>
       <input type="hidden" id="bookingTime" name="bookingTime" value="9:00 AM">
     </fieldset>
@@ -92,15 +92,15 @@ def booking_page(field: Callable[..., str]) -> str:
       <p class="field-error" id="consent-error" role="alert" hidden></p>
     </div>
 
-    <button class="btn btn-ruby form-submit" type="submit" data-submit>Confirm Strategy Call <span aria-hidden="true">↗</span></button>
+    <button class="btn btn-ruby form-submit" type="submit" data-submit>Request Strategy Call <span aria-hidden="true">↗</span></button>
     <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
   </form>
 
   <div class="form-success" id="booking-success" role="status" tabindex="-1" hidden>
-    <p class="eyebrow">CONSULTATION CONFIRMED</p>
-    <h3>Your strategy call is booked.</h3>
-    <p>We look forward to speaking with you on <strong data-confirmed-time>Tomorrow at 9:00 AM</strong>. Your reference is <strong data-reference></strong>.</p>
-    <p class="fine-print">A senior consultant will call your provided number at the scheduled time. Need to reschedule? Call us on <a href="{PHONE_HREF}">{PHONE}</a> quoting your reference.</p>
+    <p class="eyebrow">CALL REQUESTED</p>
+    <h3>Thank you — your call request is in.</h3>
+    <p>You asked for <strong data-confirmed-time>Tomorrow at 9:00 AM</strong>. Your reference is <strong data-reference></strong>.</p>
+    <p class="fine-print">A member of the Milestone team will contact you on the number you provided to confirm a time. Need to change anything? Call us on <a href="{PHONE_HREF}">{PHONE}</a> quoting your reference.</p>
     <a class="btn btn-dark" href="/">Back to home ↗</a>
   </div>
 </div>
@@ -154,9 +154,9 @@ def quote_audit_page(field: Callable[..., str]) -> str:
 
   <div class="form-success" id="quote-audit-success" role="status" tabindex="-1" hidden>
     <p class="eyebrow">QUOTE RECEIVED FOR AUDIT</p>
-    <h3>Thank you — our estimators are reviewing your scope.</h3>
+    <h3>Thank you — we have your quote.</h3>
     <p>Your quote audit reference is <strong data-reference></strong>.</p>
-    <p class="fine-print">A senior construction estimator will review your breakdown against current NSW trade pricing and get back to you with our scope assessment. Quote <a href="{PHONE_HREF}">{PHONE}</a> for priority queries.</p>
+    <p class="fine-print">A member of the Milestone team will review your breakdown and get back to you with a scope assessment. If you need to add anything, call <a href="{PHONE_HREF}">{PHONE}</a> and quote your reference.</p>
     <a class="btn btn-dark" href="/">Back to home ↗</a>
   </div>
 </div>
@@ -164,12 +164,12 @@ def quote_audit_page(field: Callable[..., str]) -> str:
 
 
 def approvals_page() -> str:
-    return '''<section class="inner-hero compact"><div class="wrap"><p class="eyebrow">NSW PLANNING &amp; APPROVALS GUIDE</p><h1>Do I need a <em>DA or CDC?</em></h1><p>Navigating Sydney council planning approvals can seem overwhelming. Use our interactive feasibility checker to find out whether your renovation qualifies for fast-track 20-day CDC approval or requires a formal Council DA.</p></div></section>
+    return '''<section class="inner-hero compact"><div class="wrap"><p class="eyebrow">NSW PLANNING &amp; APPROVALS GUIDE</p><h1>Do I need a <em>DA or CDC?</em></h1><p>Navigating Sydney council planning approvals can seem overwhelming. Use our interactive checker for a general idea of whether your renovation may suit complying development (CDC) or needs a formal Council DA. It is a guide only, not planning advice.</p></div></section>
 <section class="section"><div class="wrap" data-approvals-checker>
 <div class="approvals-grid">
 <div class="approvals-form-card">
   <form id="approvals-form">
-    <p class="eyebrow">NSW HOUSING CODE CHECKER</p>
+    <p class="eyebrow">NSW APPROVALS CHECKER</p>
     <h2>Check your approval pathway</h2>
     
     <fieldset class="approvals-group">
@@ -212,12 +212,12 @@ def approvals_page() -> str:
     <div class="comparison-card">
       <span class="badge-tag">FAST TRACK</span>
       <h3>Complying Development (CDC)</h3>
-      <p class="lead-sm">Fast-tracked approval issued by an Accredited Private Certifier under State Environmental Planning Policy (SEPP).</p>
+      <p class="lead-sm">A fast-tracked approval pathway for development that meets all of the standards in the State Environmental Planning Policy (Exempt and Complying Development Codes) 2008 (the Codes SEPP).</p>
       <ul>
-        <li><strong>Turnaround:</strong> 20–30 business days.</li>
-        <li><strong>Approval Body:</strong> Private Certifier (no council committee meetings).</li>
-        <li><strong>Neighbour Involvement:</strong> 14-day statutory notice only; cannot formally object if standards are met.</li>
-        <li><strong>Best for:</strong> Standard home additions, internal renovations, and compliant extensions.</li>
+        <li><strong>Turnaround:</strong> NSW Planning says fast-tracked approvals can be issued in as little as 20 days. The standard process allows 14 days for neighbour notification.</li>
+        <li><strong>Approval Body:</strong> Council or an accredited certifier.</li>
+        <li><strong>Neighbour Involvement:</strong> Neighbours are notified before approval is issued.</li>
+        <li><strong>Best for:</strong> Development that meets every complying development standard for the site.</li>
       </ul>
     </div>
     <div class="comparison-card">
@@ -225,13 +225,14 @@ def approvals_page() -> str:
       <h3>Council Development Application (DA)</h3>
       <p class="lead-sm">Formal assessment by your local council planners against the Local Environmental Plan (LEP) and Development Control Plan (DCP).</p>
       <ul>
-        <li><strong>Turnaround:</strong> 60–120+ days depending on council backlog.</li>
-        <li><strong>Approval Body:</strong> Local Council Assessment Team / Planning Panel.</li>
-        <li><strong>Neighbour Involvement:</strong> Public exhibition period with formal public submissions.</li>
-        <li><strong>Best for:</strong> Heritage items, non-compliant setbacks, large second storeys, or steep sites.</li>
+        <li><strong>Turnaround:</strong> Generally longer than a CDC. It varies by council and by how complex the site is.</li>
+        <li><strong>Approval Body:</strong> Your local council (or a planning panel for some larger projects).</li>
+        <li><strong>Neighbour Involvement:</strong> Notification or exhibition usually applies, and neighbours can make submissions.</li>
+        <li><strong>Best for:</strong> Heritage items, work outside the complying development standards, and sites that need merit assessment.</li>
       </ul>
     </div>
   </div>
+  <p class="image-note">General information only, not planning or legal advice. Eligibility depends on your zoning, lot, heritage status and the specific standards, so confirm it with your council or an accredited certifier. Timing is from NSW Planning (<a class="inline-link" href="https://www.planning.nsw.gov.au/assess-and-regulate/development-assessment/planning-approval-pathways/complying-development" target="_blank" rel="noopener">complying development</a>, checked 12 October 2026). The NSW Government has proposed changes to the complying development system, so check the current rules on the <a class="inline-link" href="https://www.planningportal.nsw.gov.au/" target="_blank" rel="noopener">NSW Planning Portal</a>.</p>
 </div></section>'''
 
 

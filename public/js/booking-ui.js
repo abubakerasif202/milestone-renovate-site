@@ -1,6 +1,6 @@
 import { isAuPhone, isAuPostcode, isEmail, normalisePhone } from './lib/au.js';
 import { clearSessionKey, sessionKey, submitEnquiry } from './lib/enquiry-client.js';
-import { clearErrors, setBusy, setStatus, showErrors } from './lib/ui.js';
+import { clearErrors, revealSuccess, setBusy, setStatus, showErrors } from './lib/ui.js';
 
 const form = document.querySelector('[data-booking-form]');
 const startedAt = Date.now();
@@ -91,7 +91,7 @@ if (form) {
 
     const button = form.querySelector('[data-submit]');
     setBusy(button, true);
-    setStatus(form, 'Locking in your consultation…');
+    setStatus(form, 'Sending your request…');
     const result = await submitEnquiry(payloadFrom(values));
     setBusy(button, false);
 
@@ -100,15 +100,14 @@ if (form) {
       form.hidden = true;
       const successEl = document.querySelector('#booking-success');
       if (successEl) {
-        successEl.hidden = false;
         const refEl = successEl.querySelector('[data-reference]');
         if (refEl) refEl.textContent = result.reference;
         const dateEl = successEl.querySelector('[data-confirmed-time]');
         if (dateEl) dateEl.textContent = `${values.date} at ${values.time}`;
-        successEl.focus();
+        revealSuccess(successEl);
       }
     } else {
-      setStatus(form, result.error || 'Unable to schedule right now. Please call 1800 008 883.');
+      setStatus(form, result.error || 'Unable to send your request right now. Please call 1800 008 883.');
     }
   });
 }

@@ -3,6 +3,7 @@
 html{scroll-behavior:smooth;scroll-padding-top:110px}
 body{margin:0;background:var(--color-cream);color:var(--color-ink);font-family:var(--font-body);font-size:1rem;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 img{display:block;max-width:100%;height:auto}
+picture{display:contents}
 a{color:inherit;text-decoration:none}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
@@ -22,6 +23,7 @@ p{line-height:1.7}
 /* Masthead */
 /* The masthead itself is the dark surface, so the transparent gold logo sits directly on it — no tile. */
 .header{position:sticky;top:0;z-index:40;background:var(--color-masthead);color:var(--color-masthead-ink);border-bottom:1px solid var(--color-masthead-line);transition:box-shadow var(--dur) var(--ease-out)}
+.scroll-sentinel{position:absolute;top:0;left:0;width:1px;height:8px;pointer-events:none}
 .header.is-scrolled{box-shadow:0 12px 32px rgba(4,30,21,.28)}
 .header :focus-visible{outline-color:var(--color-gold);box-shadow:none}
 .nav-inner{min-height:80px;display:flex;align-items:center;gap:clamp(16px,2.4vw,34px)}
@@ -83,7 +85,9 @@ p{line-height:1.7}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(90deg,rgba(23,98,75,.08) 1px,transparent 1px);background-size:25% 100%;background-position:12.5% 0}
 .hero::after{content:"";position:absolute;z-index:-1;left:-8%;top:-30%;width:46%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(233,241,235,.95),transparent)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(32px,5vw,88px);align-items:center;padding-block:clamp(44px,6vw,92px)}
-.hero h1{font-size:var(--text-hero-lg);margin-bottom:28px;max-width:11ch}
+/* Each headline phrase is its own line (.h-line). Size the heading so the longest phrase (~6.2em) always fits its
+   column with a margin larger than the fallback-font width error, so a font swap can never re-wrap it. */
+.hero h1{font-size:min(var(--text-hero-lg),calc((100vw - var(--gutter)*2)/6.6));margin-bottom:28px}
 .hero-copy>p:not(.eyebrow):not(.hero-phone){font-size:clamp(1rem,1.25vw,1.15rem);max-width:520px;color:var(--color-ink-soft);line-height:1.8}
 .hero-buttons{display:flex;gap:22px 34px;align-items:center;margin-top:38px;flex-wrap:wrap}
 .hero-phone{margin-top:26px;font-size:.92rem;color:var(--color-ink-soft)}
@@ -123,7 +127,7 @@ p{line-height:1.7}
 .service-number{grid-column:1/span 2;font-size:.66rem;font-weight:700;letter-spacing:.17em;color:var(--color-ruby)}
 .circle-arrow{grid-column:2;grid-row:2;border:1px solid var(--color-ruby);color:var(--color-ruby);border-radius:50%;width:44px;height:44px;display:grid;place-items:center;transition:background var(--dur-fast),color var(--dur-fast),transform var(--dur) var(--ease-out)}
 .service-tile:hover .circle-arrow{background:var(--color-ruby);color:#fff;transform:rotate(45deg)}
-.image-note{color:var(--color-ink-soft);font-size:.8rem;margin:18px 0 28px;max-width:70ch}
+.image-note{color:var(--color-ink-soft);font-size:.8rem;margin:18px 0 28px;max-width:44.16em}
 
 /* Journey */
 .journey-section{background:var(--color-cream)}
@@ -151,7 +155,7 @@ p{line-height:1.7}
 .compare-range::-webkit-slider-thumb{appearance:none;width:52px;height:100%}
 .compare-range::-moz-range-thumb{width:52px;height:100%;border:0}
 .compare-stage:has(.compare-range:focus-visible){outline:3px solid var(--color-forest-deep);outline-offset:4px}
-.compare figcaption{margin-top:18px;font-size:.84rem;color:var(--color-ink-soft);max-width:80ch}
+.compare figcaption{margin-top:18px;font-size:.84rem;color:var(--color-ink-soft);max-width:50.47em}
 .compare figcaption strong{color:var(--color-forest-deep)}
 
 /* Tools */
@@ -160,14 +164,14 @@ p{line-height:1.7}
 .tool-card{display:flex;flex-direction:column;gap:14px;padding:clamp(26px,4vw,46px);background:#fff;border:1px solid var(--color-line);border-top:3px solid var(--color-ruby);transition:box-shadow var(--dur),transform var(--dur) var(--ease-out)}
 .tool-card:hover{box-shadow:var(--shadow-soft);transform:translateY(-3px)}
 .tool-card h3{margin:0}
-.tool-card p{color:var(--color-ink-soft);margin:0;max-width:44ch}
+.tool-card p{color:var(--color-ink-soft);margin:0;max-width:27.76em}
 .tool-card .text-link{margin-top:auto;align-self:flex-start}
 .tool-tag{font-size:.68rem;letter-spacing:.18em;font-weight:700;color:var(--color-gold-ink)}
 
 /* Philosophy */
 .philosophy-grid{display:grid;grid-template-columns:1.02fr .88fr;gap:11%;align-items:center}
 .philosophy-media{position:relative;background:var(--color-sage);min-height:600px}
-.philosophy-media>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.philosophy-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .media-stamp{position:absolute;bottom:28px;left:-28px;padding:24px 28px;background:var(--color-cream);border-left:3px solid var(--color-ruby);color:var(--color-forest-deep);font-size:.66rem;font-weight:700;line-height:1.65;letter-spacing:.17em;box-shadow:var(--shadow-soft)}
 .media-stamp strong{font-size:1.25rem;letter-spacing:.03em}
 .philosophy-copy h2{max-width:650px}
@@ -245,14 +249,14 @@ p{line-height:1.7}
 /* Inner heroes — light, image-led */
 .inner-hero{position:relative;background:var(--color-sage);min-height:480px;display:flex;align-items:center;overflow:hidden;isolation:isolate}
 .inner-hero>.wrap{position:relative;z-index:2;padding-block:clamp(56px,7vw,92px)}
-.inner-hero h1{max-width:12ch;font-size:clamp(3rem,5.4vw,5.5rem)}
+.inner-hero h1{max-width:6.8em;font-size:clamp(3rem,5.4vw,5.5rem)}
 .inner-hero .wrap>p:not(.eyebrow){max-width:500px;color:var(--color-ink-soft);font-size:1.05rem}
 .inner-hero-image{position:absolute;inset:0 0 0 52%;z-index:0}
 .inner-hero-image img{width:100%;height:100%;object-fit:cover}
 .inner-hero:after{content:"";position:absolute;z-index:1;inset:0 0 0 38%;background:linear-gradient(90deg,var(--color-sage) 0,rgba(233,241,235,.7) 20%,transparent 46%)}
 .inner-hero .btn{margin-top:18px}
 .inner-hero.compact{min-height:290px}
-.inner-hero.compact h1{margin-bottom:0;max-width:18ch}
+.inner-hero.compact h1{margin-bottom:0;max-width:10.2em}
 
 .services-list{border-top:1px solid var(--color-line)}
 .service-row{display:grid;grid-template-columns:65px 1fr 70px;align-items:center;gap:25px;padding:28px 18px;border-bottom:1px solid var(--color-line);transition:background var(--dur-fast)}
@@ -299,7 +303,7 @@ p{line-height:1.7}
 
 /* Responsive */
 @media(max-width:1160px){.call-top{display:none}.nav-actions .btn{display:none}.brand img{width:180px;height:35px}.service-grid{grid-template-rows:300px 300px}}
-@media(max-width:1020px){.hero-grid{grid-template-columns:1fr}.hero-media{aspect-ratio:16/11;margin-right:14px;max-width:720px}.hero h1{max-width:14ch}.journey-list{grid-template-columns:1fr 1fr;row-gap:44px}.journey-list::before{display:none}.cta-panel{grid-template-columns:1fr}}
+@media(max-width:1020px){.hero-grid{grid-template-columns:1fr}.hero-media{aspect-ratio:16/11;margin-right:14px;max-width:720px}.hero h1{max-width:7.93em}.journey-list{grid-template-columns:1fr 1fr;row-gap:44px}.journey-list::before{display:none}.cta-panel{grid-template-columns:1fr}}
 @media(max-width:870px){
   .menu-toggle{display:block;margin-left:auto}
   /* Full-height panel under the masthead. Closed = visibility:hidden (removed from tab order and the a11y tree);
@@ -337,7 +341,7 @@ p{line-height:1.7}
   .inner-hero{min-height:0;flex-direction:column-reverse;align-items:stretch}
   .inner-hero-image{position:relative;inset:auto;height:240px}
   .inner-hero:after{display:none}
-  .inner-hero h1{max-width:16ch}
+  .inner-hero h1{max-width:9.06em}
 }
 @media(max-width:600px){
   .brand img{width:158px;height:31px}
@@ -372,6 +376,14 @@ p{line-height:1.7}
   .field-grid .wide{grid-column:auto}
   .footer-bottom{align-items:flex-start;flex-direction:column}
 }
+/* Phones: image-first hero. The photograph leads, full-bleed under the masthead; the headline and postcode entry follow.
+   Only the visual order changes (DOM order stays copy-first), so the heading is still read first and focus order is unchanged. */
+@media(max-width:760px){
+  .hero-grid{gap:0;padding-block:0 clamp(32px,8vw,48px)}
+  .hero-media{order:-1;margin:0 calc(var(--gutter)*-1) clamp(24px,6vw,32px)}
+  .hero-media::before,.hero-corner{display:none}
+  .hero-chip{left:0;bottom:0;max-width:calc(100% - 28px);padding:9px 14px;font-size:.58rem;letter-spacing:.13em;line-height:1.55}
+}
 /* Touch targets: standalone links and buttons reach 44px on phones and tablets (inline text links are exempt). */
 @media (pointer:coarse),(max-width:870px){
   .footer-links{gap:0 22px}
@@ -384,9 +396,9 @@ p{line-height:1.7}
 /* Team section */
 .team-section{background:var(--color-forest-deep);color:var(--color-cream)}
 .team-section .eyebrow{color:var(--color-gold)}
-.team-section h2{color:var(--color-white);max-width:20ch}
+.team-section h2{color:var(--color-white);max-width:11.33em}
 .team-section h2 em{color:var(--color-gold-light)}
-.team-intro{max-width:62ch;margin:20px 0 0;color:rgba(248,246,240,.82);font-size:1.05rem}
+.team-intro{max-width:39.11em;margin:20px 0 0;color:rgba(248,246,240,.82);font-size:1.05rem}
 .team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,440px));gap:32px;justify-content:center;margin-top:48px}
 .team-card{display:flex;flex-direction:column;background:rgba(255,255,255,.04);border:1px solid rgba(221,180,92,.3);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
 .team-card:hover{transform:translateY(-4px);border-color:var(--color-gold);box-shadow:0 18px 40px rgba(0,0,0,.3)}

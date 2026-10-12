@@ -43,16 +43,15 @@
   mobile.addEventListener?.('change', (e) => { if (!e.matches && isOpen()) setMenu(false); });
 
   // Masthead gains a shadow once the page has scrolled. Only the shadow changes, so the layout never jumps.
-  if (header) {
-    let ticking = false;
-    const update = () => {
-      ticking = false;
-      header.classList.toggle('is-scrolled', window.scrollY > 8);
-    };
-    window.addEventListener('scroll', () => {
-      if (!ticking) { ticking = true; requestAnimationFrame(update); }
-    }, { passive: true });
-    update();
+  // An IntersectionObserver on a 8px sentinel at the top of the page does this without reading scrollY or any other
+  // layout property: a synchronous read at start-up forced the whole document to lay out inside this script, which
+  // turned the browser's ordinary first layout into a ~120ms long task whenever the script ran before first paint.
+  if (header && 'IntersectionObserver' in window) {
+    const sentinel = document.createElement('div');
+    sentinel.className = 'scroll-sentinel';
+    sentinel.setAttribute('aria-hidden', 'true');
+    document.body.prepend(sentinel);
+    new IntersectionObserver(([entry]) => header.classList.toggle('is-scrolled', !entry.isIntersecting)).observe(sentinel);
   }
 
   // Offline illustration fallback for remotely hosted reference images (CSP forbids inline onerror).

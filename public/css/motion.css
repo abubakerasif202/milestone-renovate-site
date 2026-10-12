@@ -26,7 +26,7 @@
   .hero-copy>:nth-child(5){animation-delay:.62s}
   .hero-copy>:nth-child(n+6){animation-delay:.7s}
   .hero-media-inner{animation:m-unveil 1.3s var(--ease-out) both}
-  .hero-media-inner>img{animation:m-settle 2.2s var(--ease-out) both}
+  .hero-media-inner img{animation:m-settle 2.2s var(--ease-out) both}
   .hero-corner,.hero-chip{animation:m-rise var(--dur-enter) .85s var(--ease-out) backwards}
   .scroll-cue{animation:m-rise var(--dur-enter) 1.1s var(--ease-out) backwards}
   .scroll-cue i::after{animation:m-cue 2.4s 2s var(--ease-in-out) 3}
@@ -78,8 +78,37 @@
 .tool-card:hover::after,.platform-card:hover::after,.value-grid article:hover::after,
 .tool-card:focus-visible::after,.platform-card:focus-visible::after{transform:scaleX(1)}
 
+/* 6. Forms and planning tools. Nothing here uses opacity on text that must stay legible, so contrast is constant. */
+@keyframes m-spin{to{transform:rotate(360deg)}}
+@keyframes m-wipe-fwd{from{clip-path:inset(-10px -10px -10px 100%);transform:translateX(18px)}to{clip-path:inset(-10px);transform:none}}
+@keyframes m-wipe-back{from{clip-path:inset(-10px 100% -10px -10px);transform:translateX(-18px)}to{clip-path:inset(-10px);transform:none}}
+@keyframes m-ring{from{stroke-dashoffset:151}to{stroke-dashoffset:0}}
+@keyframes m-tick{from{stroke-dashoffset:40}to{stroke-dashoffset:0}}
+
+/* Sending: a spinner joins the button label and the form softens and stops taking input until the reply arrives.
+   Under reduced motion the spinner is a static dotted ring, so "busy" is still shown without movement. */
+.btn.is-busy{justify-content:center}
+.btn.is-busy::before{content:"";flex:0 0 auto;width:15px;height:15px;margin-right:12px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:m-spin .8s linear infinite}
+.is-sending .field-grid,.is-sending .choice-grid,.is-sending .slot-group,.is-sending .consent-field{opacity:.7;pointer-events:none;transition:opacity var(--dur)}
+
+/* Success: a drawn tick above the panel's own heading (decorative, aria-hidden). */
+.success-mark{display:block;width:52px;height:52px;margin-bottom:18px}
+.success-ring,.success-tick{fill:none;stroke:var(--color-success);stroke-linecap:round;stroke-linejoin:round}
+.success-ring{stroke-width:2;stroke-dasharray:151}
+.success-tick{stroke-width:3;stroke-dasharray:40}
+
+@media(prefers-reduced-motion:no-preference){
+  /* Questionnaire: the incoming step wipes in from the side it is reached from. */
+  .wizard-step.is-entering{animation:m-wipe-fwd .5s var(--ease-out) backwards}
+  .wizard[data-step-dir="back"] .wizard-step.is-entering{animation-name:m-wipe-back}
+  .form-success.is-entering{animation:m-rise var(--dur-reveal) var(--ease-out) backwards}
+  .form-success.is-entering .success-ring{animation:m-ring .8s .1s var(--ease-out) backwards}
+  .form-success.is-entering .success-tick{animation:m-tick .5s .55s var(--ease-out) backwards}
+}
+
 @media(prefers-reduced-motion:reduce){
   .m-reveal,.m-mask,.journey-list li{animation:none!important}
+  .btn.is-busy::before{animation:none;border-style:dotted;border-right-color:currentColor}
   .journey-list::after{transition:none}
   .m-reveal,.m-mask,.journey-list li{opacity:1;transform:none;clip-path:none}
   .journey-list::after{transform:none}
