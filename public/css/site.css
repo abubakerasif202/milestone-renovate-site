@@ -255,6 +255,12 @@ p{line-height:1.7}
 .footer-licence{flex-basis:100%;margin:0;font-size:.74rem;line-height:1.6;color:#c9d8ce}
 .footer-licence a{color:var(--color-gold-light);text-decoration:underline;text-underline-offset:3px}
 .footer :focus-visible{outline-color:var(--color-gold);box-shadow:none}
+.footer-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px 32px;width:100%;padding-top:20px;border-top:1px solid var(--color-masthead-line)}
+.developer-credit{display:flex;align-items:center;gap:12px;max-width:350px;min-height:44px;color:#c9d8ce;font-size:.74rem;line-height:1.65;transition:color var(--dur) var(--ease-out)}
+.developer-credit img{display:block;flex:none;width:96px;height:auto;transition:filter var(--dur) var(--ease-out)}
+.developer-credit strong{color:var(--color-gold-light);font-weight:600}
+.developer-credit:hover,.developer-credit:focus-visible{color:var(--color-gold-light)}
+.developer-credit:hover img,.developer-credit:focus-visible img{filter:drop-shadow(0 0 3px rgba(221,180,92,.25))}
 
 /* Inner heroes — light, image-led */
 .inner-hero{position:relative;background:var(--color-sage);min-height:480px;display:flex;align-items:center;overflow:hidden;isolation:isolate}
