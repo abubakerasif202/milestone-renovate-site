@@ -244,6 +244,9 @@ def webpage_ld(title, description, slug, home=False, crumbs=None, service_info=N
 
 
 def shell(title, description, body, active='', slug='', home=False, crumbs=None, scripts=(), noindex=False, service_info=None, styles=()):
+    if home:
+        scripts = [*scripts, 'opening-intro.js']
+        styles = [*styles, 'opening-intro.css']
     return head(title, description, slug, webpage_ld(title, description, slug, home, crumbs, service_info), scripts, noindex, styles) + f'<body>{header(active)}<main id="content">{body}</main>{footer()}</body></html>'
 
 

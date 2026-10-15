@@ -16,7 +16,7 @@ const sent = [];
 const notifier = { enabled: true, async sendStaffNotification(payload) { sent.push(payload.reference); } };
 const api = createHandler(() => ({ store, notifier, ipSecret: 'dev-only-secret', allowedOrigins: [`http://127.0.0.1:${port}`, `http://localhost:${port}`] }));
 
-const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.xml': 'application/xml', '.txt': 'text/plain' };
+const TYPES = { '.mp4': 'video/mp4', '.webm': 'video/webm', '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.xml': 'application/xml', '.txt': 'text/plain' };
 
 async function resolveFile(pathname) {
   const clean = normalize(decodeURIComponent(pathname)).replace(/^([/\\])+/, '');

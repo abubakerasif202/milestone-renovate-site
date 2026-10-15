@@ -1,6 +1,11 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
+// These tests exercise the existing hero sequence underneath the session intro.
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => sessionStorage.setItem('milestone-opening-seen-v1', '1'));
+});
+
 test('the image stays visible between decorative shutters and the sequence finishes', async ({ page }) => {
   await page.goto('/');
   const initial = await page.locator('.hero-media-inner').evaluate((el) => {
