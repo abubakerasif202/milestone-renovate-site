@@ -1,0 +1,31 @@
+{
+  "oldCalculatorModules": {
+    "files": [
+      "public/js/calculator-ui.js",
+      "public/js/lib/estimate.js",
+      "public/js/lib/planning-context.js",
+      "public/js/lib/price-estimate.js",
+      "public/js/lib/pricing-config.js"
+    ],
+    "rawBytes": 52929,
+    "gzipBytes": 19031
+  },
+  "newBathroomModules": {
+    "files": [
+      "public/js/bathroom-calculator-ui.js",
+      "public/js/lib/au.js",
+      "public/js/lib/bathroom-calculator.js",
+      "public/js/lib/enquiry-client.js"
+    ],
+    "rawBytes": 13508,
+    "gzipBytes": 5324
+  },
+  "oldCSS": {
+    "rawBytes": 18489,
+    "gzipBytes": 5142
+  },
+  "newCSS": {
+    "rawBytes": 2311,
+    "gzipBytes": 1005
+  }
+}

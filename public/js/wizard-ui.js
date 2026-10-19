@@ -47,6 +47,13 @@ function init(root) {
   if (handedOff || (!draft && importedSteps.size)) {
     while (state.step < TOTAL_STEPS - 1 && importedSteps.has(STEPS[state.step].id)) state.step += 1;
   }
+  const bathroomLink = document.createElement('p');
+  const calculatorLink = document.createElement('a');
+  calculatorLink.href = '/bathroom-renovation-cost'; calculatorLink.textContent = 'Estimate your bathroom renovation →';
+  bathroomLink.append(calculatorLink); root.prepend(bathroomLink);
+  const syncBathroomLink = () => { bathroomLink.hidden = state.category !== 'bathroom'; };
+  root.addEventListener('change', () => { bathroomLink.hidden = new FormData(root).get('category') !== 'bathroom'; });
+  syncBathroomLink();
   const review = document.createElement('section');
   review.className = 'planning-review';
   review.setAttribute('aria-label', 'Your carried-over renovation plans');
@@ -61,7 +68,7 @@ function init(root) {
     const details = document.createElement('details');
     const summary = document.createElement('summary'); summary.textContent = 'Review included planning selections';
     details.append(summary, list); review.append(details);
-    for (const [section, url, label] of [['planner', '/bathroom-renovation-cost', 'Edit bathroom plan'], ['estimate', '/bathroom-renovation-cost', 'Edit cost estimate'], ['studio', '/renovation-design-studio', 'Edit design preferences']]) {
+    for (const [section, url, label] of [['planner', '/bathroom-renovation-cost', 'Edit bathroom plan'], ['estimate', '/kitchen-renovation-cost', 'Edit cost estimate'], ['studio', '/renovation-design-studio', 'Edit design preferences']]) {
       if (planning[section]) { const link = document.createElement('a'); link.href = url; link.textContent = label; review.append(link); }
     }
     for (const stepId of importedSteps) {

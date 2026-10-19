@@ -69,23 +69,11 @@ test('calculator handoff replaces an incompatible design even when storage write
  await page.locator('[data-back]').click();
  await expect(page.locator('input[name="category"][value="bathroom"]')).toBeChecked();
 });
-test('editing imported category clears incompatible bathroom planning and survives reload',async({page})=>{
- await page.goto('/bathroom-renovation-cost');
- await page.locator('label.calc-card:has(input[name="size"][value="large"])').click();
- await page.locator('label.calc-card:has(input[name="finish"][value="premium"])').click();
- await page.locator('#calc-result').getByRole('link',{name:/detailed quote/}).click();
- await expect(page.locator('.planning-review')).toBeVisible();
- await expect.poll(()=>page.evaluate(()=>JSON.parse(sessionStorage.getItem('mr-wizard-draft'))?.roomSize)).toBe('large');
- const before=await page.evaluate(()=>JSON.parse(sessionStorage.getItem('mr-wizard-draft')));
- expect(before.roomSize).toBe('large');
- expect(before.category).toBe('bathroom');
- await page.locator('[data-back]').click();
- await page.locator('label.choice').filter({has:page.locator('input[name="category"][value="kitchen"]')}).click();
- await page.reload();
- await expect(page.locator('input[name="category"][value="kitchen"]')).toBeChecked();
- const state=await page.evaluate(()=>JSON.parse(sessionStorage.getItem('mr-wizard-draft')));
- expect(state.roomSize).toBe('');
- expect(state.finishLevel).toBe('');
+test('bathroom planning links to canonical calculator without pricing other services',async({page})=>{
+ await page.goto('/plan-your-renovation?category=bathroom');
+ await expect(page.getByRole('link',{name:'Estimate your bathroom renovation →'})).toHaveAttribute('href','/bathroom-renovation-cost');
+ await page.goto('/plan-your-renovation?category=extension');
+ await expect(page.getByRole('link',{name:'Estimate your bathroom renovation →'})).toBeHidden();
 });
 test('studio selection and progress work with keyboard alone',async({page})=>{
  await page.goto('/renovation-design-studio');

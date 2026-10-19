@@ -227,30 +227,11 @@ test.describe('questionnaire step transitions', () => {
   });
 });
 
-test.describe('calculator indicators', () => {
-  const card = (page, name, value) => page.locator(`label.calc-card:has(input[name="${name}"][value="${value}"])`);
-
-  test('steps earn a tick once a choice is made, and the estimate sweeps when it changes', async ({ page }) => {
-    await page.goto('/bathroom-renovation-cost');
-    await expect(page.locator('.calc-step[data-complete]')).toHaveCount(0);
-    await card(page, 'finish', 'premium').click();
-    await expect(page.locator('.calc-step[data-complete]')).toHaveCount(1);
-    await expect(page.locator('#calc-range')).toHaveClass(/is-updating/);
-    await expect(page.locator('#calc-range')).toHaveText('$42,500 – $77,000'); // the number itself is untouched by the motion
-    await expect(page.locator('#calc-range')).not.toHaveClass(/is-updating/, { timeout: 3000 });
-    await card(page, 'size', 'large').click();
-    await expect(page.locator('.calc-step[data-complete]')).toHaveCount(2);
-  });
-
-  test('reduced motion: no sweep', async ({ browser }) => {
-    const context = await browser.newContext({ reducedMotion: 'reduce' });
-    const page = await context.newPage();
-    await page.goto('/bathroom-renovation-cost');
-    await card(page, 'finish', 'premium').click();
-    await expect(page.locator('#calc-range')).toHaveText('$42,500 – $77,000');
-    await expect(page.locator('#calc-range')).not.toHaveClass(/is-updating/);
-    await context.close();
-  });
+test('calculator updates immediately with reduced motion', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/bathroom-renovation-cost');
+  await page.locator('input[name="size"][value="large"]').check();
+  await expect(page.locator('[data-price]')).toHaveText('$24,000–$34,000');
 });
 
 test.describe('verified business, staff and planning copy', () => {

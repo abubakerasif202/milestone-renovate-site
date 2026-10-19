@@ -1,0 +1,38 @@
+[
+  {
+    "width": 320,
+    "errors": [],
+    "external": [],
+    "cls": 0,
+    "lcp": 460,
+    "overflow": false,
+    "jsBytes": 22716
+  },
+  {
+    "width": 375,
+    "errors": [],
+    "external": [],
+    "cls": 0,
+    "lcp": 292,
+    "overflow": false,
+    "jsBytes": 22716
+  },
+  {
+    "width": 768,
+    "errors": [],
+    "external": [],
+    "cls": 0,
+    "lcp": 280,
+    "overflow": false,
+    "jsBytes": 22716
+  },
+  {
+    "width": 1440,
+    "errors": [],
+    "external": [],
+    "cls": 0,
+    "lcp": 288,
+    "overflow": false,
+    "jsBytes": 22716
+  }
+]

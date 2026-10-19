@@ -21,7 +21,7 @@ public/                 Vercel output directory — the only thing served static
                         concept-images.css, motion.css feature styles
   js/site.js, motion.js, interactions.js   menu, reveals, slider and gallery behaviour
   js/enquiry-form.js, booking-ui.js, quote-audit-ui.js, wizard-ui.js   forms (all post through js/lib/enquiry-client.js)
-  js/calculator-ui.js, design-studio.js, approvals-checker.js, postcode-entry.js   planning tools
+  js/bathroom-calculator-ui.js, calculator-ui.js, design-studio.js, approvals-checker.js, postcode-entry.js   planning tools
   js/lib/               pure, DOM-free logic shared with tests and (au.js, price-estimate.js) the server
   assets/brand/         official logo SVGs + generated favicons / OG image
   assets/fonts/         self-hosted Inter and Newsreader WOFF2 (axis-limited)
@@ -84,18 +84,22 @@ inline handlers or styles (tested). The photography generator fails on missing l
 
 ## Cost calculator
 
-`public/js/lib/pricing-config.js` holds the indicative Sydney pricing configuration (sources, tier ranges,
-adjustments, timelines, GST) and `public/js/lib/price-estimate.js` is the pure engine used by the browser and by the
-server (staff notification). Ranges are market benchmarks, not approved Milestone rates; every adjustment is tagged
-`source` or `assumption`. See `docs/PRICING-METHODOLOGY.md`. `public/js/lib/estimate.js` is the earlier
-planning-profile engine; it is retained only for the legacy `planner` planning-context section accepted by the
-questionnaire and server schema.
+`public/js/lib/bathroom-calculator.js` holds the supplied additive bathroom configuration and pure
+calculation function used by browser and server. `/bathroom-renovation-cost` posts to the existing
+`/api/enquiries` route with `enquiryType: bathroom_renovation_calculator`. That branch validates,
+recomputes and emails through the existing Resend notifier without Supabase reads or writes.
+Failures retain selections and expose a real contact fallback; acceptance is not inbox delivery proof.
+
+Kitchen market arithmetic remains in `pricing-config.js` and `price-estimate.js`, served separately
+at `/kitchen-renovation-cost`. The retired bathroom tier and weighted-price engines are removed.
+`planning-options.js` retains only non-price choices for saved legacy planning briefs.
+See `PRICING-METHODOLOGY.md` and `BATHROOM-CALCULATOR-REPLACEMENT.md` for details and evidence.
 
 ## Decisions to revisit
 
 | Topic | Now | Revisit when |
 |---|---|---|
-| Rate limiting | DB count of stored leads per IP hash (5/hour) + Vercel Firewall rule (8 POSTs/min per IP) | Abuse continues → Upstash or stricter firewall |
+| Rate limiting | Existing flows: DB count per IP hash (5/hour). Bathroom calculator: bounded instance-local count (5/hour). Existing Vercel Firewall rule retained | Abuse continues → Upstash or stricter firewall |
 | Page source | Python generator, HTML committed | Content editing by non-developers is needed |
 | Admin | None (DB access via Supabase dashboard) | Staff need a lead UI → protected admin app |
 | Uploads | Omitted | Secure storage + malware scanning is in place |

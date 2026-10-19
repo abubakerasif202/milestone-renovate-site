@@ -8,7 +8,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
 import json
 import subprocess
-from site_calculator import calculator_page, load_pricing
+from site_calculator import calculator_page, kitchen_calculator_page, load_pricing
 from site_constants import ACN, COMPANY, EMAIL, LICENCE, LICENCE_CLASS, LICENCE_URL, PHONE, PHONE_HREF
 from site_legal import estimate_disclaimer_page, privacy_page, terms_page
 from site_experiences import (
@@ -368,6 +368,7 @@ pdetails = {
             ('Plumbing & Exhaust Runs', 'Planning waste stack relocations, water filtration lines, and external ducting paths that comply with Australian Standards.'),
         ],
         'tools': [
+            ('Kitchen Cost Guide', '/kitchen-renovation-cost', 'Explore indicative kitchen market ranges and timing.'),
             ('Design Studio', '/renovation-design-studio', 'Explore materials, color palettes, and joinery aesthetics.'),
             ('Approvals Guide', '/approvals-guide', 'Check if internal layout alterations qualify as Exempt Development.'),
             ('15-Min Strategy Call', '/booking', 'Review preliminary layouts and budget priorities with an advisor.'),
@@ -579,7 +580,8 @@ def build():
         ('terms.html', 'Website Terms of Use | Milestone Renovate', 'The terms that apply to your use of the Milestone Renovate website, including how cost estimates and general information may be used.', terms, '', 'terms', dict(crumbs=[('Home', '/'), ('Terms of Use', '/terms')])),
         ('estimate-disclaimer.html', 'Cost Estimate Disclaimer | Milestone Renovate', 'Indicative cost ranges from the Milestone Renovate calculator are market-based guides, not quotes, offers or contracts.', estimate_disclaimer, '', 'estimate-disclaimer', dict(crumbs=[('Home', '/'), ('Cost Estimate Disclaimer', '/estimate-disclaimer')])),
         ('plan-your-renovation.html', 'Plan Your Renovation | Guided Brief | Milestone Renovate', 'Answer a few short questions about your kitchen, bathroom, whole-home or extension renovation and share your brief with the Milestone Renovate team.', plan, '', 'plan-your-renovation', dict(crumbs=[('Home', '/'), ('Plan Your Renovation', '/plan-your-renovation')], scripts=['wizard-ui.js'])),
-        ('bathroom-renovation-cost.html', 'Renovation Cost Calculator Sydney | Milestone Renovate', 'Estimate your Sydney bathroom or kitchen renovation cost in AUD with indicative ranges, timelines and clear assumptions. A market guide, not a quote.', calculator, 'Cost Planner', 'bathroom-renovation-cost', dict(crumbs=[('Home', '/'), ('Cost Calculator', '/bathroom-renovation-cost')], scripts=['calculator-ui.js'], styles=['calculator.css'])),
+        ('bathroom-renovation-cost.html', 'Renovation Cost Calculator Sydney | Milestone Renovate', 'Estimate your Sydney bathroom or kitchen renovation cost in AUD with indicative ranges, timelines and clear assumptions. A market guide, not a quote.', calculator, 'Cost Planner', 'bathroom-renovation-cost', dict(crumbs=[('Home', '/'), ('Cost Calculator', '/bathroom-renovation-cost')], scripts=['bathroom-calculator-ui.js'], styles=['calculator.css'])),
+        ('kitchen-renovation-cost.html', 'Kitchen Renovation Cost Guide Sydney | Milestone Renovate', 'Explore indicative kitchen renovation market ranges and prepare your renovation brief.', kitchen_calculator_page(PRICING, cta()), 'Cost Planner', 'kitchen-renovation-cost', dict(crumbs=[('Home', '/'), ('Kitchen Cost Guide', '/kitchen-renovation-cost')], scripts=['calculator-ui.js'], styles=['calculator.css'])),
         ('booking.html', 'Request a 15-Minute Strategy Call | Milestone Renovate', 'Request a complimentary 15-minute phone strategy call with the Milestone Renovate team. Talk through plans, costs and approvals.', booking, '', 'booking', dict(crumbs=[('Home', '/'), ('Book Consultation', '/booking')], scripts=['booking-ui.js'])),
         ('quote-audit.html', 'Renovation Quote & Scope Audit | Milestone Renovate', 'Have an existing builder quote reviewed by the Milestone Renovate team. Look for prime cost allowances, omitted certifier allowances and scope gaps.', quote_audit, '', 'quote-audit', dict(crumbs=[('Home', '/'), ('Quote Audit', '/quote-audit')], scripts=['quote-audit-ui.js'])),
         ('approvals-guide.html', 'NSW Council DA vs CDC Approvals Checker | Milestone Renovate', 'Get a general idea of whether your Sydney renovation may suit complying development (CDC) or needs a Council DA. A guide to NSW approval pathways, not planning advice.', approvals, 'Approvals', 'approvals-guide', dict(crumbs=[('Home', '/'), ('Approvals Guide', '/approvals-guide')], scripts=['approvals-checker.js'])),

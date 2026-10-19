@@ -6,10 +6,10 @@ import { enquirySchema } from '../lib/enquiry-schema.js';
 import { estimateHandoffQuery } from '../public/js/lib/price-estimate.js';
 
 // All network access is mocked. Nothing here can reach Resend, Supabase or production.
-const calc = { project: 'bathroom', finish: 'mid_range', size: 'medium', floor: 'concrete', access: 'apartment', supply: 'supply_install', layoutChange: true };
+const calc = { project: 'kitchen', finish: 'mid_range', size: 'medium', floor: 'concrete', access: 'apartment', supply: 'supply_install', layoutChange: true };
 const enquiry = (over = {}) => ({
   idempotencyKey: '7b1f3f0e-6a52-4c6e-9d6b-0a3d2f1c9e11', name: 'Test Person', phone: '0412 345 678', email: 'test@example.com', postcode: '2000',
-  category: 'bathroom', source: 'calculator', sourcePage: '/plan-your-renovation', consent: true, wizard: { planning: { version: 1, estimate: calc } }, ...over,
+  category: 'kitchen', source: 'calculator', sourcePage: '/plan-your-renovation', consent: true, wizard: { planning: { version: 1, estimate: calc } }, ...over,
 });
 
 test('staff notifications go to the configured recipient (admin@milestonerenovate.com) and include the estimate shown', async () => {
@@ -44,16 +44,16 @@ test('recipient addresses are never hard-coded in server code', () => {
 test('the server rejects tampered or incomplete calculator selections', () => {
   assert.ok(enquirySchema.safeParse(enquiry()).success);
   assert.ok(!enquirySchema.safeParse(enquiry({ wizard: { planning: { version: 1, estimate: { ...calc, finish: 'gold' } } } })).success);
-  assert.ok(!enquirySchema.safeParse(enquiry({ wizard: { planning: { version: 1, estimate: { project: 'bathroom', finish: 'premium' } } } })).success);
+  assert.ok(!enquirySchema.safeParse(enquiry({ wizard: { planning: { version: 1, estimate: { project: 'kitchen' } } } })).success);
   assert.ok(!enquirySchema.safeParse(enquiry({ wizard: { planning: { version: 1, estimate: { ...calc, lowAud: 1 } } } })).success, 'client-supplied prices are not accepted');
 });
 
 test('hand-off query carries the whole selection and only whitelisted values', () => {
   const q = new URLSearchParams(estimateHandoffQuery({ ...calc, injected: '<script>', lowAud: 5 }));
-  assert.equal(q.get('category'), 'bathroom');
+  assert.equal(q.get('category'), 'kitchen');
   assert.equal(q.get('from'), 'calculator');
-  assert.equal(q.get('size'), 'medium');
-  assert.equal(q.get('plumbing'), '1');
+  assert.equal(q.has('size'), false);
+  assert.equal(q.has('plumbing'), false);
   const est = JSON.parse(q.get('estimate'));
   assert.deepEqual(Object.keys(est).sort(), ['access', 'finish', 'floor', 'layoutChange', 'project', 'size', 'supply']);
   const kq = new URLSearchParams(estimateHandoffQuery({ project: 'kitchen', finish: 'premium', wallRemoval: true }));

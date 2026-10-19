@@ -1,3 +1,4 @@
+import { bathroomBrief } from './lib/bathroom-calculator.js';
 import { isAuPhone, isAuPostcode, isEmail, normalisePhone } from './lib/au.js';
 import { clearSessionKey, sessionKey, submitEnquiry } from './lib/enquiry-client.js';
 import { clearErrors, setBusy, setStatus, showErrors, showSuccess, showSummary } from './lib/ui.js';
@@ -68,3 +69,15 @@ form?.addEventListener('submit', async (event) => {
   if (result.kind === 'validation' && result.fields) showErrors(form, result.fields)?.focus();
   showSummary(form, result.retryable ? `${result.message} You can press “Send enquiry” again — it will not create a duplicate.` : result.message);
 });
+
+// The contact fallback carries only validated non-personal calculator selections.
+if (form) {
+  const encoded = new URLSearchParams(location.search).get('bathroomEstimate');
+  if (encoded && encoded.length <= 2000) {
+    try {
+      const brief = bathroomBrief(JSON.parse(encoded));
+      form.elements.namedItem('details').value = brief;
+      form.elements.namedItem('category').value = 'bathroom';
+    } catch { /* Ignore malformed or unknown options. */ }
+  }
+}
