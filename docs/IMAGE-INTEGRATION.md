@@ -1,15 +1,42 @@
-# Approved architectural concepts
+# Local renovation photography
 
-All 11 approved concepts are indexed in `assets/renovation-concepts.json`, including original filenames, private semantic master paths, dimensions, placements, alt text, focal position and AI concept status. Timestamped originals supplied in `public/assets/img` were preserved unchanged and excluded from the feature commit. Identical semantic masters are retained in `incoming-images/renovation-concepts` outside the published output.
+The current collection contains 29 genuine photographs: 13 user-supplied photographs expressly approved as Milestone work, plus 16 licensed inspiration photographs of other interiors, housing, residential framing and carpentry. It replaces 19 active AI image identities (11 shared concepts, six bathroom styles and two comparison images). Ten dormant legacy identities were also retired: 176 obsolete WebP/AVIF derivatives in total. The initial inventory covers 202 image assets, including responsive derivatives, protected branding, portraits and vector fallbacks, across all 22 routes. Thirteen subsequently supplied owner photographs were also inspected; their intake and approval records are in `docs/audits/photography-owner-intake.json`. See `docs/audits/photography-inventory-before.json` for files, aspect ratios, original route references, source components, priorities and replacement subjects.
 
-Rebuild derivatives with `node scripts/build-renovation-concepts.mjs`, then run `python build_site.py`. Sharp was already installed. Quality 83, effort 6; metadata is stripped. All sources are 1448 x 1086. Five widths per image (480, 768, 1024, 1280, 1448) produce 55 WebPs without upscaling. The original-width variant uses the descriptive filename without a size suffix. Existing one-year immutable asset caching is retained; these assets have new names. Changed masters require new filename identities before future deployment.
+## Provenance and permitted use
 
-Primary placements: living homepage hero; olive kitchen kitchen page; spa bathroom bathroom page; waterfront extension extensions page; workspace studio/planning; open-plan interior whole-home page; bedroom, entrance, vanity, staircase and terrace inspiration gallery. The homepage also uses distinct detail/entrance/staircase views. All images remain explicitly conceptual. No new claim of completed work or generated user-specific design is made.
+`assets/photography/licences.json` records each local master, responsive output files, stock source URL or supplied original filename, photographer when known, download URL where applicable, licence/permission, commercial-use permission, attribution requirement, retrieval date and current page usage. For the 16 retained stock photographs, individual original Unsplash pages were checked for “Free to use under the Unsplash License”; Unsplash+ images were rejected. The Unsplash licence permits downloading, modification and commercial website use without mandatory attribution. Photographer credits remain in the manifest. No competitor portfolio photographs were used.
 
-Generator source owns all responsive references. Images have srcset/sizes, intrinsic dimensions, focal crops, stable frames and lazy loading below the fold. Only justified page hero imagery uses high loading priority. Reduced-motion preferences disable image effects. Original logo, typography, palette, business facts, existing comparative concepts and API/database contracts remain intact.
+Stock photographs were visually inspected and source descriptions/available camera and location metadata reviewed. This provides stock-source provenance, not an independent audit of a property's construction history. Photographs show real spaces and work; they do not verify when a room was renovated, its budget, client, builder or completion date. Brisbane compact-kitchen, Sydney weatherboard and Australian framing provenance is retained where supplied by the photographer. Other locations remain as published or unspecified. No overseas stock interior is advertised as an Australian project. The extension hero shows residential framing, not a falsely documented completed extension.
 
-The images are in production. AVIF siblings of every WebP are built by `scripts/build-concept-avif.mjs` and offered first.
+The 13 owner-supplied photographs are expressly confirmed Milestone work, with the user approval recorded in the licence manifest. Stock photographs are renovation inspiration, never proof of Milestone workmanship. Homepage and gallery disclosures, service captions, studio captions, concept pages and the site-wide notice make this distinction. The carpentry photograph is explicitly stock, not Milestone staff. Named team portraits and their existing AI-editing disclosure are unchanged. Brand logos, icons, typography, navigation, opening animation, forms, pricing, business facts and tool contracts are preserved.
 
-## Masters and tests
+The homepage slider compares **two unrelated compact kitchens**, labelled by cabinetry/storage direction. It is explicitly not a before-and-after transformation. Concept routes remain design discussions using identified Milestone or stock reference photography; no site-specific case study, suburb, cost or completion date is invented. Bathroom style photographs are material/colour references rather than literal reproductions of every style or selection.
 
-The PNG masters live only in `incoming-images/` (git-ignored, never deployed; about 49 MB for 19 files on the owner's machine). `tests/e2e/images.spec.js` and `tests/e2e/bathroom-styles.spec.js` validate the committed WebP/AVIF variants unconditionally (format, measured dimensions, aspect ratio, no upscaling, a full-width variant equal to the manifest size, AVIF smaller than WebP, six visibly distinct style images). The master-dimension checks run only where `incoming-images/` is present and are reported as skipped elsewhere, so a fresh clone or CI run is reproducible. Before replacing a master, keep `width`/`height` in the manifest in step and rebuild the variants.
+## Pipeline
+
+Owner-supplied originals remain untouched in Downloads; committed copies have descriptive filenames. Masters are committed under `assets/photography/`, outside public output. Maximum downloaded stock width is 1600px; owner photographs retain their supplied 1200/1600px dimensions. `scripts/build-photography.mjs` generates capped 1448px local WebP and AVIF derivatives, stripping metadata and preserving each source's ratio. Main photographs use available 480/768/1024/1280 widths and a full-width variant capped at 1448px (1200px for narrower supplied originals); bathroom style selectors use 480/768/1448. No upscaling. WebP quality is 77; AVIF starts at 44, reducing where necessary to remain smaller than the corresponding WebP. The historical concept/bathroom build entry points delegate to this pipeline.
+
+The generator reads the existing manifest interfaces. Main pictures offer AVIF with WebP fallback, intrinsic dimensions, `srcset` and layout-specific `sizes`. Studio selectors/previews retain responsive WebP and lazy loading. Below-fold photography is lazy; page heroes use eager loading and high fetch priority. Existing stable frames and image crops are retained. Missing image keys fail the build; there is no remote fallback.
+
+On Windows, from the repository root:
+
+```powershell
+node scripts/build-photography.mjs
+python build_site.py
+node scripts/validate-photography.mjs
+npm.cmd test
+npx.cmd playwright test
+```
+
+The validator also refreshes the manifest's per-image page list. It checks all generated HTML image paths and responsive variants, dimensions, alt attributes and licence records. Browser tests cover loading, external requests, layout shift and overflow across all 22 local routes at 375/768/1440px, plus studio selection, keyboard navigation, sharing and accessibility. `package.json` has no TypeScript or lint command; use Python compilation, Node syntax checks and `git diff --check` for changed source syntax/whitespace.
+
+## Future image changes
+
+1. Verify the original photo page and intended commercial licence. Reject CGI, generated interiors, watermarks and uncertain permissions. Do not use search thumbnails as licence evidence.
+2. Add the reasonably sized authorised download and a complete licence record. Describe only visible subjects and verified location metadata.
+3. Use a new descriptive filename when changing a photograph; the site's immutable asset caching makes filename reuse inappropriate.
+4. Rebuild both manifests and the site; validate local paths; run relevant tests and inspect local crops at all three target widths.
+5. Search all source/manifests/HTML/CSS/JS references before removing an obsolete asset. Preserve named team/brand/UI assets.
+6. Replace stock with genuine Milestone portfolio material only when owner-approved project documentation and publication permissions are available. Document before/after continuity before presenting a transformation.
+
+No live-site crawl, screenshot comparison, image copying, push or deployment was performed for this overhaul.

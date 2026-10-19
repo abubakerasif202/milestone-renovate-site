@@ -107,7 +107,7 @@ test.describe('phone image-first hero', () => {
       expect(media.top, `${width}px media above headline`).toBeLessThan(h1.top);
       expect(media.left, `${width}px full-bleed left`).toBe(0);
       expect(media.width, `${width}px full-bleed width`).toBe(width);
-      await expect(page.locator('.hero-chip')).toContainText('AI-GENERATED CONCEPT');
+      await expect(page.locator('.hero-chip')).toContainText('MILESTONE WORK');
     }
     await page.setViewportSize({ width: 900, height: 900 });
     await page.goto('/');

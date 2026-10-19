@@ -39,3 +39,21 @@
   .case-study:hover .concept-image{transform:none}
   .hero-media-inner:has(.concept-image){animation:none}
 }
+/* Licensed photographs share the existing image frames and interaction hooks. */
+.concept-image-extension,.concept-image-workspace,.concept-image-vanity,.concept-image-staircase{object-position:50% 50%}
+.photography-notice{max-width:var(--wrap,1200px);margin:0 auto;padding:24px 5%;text-align:center}
+.compare-stage .concept-image{width:100%;height:100%;object-fit:cover}
+.craft-reference{max-width:800px;margin:48px auto 0}
+.craft-reference .frame{aspect-ratio:3/2;overflow:hidden;border-radius:var(--radius)}
+.craft-reference img{width:100%;height:100%;object-fit:cover}
+.craft-reference figcaption{margin-top:12px;font-size:.8rem;color:var(--color-forest-deep)}
+/* Keep portrait source photographs inside the same stable service-hero frame. */
+.inner-hero-image>picture{position:absolute;inset:0;display:block;overflow:hidden}
+/* Reserve the visual board before its module inserts responsive photographs. */
+[data-studio-app]:empty{min-height:760px}
+@media print{[data-studio-app]:empty{min-height:0}}
+/* Distinguish owner-confirmed project photographs from licensed references. */
+.inner-hero-image:has([data-photo-origin])::after,.service-tile:has([data-photo-origin])::after{position:absolute;left:16px;top:16px;z-index:2;max-width:calc(100% - 32px);padding:7px 10px;background:var(--color-forest-deep);color:#fff;font-size:.7rem;line-height:1.4;letter-spacing:.025em;pointer-events:none}
+.inner-hero-image:has([data-photo-origin="milestone-work"])::after,.service-tile:has([data-photo-origin="milestone-work"])::after{content:"Milestone work · owner supplied"}
+.inner-hero-image:has([data-photo-origin="inspiration"])::after,.service-tile:has([data-photo-origin="inspiration"])::after{content:"Renovation inspiration · not Milestone work"}
+.concept-image-construction,.concept-image-site-floor,.concept-image-shower-preparation{object-position:50% 75%}

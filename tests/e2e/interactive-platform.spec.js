@@ -34,7 +34,7 @@ test('studio completes, recovers, shares and hands safe preferences to questionn
  }
  await expect(page.locator('[data-print]')).toBeVisible();
  await expect(page.locator('[data-share]')).toBeVisible();
- await expect(page.locator('.studio-preview')).toContainText('not completed work');
+ await expect(page.locator('.studio-preview')).toContainText('not completed Milestone work');
  await page.locator('[data-enquire]').click();
  await expect(page).toHaveURL(/plan-your-renovation/);
  await expect(page.locator('.planning-review')).toContainText('Scandinavian');

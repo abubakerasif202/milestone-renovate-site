@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import {readFileSync,existsSync} from 'node:fs';
+import {readFileSync} from 'node:fs';
 import sharp from 'sharp';
 
 const manifest=JSON.parse(readFileSync(new URL('../../assets/bathroom-styles.json',import.meta.url)));
@@ -14,14 +14,13 @@ async function openStyleStep(page,room='bathroom'){
 }
 const loadAll=(page)=>page.locator('img').evaluateAll(imgs=>Promise.all(imgs.map(i=>{i.loading='eager';return i.decode().catch(()=>{});})));
 
-// The PNG masters are private and git-ignored (incoming-images/), so a fresh clone or CI run cannot read them.
+// Licensed JPEG masters are committed alongside the licence records for reproducible builds.
 // The committed variants are validated unconditionally; the masters are checked only where present.
-const mastersPresent=manifest.images.every(image=>existsSync(image.source));
 const fullWidth=image=>`public${image.variants.find(v=>v.width===image.width).src}`;
 test('six style WebP variants are real, readable and not upscaled',async()=>{
  expect(manifest.images.map(i=>i.style)).toEqual(ORDER);
  for(const image of manifest.images){
-  expect(image.alt).toMatch(/^AI-generated concept/);
+  expect(image.alt).toMatch(/Bathroom/);
   expect(image.variants.map(v=>v.width)).toEqual([480,768,image.width]);
   for(const variant of image.variants){
    const meta=await sharp(`public${variant.src}`).metadata();
@@ -30,9 +29,8 @@ test('six style WebP variants are real, readable and not upscaled',async()=>{
  }
 });
 
-test('private PNG style masters match the manifest (runs only where incoming-images/ is present)',async()=>{
- test.skip(!mastersPresent,'incoming-images/ masters are git-ignored and not present in this checkout');
- for(const image of manifest.images){const master=await sharp(image.source).metadata();expect(master.width,image.style).toBe(image.width);expect(master.height,image.style).toBe(image.height);}
+test('licensed photographic style masters match the manifest',async()=>{
+ for(const image of manifest.images){const master=await sharp(image.source).metadata();expect(master.width,image.style).toBeGreaterThanOrEqual(image.width);expect(Math.abs(master.width/master.height-image.width/image.height)).toBeLessThan(0.01);}
 });
 
 test('the six photographs are genuinely different rooms, not recoloured copies',async()=>{
@@ -57,10 +55,10 @@ for(const width of [390,768,1440])test(`style selector grid, images, selection a
  await loadAll(page);
  const imgs=await page.locator('.style-card img').evaluateAll(list=>list.map(i=>({ok:i.complete&&i.naturalWidth>0,w:i.getAttribute('width'),h:i.getAttribute('height'),srcset:i.srcset,sizes:i.sizes,ratio:(i.getBoundingClientRect().width/i.getBoundingClientRect().height)})));
  for(const [index,img] of imgs.entries()){
-  expect(img.ok,ORDER[index]).toBe(true);expect(img.w).toBe('1122');expect(img.h).toBe('1402');expect(img.srcset).toContain('480w');expect(img.srcset).toContain('768w');expect(img.sizes).not.toBe('');
+  expect(img.ok,ORDER[index]).toBe(true);expect(img.w).toBe(String(manifest.images[index].width));expect(img.h).toBe(String(manifest.images[index].height));expect(img.srcset).toContain('480w');expect(img.srcset).toContain('768w');expect(img.sizes).not.toBe('');
  }
  for(const card of await cards.all()){
-  await expect(card).toContainText('AI-generated concept');
+  await expect(card).toContainText('Renovation inspiration');
   await expect(card).toHaveAttribute('aria-pressed','false');
   const name=await card.getAttribute('aria-label');expect(name).toMatch(/\w/);
   const box=await card.boundingBox();expect(box.width).toBeGreaterThan(130);
@@ -74,7 +72,7 @@ for(const width of [390,768,1440])test(`style selector grid, images, selection a
  await expect(page.locator('[data-next]')).toBeEnabled();
  await expect(page.locator('.style-selection-note')).toContainText('Industrial');
  await expect(page.locator('.studio-style-image')).toHaveAttribute('src',/bathroom-style-industrial/);
- await expect(page.locator('.studio-preview figcaption')).toContainText(/AI-generated concept.*Industrial.*not completed work/);
+ await expect(page.locator('.studio-preview figcaption')).toContainText(/Renovation inspiration.*Industrial.*not completed Milestone work/);
  await expect(page.locator('.studio-preview')).toContainText('Industrial');
  // The choice survives a reload and can be changed; the moodboard follows.
  await page.reload();

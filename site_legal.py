@@ -71,7 +71,7 @@ def terms_page(email: str, phone: str, phone_href: str, parent_url: str) -> str:
 <h2>3. Cost estimates</h2>
 <p>The cost calculator gives indicative ranges based on published Sydney market information. It is not a Milestone Renovate quotation. Please read the <a href="/estimate-disclaimer">Cost Estimate Disclaimer</a>, which forms part of these Terms.</p>
 <h2>4. Images</h2>
-<p>Many images on the website are AI-generated concept imagery used for design discussion. They are not photographs of completed Milestone projects and do not show real client homes. Some portraits of team members are AI-edited images.</p>
+<p>Photographs identified as Milestone work were supplied and approved for website use by the business. Other renovation imagery is licensed third-party photography used for design discussion and is not Milestone work. Some portraits of team members are AI-edited images.</p>
 <h2>5. Enquiries and your information</h2>
 <p>When you submit an enquiry you agree to provide accurate information and to use the forms only for genuine renovation enquiries. We handle personal information as set out in our <a href="/privacy">Privacy Policy</a>.</p>
 <h2>6. Acceptable use</h2>

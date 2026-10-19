@@ -35,8 +35,7 @@ npm run audit        # production dependency audit
 DEPLOYED_URL=https://milestonerenovate.com npx playwright test tests/e2e/deployed.spec.js   # read-only production checks
 ```
 
-The e2e suite reads the private PNG image masters from `incoming-images/` (git-ignored) only where they exist; in a fresh
-clone or CI those two master checks are skipped and the committed WebP/AVIF variants are still validated. The
+The e2e suite validates the committed licensed masters in `assets/photography/` and their responsive WebP/AVIF variants in every checkout. See [photography management](docs/IMAGE-INTEGRATION.md) and [source licences](docs/PHOTOGRAPHY-SOURCES.md). The
 `integration.spec.js` live-pipeline tests are opt-in (`INTEGRATION=1`) because they create real leads and send real email. The dev server refuses to start when `NODE_ENV=production`;
 if that is set globally on your machine, run the suite with `NODE_ENV=test`.
 
@@ -48,5 +47,4 @@ Apply `supabase/migrations/*.sql` to the Supabase project. Without configuration
 (it never pretends to save).
 
 ## Open items
-See "Open items" in [docs/STATUS.md](docs/STATUS.md). All imagery is AI-generated concept art, labelled as such on the site; there is no
-completed-project photography yet.
+See "Open items" in [docs/STATUS.md](docs/STATUS.md). Renovation imagery now combines 13 expressly approved Milestone work photographs with 16 labelled licensed inspiration photographs. Project case studies and before/after pairs still require supporting details.
