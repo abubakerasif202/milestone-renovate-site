@@ -7,6 +7,7 @@ from html import escape
 from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
 import json
+import hashlib
 import subprocess
 from site_calculator import calculator_page, kitchen_calculator_page, load_pricing
 from site_constants import ACN, COMPANY, EMAIL, LICENCE, LICENCE_CLASS, LICENCE_URL, PHONE, PHONE_HREF
@@ -229,7 +230,7 @@ def webpage_ld(title, description, slug, home=False, crumbs=None, service_info=N
             '@type': 'Person',
             '@id': f'{url}#person-{person["slug"]}',
             'name': person['name'],
-            'image': f'{SITE}/assets/img/team/{person["slug"]}-1122.webp',
+            'image': f'{SITE}{team_portrait_url(person["slug"], 1122)}',
             'url': f'{url}#team',
             'worksFor': {'@id': SITE + '/#organization'},
         } for person in TEAM)
@@ -286,13 +287,20 @@ TEAM = [
 TEAM_WIDTHS = (480, 800, 1122)
 
 
+def team_portrait_url(slug, width):
+    path = f'/assets/img/team/{slug}-{width}.webp'
+    # Asset responses are immutable for a year. Changed bytes need a new cache key.
+    version = hashlib.sha256((OUT / path.lstrip('/')).read_bytes()).hexdigest()[:12]
+    return f'{path}?v={version}'
+
+
 def team_card(person):
     files = [OUT / 'assets' / 'img' / 'team' / f"{person['slug']}-{n}.webp" for n in TEAM_WIDTHS]
     missing = [f.name for f in files if not f.exists()]
     if missing:
         raise SystemExit(f'Team portrait variants missing ({", ".join(missing)}); run `npm run build:team`.')
-    srcset = ', '.join(f"/assets/img/team/{person['slug']}-{n}.webp {n}w" for n in TEAM_WIDTHS)
-    return f'<article class="team-card"><div class="team-photo"><img src="/assets/img/team/{person["slug"]}-800.webp" srcset="{srcset}" sizes="(max-width:760px) min(92vw, 440px), (max-width:1020px) 46vw, 430px" width="1122" height="1402" loading="lazy" decoding="async" alt="{escape(person["alt"], quote=True)}"></div><div class="team-body"><h3>{escape(person["name"])}</h3></div></article>'
+    srcset = ', '.join(f"{team_portrait_url(person['slug'], n)} {n}w" for n in TEAM_WIDTHS)
+    return f'<article class="team-card"><div class="team-photo"><img src="{team_portrait_url(person["slug"], 800)}" srcset="{srcset}" sizes="(max-width:760px) min(92vw, 440px), (max-width:1020px) 46vw, 430px" width="1122" height="1402" loading="lazy" decoding="async" alt="{escape(person["alt"], quote=True)}"></div><div class="team-body"><h3>{escape(person["name"])}</h3></div></article>'
 
 
 def team_section():
@@ -327,253 +335,7 @@ gallery_items = [
     ('staircase', 'Curved staircase in a light-filled foyer', 'Timber and circulation', 'living'),
 ]
 filter_bar = '<div class="filter-bar" role="group" aria-label="Filter design references" data-filter-bar>' + ''.join(f'<button class="filter-btn" type="button" data-filter="{k}" aria-pressed="{"true" if k == "all" else "false"}">{l}</button>' for k, l in GALLERY_FILTERS) + '</div><p class="sr-only" id="filter-status" role="status" aria-live="polite"></p>'
-inspiration = f'''<section class="inner-hero"><div class="wrap"><p class="eyebrow inverse">DESIGN INSPIRATION</p><h1>Imagine the <em>possibilities.</em></h1><p>Ideas for light, texture, proportion and better flow. Explore owner-supplied photographs of Milestone work alongside clearly labelled renovation inspiration from other homes.</p></div><div class="inner-hero-image">{picture('inspo-outdoor', 'Dining room with timber beams, upholstered seating and garden-facing windows', '', 'eager', '(max-width:870px) 100vw, 48vw', True)}</div></section><section class="section"><div class="wrap">{split_header('A VISUAL CONVERSATION', 'Details worth <em>exploring.</em>', 'Bring the ideas you like, and we can discuss how they might translate to your own home.')}{filter_bar}<div class="gallery-grid">''' + ''.join(f'<figure class="gallery-card reveal" data-category="{cat}"><div class="frame">{picture(im, alt, "", "lazy", "(max-width:600px) 92vw, (max-width:870px) 46vw, 30vw")}</div><figcaption><span>{i:02d} / DESIGN REFERENCE</span><h3>{name}</h3><small>{image_caption(im)}</small></figcaption></figure>' for i, (im, alt, name, cat) in enumerate(gallery_items, 1)) + '''</div><p class="image-note">Milestone work is identified in each caption. Other images are licensed inspiration. No project locations, budgets or before-and-after relationships are implied.</p></div></section>''' + cta()
-
-CATEGORY_OPTIONS = [('kitchen', 'Kitchen renovation'), ('bathroom', 'Bathroom renovation'), ('whole_home', 'Whole-home renovation'), ('other', 'Something else')]
-TIMELINE_OPTIONS = [('asap', 'As soon as practical'), ('3_6_months', 'In 3–6 months'), ('6_plus_months', 'In 6+ months'), ('exploring', 'Just exploring')]
-BUDGET_OPTIONS = [('under_50k', 'Under $50,000'), ('50k_100k', '$50,000–$100,000'), ('100k_250k', '$100,000–$250,000'), ('250k_plus', '$250,000+'), ('discuss', 'Prefer to discuss')]
-
-
-def options(pairs, blank=None):
-    first = f'<option value="">{blank}</option>' if blank else ''
-    return first + ''.join(f'<option value="{v}">{l}</option>' for v, l in pairs)
-
-
-def field(name, label, control, hint='', wide=False):
-    hint_html = f'<small class="hint" id="{name}-hint">{hint}</small>' if hint else ''
-    return f'<div class="field{" wide" if wide else ""}"><label for="{name}">{label}</label>{control}{hint_html}<p class="field-error" id="{name}-error" role="alert" hidden></p></div>'
-
-
-contact_form = f'''<form class="quote-form" id="quote-form" data-enquiry-form novalidate><h3>Your renovation brief</h3><p>Fields marked * are required.</p><div class="form-error-summary" id="form-error" role="alert" tabindex="-1" hidden></div><div class="field-grid">{field('name', 'Full name *', '<input id="name" name="name" autocomplete="name" required minlength="2" maxlength="120" aria-describedby="name-error">')}{field('phone', 'Phone *', '<input id="phone" name="phone" autocomplete="tel" type="tel" inputmode="tel" required maxlength="20" aria-describedby="phone-error">')}{field('email', 'Email *', '<input id="email" name="email" autocomplete="email" type="email" required maxlength="254" aria-describedby="email-error">')}{field('category', 'Project type *', f'<select id="category" name="category" required aria-describedby="category-error">{options(CATEGORY_OPTIONS, "Select a service")}</select>')}{field('suburb', 'Suburb', '<input id="suburb" name="suburb" autocomplete="address-level2" maxlength="80" aria-describedby="suburb-error">')}{field('postcode', 'Postcode', '<input id="postcode" name="postcode" autocomplete="postal-code" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" aria-describedby="postcode-error postcode-hint">', 'Suburb or postcode is required.')}{field('timeline', 'Preferred timeframe', f'<select id="timeline" name="timeline">{options(TIMELINE_OPTIONS, "Not sure yet")}</select>')}{field('budgetRange', 'Approximate budget (optional)', f'<select id="budgetRange" name="budgetRange">{options(BUDGET_OPTIONS, "Prefer to discuss")}</select>')}{field('details', 'Tell us about your project *', '<textarea id="details" name="details" rows="5" required minlength="10" maxlength="4000" aria-describedby="details-error" placeholder="Which spaces, what would you like to change, and any ideas you have so far?"></textarea>', wide=True)}</div><div class="hp-field" aria-hidden="true"><label>Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div><div class="field consent-field"><label class="consent" for="consent"><input type="checkbox" id="consent" name="consent" required aria-describedby="consent-error"><span>I agree to Milestone Renovate contacting me about my enquiry and storing my details for that purpose, as described in the <a href="/privacy">privacy notice</a>. *</span></label><p class="field-error" id="consent-error" role="alert" hidden></p></div><button class="btn btn-dark form-submit" type="submit" data-submit>Send enquiry <span aria-hidden="true">↗</span></button><p class="form-status" id="form-status" role="status" aria-live="polite"></p><noscript><p class="form-error-summary">This form needs JavaScript. Please call <a href="{PHONE_HREF}">{PHONE}</a> instead.</p></noscript></form><div class="form-success" id="form-success" role="status" tabindex="-1" hidden><p class="eyebrow">ENQUIRY RECEIVED</p><h3>Thank you.</h3><p>Your enquiry has been stored securely and passed to the Milestone team. Your reference is <strong data-reference></strong>.</p><p class="fine-print">Please quote this reference if you call us on <a href="{PHONE_HREF}">{PHONE}</a>.</p></div>'''
-
-contact = f'''<section class="inner-hero contact-bg"><div class="wrap"><p class="eyebrow inverse">START A CONVERSATION</p><h1>Tell us what you <em>have in mind.</em></h1><p>A few details will help the Milestone team understand your renovation idea and the next practical steps.</p></div></section><section class="section contact-section"><div class="wrap contact-grid"><div><p class="eyebrow">RENOVATION ENQUIRIES</p><h2>Great spaces begin<br><em>with a conversation.</em></h2><p>Whether you have a detailed plan or a rough idea, share what you know. Prefer a guided approach? Try the <a class="inline-link" href="/plan-your-renovation">renovation questionnaire</a>.</p><div class="contact-info"><span>PHONE</span><a href="{PHONE_HREF}">{PHONE}</a><span>EMAIL</span><a href="mailto:{EMAIL}">{EMAIL}</a><span>BASED IN</span><p>North Sydney, NSW (Milestone Development)</p><span>NSW CONTRACTOR LICENCE</span><p><a href="{LICENCE_URL}" target="_blank" rel="noopener">{LICENCE}</a> ({LICENCE_CLASS}) — {COMPANY}, ACN {ACN}</p></div><p class="fine-print">Your details are used only to respond to your enquiry. See the <a class="inline-link" href="/privacy">privacy notice</a>.</p></div><div>{contact_form}</div></div></section>'''
-
-privacy = privacy_page(EMAIL, PHONE, PHONE_HREF, PARENT)
-terms = terms_page(EMAIL, PHONE, PHONE_HREF, PARENT)
-estimate_disclaimer = estimate_disclaimer_page(EMAIL, PHONE, PHONE_HREF, PRICING_REVIEWED)
-
-# --- service detail pages ----------------------------------------------------------------------------------
-pdetails = {
-    'kitchen-renovations': {
-        'name': 'Kitchen renovations',
-        'lead': 'The heart of home,',
-        'tail': 'reconsidered.',
-        'desc': 'Reimagine how you cook, host, and live. We plan ergonomic workflows, custom cabinetry, resilient stone surfaces, and refined lighting for Sydney homes.',
-        'img': 'kitchen-after',
-        'cat': 'kitchen',
-        'intro_h2': 'Balancing Sydney living with culinary craft.',
-        'intro_lead': 'A kitchen is the most demanding, heavily lived-in space in any Australian home.',
-        'intro_p1': 'Whether adapting the compact footprint of an Eastern Suburbs Victorian terrace, opening up a North Shore Federation bungalow, or redesigning an open-plan living hub in the Hills, our design process starts with how your household moves and cooks.',
-        'intro_p2': 'We integrate practical working zones—preparation, cooking, washing, and social hosting—ensuring cabinetry heights, aisle widths, appliance ventilation, and natural daylight work harmoniously.',
-        'focus': [
-            ('Layout & Movement', 'Carefully zoned workflows, generous island proportions, and intuitive transitions into living and outdoor dining spaces.'),
-            ('Bespoke Cabinetry', 'Full-height joinery, concealed sculleries, integrated pantries, and premium soft-close drawer systems built for everyday durability.'),
-            ('Materials & Lighting', 'Engineered quartz, quartzite, tactile timber veneers, and layered task-and-ambient LED lighting.'),
-        ],
-        'technical': [
-            ('Structural Load Paths', 'Assessing load-bearing wall removals with structural engineers to create open-plan dining and living sightlines.'),
-            ('Electrical & 3-Phase Power', 'Reviewing main switchboard capacity for modern induction cooktops, dual pyrolytic ovens, and concealed rangehood ducting.'),
-            ('Plumbing & Exhaust Runs', 'Planning waste stack relocations, water filtration lines, and external ducting paths that comply with Australian Standards.'),
-        ],
-        'tools': [
-            ('Kitchen Cost Guide', '/kitchen-renovation-cost', 'Explore indicative kitchen market ranges and timing.'),
-            ('Design Studio', '/renovation-design-studio', 'Explore materials, color palettes, and joinery aesthetics.'),
-            ('15-Min Strategy Call', '/booking', 'Review preliminary layouts and budget priorities with an advisor.'),
-        ],
-    },
-    'bathroom-renovations': {
-        'name': 'Bathroom renovations',
-        'lead': 'Sanctuary and routine,',
-        'tail': 'crafted for longevity.',
-        'desc': 'Explore a more considered bathroom balance: spatial efficiency, water management, custom vanities, and tactile materials designed for everyday serenity.',
-        'img': 'bathroom-after',
-        'cat': 'bathroom',
-        'intro_h2': 'Serenity engineered with rigorous technical detail.',
-        'intro_lead': 'A successful bathroom renovation blends restorative luxury with exacting wet-area construction.',
-        'intro_p1': 'From heritage Inner West terrace bathrooms with tight footprints to expansive North Shore ensuites, spatial proportion and waterproofing integrity are paramount. We carefully design falls to waste, recessed shower niches, and in-wall cisterns to maximize usable space.',
-        'intro_p2': 'Every detail is planned in advance—from AS 3740 waterproofing membranes and acoustic waste isolation to balanced ventilation that prevents moisture build-up and preserves pristine tile and stone surfaces.',
-        'focus': [
-            ('Spatial Flow & Wet Areas', 'Walk-in frameless showers, freestanding stone baths, and wall-hung fixtures that elevate visual scale and simplify cleaning.'),
-            ('Custom Joinery & Storage', 'Bespoke timber and polyurethane vanities, recessed mirrored shaving cabinets, and integrated charging drawers.'),
-            ('Surfaces & Tapware', 'Large-format porcelain slabs, fluted feature tiles, brushed brass or gunmetal tapware, and heated towel elements.'),
-        ],
-        'technical': [
-            ('Waterproofing to AS 3740', 'Dual-layer membrane systems, bonded screed drainage falls, and compliant perimeter leak-stop flanges for complete peace of mind.'),
-            ('In-Wall Framework & Services', 'Precision nogging and studwork for wall-hung basins, concealed cisterns, and thermostatic mixer bodies.'),
-            ('Subfloor & Acoustic Isolation', 'Structural subfloor verification, acoustic lagging on PVC waste pipes, and quiet mechanical exhaust ventilation.'),
-        ],
-        'tools': [
-            ('Bathroom Cost Planner', '/bathroom-renovation-cost', 'Explore scope drivers, fixtures, and layout complexities.'),
-            ('Design Studio', '/renovation-design-studio', 'Compare 6 photographed bathroom style directions and palettes.'),
-            ('15-Min Strategy Call', '/booking', 'Talk through your bathroom priorities and budget with the team.'),
-        ],
-    },
-    'home-renovations': {
-        'name': 'Whole-home renovations',
-        'lead': 'Make your home feel',
-        'tail': 'new again.',
-        'desc': 'Reconsider the relationship between rooms, improve daily flow, and explore the latent potential waiting within your existing floor plan.',
-        'img': 'whole-home-living',
-        'cat': 'whole_home',
-        'intro_h2': 'Harmonizing existing character with contemporary living.',
-        'intro_lead': 'Whole-home renovations allow you to preserve the soul of your residence while completely transforming how it lives.',
-        'intro_p1': 'Many classic Sydney residences suffer from disjointed room layouts, dark internal hallways, and disconnected rear gardens. Rather than knocking down and starting over, our approach unifies floor levels, aligns sightlines, and brings natural light deep into the home.',
-        'intro_p2': 'We balance care for original details such as mouldings, cornices and fireplaces with practical updates to flooring, lighting, storage and finishes.',
-        'focus': [
-            ('Cohesive Spatial Planning', 'Eliminating awkward pinch points, opening hallways to natural light, and creating purposeful connections between living zones.'),
-            ('Respecting Character', 'Respecting original period character in heritage zones while delivering refined, contemporary interiors.'),
-            ('Comfort & Finishes', 'Considering insulation, ventilation, flooring and lighting as part of the renovation scope.'),
-        ],
-        'technical': [
-            ('Existing Structure', 'Checking which walls are load-bearing and bringing in a structural engineer where a change needs one.'),
-            ('Electrical & Lighting', 'Reviewing switchboard capacity, power points and lighting so the new layout works day to day.'),
-            ('Staging & Logistics Planning', 'Evaluating construction sequencing, site hoarding, and whether works can be staged or require temporary relocation.'),
-        ],
-        'tools': [
-            ('Quote & Scope Audit', '/quote-audit', 'Have existing renovation quotes reviewed for missing allowances.'),
-            ('Design Studio', '/renovation-design-studio', 'Explore materials, colour palettes and finishes for living spaces.'),
-            ('15-Min Strategy Call', '/booking', 'Discuss your priorities, the existing home and approximate timeframes.'),
-        ],
-    },
-}
-
-SERVICE_META = {
-    'kitchen-renovations': 'Kitchen renovations in Sydney: plan layout, cabinetry, storage, lighting and finishes with Milestone Renovate, renovation brand of Milestone Development.',
-    'bathroom-renovations': 'Bathroom renovations in Sydney: plan space, storage, fixtures, waterproofing and finishes with Milestone Renovate, renovation brand of Milestone Development.',
-    'home-renovations': 'Whole-home renovations in Sydney: rework flow, living spaces and finishes with practical planning from Milestone Renovate.',
-}
-
-# --- planning questionnaire --------------------------------------------------------------------------------
-CHOICES = {
-    'category': [('kitchen', 'Kitchen', 'Layout, cabinetry, benchtops and appliances'), ('bathroom', 'Bathroom', 'Tiling, fixtures, waterproofing and layout'), ('whole_home', 'Whole home', 'Several rooms, flow and finishes'), ('other', 'Something else', 'Tell us about it in the notes')],
-    'propertyType': [('house', 'House', ''), ('townhouse', 'Townhouse', ''), ('apartment', 'Apartment', ''), ('strata_unit', 'Strata unit', 'Body corporate rules may apply'), ('other', 'Other', '')],
-    'layoutChange': [('none', 'Keep the current layout', ''), ('minor', 'Minor adjustments', ''), ('major', 'Major layout change', ''), ('not_sure', 'Not sure yet', '')],
-    'roomSize': [('small', 'Compact', ''), ('medium', 'Average', ''), ('large', 'Generous', ''), ('not_sure', 'Not sure', '')],
-    'finishLevel': [('essential', 'Essential and practical', 'Durable, straightforward finishes'), ('mid_range', 'Mid-range', 'A balance of quality and value'), ('premium', 'Premium and bespoke', 'Custom detail and high-end materials'), ('not_sure', 'Not sure yet', '')],
-}
-SCOPE_LABELS = {'new_layout': 'Change the layout', 'new_cabinetry': 'New cabinetry', 'new_benchtops': 'New benchtops', 'new_appliances': 'New appliances', 'relocate_plumbing': 'Move plumbing', 'new_tiling': 'New tiling', 'new_fixtures': 'New fixtures and fittings', 'waterproofing': 'Waterproofing', 'walk_in_shower': 'Walk-in shower', 'accessibility': 'Accessibility features', 'structural_changes': 'Structural changes', 'new_flooring': 'New flooring', 'painting': 'Painting', 'lighting_electrical': 'Lighting and electrical', 'open_plan': 'Open-plan living'}
-SCOPE_BY_CATEGORY = {
-    'kitchen': ['new_layout', 'new_cabinetry', 'new_benchtops', 'new_appliances', 'relocate_plumbing', 'new_flooring', 'lighting_electrical', 'structural_changes'],
-    'bathroom': ['new_layout', 'new_tiling', 'new_fixtures', 'waterproofing', 'walk_in_shower', 'accessibility', 'relocate_plumbing'],
-    'whole_home': ['open_plan', 'new_layout', 'new_flooring', 'painting', 'lighting_electrical', 'structural_changes'],
-    'other': ['new_layout', 'new_flooring', 'painting', 'lighting_electrical', 'accessibility'],
-}
-
-
-def choice(kind, name, value, label, desc=''):
-    d = f'<small>{desc}</small>' if desc else ''
-    return f'<label class="choice"><input type="{kind}" name="{name}" value="{value}"><span class="choice-body"><b>{label}</b>{d}</span></label>'
-
-
-def choices(kind, name):
-    return ''.join(choice(kind, name, v, l, d) for v, l, d in CHOICES[name])
-
-
-def step(step_id, title, inner, optional=False):
-    opt = '<span class="optional">Optional</span>' if optional else ''
-    return f'<fieldset class="wizard-step" data-step="{step_id}"><legend tabindex="-1">{title}{opt}</legend>{inner}<p class="field-error" id="{step_id}-error" role="alert" hidden></p></fieldset>'
-
-
-scope_groups = ''.join(
-    f'<div class="choice-grid" data-scope-for="{cat}" hidden>' + ''.join(choice('checkbox', 'scope', s, SCOPE_LABELS[s]) for s in scopes) + '</div>'
-    for cat, scopes in SCOPE_BY_CATEGORY.items()
-)
-
-wizard_steps = ''.join([
-    step('category', 'What are you planning to renovate?', f'<div class="choice-grid">{choices("radio", "category")}</div>'),
-    step('location', 'Where is the property?', f'''<div class="field-grid">{field('suburb', 'Suburb', '<input id="suburb" name="suburb" autocomplete="address-level2" maxlength="80">')}{field('postcode', 'Postcode', '<input id="postcode" name="postcode" autocomplete="postal-code" inputmode="numeric" maxlength="4">', 'Suburb or postcode is required.')}</div>'''),
-    step('property', 'What type of property is it?', f'<div class="choice-grid">{choices("radio", "propertyType")}</div>', True),
-    step('scope', 'What changes are you considering?', f'<p class="step-hint">Select anything that applies.</p>{scope_groups}<p class="subhead">How much would the layout change?</p><div class="choice-grid">{choices("radio", "layoutChange")}</div>', True),
-    step('size', 'Roughly how big is the space?', f'<div class="choice-grid">{choices("radio", "roomSize")}</div>', True),
-    step('finish', 'What design and finish level suits you?', f'<div class="choice-grid">{choices("radio", "finishLevel")}</div>', True),
-    step('budget', 'Budget and timing', f'''<div class="field-grid">{field('budgetRange', 'Approximate budget', f'<select id="budgetRange" name="budgetRange">{options(BUDGET_OPTIONS, "Prefer to discuss")}</select>')}{field('timeline', 'Preferred timeframe', f'<select id="timeline" name="timeline">{options(TIMELINE_OPTIONS, "Not sure yet")}</select>')}</div><p class="fine-print">A budget range helps us suggest practical options. It is never a quote or commitment.</p>''', True),
-    step('notes', 'Anything else we should know?', f'''{field('details', 'Project notes', '<textarea id="details" name="details" rows="5" maxlength="4000" placeholder="Ideas, must-haves, constraints, access or anything else useful."></textarea>', wide=True)}<p class="fine-print">Please do not include sensitive information such as payment details.</p>''', True),
-    step('contact', 'How can we reach you?', f'''<div class="field-grid">{field('name', 'Full name *', '<input id="name" name="name" autocomplete="name" maxlength="120">')}{field('phone', 'Phone *', '<input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20">')}{field('email', 'Email *', '<input id="email" name="email" type="email" autocomplete="email" maxlength="254">', wide=True)}</div><div class="hp-field" aria-hidden="true"><label>Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div><div class="field consent-field"><label class="consent" for="consent"><input type="checkbox" id="consent" name="consent"><span>I agree to Milestone Renovate contacting me about my enquiry and storing my details for that purpose, as described in the <a href="/privacy">privacy notice</a>. *</span></label><p class="field-error" id="consent-error" role="alert" hidden></p></div>'''),
-])
-
-plan = f'''<section class="inner-hero compact"><div class="wrap"><p class="eyebrow inverse">PLAN YOUR RENOVATION</p><h1>Let’s shape your <em>brief.</em></h1><p>Nine short steps. Skip anything you are unsure about — you can always discuss it with the team.</p></div></section><section class="section wizard-section"><div class="wrap wizard-wrap"><form class="wizard" id="wizard" data-wizard novalidate><div class="wizard-head"><p class="wizard-step-label" id="wizard-step-label" aria-live="polite">Step 1 of 9</p><progress id="wizard-progress" max="9" value="1" aria-labelledby="wizard-step-label"></progress></div><div class="form-error-summary" id="form-error" role="alert" tabindex="-1" hidden></div>{wizard_steps}<div class="wizard-actions"><button class="btn btn-outline" type="button" data-back>Back</button><button class="btn btn-dark" type="button" data-next>Continue <span aria-hidden="true">→</span></button><button class="btn btn-dark" type="submit" data-submit>Send my brief <span aria-hidden="true">↗</span></button></div><p class="form-status" id="form-status" role="status" aria-live="polite"></p><noscript><p class="form-error-summary">This questionnaire needs JavaScript. Please use the <a href="/contact">contact form</a> or call <a href="{PHONE_HREF}">{PHONE}</a>.</p></noscript></form><div class="form-success" id="form-success" role="status" tabindex="-1" hidden><p class="eyebrow">BRIEF RECEIVED</p><h2>Thank you — we have your brief.</h2><p>Your enquiry has been stored securely and passed to the Milestone team. Your reference is <strong data-reference></strong>.</p><p>The team will be in touch to talk through your priorities and next steps. Please quote this reference if you call us on <a href="{PHONE_HREF}">{PHONE}</a>.</p><a class="btn btn-dark" href="/">Back to home <span aria-hidden="true">↗</span></a></div></div></section>'''
-
-# --- interactive planning experiences ---------------------------------------------------------------------
-calculator = calculator_page(PRICING, cta())
-studio = studio_page({room: concept_image_data(key) for room, key in [('bathroom', 'bathroom'), ('kitchen', 'kitchen'), ('living', 'whole-home'), ('workspace', 'workspace')]}, bathroom_style_imagery())
-booking = booking_page(field)
-quote_audit = quote_audit_page(field)
-
-not_found = '''<section class="inner-hero compact"><div class="wrap"><p class="eyebrow inverse">PAGE NOT FOUND</p><h1>That page has <em>moved.</em></h1><p>Try the links below, or call us.</p><a class="btn btn-primary" href="/">Back to home <span aria-hidden="true">↗</span></a></div></section>'''
-
-
-# --- write everything ---------------------------------------------------------------------------------------
-RETIRED_ROUTES = ('/extensions', '/approvals-guide')
-
-
-def write(name, content):
-    (OUT / name).write_text(content, encoding='utf-8')
-
-
-def build():
-    OUT.mkdir(exist_ok=True)
-    for route in RETIRED_ROUTES:
-        (OUT / (route.lstrip('/') + '.html')).unlink(missing_ok=True)
-    for slug, d in pdetails.items():
-        service = d['name']
-        lead, tail = d['lead'], d['tail']
-        desc = d['desc']
-        img = d['img']
-        cat = d['cat']
-        seo_title = f"{service} Sydney | Milestone Renovate"
-        seo_desc = SERVICE_META[slug]
-
-        focus_cards = ''.join(
-            f'<article><span>0{i} / RENOVATION FOCUS</span><h3>{escape(title)}</h3><p>{escape(text)}</p></article>'
-            for i, (title, text) in enumerate(d['focus'], 1)
-        )
-        tech_cards = ''.join(
-            f'<article><span>0{i} / PLANNING &amp; SITE REALITY</span><h3>{escape(title)}</h3><p>{escape(text)}</p></article>'
-            for i, (title, text) in enumerate(d['technical'], 1)
-        )
-        tools_html = ''.join(
-            f'<a class="platform-card" href="{url}"><span class="platform-card-badge">INTERACTIVE PLANNING</span><h3>{escape(label)}</h3><p>{escape(summary)}</p><span class="platform-card-cta">Explore tool <span aria-hidden="true">↗</span></span></a>'
-            for label, url, summary in d['tools']
-        )
-
-        photo_sets = {
-            'kitchen': [('compare-before', 'Compact timber cabinetry'), ('compare-after', 'Open shelving and storage'), ('living-hero', 'Natural light and practical worktops')],
-            'bathroom': [('vanity', 'Twin basins and everyday storage'), ('detail', 'Vanity and shower details'), ('bath-layout', 'A bath and practical circulation')],
-            'whole_home': [('staircase', 'Timber and circulation'), ('bedroom', 'A restful bedroom'), ('laundry', 'A practical utility space')],
-        }
-        photo_cards = ''.join(f'<figure class="gallery-card"><div class="frame">{picture(key, title, sizes="(max-width:600px) 92vw, (max-width:870px) 46vw, 30vw")}</div><figcaption><h3>{title}</h3><small>{image_caption(key)}</small></figcaption></figure>' for key, title in photo_sets[cat])
-        photo_section = f'<section class="section surface-alt"><div class="wrap"><p class="eyebrow">RENOVATION INSPIRATION</p><h2>Real spaces.<br><em>Ideas for your brief.</em></h2><div class="gallery-grid">{photo_cards}</div></div></section>'
-        detail = f'''<section class="inner-hero"><div class="wrap"><p class="eyebrow inverse">MILESTONE RENOVATE / SERVICES</p><h1>{lead}<br><em>{tail}</em></h1><p>{desc}</p><div class="hero-buttons"><a class="btn btn-primary" href="/plan-your-renovation?category={cat}">Plan this renovation <span aria-hidden="true">↗</span></a><a class="btn btn-gold" href="/booking">Book 15-min call <span aria-hidden="true">↗</span></a></div></div><div class="inner-hero-image">{picture(img, 'Renovation inspiration photograph', loading='eager', sizes='(max-width:870px) 100vw, 48vw', priority=True)}</div></section>
-<section class="section"><div class="wrap intro-grid"><div>{kicker(escape(service.upper()))}<h2>{d['intro_h2']}</h2></div><div><p class="lead">{d['intro_lead']}</p><p>{d['intro_p1']}</p><p>{d['intro_p2']}</p><a class="text-link" href="/plan-your-renovation?category={cat}">Start your renovation brief <span aria-hidden="true">↗</span></a></div></div></section>
-{photo_section}<section class="section services-surface"><div class="wrap">{split_header('DESIGN PRINCIPLES', 'Designed for how<br><em>you live every day.</em>', 'Every space is shaped around natural light, spatial proportion, and functional longevity.')}<div class="value-grid">{focus_cards}</div><p class="image-note">{image_caption(img)}. Supporting photographs are individually labelled.</p></div></section>
-<section class="section"><div class="wrap">{split_header('TECHNICAL &amp; PLANNING RIGOUR', 'Practical execution<br><em>before work begins.</em>', 'Early checks of structure, services and access help protect your renovation budget.')}<div class="value-grid">{tech_cards}</div></div></section>
-<section class="section surface-alt"><div class="wrap">{split_header('PLANNING SUITE', 'Explore our interactive<br><em>renovation tools.</em>', 'Clarity at every stage: test styles, prepare your brief and audit builder scopes.')}<div class="platform-tools">{tools_html}</div></div></section>{cta()}'''
-
-        write(slug + '.html', shell(seo_title, seo_desc, detail, 'Services', slug, crumbs=[('Home', '/'), ('Services', '/services'), (service, '/' + slug)], service_info={'name': service, 'category': cat}))
-
-    pages = [
-        ('index.html', 'Milestone Renovate | Thoughtful Home Renovations Sydney', 'Thoughtful kitchen, bathroom and whole-home renovations for existing Sydney homes, from Milestone Renovate, the renovation brand of Milestone Development.', home, 'Home', '', dict(home=True, scripts=['interactions.js', 'postcode-entry.js'])),
-        ('services.html', 'Home Renovation Services Sydney | Milestone Renovate', 'Explore whole-home, kitchen and bathroom renovations with Milestone Renovate in Sydney.', services, 'Services', 'services', dict(crumbs=[('Home', '/'), ('Services', '/services')])),
-        ('about.html', 'About Milestone Renovate | Our Renovation Approach', 'Meet Milestone Renovate, the renovation brand of Milestone Development, and explore our thoughtful approach.', about, 'Our Approach', 'about', dict(crumbs=[('Home', '/'), ('Our Approach', '/about')])),
-        ('inspiration.html', 'Renovation Inspiration & Concepts | Milestone Renovate', 'Explore photographic design references and renovation ideas for Sydney homes.', inspiration + concept_gallery(picture, image_caption), 'Inspiration', 'inspiration', dict(crumbs=[('Home', '/'), ('Inspiration', '/inspiration')], scripts=['interactions.js'])),
-        ('contact.html', 'Renovation Enquiries | Milestone Renovate', 'Speak with Milestone Renovate about kitchen, bathroom and whole-home renovations. Send a short enquiry or call ' + PHONE + '.', contact, 'Contact', 'contact', dict(crumbs=[('Home', '/'), ('Contact', '/contact')], scripts=['enquiry-form.js'])),
-        ('privacy.html', 'Privacy Policy | Milestone Renovate', 'How Milestone Renovate collects, uses, stores and discloses the personal information you share, and how to access, correct or complain.', privacy, '', 'privacy', dict(crumbs=[('Home', '/'), ('Privacy', '/privacy')])),
-        ('terms.html', 'Website Terms of Use | Milestone Renovate', 'The terms that apply to your use of the Milestone Renovate website, including how cost estimates and general information may be used.', terms, '', 'terms', dict(crumbs=[('Home', '/'), ('Terms of Use', '/terms')])),
-        ('estimate-disclaimer.html', 'Cost Estimate Disclaimer | Milestone Renovate', 'Indicative cost ranges from the Milestone Renovate calculator are market-based guides, not quotes, offers or contracts.', estimate_disclaimer, '', 'estimate-disclaimer', dict(crumbs=[('Home', '/'), ('Cost Estimate Disclaimer', '/estimate-disclaimer')])),
-        ('plan-your-renovation.html', 'Plan Your Renovation | Guided Brief | Milestone Renovate', 'Answer a few short questions about your kitchen, bathroom or whole-home renovation and share your brief with the Milestone Renovate team.', plan, '', 'plan-your-renovation', dict(crumbs=[('Home', '/'), ('Plan Your Renovation', '/plan-your-renovation')], scripts=['wizard-ui.js'])),
-        ('bathroom-renovation-cost.html', 'Renovation Cost Calculator Sydney | Milestone Renovate', 'Estimate your Sydney bathroom or kitchen renovation cost in AUD with indicative ranges, timelines and clear assumptions. A market guide, not a quote.', calculator, 'Cost Planner', 'bathroom-renovation-cost', dict(crumbs=[('Home', '/'), ('Cost Calculator', '/bathroom-renovation-cost')], scripts=['bathroom-calculator-ui.js'], styles=['calculator.css'])),
-        ('kitchen-renovation-cost.html', 'Kitchen Renovation Cost Guide Sydney | Milestone Renovate', 'Explore indicative kitchen renovation market ranges and prepare your renovation brief.', kitchen_calculator_page(PRICING, cta()), 'Cost Planner', 'kitchen-renovation-cost', dict(crumbs=[('Home', '/'), ('Kitchen Cost Guide', '/kitchen-renovation-cost')], scripts=['calculator-ui.js'], styles=['calculator.css'])),
-        ('booking.html', 'Request a 15-Minute Strategy Call | Milestone Renovate', 'Request a complimentary 15-minute phone strategy call with the Milestone Renovate team. Talk through your plans, priorities and costs.', booking, '', 'booking', dict(crumbs=[('Home', '/'), ('Book Consultation', '/booking')], scripts=['booking-ui.js'])),
-        ('quote-audit.html', 'Renovation Quote & Scope Audit | Milestone Renovate', 'Have an existing builder quote reviewed by the Milestone Renovate team. Look for prime cost allowances, omitted certifier allowances and scope gaps.', quote_audit, '', 'quote-audit', dict(crumbs=[('Home', '/'), ('Quote Audit', '/quote-audit')], scripts=['quote-audit-ui.js'])),
-    ]
-    pages.append(('renovation-design-studio.html', 'Renovation Design Studio Sydney | Milestone Renovate', 'Create a visual renovation moodboard for your Sydney bathroom, kitchen or living space. Explore materials, colours and layout priorities, then share your brief.', studio, 'Design Studio', 'renovation-design-studio', dict(crumbs=[('Home', '/'), ('Design Studio', '/renovation-design-studio')], scripts=['design-studio.js'])))
-    for concept in CONCEPTS:
-        slug = 'concepts/' + concept['slug']
-        (OUT / 'concepts').mkdir(exist_ok=True)
-        pages.append((slug + '.html', concept['title'] + ' | Concept | Milestone Renovate', 'Photographic ' + concept['category'].lower() + ' inspiration: ' + concept['scope'].rstrip('.').lower() + '. A design discussion with reference photography; project details are not inferred.', concept_page(concept, picture, image_caption), 'Inspiration', slug, dict(crumbs=[('Home', '/'), ('Inspiration', '/inspiration'), (concept['title'], '/' + slug)])))
-    for filename, title, desc, content, active, slug, kw in pages:
-        write(filename, shell(title, desc, content, active, slug, **kw))
-    write('404.html', shell('Page not found | Milestone Renovate', 'The page you were looking for could not be found.', not_found, noindex=True, slug='404'))
+inspiration = f'''<section class="inner-hero"><div class="wrap"><p class="eyebrow inverse">DESIGN INSPIRATION</p><h1>Imagine the <em>possibilities.</em></h1><p>Ideas for light, texture, proportion and better flow. Explore owner-supplied photographs of Milestone work alongside clearly labelled renovation inspiration from other homes.</p></div><div class="inner-hero-image">{picture('inspo-outdoor', 'Dining room with timber beams, upholstered seating and garden-facing windows', '', 'eager', '(max-width:870px) 100vw, 48vw', True)}</div></section><section class="section"><div class="wrap">{split_header('A VISUAL CONVERSATION', 'Details worth …8617 tokens truncated…404'))
 
     write('robots.txt', f'User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: {SITE}/sitemap.xml\n')
 

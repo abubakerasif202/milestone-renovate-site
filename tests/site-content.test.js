@@ -5,6 +5,11 @@ import { createHash } from 'node:crypto';
 
 const pub = (f) => new URL(`../public/${f}`, import.meta.url);
 const html = (f) => readFileSync(pub(f), 'utf8');
+const portraitUrl = (slug, width) => {
+  const path = `assets/img/team/${slug}-${width}.webp`;
+  const version = createHash('sha256').update(readFileSync(pub(path))).digest('hex').slice(0, 12);
+  return `/${path}?v=${version}`;
+};
 const pages = [...readdirSync(pub('')).filter((f) => f.endsWith('.html')), ...readdirSync(pub('concepts')).map((f) => `concepts/${f}`)];
 
 test('team section publishes the user-confirmed names, portrait mapping and factual copy', () => {
@@ -20,13 +25,17 @@ test('team section publishes the user-confirmed names, portrait mapping and fact
   assert.ok(at('James Creswick') > 0 && at('James Creswick') < at('Kamala Najafi') && at('Kamala Najafi') < at('Muhammad Mohsini'), 'order James, Kamala, Muhammad');
   const cards = about.split('class="team-card"').slice(1).map((c) => c.split('</article>')[0]);
   assert.deepEqual(cards.map((card) => card.match(/src="([^"]+)"/)?.[1]), [
-    '/assets/img/team/james-creswick-800.webp',
-    '/assets/img/team/kamala-najafi-800.webp',
-    '/assets/img/team/muhammad-mohsini-800.webp',
+    portraitUrl('james-creswick', 800),
+    portraitUrl('kamala-najafi', 800),
+    portraitUrl('muhammad-mohsini', 800),
   ]);
   assert.match(cards[0], /alt="James Creswick, smiling with light-brown hair in a green Milestone Development shirt"/);
   assert.match(cards[1], /alt="Kamala Najafi, dark-haired and bearded in a green Milestone Renovate shirt"/);
   assert.match(cards[2], /alt="Muhammad Mohsini, clean-shaven with dark hair in a green Milestone Renovate shirt"/);
+  for (const [i, slug] of ['james-creswick', 'kamala-najafi', 'muhammad-mohsini'].entries()) {
+    const srcset = cards[i].match(/srcset="([^"]+)"/)[1];
+    assert.deepEqual(srcset.split(', '), [480, 800, 1122].map((width) => `${portraitUrl(slug, width)} ${width}w`), 'every mobile and desktop candidate bypasses stale immutable caches');
+  }
   assert.doesNotMatch(cards.join(' '), /team-role|years of .*experience|speciali[sz]es|builder-led|project delivery/i);
   assert.equal((about.match(/width="1122" height="1402"/g) || []).length, 3);
 
@@ -34,9 +43,9 @@ test('team section publishes the user-confirmed names, portrait mapping and fact
   const people = ld['@graph'].filter((item) => item['@type'] === 'Person');
   assert.deepEqual(people.map((person) => person.name), ['James Creswick', 'Kamala Najafi', 'Muhammad Mohsini']);
   assert.deepEqual(people.map((person) => person.image), [
-    'https://milestonerenovate.com/assets/img/team/james-creswick-1122.webp',
-    'https://milestonerenovate.com/assets/img/team/kamala-najafi-1122.webp',
-    'https://milestonerenovate.com/assets/img/team/muhammad-mohsini-1122.webp',
+    `https://milestonerenovate.com${portraitUrl('james-creswick', 1122)}`,
+    `https://milestonerenovate.com${portraitUrl('kamala-najafi', 1122)}`,
+    `https://milestonerenovate.com${portraitUrl('muhammad-mohsini', 1122)}`,
   ]);
 });
 

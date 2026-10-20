@@ -26,7 +26,7 @@ test.describe('team section', () => {
     const imgs = section.locator('img');
     for (let i = 0; i < 3; i += 1) {
       const img = imgs.nth(i);
-      await expect(img).toHaveAttribute('src', expectedPortraits[i][0]);
+      expect(await img.getAttribute('src')).toMatch(new RegExp(`^${expectedPortraits[i][0].replaceAll('.', '\\.')}\\?v=[a-f0-9]{12}$`));
       await expect(img).toHaveAttribute('alt', expectedPortraits[i][1]);
       await expect.poll(() => img.evaluate((e) => e.complete && e.naturalWidth > 0)).toBe(true);
       const r = await img.evaluate((e) => { const b = e.getBoundingClientRect(); return { ratio: b.width / b.height, natural: e.naturalWidth / e.naturalHeight, fit: getComputedStyle(e).objectFit }; });
