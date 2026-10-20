@@ -4,18 +4,21 @@ import AxeBuilder from '@axe-core/playwright';
 const LEGAL = ['/privacy', '/terms', '/estimate-disclaimer'];
 
 test.describe('team section', () => {
-  test('renders both portraits at 4:5 with equal card heights and no stretching', async ({ page }) => {
+  test('renders all three portraits at 4:5 with equal card heights and no stretching', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/about');
     const section = page.locator('#team');
     await section.scrollIntoViewIfNeeded();
-    await expect(section.getByRole('heading', { level: 2 })).toContainText('Experienced leadership');
+    await expect(section.getByRole('heading', { level: 2 })).toContainText('A hands-on team');
     const cards = section.locator('.team-card');
-    await expect(cards).toHaveCount(2);
+    await expect(cards).toHaveCount(3);
     const boxes = await cards.evaluateAll((els) => els.map((e) => e.getBoundingClientRect()));
     expect(Math.abs(boxes[0].height - boxes[1].height)).toBeLessThan(1);
+    expect(Math.abs(boxes[1].height - boxes[2].height)).toBeLessThan(1);
+    const photoHeights = await cards.locator('.team-photo img').evaluateAll((els) => els.map((e) => e.getBoundingClientRect().height));
+    expect(Math.max(...photoHeights) - Math.min(...photoHeights)).toBeLessThan(1);
     const imgs = section.locator('img');
-    for (let i = 0; i < 2; i += 1) {
+    for (let i = 0; i < 3; i += 1) {
       const img = imgs.nth(i);
       await expect.poll(() => img.evaluate((e) => e.complete && e.naturalWidth > 0)).toBe(true);
       const r = await img.evaluate((e) => { const b = e.getBoundingClientRect(); return { ratio: b.width / b.height, natural: e.naturalWidth / e.naturalHeight, fit: getComputedStyle(e).objectFit }; });
@@ -31,7 +34,14 @@ test.describe('team section', () => {
       await page.goto('/about');
       expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBe(0);
       const cols = await page.locator('.team-grid').evaluate((e) => getComputedStyle(e).gridTemplateColumns.split(' ').length);
-      expect(cols).toBe(width <= 760 ? 1 : 2);
+      expect(cols).toBe(width <= 760 ? 1 : width <= 1020 ? 2 : 3);
+      if (width > 760 && width <= 1020) {
+        // two columns: the third card sits centred on its own row
+        const boxes = await page.locator('.team-card').evaluateAll((els) => els.map((e) => e.getBoundingClientRect()));
+        const grid = await page.locator('.team-grid').evaluate((e) => { const b = e.getBoundingClientRect(); return b.left + b.width / 2; });
+        expect(boxes[2].top).toBeGreaterThan(boxes[0].bottom - 1);
+        expect(Math.abs(boxes[2].left + boxes[2].width / 2 - grid)).toBeLessThan(2);
+      }
     });
   }
 

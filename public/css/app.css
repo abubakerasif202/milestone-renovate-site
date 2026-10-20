@@ -86,38 +86,6 @@
 .slot-pill:hover{border-color:var(--color-accent);background:#fff}
 .slot-pill.is-selected,.slot-pill[aria-pressed="true"]{background:var(--color-accent);color:#fff;border-color:var(--color-accent);box-shadow:0 2px 8px rgba(15,32,29,.25)}
 
-/* Approvals Checker */
-.approvals-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,5vw,60px);align-items:start}
-.approvals-form-card{background:#fff;padding:clamp(24px,4vw,46px);box-shadow:var(--shadow-soft);border-top:2px solid var(--color-detail)}
-.approvals-group{border:0;padding:0;margin:0 0 24px}
-.approvals-group legend{font-size:.95rem;font-weight:700;color:var(--color-forest-deep);margin-bottom:12px;padding:0}
-.check-radio{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;margin-bottom:8px;border:1px solid var(--color-line);border-radius:var(--radius);background:var(--color-paper);cursor:pointer;font-size:.88rem;transition:border-color var(--dur-fast),background var(--dur-fast)}
-.check-radio:hover{border-color:var(--color-forest);background:#fff}
-.check-radio input{margin-top:3px;accent-color:var(--color-accent)}
-.approvals-result-card{position:sticky;top:104px}
-.approvals-card{background:var(--color-forest);color:#fff;padding:clamp(24px,4vw,40px);box-shadow:var(--shadow-soft);border-bottom:4px solid var(--color-gold)}
-.approvals-card h3{font-family:var(--font-display);font-size:2.2rem;margin:12px 0;color:#fff}
-.approvals-card p{color:#e2ede6;line-height:1.55;margin-bottom:16px}
-.badge-tag,.badge-success,.badge-warning,.badge-primary{display:inline-block;padding:4px 10px;border-radius:20px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.badge-success{background:#25855A;color:#fff}
-.badge-warning{background:var(--color-gold);color:var(--color-forest-deep)}
-.badge-primary{background:var(--color-accent);color:#fff}
-.badge-tag{background:var(--color-sage);color:var(--color-forest-deep);margin-bottom:12px}
-.approvals-checklist{list-style:none;padding:0;margin:20px 0}
-.approvals-checklist li{position:relative;padding-left:24px;margin-bottom:10px;font-size:.9rem;color:#f0f7f3;line-height:1.45}
-.approvals-checklist li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--color-gold);font-weight:700}
-.approvals-card .btn{width:100%;margin-top:12px;text-align:center}
-.approvals-card-footer{display:flex;flex-direction:column;gap:12px;margin-top:20px}
-.approvals-card .text-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;color:#fff;border-bottom:1px solid var(--color-gold);text-decoration:none;transition:color var(--dur-fast),border-color var(--dur-fast)}
-.approvals-card .text-link:hover{color:var(--color-gold-light);border-bottom-color:var(--color-gold-light)}
-.approvals-card .text-link:focus-visible{outline:2px solid var(--color-gold);outline-offset:4px;color:var(--color-gold-light)}
-.comparison-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px;margin-top:32px}
-.comparison-card{background:#fff;padding:32px;border:1px solid var(--color-line);border-top:3px solid var(--color-forest);border-radius:var(--radius)}
-.comparison-card h3{font-size:1.4rem;margin:8px 0 12px}
-.comparison-card .lead-sm{font-size:.92rem;color:var(--color-ink-soft);margin-bottom:16px;line-height:1.5}
-.comparison-card ul{padding-left:18px;margin:0;font-size:.88rem;color:var(--color-ink);line-height:1.6}
-.comparison-card li{margin-bottom:8px}
-
 /* Layout Helpers */
 .prep-value-grid{grid-template-columns:1fr;gap:16px;margin:24px 0}
 .booking-fields{margin-top:24px}
@@ -132,10 +100,6 @@
 @media(max-width:870px){
   .nav .nav-booking-link{display:flex;justify-content:center;margin-top:8px;background:transparent;color:var(--color-masthead-ink);border:1px solid rgba(235,198,120,.55);padding:16px;min-height:50px;border-radius:var(--radius);font-weight:600}
   .nav .nav-booking-link:hover{border-color:var(--color-gold-light);color:var(--color-gold-light)}
-}
-@media(max-width:1020px){
-  .approvals-grid{grid-template-columns:1fr}
-  .approvals-result-card{position:static}
 }
 @media(max-width:768px){
   body{padding-bottom:calc(64px + env(safe-area-inset-bottom, 0px))}

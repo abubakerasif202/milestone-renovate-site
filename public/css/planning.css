@@ -3,6 +3,8 @@
 .planning-index a{color:var(--color-forest-deep);text-underline-offset:5px}
 .platform-intro .section-header{margin-bottom:40px}
 .platform-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+@media(min-width:1021px){.platform-tools{grid-template-columns:repeat(3,minmax(0,1fr))}.platform-card{padding:clamp(24px,2.6vw,40px)}}
+@media(min-width:701px) and (max-width:1020px){.platform-tools>.platform-card:last-child:nth-child(odd){grid-column:1/-1}.platform-tools>.platform-card:last-child:nth-child(odd) .frame{aspect-ratio:21/9}}
 .platform-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;padding:clamp(24px,4vw,52px);background:var(--color-paper);border:1px solid var(--color-line-green);border-top:3px solid var(--color-gold);min-width:0}
 .platform-card h3{margin:16px 0;font-size:clamp(1.8rem,3vw,2.7rem)}
 .platform-card p{color:var(--color-ink-soft);max-width:29.02em}

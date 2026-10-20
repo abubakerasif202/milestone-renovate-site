@@ -251,26 +251,10 @@ test.describe('verified business, staff and planning copy', () => {
       const text = await page.locator('html').evaluate((el) => el.innerText + ' ' + el.querySelector('meta[name="description"]').content + ' ' + document.title);
       for (const [pattern, reason] of BANNED) expect(text, `${route}: ${reason}`).not.toMatch(pattern);
     }
-    for (const file of ['approvals-checker.js', 'booking-ui.js', 'quote-audit-ui.js']) {
+    for (const file of ['booking-ui.js', 'quote-audit-ui.js']) {
       const source = readFileSync(join(PUBLIC, 'js', file), 'utf8');
       for (const [pattern, reason] of BANNED) expect(source, `${file}: ${reason}`).not.toMatch(pattern);
     }
-  });
-
-  test('the approvals checker gives measured, qualified answers and cites NSW Planning', async ({ page }) => {
-    await page.goto('/approvals-guide');
-    const result = page.locator('[data-approvals-result]');
-    await expect(result).toContainText('Possibly Exempt Development');
-    await page.locator('input[name="scope"][value="ground_extension"]').check();
-    await expect(result).toContainText('May Suit Complying Development (CDC)');
-    await expect(result).toContainText('as little as 20 days');
-    await expect(result).toContainText('needs to be confirmed');
-    await page.locator('input[name="scope"][value="second_storey"]').check();
-    await expect(result).toContainText('Council Development Application (DA) Required');
-    const source = page.locator('a[href*="planning.nsw.gov.au/assess-and-regulate"]');
-    await expect(source).toHaveAttribute('rel', /noopener/);
-    await expect(page.locator('main')).toContainText('General information only, not planning or legal advice');
-    await expect(page.locator('main')).toContainText('Codes SEPP');
   });
 
   test('the booking page offers the email address instead of unverified opening hours', async ({ page }) => {

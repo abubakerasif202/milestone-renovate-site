@@ -33,7 +33,7 @@ def trust_ribbon() -> str:
 
 
 def platform_tools(picture: Callable[..., str]) -> str:
-    return f'''<section class="section platform-intro"><div class="wrap"><div class="section-header"><div><p class="eyebrow">YOUR HOME. YOUR POSSIBILITIES.</p><h2>A clearer picture.<br><em>A considered plan.</em></h2></div><p>Explore a design direction, understand your bathroom scope, check council approvals, then bring the details together in one useful brief. Start wherever you feel ready.</p></div><div class="platform-tools"><a class="platform-card" href="/renovation-design-studio"><div class="frame">{picture('inspo-materials', 'Home study with a desk, notebooks and a woven chair', sizes='(max-width:768px) 90vw, 42vw')}</div><div><span class="eyebrow">01 / DESIGN STUDIO</span><h3>Find the feeling<br><em>of home.</em></h3><p>Build a visual moodboard with colours, materials, lighting and practical priorities.</p><span class="text-link">Create your design direction ↗</span><small>Interactive moodboard · concept references</small></div></a><a class="platform-card" href="/bathroom-renovation-cost"><div class="frame">{picture('vanity', 'Brisbane bathroom with twin basins, wall-mounted taps and a wide mirror', sizes='(max-width:768px) 90vw, 42vw')}</div><div><span class="eyebrow">02 / BATHROOM PLANNER</span><h3>Understand the<br><em>moving parts.</em></h3><p>Compare scope choices, explore layout drivers and prepare for a site assessment.</p><span class="text-link">Explore your bathroom scope ↗</span><small>Scope planning · practical guide</small></div></a><a class="platform-card" href="/approvals-guide"><div class="frame">{picture('extension-rear', 'Australian residential construction with exposed timber framing and roof trusses', sizes='(max-width:768px) 90vw, 42vw')}</div><div><span class="eyebrow">03 / APPROVALS CHECKER</span><h3>Do I need a<br><em>DA or CDC?</em></h3><p>Check whether your renovation may suit complying development (CDC) or needs a Council DA.</p><span class="text-link">Check approval pathway ↗</span><small>NSW approvals · general guide</small></div></a><a class="platform-card" href="/quote-audit"><div class="frame">{picture('kitchen-after', 'Detailed kitchen and joinery finishes', sizes='(max-width:768px) 90vw, 42vw')}</div><div><span class="eyebrow">04 / QUOTE AUDIT</span><h3>Get an expert<br><em>second opinion.</em></h3><p>Have an existing builder quote? We’ll review the line items and PC allowances to uncover hidden exclusions.</p><span class="text-link">Request a quote audit ↗</span><small>Free scope check · Quote review</small></div></a></div><div class="planning-index"><div><span>05 / 15-MIN STRATEGY CALL</span><p>Want direct advice before putting hammer to nail?</p><a class="text-link" href="/booking">Book a strategy call ↗</a></div><div><span>06 / COMPLETE BRIEF</span><p>Ready to get started? Send your project brief.</p><a class="text-link" href="/plan-your-renovation">Plan your renovation ↗</a></div></div></div></section>'''
+    return f'''<section class="section platform-intro"><div class="wrap"><div class="section-header"><div><p class="eyebrow">YOUR HOME. YOUR POSSIBILITIES.</p><h2>A clearer picture.<br><em>A considered plan.</em></h2></div><p>Explore a design direction, understand your bathroom scope, then bring the details together in one useful brief. Start wherever you feel ready.</p></div><div class="platform-tools"><a class="platform-card" href="/renovation-design-studio"><div class="frame">{picture('inspo-materials', 'Home study with a desk, notebooks and a woven chair', sizes='(max-width:768px) 90vw, 42vw')}</div><div><span class="eyebrow">01 / DESIGN STUDIO</span><h3>Find the feeling<br><em>of home.</em></h3><p>Build a visual moodboard with colours, materials, lighting and practical priorities.</p><span class="text-link">Create your design direction ↗</span><small>Interactive moodboard · concept references</small></div></a><a class="platform-card" href="/bathroom-renovation-cost"><div class="frame">{picture('vanity', 'Brisbane bathroom with twin basins, wall-mounted taps and a wide mirror', sizes='(max-width:768px) 90vw, 42vw')}</div><div><span class="eyebrow">02 / BATHROOM PLANNER</span><h3>Understand the<br><em>moving parts.</em></h3><p>Compare scope choices, explore layout drivers and prepare for a site assessment.</p><span class="text-link">Explore your bathroom scope ↗</span><small>Scope planning · practical guide</small></div></a><a class="platform-card" href="/quote-audit"><div class="frame">{picture('kitchen-after', 'Detailed kitchen and joinery finishes', sizes='(max-width:768px) 90vw, 42vw')}</div><div><span class="eyebrow">03 / QUOTE AUDIT</span><h3>Get an expert<br><em>second opinion.</em></h3><p>Have an existing builder quote? We’ll review the line items and PC allowances to uncover hidden exclusions.</p><span class="text-link">Request a quote audit ↗</span><small>Free scope check · Quote review</small></div></a></div><div class="planning-index"><div><span>04 / 15-MIN STRATEGY CALL</span><p>Want direct advice before putting hammer to nail?</p><a class="text-link" href="/booking">Book a strategy call ↗</a></div><div><span>05 / COMPLETE BRIEF</span><p>Ready to get started? Send your project brief.</p><a class="text-link" href="/plan-your-renovation">Plan your renovation ↗</a></div></div></div></section>'''
 
 
 def booking_page(field: Callable[..., str]) -> str:
@@ -42,7 +42,7 @@ def booking_page(field: Callable[..., str]) -> str:
     date_pills = ''.join(f'<button type="button" class="slot-pill" data-slot-date="{v}" aria-pressed="{"true" if i==0 else "false"}">{l}</button>' for i, (v, l) in enumerate(date_slots))
     time_pills = ''.join(f'<button type="button" class="slot-pill" data-slot-time="{v}" aria-pressed="{"true" if i==0 else "false"}">{l}</button>' for i, (v, l) in enumerate(time_slots))
 
-    return f'''<section class="inner-hero compact"><div class="wrap"><p class="eyebrow">15-MINUTE STRATEGY CALL</p><h1>Schedule your <em>consultation.</em></h1><p>Request a call with the Milestone Renovate team. Talk through your plans, budget priorities and council approval pathways before committing to anything.</p></div></section>
+    return f'''<section class="inner-hero compact"><div class="wrap"><p class="eyebrow">15-MINUTE STRATEGY CALL</p><h1>Schedule your <em>consultation.</em></h1><p>Request a call with the Milestone Renovate team. Talk through your plans, budget priorities and the practical next steps before committing to anything.</p></div></section>
 <section class="section"><div class="wrap contact-grid">
 <div>
   <p class="eyebrow">PRE-CONSULTATION PREPARATION</p>
@@ -50,7 +50,7 @@ def booking_page(field: Callable[..., str]) -> str:
   <div class="value-grid prep-value-grid">
     <article><span>01 / FEASIBILITY</span><h3>Scope &amp; Space Review</h3><p>Discuss the rooms you want to rework, layout possibilities, and structural walls.</p></article>
     <article><span>02 / BUDGET</span><h3>Realistic Cost Benchmarks</h3><p>Review realistic Sydney market figures for your chosen finish level.</p></article>
-    <article><span>03 / APPROVALS</span><h3>CDC vs DA</h3><p>Talk through whether your project may suit complying development (CDC) or needs a Council DA.</p></article>
+    <article><span>03 / NEXT STEPS</span><h3>A Sensible Next Stage</h3><p>Agree what should happen next, such as a site assessment or a detailed brief.</p></article>
   </div>
   <div class="contact-info"><span>PREFER TO CALL DIRECTLY?</span><a href="{PHONE_HREF}">{PHONE}</a><p>Or email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p></div>
 </div>
@@ -76,7 +76,7 @@ def booking_page(field: Callable[..., str]) -> str:
       {field('name', 'Full name *', '<input id="name" name="name" autocomplete="name" required minlength="2" maxlength="120" aria-describedby="name-error">')}
       {field('phone', 'Phone *', '<input id="phone" name="phone" autocomplete="tel" type="tel" inputmode="tel" required maxlength="20" aria-describedby="phone-error">')}
       {field('email', 'Email *', '<input id="email" name="email" autocomplete="email" type="email" required maxlength="254" aria-describedby="email-error">')}
-      {field('category', 'Primary service *', '<select id="category" name="category" required><option value="whole_home">Whole-home renovation</option><option value="kitchen">Kitchen renovation</option><option value="bathroom">Bathroom renovation</option><option value="extension">Extension or addition</option><option value="other">Other project</option></select>')}
+      {field('category', 'Primary service *', '<select id="category" name="category" required><option value="whole_home">Whole-home renovation</option><option value="kitchen">Kitchen renovation</option><option value="bathroom">Bathroom renovation</option><option value="other">Other project</option></select>')}
       {field('suburb', 'Suburb', '<input id="suburb" name="suburb" autocomplete="address-level2" maxlength="80">')}
       {field('postcode', 'Postcode', '<input id="postcode" name="postcode" autocomplete="postal-code" inputmode="numeric" maxlength="4" pattern="[0-9]{4}">', 'Suburb or postcode required.')}
       {field('details', 'Any specific questions or floor plan notes?', '<textarea id="details" name="details" rows="3" maxlength="4000" placeholder="e.g. Removing load-bearing wall between kitchen and dining, hoping to start mid-year."></textarea>', wide=True)}
@@ -130,7 +130,7 @@ def quote_audit_page(field: Callable[..., str]) -> str:
       {field('name', 'Full name *', '<input id="name" name="name" autocomplete="name" required minlength="2" maxlength="120">')}
       {field('phone', 'Phone *', '<input id="phone" name="phone" autocomplete="tel" type="tel" inputmode="tel" required maxlength="20">')}
       {field('email', 'Email *', '<input id="email" name="email" autocomplete="email" type="email" required maxlength="254">')}
-      {field('category', 'Renovation scope *', '<select id="category" name="category" required><option value="whole_home">Whole-home renovation</option><option value="kitchen">Kitchen renovation</option><option value="bathroom">Bathroom renovation</option><option value="extension">Extension or addition</option><option value="other">Other renovation</option></select>')}
+      {field('category', 'Renovation scope *', '<select id="category" name="category" required><option value="whole_home">Whole-home renovation</option><option value="kitchen">Kitchen renovation</option><option value="bathroom">Bathroom renovation</option><option value="other">Other renovation</option></select>')}
       {field('quotedAmount', 'Quoted total (AUD)', '<input id="quotedAmount" name="quotedAmount" placeholder="e.g. 85,000">')}
       {field('builderName', 'Quoting builder (optional)', '<input id="builderName" name="builderName" placeholder="Builder or company name">')}
       {field('suburb', 'Suburb', '<input id="suburb" name="suburb" autocomplete="address-level2" maxlength="80">')}
@@ -160,79 +160,6 @@ def quote_audit_page(field: Callable[..., str]) -> str:
     <a class="btn btn-dark" href="/">Back to home ↗</a>
   </div>
 </div>
-</div></section>'''
-
-
-def approvals_page() -> str:
-    return '''<section class="inner-hero compact"><div class="wrap"><p class="eyebrow">NSW PLANNING &amp; APPROVALS GUIDE</p><h1>Do I need a <em>DA or CDC?</em></h1><p>Navigating Sydney council planning approvals can seem overwhelming. Use our interactive checker for a general idea of whether your renovation may suit complying development (CDC) or needs a formal Council DA. It is a guide only, not planning advice.</p></div></section>
-<section class="section"><div class="wrap" data-approvals-checker>
-<div class="approvals-grid">
-<div class="approvals-form-card">
-  <form id="approvals-form">
-    <p class="eyebrow">NSW APPROVALS CHECKER</p>
-    <h2>Check your approval pathway</h2>
-    
-    <fieldset class="approvals-group">
-      <legend>1. Heritage or critical environmental zoning?</legend>
-      <label class="check-radio"><input type="radio" name="heritage" value="no" checked><span>No — Standard residential suburban zoning</span></label>
-      <label class="check-radio"><input type="radio" name="heritage" value="yes"><span>Yes — Heritage conservation area, listed item, or flame zone</span></label>
-      <label class="check-radio"><input type="radio" name="heritage" value="unsure"><span>Unsure — Need Section 10.7 planning certificate check</span></label>
-    </fieldset>
-
-    <fieldset class="approvals-group">
-      <legend>2. What is the extent of proposed building work?</legend>
-      <label class="check-radio"><input type="radio" name="scope" value="internal_only" checked><span>Purely internal renovations (kitchen, bathroom, internal walls)</span></label>
-      <label class="check-radio"><input type="radio" name="scope" value="ground_extension"><span>Ground-floor extension or alterations to external walls</span></label>
-      <label class="check-radio"><input type="radio" name="scope" value="second_storey"><span>Second-storey addition / roofline alteration</span></label>
-    </fieldset>
-
-    <fieldset class="approvals-group">
-      <legend>3. Boundary setbacks and building envelope</legend>
-      <label class="check-radio"><input type="radio" name="setbacks" value="compliant" checked><span>Will meet standard setbacks (0.9m–1.5m side boundaries)</span></label>
-      <label class="check-radio"><input type="radio" name="setbacks" value="non_compliant"><span>Will build closer to boundary or requires boundary wall</span></label>
-      <label class="check-radio"><input type="radio" name="setbacks" value="unsure"><span>Unsure / Depends on site survey</span></label>
-    </fieldset>
-
-    <fieldset class="approvals-group">
-      <legend>4. Property type and lot size</legend>
-      <label class="check-radio"><input type="radio" name="lotSize" value="standard" checked><span>Standard freestanding house (lot &gt; 450 m²)</span></label>
-      <label class="check-radio"><input type="radio" name="lotSize" value="small"><span>Compact lot or semi / terrace (&lt; 300 m²)</span></label>
-      <label class="check-radio"><input type="radio" name="lotSize" value="strata"><span>Strata apartment or townhouse</span></label>
-    </fieldset>
-  </form>
-</div>
-<div class="approvals-result-card" data-approvals-result>
-  <!-- Rendered interactively by approvals-checker.js -->
-</div>
-</div>
-</div></section>
-<section class="section surface-alt"><div class="wrap">
-  <div class="section-header"><div><p class="eyebrow">THE TWO APPROVAL PATHWAYS</p><h2>Understanding the NSW Planning Portal</h2></div><p>Every Sydney council operates under the NSW Environmental Planning and Assessment Act. Here is how CDC and DA compare.</p></div>
-  <div class="comparison-grid">
-    <div class="comparison-card">
-      <span class="badge-tag">FAST TRACK</span>
-      <h3>Complying Development (CDC)</h3>
-      <p class="lead-sm">A fast-tracked approval pathway for development that meets all of the standards in the State Environmental Planning Policy (Exempt and Complying Development Codes) 2008 (the Codes SEPP).</p>
-      <ul>
-        <li><strong>Turnaround:</strong> NSW Planning says fast-tracked approvals can be issued in as little as 20 days. The standard process allows 14 days for neighbour notification.</li>
-        <li><strong>Approval Body:</strong> Council or an accredited certifier.</li>
-        <li><strong>Neighbour Involvement:</strong> Neighbours are notified before approval is issued.</li>
-        <li><strong>Best for:</strong> Development that meets every complying development standard for the site.</li>
-      </ul>
-    </div>
-    <div class="comparison-card">
-      <span class="badge-tag">CUSTOM MERIT</span>
-      <h3>Council Development Application (DA)</h3>
-      <p class="lead-sm">Formal assessment by your local council planners against the Local Environmental Plan (LEP) and Development Control Plan (DCP).</p>
-      <ul>
-        <li><strong>Turnaround:</strong> Generally longer than a CDC. It varies by council and by how complex the site is.</li>
-        <li><strong>Approval Body:</strong> Your local council (or a planning panel for some larger projects).</li>
-        <li><strong>Neighbour Involvement:</strong> Notification or exhibition usually applies, and neighbours can make submissions.</li>
-        <li><strong>Best for:</strong> Heritage items, work outside the complying development standards, and sites that need merit assessment.</li>
-      </ul>
-    </div>
-  </div>
-  <p class="image-note">General information only, not planning or legal advice. Eligibility depends on your zoning, lot, heritage status and the specific standards, so confirm it with your council or an accredited certifier. Timing is from NSW Planning (<a class="inline-link" href="https://www.planning.nsw.gov.au/assess-and-regulate/development-assessment/planning-approval-pathways/complying-development" target="_blank" rel="noopener">complying development</a>, checked 12 October 2026). The NSW Government has proposed changes to the complying development system, so check the current rules on the <a class="inline-link" href="https://www.planningportal.nsw.gov.au/" target="_blank" rel="noopener">NSW Planning Portal</a>.</p>
 </div></section>'''
 
 

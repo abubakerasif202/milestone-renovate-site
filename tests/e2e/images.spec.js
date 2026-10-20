@@ -2,11 +2,11 @@ import {test,expect} from '@playwright/test';
 import {readFileSync} from 'node:fs';
 import sharp from 'sharp';
 const manifest=JSON.parse(readFileSync(new URL('../../assets/renovation-concepts.json',import.meta.url)));
-const paths=['/','/kitchen-renovations','/bathroom-renovations','/extensions','/home-renovations','/about','/renovation-design-studio','/inspiration'];
+const paths=['/','/kitchen-renovations','/bathroom-renovations','/home-renovations','/about','/renovation-design-studio','/inspiration'];
 // Licensed JPEG masters are committed alongside the licence records for reproducible builds.
 // Both masters and served derivatives are validated in every checkout.
 test('committed WebP and AVIF variants retain the manifest dimensions and are never upscaled',async()=>{
- expect(manifest.images).toHaveLength(23);
+ expect(manifest.images).toHaveLength(22);
  for(const image of manifest.images){
   expect(['licensed-inspiration-photograph','owner-confirmed-milestone-work']).toContain(image.status);
   expect(image.variants.map(v=>v.width).at(-1),image.id).toBe(image.width); // largest published variant matches the capped manifest dimensions
@@ -38,5 +38,5 @@ for(const width of [375,768,1440])test(`approved image network, crops and semant
   await expect(page.locator('main')).toContainText(/Renovation inspiration/i);
   page.off('request',record);
  }
- expect(used.size).toBe(23);
+ expect(used.size).toBe(22);
 });

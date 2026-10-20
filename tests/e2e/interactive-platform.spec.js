@@ -72,7 +72,7 @@ test('calculator handoff replaces an incompatible design even when storage write
 test('bathroom planning links to canonical calculator without pricing other services',async({page})=>{
  await page.goto('/plan-your-renovation?category=bathroom');
  await expect(page.getByRole('link',{name:'Estimate your bathroom renovation →'})).toHaveAttribute('href','/bathroom-renovation-cost');
- await page.goto('/plan-your-renovation?category=extension');
+ await page.goto('/plan-your-renovation?category=kitchen');
  await expect(page.getByRole('link',{name:'Estimate your bathroom renovation →'})).toBeHidden();
 });
 test('studio selection and progress work with keyboard alone',async({page})=>{

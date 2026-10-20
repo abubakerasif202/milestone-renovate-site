@@ -17,7 +17,7 @@ for(const width of [375,768,1440])test(`all ${routes.length} local routes: photo
   expect(state.overflow,route).toBeLessThanOrEqual(0);expect(state.cls,route).toBeLessThan(0.1);
   for(const i of state.images){expect(i.ok,route+' '+i.src).toBe(true);expect(i.alt,route).not.toBeNull();expect(i.width).toBeTruthy();expect(i.height).toBeTruthy();}
   results.push({route,images:state.images.length,cls:state.cls});
-  if(['/', '/kitchen-renovations','/bathroom-renovations','/extensions','/about','/inspiration','/home-renovations'].includes(route)){
+  if(['/', '/kitchen-renovations','/bathroom-renovations','/about','/inspiration','/home-renovations'].includes(route)){
    await page.evaluate(async()=>{for(let y=0;y<document.body.scrollHeight;y+=700){scrollTo(0,y);await new Promise(r=>setTimeout(r,25));}scrollTo(0,0);});
    await page.screenshot({path:testInfo.outputPath(`photography-${route.replaceAll('/','')||'home'}-${width}.png`),fullPage:true});
   }

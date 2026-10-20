@@ -54,7 +54,7 @@ test('contact step validates name, AU phone, email and consent', () => {
 });
 
 test('changing category drops scope options that no longer apply', () => {
-  const next = setCategory({ ...initialState(), category: 'bathroom', scope: ['new_tiling', 'new_layout'] }, 'extension');
+  const next = setCategory({ ...initialState(), category: 'bathroom', scope: ['new_tiling', 'walk_in_shower'] }, 'kitchen');
   assert.deepEqual(next.scope, []);
   assert.deepEqual(setCategory({ ...initialState(), scope: ['new_layout'] }, 'kitchen').scope, ['new_layout']);
 });

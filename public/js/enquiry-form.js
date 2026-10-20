@@ -4,7 +4,7 @@ import { clearSessionKey, sessionKey, submitEnquiry } from './lib/enquiry-client
 import { clearErrors, setBusy, setStatus, showErrors, showSuccess, showSummary } from './lib/ui.js';
 
 const form = document.querySelector('[data-enquiry-form]');
-const CATEGORIES = ['kitchen', 'bathroom', 'whole_home', 'extension', 'other'];
+const CATEGORIES = ['kitchen', 'bathroom', 'whole_home', 'other'];
 const startedAt = Date.now();
 
 function validate(values) {
