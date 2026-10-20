@@ -86,7 +86,7 @@ test.describe('routes, metadata and assets', () => {
 
   test('about page shows the three team members in order', async ({ page }) => {
     await page.goto('/about');
-    await expect(page.locator('#team .team-card h3')).toHaveText(['James Creswick', 'Kamal Najafi', 'Mohammad Mohsini']);
+    await expect(page.locator('#team .team-card h3')).toHaveText(['James Creswick', 'Kamala Najafi', 'Muhammad Mohsini']);
   });
 
   test('no inline scripts or handlers (CSP-safe) and the CSP header is configured', async ({ page }) => {

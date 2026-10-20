@@ -12,6 +12,12 @@ test.describe('team section', () => {
     await expect(section.getByRole('heading', { level: 2 })).toContainText('A hands-on team');
     const cards = section.locator('.team-card');
     await expect(cards).toHaveCount(3);
+    await expect(cards.locator('h3')).toHaveText(['James Creswick', 'Kamala Najafi', 'Muhammad Mohsini']);
+    const expectedPortraits = [
+      ['/assets/img/team/james-creswick-800.webp', 'James Creswick, smiling with light-brown hair in a green Milestone Development shirt'],
+      ['/assets/img/team/kamala-najafi-800.webp', 'Kamala Najafi, dark-haired and bearded in a green Milestone Renovate shirt'],
+      ['/assets/img/team/muhammad-mohsini-800.webp', 'Muhammad Mohsini, clean-shaven with dark hair in a green Milestone Renovate shirt'],
+    ];
     const boxes = await cards.evaluateAll((els) => els.map((e) => e.getBoundingClientRect()));
     expect(Math.abs(boxes[0].height - boxes[1].height)).toBeLessThan(1);
     expect(Math.abs(boxes[1].height - boxes[2].height)).toBeLessThan(1);
@@ -20,12 +26,15 @@ test.describe('team section', () => {
     const imgs = section.locator('img');
     for (let i = 0; i < 3; i += 1) {
       const img = imgs.nth(i);
+      await expect(img).toHaveAttribute('src', expectedPortraits[i][0]);
+      await expect(img).toHaveAttribute('alt', expectedPortraits[i][1]);
       await expect.poll(() => img.evaluate((e) => e.complete && e.naturalWidth > 0)).toBe(true);
       const r = await img.evaluate((e) => { const b = e.getBoundingClientRect(); return { ratio: b.width / b.height, natural: e.naturalWidth / e.naturalHeight, fit: getComputedStyle(e).objectFit }; });
       expect(r.ratio).toBeCloseTo(0.8, 2);
       expect(r.natural).toBeCloseTo(1122 / 1402, 2);
       expect(r.fit).toBe('cover');
     }
+    await expect(section.locator('.team-role, .team-body p')).toHaveCount(0);
   });
 
   for (const width of [320, 390, 768, 1024, 1440, 1920]) {
