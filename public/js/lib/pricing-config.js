@@ -67,7 +67,6 @@ export const EXCLUSIONS = Object.freeze({
 /** Projects where published pricing is too thin to estimate; the calculator routes these to a detailed quote. */
 export const QUOTE_ONLY_PROJECTS = Object.freeze({
   whole_home: 'Whole-home renovations vary too widely for a reliable online range (only one published Sydney figure was found).',
-  extension: 'No published Sydney extension pricing was found that is specific enough to estimate responsibly.',
 });
 
 export const FINISH_IDS = Object.freeze(['essential', 'mid_range', 'premium']);

@@ -160,3 +160,10 @@ test('server logs never contain personal data', async () => {
     assert.ok(!logs.includes(pii), `log leaked ${pii}`);
   }
 });
+
+test('legacy category "extension" is still accepted by the server schema', async () => {
+  const d = deps();
+  const res = await submit(base({ category: 'extension' }), d);
+  assert.equal(res.status, 201);
+  assert.equal(d.store.rows[0].category, 'extension');
+});

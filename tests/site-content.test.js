@@ -6,25 +6,56 @@ const pub = (f) => new URL(`../public/${f}`, import.meta.url);
 const html = (f) => readFileSync(pub(f), 'utf8');
 const pages = [...readdirSync(pub('')).filter((f) => f.endsWith('.html')), ...readdirSync(pub('concepts')).map((f) => `concepts/${f}`)];
 
-test('team section publishes both portraits, titles and the approved biographies', () => {
+test('team section publishes three cards in order with the approved copy', () => {
   const about = html('about.html');
   assert.match(about, /id="team"/);
-  for (const text of ['MEET THE TEAM', 'Experienced leadership. Thoughtful renovations.', 'Exceptional attention to detail.',
-    'Mohammad Mohsini', 'Construction &amp; Project Delivery', 'With 10 years of experience across residential and commercial construction',
-    'James Creswick', 'Renovation Specialist', 'James Creswick specialises in supporting renovation and extension projects',
-    'Great renovations begin with clear planning, practical experience and people who take responsibility for the details.']) {
+  for (const text of ['MEET THE TEAM', 'A hands-on team. Thoughtful renovations.', 'Careful attention to detail.',
+    'Mohammad Mohsini', 'Construction &amp; Project Delivery', 'With 10 years of construction experience, Mohammad Mohsini',
+    'James Creswick', 'Renovation Specialist', 'James Creswick specialises in supporting renovation projects through thoughtful planning',
+    'Kamal Najafi',
+    'Good renovations begin with clear planning, practical experience and people who take responsibility for the details.']) {
     assert.ok(about.includes(text), text);
   }
-  assert.equal((about.match(/class="team-card"/g) || []).length, 2);
+  assert.equal((about.match(/class="team-card"/g) || []).length, 3);
+  const at = (name) => about.indexOf(`<h3>${name}</h3>`);
+  assert.ok(at('James Creswick') > 0 && at('James Creswick') < at('Kamal Najafi') && at('Kamal Najafi') < at('Mohammad Mohsini'), 'order James, Kamal, Mohammad');
+  const cards = about.split('class="team-card"').slice(1).map((c) => c.split('</article>')[0]);
+  assert.match(cards[0], /team-role">Renovation Specialist</);
+  assert.match(cards[2], /team-role">Construction &amp; Project Delivery</);
+  assert.ok(cards[1].includes('<h3>Kamal Najafi</h3>'));
+  assert.doesNotMatch(cards[1], /team-role/);
+  assert.doesNotMatch(cards[1], /<p[ >]/);
+  assert.match(about, /alt="Portrait of Kamal Najafi"/);
   assert.match(about, /alt="Portrait of Mohammad Mohsini, Construction &amp; Project Delivery at Milestone Renovate"/);
   assert.match(about, /alt="Portrait of James Creswick, Renovation Specialist at Milestone Renovate"/);
-  assert.match(about, /width="1122" height="1402"/);
+  assert.equal((about.match(/width="1122" height="1402"/g) || []).length, 3);
 });
 
 test('portrait files are published and the full-size variant is the unmodified supplied image', () => {
-  for (const slug of ['mohammad-mohsini', 'james-creswick']) {
+  for (const slug of ['james-creswick', 'kamal-najafi', 'mohammad-mohsini']) {
     for (const w of [480, 800, 1122]) assert.ok(existsSync(pub(`assets/img/team/${slug}-${w}.webp`)), `${slug}-${w}`);
     assert.ok(readFileSync(pub(`assets/img/team/${slug}-1122.webp`)).equals(readFileSync(new URL(`../assets/team/${slug}.webp`, import.meta.url))));
+  }
+});
+
+test('removed extension, second-storey and approvals content is not published or linked', () => {
+  const banned = [/href="\/approvals-guide"/, /href="\/extensions"/, /category=extension/, /second[ -]storey/i, /complying development/i, /Development Application/, /\bCDC\b/];
+  for (const f of pages) for (const re of banned) assert.doesNotMatch(html(f), re, `${f} ${re}`);
+  const sitemap = html('sitemap.xml');
+  assert.ok(!sitemap.includes('/extensions') && !sitemap.includes('/approvals-guide'));
+  for (const f of ['extensions.html', 'approvals-guide.html', 'js/approvals-checker.js']) assert.ok(!existsSync(pub(f)), f);
+  const plan = html('plan-your-renovation.html');
+  assert.doesNotMatch(plan, /value="extension"/);
+  assert.doesNotMatch(plan, /value="second_storey"/);
+});
+
+test('vercel.json permanently redirects the removed pages to /services', () => {
+  const { redirects } = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'));
+  for (const source of ['/extensions', '/approvals-guide']) {
+    const r = redirects.find((x) => x.source === source);
+    assert.ok(r, source);
+    assert.equal(r.destination, '/services');
+    assert.equal(r.permanent, true);
   }
 });
 

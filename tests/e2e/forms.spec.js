@@ -145,12 +145,12 @@ test.describe('renovation questionnaire', () => {
     await page.goto('/plan-your-renovation?category=kitchen');
     await expect(page.locator('#wizard-step-label')).toHaveText('Step 2 of 9');
     await page.getByRole('button', { name: 'Back' }).click();
-    await page.getByText('Extension or addition').click();
+    await page.getByText('Bathroom', { exact: true }).click();
     await page.getByRole('button', { name: /Continue/ }).click();
     await page.fill('#suburb', 'Parramatta');
     await page.getByRole('button', { name: /Continue/ }).click();
     await page.getByRole('button', { name: /Continue/ }).click();
-    await expect(page.getByText('Second storey')).toBeVisible();
+    await expect(page.getByText('Walk-in shower')).toBeVisible();
     await expect(page.getByText('New cabinetry')).toBeHidden();
   });
 

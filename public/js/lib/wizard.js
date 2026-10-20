@@ -2,7 +2,7 @@ import { sanitizePlanningContext } from './planning-context.js';
 import { isAuPhone, isAuPostcode, isEmail, normalisePhone } from './au.js';
 
 export const CATEGORY_LABELS = {
-  kitchen: 'Kitchen', bathroom: 'Bathroom', whole_home: 'Whole home', extension: 'Extension or addition', other: 'Something else',
+  kitchen: 'Kitchen', bathroom: 'Bathroom', whole_home: 'Whole home', other: 'Something else',
 };
 
 export const STEPS = [
@@ -23,7 +23,6 @@ export const SCOPE_BY_CATEGORY = {
   kitchen: ['new_layout', 'new_cabinetry', 'new_benchtops', 'new_appliances', 'relocate_plumbing', 'new_flooring', 'lighting_electrical', 'structural_changes'],
   bathroom: ['new_layout', 'new_tiling', 'new_fixtures', 'waterproofing', 'walk_in_shower', 'accessibility', 'relocate_plumbing'],
   whole_home: ['open_plan', 'new_layout', 'new_flooring', 'painting', 'lighting_electrical', 'structural_changes'],
-  extension: ['single_storey_extension', 'second_storey', 'open_plan', 'outdoor_connection', 'structural_changes'],
   other: ['new_layout', 'new_flooring', 'painting', 'lighting_electrical', 'accessibility'],
 };
 
@@ -32,7 +31,7 @@ export const SCOPE_LABELS = {
   relocate_plumbing: 'Move plumbing', new_tiling: 'New tiling', new_fixtures: 'New fixtures and fittings', waterproofing: 'Waterproofing',
   walk_in_shower: 'Walk-in shower', accessibility: 'Accessibility features', structural_changes: 'Structural changes',
   new_flooring: 'New flooring', painting: 'Painting', lighting_electrical: 'Lighting and electrical',
-  single_storey_extension: 'Single-storey extension', second_storey: 'Second storey', open_plan: 'Open-plan living', outdoor_connection: 'Connection to outdoors',
+  open_plan: 'Open-plan living',
 };
 
 export const OPTIONS = {

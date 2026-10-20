@@ -3,7 +3,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
 const PUBLIC = join(import.meta.dirname, '..', '..', 'public');
-const PAGES = ['/', '/services', '/about', '/inspiration', '/contact', '/privacy', '/terms', '/estimate-disclaimer', '/plan-your-renovation', '/bathroom-renovation-cost', '/kitchen-renovations', '/bathroom-renovations', '/home-renovations', '/extensions'];
+const PAGES = ['/', '/services', '/about', '/inspiration', '/contact', '/privacy', '/terms', '/estimate-disclaimer', '/plan-your-renovation', '/bathroom-renovation-cost', '/kitchen-renovations', '/bathroom-renovations', '/home-renovations'];
 const SITE = 'https://milestonerenovate.com';
 const VIEWPORTS = [{ name: 'desktop', width: 1440, height: 900 }, { name: 'tablet', width: 768, height: 1024 }, { name: 'mobile', width: 390, height: 844 }, { name: 'small', width: 320, height: 640 }];
 
@@ -78,10 +78,15 @@ test.describe('routes, metadata and assets', () => {
   test('home page carries the approved proposition and CTAs', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('h1')).toContainText('Space to live. Room to become.');
-    await expect(page.getByText('Explore thoughtful kitchen, bathroom, whole-home and extension renovations')).toBeVisible();
+    await expect(page.getByText('Explore thoughtful kitchen, bathroom and whole-home renovations, with practical guidance from the first idea to the next conversation.')).toBeVisible();
     await expect(page.locator('.hero form')).toHaveAttribute('action', '/plan-your-renovation');
     await expect(page.locator('.hero').getByRole('link', { name: /Design Studio/ })).toHaveAttribute('href', '/renovation-design-studio');
     await expect(page.locator('.hero-phone a')).toHaveAttribute('href', 'tel:1800008883');
+  });
+
+  test('about page shows the three team members in order', async ({ page }) => {
+    await page.goto('/about');
+    await expect(page.locator('#team .team-card h3')).toHaveText(['James Creswick', 'Kamal Najafi', 'Mohammad Mohsini']);
   });
 
   test('no inline scripts or handlers (CSP-safe) and the CSP header is configured', async ({ page }) => {

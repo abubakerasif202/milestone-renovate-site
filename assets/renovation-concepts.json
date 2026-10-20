@@ -9,68 +9,6 @@
   ],
   "images": [
     {
-      "id": "extension",
-      "source": "assets/photography/australian-residential-timber-framing.jpg",
-      "filename": "australian-residential-timber-framing",
-      "width": 1448,
-      "height": 966,
-      "status": "licensed-inspiration-photograph",
-      "alt": "Australian residential construction with exposed timber framing and roof trusses",
-      "position": "50% 50%",
-      "variants": [
-        {
-          "width": 480,
-          "height": 320,
-          "src": "/assets/img/photography/australian-residential-timber-framing-480.webp",
-          "bytes": 25602,
-          "avif": {
-            "src": "/assets/img/photography/australian-residential-timber-framing-480.avif",
-            "bytes": 10870
-          }
-        },
-        {
-          "width": 768,
-          "height": 512,
-          "src": "/assets/img/photography/australian-residential-timber-framing-768.webp",
-          "bytes": 61718,
-          "avif": {
-            "src": "/assets/img/photography/australian-residential-timber-framing-768.avif",
-            "bytes": 24470
-          }
-        },
-        {
-          "width": 1024,
-          "height": 683,
-          "src": "/assets/img/photography/australian-residential-timber-framing-1024.webp",
-          "bytes": 101954,
-          "avif": {
-            "src": "/assets/img/photography/australian-residential-timber-framing-1024.avif",
-            "bytes": 42243
-          }
-        },
-        {
-          "width": 1280,
-          "height": 854,
-          "src": "/assets/img/photography/australian-residential-timber-framing-1280.webp",
-          "bytes": 149600,
-          "avif": {
-            "src": "/assets/img/photography/australian-residential-timber-framing-1280.avif",
-            "bytes": 60900
-          }
-        },
-        {
-          "width": 1448,
-          "height": 966,
-          "src": "/assets/img/photography/australian-residential-timber-framing.webp",
-          "bytes": 184500,
-          "avif": {
-            "src": "/assets/img/photography/australian-residential-timber-framing.avif",
-            "bytes": 76175
-          }
-        }
-      ]
-    },
-    {
       "id": "workspace",
       "source": "assets/photography/home-study-desk-planning.jpg",
       "filename": "home-study-desk-planning",

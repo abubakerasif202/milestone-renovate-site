@@ -2,43 +2,6 @@
   "version": 1,
   "images": [
     {
-      "id": "extension",
-      "filename": "australian-residential-timber-framing",
-      "alt": "Australian residential construction with exposed timber framing and roof trusses",
-      "source": "assets/photography/australian-residential-timber-framing.jpg",
-      "sourceUrl": "https://unsplash.com/photos/a-house-under-construction-sits-on-a-vacant-lot-mmMfGBHPkoc",
-      "downloadUrl": "https://images.unsplash.com/photo-1746787510909-92956787bb5f?w=1600&q=88&fit=max",
-      "creator": "Troy Mortier",
-      "licence": "Unsplash License",
-      "licenceUrl": "https://unsplash.com/license",
-      "commercialUse": true,
-      "attributionRequired": false,
-      "retrieved": "2026-10-19",
-      "status": "licensed-inspiration-photograph",
-      "provenance": "Download this free HD photo of building, green, construction, and purple by Troy Mortier (@troyscanon)",
-      "verification": "Individual source page states Free to use under the Unsplash License. Visual review of photograph; photographer metadata reviewed. No Milestone project claim.",
-      "localFiles": [
-        "/assets/img/photography/australian-residential-timber-framing-480.webp",
-        "/assets/img/photography/australian-residential-timber-framing-480.avif",
-        "/assets/img/photography/australian-residential-timber-framing-768.webp",
-        "/assets/img/photography/australian-residential-timber-framing-768.avif",
-        "/assets/img/photography/australian-residential-timber-framing-1024.webp",
-        "/assets/img/photography/australian-residential-timber-framing-1024.avif",
-        "/assets/img/photography/australian-residential-timber-framing-1280.webp",
-        "/assets/img/photography/australian-residential-timber-framing-1280.avif",
-        "/assets/img/photography/australian-residential-timber-framing.webp",
-        "/assets/img/photography/australian-residential-timber-framing.avif"
-      ],
-      "pages": [
-        "/extensions",
-        "/",
-        "/inspiration"
-      ],
-      "photographerReportedLocation": "Clyde North VIC, Australia",
-      "cameraMetadata": "Canon EOS 5D Mark III; 120 mm; ISO 100 (original photo-page metadata)",
-      "sourcePremium": false
-    },
-    {
       "id": "workspace",
       "filename": "home-study-desk-planning",
       "alt": "Home study with a desk, notebooks and a woven chair",
@@ -174,7 +137,6 @@
         "/assets/img/photography/australian-weatherboard-verandah.avif"
       ],
       "pages": [
-        "/extensions",
         "/",
         "/inspiration"
       ],
@@ -244,8 +206,6 @@
         "/assets/img/photography/dining-room-garden-windows.avif"
       ],
       "pages": [
-        "/extensions",
-        "/",
         "/inspiration"
       ],
       "sourcePremium": false
@@ -765,7 +725,6 @@
       ],
       "pages": [
         "/about",
-        "/extensions",
         "/",
         "/inspiration"
       ]
