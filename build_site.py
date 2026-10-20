@@ -355,7 +355,7 @@ pdetails = {
         'name': 'Kitchen renovations',
         'lead': 'The heart of home,',
         'tail': 'reconsidered.',
-        'desc': 'Reimagine how you cook, host, and live. We plan ergonomic workflows, bespoke architectural cabinetry, resilient stone surfaces, and refined lighting for Sydney homes.',
+        'desc': 'Reimagine how you cook, host, and live. We plan ergonomic workflows, custom cabinetry, resilient stone surfaces, and refined lighting for Sydney homes.',
         'img': 'kitchen-after',
         'cat': 'kitchen',
         'intro_h2': 'Balancing Sydney living with culinary craft.',
@@ -365,7 +365,7 @@ pdetails = {
         'focus': [
             ('Layout & Movement', 'Carefully zoned workflows, generous island proportions, and intuitive transitions into living and outdoor dining spaces.'),
             ('Bespoke Cabinetry', 'Full-height joinery, concealed sculleries, integrated pantries, and premium soft-close drawer systems built for everyday durability.'),
-            ('Materials & Lighting', 'Engineered quartz, quartzite, tactile timber veneers, and layered task-and-ambient architectural LED lighting.'),
+            ('Materials & Lighting', 'Engineered quartz, quartzite, tactile timber veneers, and layered task-and-ambient LED lighting.'),
         ],
         'technical': [
             ('Structural Load Paths', 'Assessing load-bearing wall removals with structural engineers to create open-plan dining and living sightlines.'),
@@ -409,7 +409,7 @@ pdetails = {
         'name': 'Whole-home renovations',
         'lead': 'Make your home feel',
         'tail': 'new again.',
-        'desc': 'Reconsider the relationship between rooms, improve daily flow, and explore the latent potential waiting within your existing architectural footprint.',
+        'desc': 'Reconsider the relationship between rooms, improve daily flow, and explore the latent potential waiting within your existing floor plan.',
         'img': 'whole-home-living',
         'cat': 'whole_home',
         'intro_h2': 'Harmonizing existing character with contemporary living.',
@@ -418,7 +418,7 @@ pdetails = {
         'intro_p2': 'We balance care for original details such as mouldings, cornices and fireplaces with practical updates to flooring, lighting, storage and finishes.',
         'focus': [
             ('Cohesive Spatial Planning', 'Eliminating awkward pinch points, opening hallways to natural light, and creating purposeful connections between living zones.'),
-            ('Architectural Continuity', 'Respecting original period character in heritage zones while delivering refined, contemporary interiors.'),
+            ('Respecting Character', 'Respecting original period character in heritage zones while delivering refined, contemporary interiors.'),
             ('Comfort & Finishes', 'Considering insulation, ventilation, flooring and lighting as part of the renovation scope.'),
         ],
         'technical': [
@@ -521,7 +521,7 @@ def build():
         seo_desc = SERVICE_META[slug]
 
         focus_cards = ''.join(
-            f'<article><span>0{i} / ARCHITECTURAL FOCUS</span><h3>{escape(title)}</h3><p>{escape(text)}</p></article>'
+            f'<article><span>0{i} / RENOVATION FOCUS</span><h3>{escape(title)}</h3><p>{escape(text)}</p></article>'
             for i, (title, text) in enumerate(d['focus'], 1)
         )
         tech_cards = ''.join(
@@ -542,7 +542,7 @@ def build():
         photo_section = f'<section class="section surface-alt"><div class="wrap"><p class="eyebrow">RENOVATION INSPIRATION</p><h2>Real spaces.<br><em>Ideas for your brief.</em></h2><div class="gallery-grid">{photo_cards}</div></div></section>'
         detail = f'''<section class="inner-hero"><div class="wrap"><p class="eyebrow inverse">MILESTONE RENOVATE / SERVICES</p><h1>{lead}<br><em>{tail}</em></h1><p>{desc}</p><div class="hero-buttons"><a class="btn btn-primary" href="/plan-your-renovation?category={cat}">Plan this renovation <span aria-hidden="true">↗</span></a><a class="btn btn-gold" href="/booking">Book 15-min call <span aria-hidden="true">↗</span></a></div></div><div class="inner-hero-image">{picture(img, 'Renovation inspiration photograph', loading='eager', sizes='(max-width:870px) 100vw, 48vw', priority=True)}</div></section>
 <section class="section"><div class="wrap intro-grid"><div>{kicker(escape(service.upper()))}<h2>{d['intro_h2']}</h2></div><div><p class="lead">{d['intro_lead']}</p><p>{d['intro_p1']}</p><p>{d['intro_p2']}</p><a class="text-link" href="/plan-your-renovation?category={cat}">Start your renovation brief <span aria-hidden="true">↗</span></a></div></div></section>
-{photo_section}<section class="section services-surface"><div class="wrap">{split_header('ARCHITECTURAL PRINCIPLES', 'Designed for how<br><em>you live every day.</em>', 'Every space is shaped around natural light, spatial proportion, and functional longevity.')}<div class="value-grid">{focus_cards}</div><p class="image-note">{image_caption(img)}. Supporting photographs are individually labelled.</p></div></section>
+{photo_section}<section class="section services-surface"><div class="wrap">{split_header('DESIGN PRINCIPLES', 'Designed for how<br><em>you live every day.</em>', 'Every space is shaped around natural light, spatial proportion, and functional longevity.')}<div class="value-grid">{focus_cards}</div><p class="image-note">{image_caption(img)}. Supporting photographs are individually labelled.</p></div></section>
 <section class="section"><div class="wrap">{split_header('TECHNICAL &amp; PLANNING RIGOUR', 'Practical execution<br><em>before work begins.</em>', 'Early checks of structure, services and access help protect your renovation budget.')}<div class="value-grid">{tech_cards}</div></div></section>
 <section class="section surface-alt"><div class="wrap">{split_header('PLANNING SUITE', 'Explore our interactive<br><em>renovation tools.</em>', 'Clarity at every stage: test styles, prepare your brief and audit builder scopes.')}<div class="platform-tools">{tools_html}</div></div></section>{cta()}'''
 
@@ -578,22 +578,22 @@ def build():
     # Pages that have not undergone substantive content changes retain their original revision date,
     # preventing false lastmod refresh when build scripts are modified.
     PAGE_LASTMOD = {
-        '': '2026-10-12',
-        'services': '2026-10-10',
-        'about': '2026-10-12',
-        'inspiration': '2026-10-11',
-        'contact': '2026-10-12',
+        '': '2026-10-20',
+        'services': '2026-10-20',
+        'about': '2026-10-20',
+        'inspiration': '2026-10-20',
+        'contact': '2026-10-20',
         'privacy': '2026-10-12',
         'terms': '2026-10-12',
         'estimate-disclaimer': '2026-10-12',
-        'plan-your-renovation': '2026-10-10',
+        'plan-your-renovation': '2026-10-20',
         'bathroom-renovation-cost': '2026-10-12',
-        'booking': '2026-10-12',
-        'quote-audit': '2026-10-12',
+        'booking': '2026-10-20',
+        'quote-audit': '2026-10-20',
         'renovation-design-studio': '2026-10-11',
-        'kitchen-renovations': '2026-10-12',
-        'bathroom-renovations': '2026-10-12',
-        'home-renovations': '2026-10-12',
+        'kitchen-renovations': '2026-10-20',
+        'bathroom-renovations': '2026-10-20',
+        'home-renovations': '2026-10-20',
     }
 
     urls = [''] + [p[5] for p in pages if p[5]] + list(pdetails)
