@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-19",
+  "initialImageFiles": 202,
+  "ownerPhotosInspected": 13,
+  "uniqueOriginalRenovationVisuals": 29,
+  "activeAIIdentitiesReplaced": 19,
+  "photographsAdded": 29,
+  "ownerConfirmedMilestonePhotographs": 13,
+  "licensedInspirationPhotographs": 16,
+  "obsoleteOriginalVariantsRemoved": 176,
+  "oldPublishedPhotoBytes": 20012417,
+  "newPublishedPhotoBytes": 11526372,
+  "heroAvifComparisons": [
+    {
+      "width": 480,
+      "before": 24542,
+      "after": 8165
+    },
+    {
+      "width": 768,
+      "before": 57569,
+      "after": 18067
+    },
+    {
+      "width": 1024,
+      "before": 95460,
+      "after": 29632
+    }
+  ],
+  "measurementNote": "Encoded asset sizes, not a production LCP measurement; three new lazy-loaded supporting images on each service detail route."
+}

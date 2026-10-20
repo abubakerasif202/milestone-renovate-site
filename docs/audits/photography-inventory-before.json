@@ -1,0 +1,3498 @@
+[
+  {
+    "file": "public/assets/brand/ab-web-studio-footer.webp",
+    "width": 448,
+    "height": 206,
+    "aspectRatio": 2.174757281553398,
+    "usages": [
+      "public/404.html",
+      "public/about.html",
+      "public/approvals-guide.html",
+      "public/bathroom-renovation-cost.html",
+      "public/bathroom-renovations.html",
+      "public/booking.html",
+      "public/contact.html",
+      "public/estimate-disclaimer.html",
+      "public/extensions.html",
+      "public/home-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/plan-your-renovation.html",
+      "public/privacy.html",
+      "public/quote-audit.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/terms.html",
+      "public/concepts/calm-bathroom.html",
+      "public/concepts/connected-living.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/brand/apple-touch-icon.png",
+    "width": 180,
+    "height": 180,
+    "aspectRatio": 1,
+    "usages": [
+      "public/404.html",
+      "public/about.html",
+      "public/approvals-guide.html",
+      "public/bathroom-renovation-cost.html",
+      "public/bathroom-renovations.html",
+      "public/booking.html",
+      "public/contact.html",
+      "public/estimate-disclaimer.html",
+      "public/extensions.html",
+      "public/home-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/plan-your-renovation.html",
+      "public/privacy.html",
+      "public/quote-audit.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/terms.html",
+      "public/concepts/calm-bathroom.html",
+      "public/concepts/connected-living.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/brand/favicon-32.png",
+    "width": 32,
+    "height": 32,
+    "aspectRatio": 1,
+    "usages": [
+      "public/404.html",
+      "public/about.html",
+      "public/approvals-guide.html",
+      "public/bathroom-renovation-cost.html",
+      "public/bathroom-renovations.html",
+      "public/booking.html",
+      "public/contact.html",
+      "public/estimate-disclaimer.html",
+      "public/extensions.html",
+      "public/home-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/plan-your-renovation.html",
+      "public/privacy.html",
+      "public/quote-audit.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/terms.html",
+      "public/concepts/calm-bathroom.html",
+      "public/concepts/connected-living.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/brand/icon-192.png",
+    "width": 192,
+    "height": 192,
+    "aspectRatio": 1,
+    "usages": [
+      "public/404.html",
+      "public/about.html",
+      "public/approvals-guide.html",
+      "public/bathroom-renovation-cost.html",
+      "public/bathroom-renovations.html",
+      "public/booking.html",
+      "public/contact.html",
+      "public/estimate-disclaimer.html",
+      "public/extensions.html",
+      "public/home-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/plan-your-renovation.html",
+      "public/privacy.html",
+      "public/quote-audit.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/terms.html",
+      "public/concepts/calm-bathroom.html",
+      "public/concepts/connected-living.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/brand/icon-512.png",
+    "width": 512,
+    "height": 512,
+    "aspectRatio": 1,
+    "usages": [
+      "public/404.html",
+      "public/about.html",
+      "public/approvals-guide.html",
+      "public/bathroom-renovation-cost.html",
+      "public/bathroom-renovations.html",
+      "public/booking.html",
+      "public/contact.html",
+      "public/estimate-disclaimer.html",
+      "public/extensions.html",
+      "public/home-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/plan-your-renovation.html",
+      "public/privacy.html",
+      "public/quote-audit.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/terms.html",
+      "public/concepts/calm-bathroom.html",
+      "public/concepts/connected-living.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/brand/icon-gold-1024.png",
+    "width": 1024,
+    "height": 856,
+    "aspectRatio": 1.1962616822429906,
+    "usages": [],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/brand/icon-gold.svg",
+    "width": 426,
+    "height": 356,
+    "aspectRatio": 1.196629213483146,
+    "usages": [],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/brand/logo-forest.svg",
+    "width": 1895,
+    "height": 370,
+    "aspectRatio": 5.121621621621622,
+    "usages": [],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/brand/logo-gold.svg",
+    "width": 1895,
+    "height": 370,
+    "aspectRatio": 5.121621621621622,
+    "usages": [
+      "public/404.html",
+      "public/about.html",
+      "public/approvals-guide.html",
+      "public/bathroom-renovation-cost.html",
+      "public/bathroom-renovations.html",
+      "public/booking.html",
+      "public/contact.html",
+      "public/estimate-disclaimer.html",
+      "public/extensions.html",
+      "public/home-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/plan-your-renovation.html",
+      "public/privacy.html",
+      "public/quote-audit.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/terms.html",
+      "public/concepts/calm-bathroom.html",
+      "public/concepts/connected-living.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/brand/og-image.png",
+    "width": 1200,
+    "height": 630,
+    "aspectRatio": 1.9047619047619047,
+    "usages": [
+      "public/404.html",
+      "public/about.html",
+      "public/approvals-guide.html",
+      "public/bathroom-renovation-cost.html",
+      "public/bathroom-renovations.html",
+      "public/booking.html",
+      "public/contact.html",
+      "public/estimate-disclaimer.html",
+      "public/extensions.html",
+      "public/home-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/plan-your-renovation.html",
+      "public/privacy.html",
+      "public/quote-audit.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/terms.html",
+      "public/concepts/calm-bathroom.html",
+      "public/concepts/connected-living.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/fallback-dual-occupancy.svg",
+    "width": 1280,
+    "height": 900,
+    "aspectRatio": 1.4222222222222223,
+    "usages": [],
+    "purpose": "vector fallback/UI",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "imagePurpose": "vector fallback/UI"
+  },
+  {
+    "file": "public/assets/fallback-featured-luxury-home.svg",
+    "width": 1280,
+    "height": 900,
+    "aspectRatio": 1.4222222222222223,
+    "usages": [],
+    "purpose": "vector fallback/UI",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "imagePurpose": "vector fallback/UI"
+  },
+  {
+    "file": "public/assets/fallback-hero-alt.svg",
+    "width": 1280,
+    "height": 900,
+    "aspectRatio": 1.4222222222222223,
+    "usages": [],
+    "purpose": "vector fallback/UI",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "imagePurpose": "vector fallback/UI"
+  },
+  {
+    "file": "public/assets/fallback-hero.svg",
+    "width": 1280,
+    "height": 900,
+    "aspectRatio": 1.4222222222222223,
+    "usages": [],
+    "purpose": "vector fallback/UI",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "imagePurpose": "vector fallback/UI"
+  },
+  {
+    "file": "public/assets/fallback-home-land-package.svg",
+    "width": 1280,
+    "height": 900,
+    "aspectRatio": 1.4222222222222223,
+    "usages": [],
+    "purpose": "vector fallback/UI",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "imagePurpose": "vector fallback/UI"
+  },
+  {
+    "file": "public/assets/fallback-luxury-renovation.svg",
+    "width": 1280,
+    "height": 900,
+    "aspectRatio": 1.4222222222222223,
+    "usages": [],
+    "purpose": "vector fallback/UI",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "imagePurpose": "vector fallback/UI"
+  },
+  {
+    "file": "public/assets/fallback-site-leadership.svg",
+    "width": 1280,
+    "height": 900,
+    "aspectRatio": 1.4222222222222223,
+    "usages": [],
+    "purpose": "vector fallback/UI",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "imagePurpose": "vector fallback/UI"
+  },
+  {
+    "file": "public/assets/favicon.png",
+    "width": 64,
+    "height": 64,
+    "aspectRatio": 1,
+    "usages": [],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/img/about-planning-1024.webp",
+    "width": 1024,
+    "height": 576,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Unfinished room with exposed plumbing, plaster repairs and a work light",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "about-planning-1024.webp",
+    "imagePurpose": "About / planning reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/about-planning-1440.webp",
+    "width": 1440,
+    "height": 810,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Unfinished room with exposed plumbing, plaster repairs and a work light",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "about-planning-1440.webp",
+    "imagePurpose": "About / planning reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/about-planning-640.webp",
+    "width": 640,
+    "height": 360,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Unfinished room with exposed plumbing, plaster repairs and a work light",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "about-planning-640.webp",
+    "imagePurpose": "About / planning reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/about-planning.webp",
+    "width": 1672,
+    "height": 941,
+    "aspectRatio": 1.7768331562167907,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Unfinished room with exposed plumbing, plaster repairs and a work light",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "about-planning.webp",
+    "imagePurpose": "About / planning reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/bathroom-after-1024.webp",
+    "width": 1024,
+    "height": 576,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with a freestanding bath, tiled walls and a leafy plant",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-after-1024.webp",
+    "imagePurpose": "Bathroom reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/bathroom-after-1440.webp",
+    "width": 1440,
+    "height": 810,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with a freestanding bath, tiled walls and a leafy plant",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-after-1440.webp",
+    "imagePurpose": "Bathroom reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/bathroom-after-640.webp",
+    "width": 640,
+    "height": 360,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with a freestanding bath, tiled walls and a leafy plant",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-after-640.webp",
+    "imagePurpose": "Bathroom reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/bathroom-after.webp",
+    "width": 1672,
+    "height": 941,
+    "aspectRatio": 1.7768331562167907,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with a freestanding bath, tiled walls and a leafy plant",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-after.webp",
+    "imagePurpose": "Bathroom reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-contemporary-australian-480.webp",
+    "width": 480,
+    "height": 600,
+    "aspectRatio": 0.8,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with pale cabinetry, vessel basin and geometric floor tiles",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-contemporary-australian-480.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-contemporary-australian-768.webp",
+    "width": 768,
+    "height": 960,
+    "aspectRatio": 0.8,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with pale cabinetry, vessel basin and geometric floor tiles",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-contemporary-australian-768.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-contemporary-australian.webp",
+    "width": 1122,
+    "height": 1402,
+    "aspectRatio": 0.8002853067047075,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with pale cabinetry, vessel basin and geometric floor tiles",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-contemporary-australian.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-industrial-480.webp",
+    "width": 480,
+    "height": 600,
+    "aspectRatio": 0.8,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with concrete-look tiles, dark shower fittings and a high window",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-industrial-480.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-industrial-768.webp",
+    "width": 768,
+    "height": 960,
+    "aspectRatio": 0.8,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with concrete-look tiles, dark shower fittings and a high window",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-industrial-768.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-industrial.webp",
+    "width": 1122,
+    "height": 1402,
+    "aspectRatio": 0.8002853067047075,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with concrete-look tiles, dark shower fittings and a high window",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-industrial.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-mediterranean-480.webp",
+    "width": 480,
+    "height": 600,
+    "aspectRatio": 0.8,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with warm stone tiles, a timber vanity and a leafy plant",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-mediterranean-480.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-mediterranean-768.webp",
+    "width": 768,
+    "height": 960,
+    "aspectRatio": 0.8,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with warm stone tiles, a timber vanity and a leafy plant",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-mediterranean-768.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-mediterranean.webp",
+    "width": 1122,
+    "height": 1402,
+    "aspectRatio": 0.8002853067047075,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with warm stone tiles, a timber vanity and a leafy plant",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-mediterranean.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-modern-luxury-480.webp",
+    "width": 480,
+    "height": 600,
+    "aspectRatio": 0.8,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with a dark stone basin, timber vanity and a large round mirror",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-modern-luxury-480.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-modern-luxury-768.webp",
+    "width": 768,
+    "height": 960,
+    "aspectRatio": 0.8,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with a dark stone basin, timber vanity and a large round mirror",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-modern-luxury-768.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-modern-luxury.webp",
+    "width": 1122,
+    "height": 1402,
+    "aspectRatio": 0.8002853067047075,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with a dark stone basin, timber vanity and a large round mirror",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-modern-luxury.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-scandinavian-480.webp",
+    "width": 480,
+    "height": 600,
+    "aspectRatio": 0.8,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with two timber vanities, oval mirrors and light walls",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-scandinavian-480.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-scandinavian-768.webp",
+    "width": 768,
+    "height": 960,
+    "aspectRatio": 0.8,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with two timber vanities, oval mirrors and light walls",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-scandinavian-768.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-scandinavian.webp",
+    "width": 1122,
+    "height": 1402,
+    "aspectRatio": 0.8002853067047075,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with two timber vanities, oval mirrors and light walls",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-scandinavian.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-timeless-classic-480.webp",
+    "width": 480,
+    "height": 600,
+    "aspectRatio": 0.8,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with green panelled cabinetry, twin basins and brass taps",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-timeless-classic-480.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-timeless-classic-768.webp",
+    "width": 768,
+    "height": 960,
+    "aspectRatio": 0.8,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with green panelled cabinetry, twin basins and brass taps",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-timeless-classic-768.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/bathroom-styles/bathroom-style-timeless-classic.webp",
+    "width": 1122,
+    "height": 1402,
+    "aspectRatio": 0.8002853067047075,
+    "usages": [
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bathroom with green panelled cabinetry, twin basins and brass taps",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "bathroom-style-timeless-classic.webp",
+    "imagePurpose": "Design Studio bathroom style selector"
+  },
+  {
+    "file": "public/assets/img/compare-after-1024.webp",
+    "width": 1024,
+    "height": 576,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [
+      "public/index.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Compact kitchen with white cabinetry, open shelves and a built-in microwave",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "compare-after-1024.webp",
+    "imagePurpose": "Homepage comparison view B"
+  },
+  {
+    "file": "public/assets/img/compare-after-1440.webp",
+    "width": 1440,
+    "height": 810,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [
+      "public/index.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Compact kitchen with white cabinetry, open shelves and a built-in microwave",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "compare-after-1440.webp",
+    "imagePurpose": "Homepage comparison view B"
+  },
+  {
+    "file": "public/assets/img/compare-after-640.webp",
+    "width": 640,
+    "height": 360,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [
+      "public/index.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Compact kitchen with white cabinetry, open shelves and a built-in microwave",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "compare-after-640.webp",
+    "imagePurpose": "Homepage comparison view B"
+  },
+  {
+    "file": "public/assets/img/compare-after.webp",
+    "width": 1672,
+    "height": 941,
+    "aspectRatio": 1.7768331562167907,
+    "usages": [
+      "public/index.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Compact kitchen with white cabinetry, open shelves and a built-in microwave",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "compare-after.webp",
+    "imagePurpose": "Homepage comparison view B"
+  },
+  {
+    "file": "public/assets/img/compare-before-1024.webp",
+    "width": 1024,
+    "height": 576,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [
+      "public/index.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Compact Brisbane kitchen with timber cabinetry and an induction cooktop",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "compare-before-1024.webp",
+    "imagePurpose": "Homepage comparison view A"
+  },
+  {
+    "file": "public/assets/img/compare-before-1440.webp",
+    "width": 1440,
+    "height": 810,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [
+      "public/index.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Compact Brisbane kitchen with timber cabinetry and an induction cooktop",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "compare-before-1440.webp",
+    "imagePurpose": "Homepage comparison view A"
+  },
+  {
+    "file": "public/assets/img/compare-before-640.webp",
+    "width": 640,
+    "height": 360,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [
+      "public/index.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Compact Brisbane kitchen with timber cabinetry and an induction cooktop",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "compare-before-640.webp",
+    "imagePurpose": "Homepage comparison view A"
+  },
+  {
+    "file": "public/assets/img/compare-before.webp",
+    "width": 1672,
+    "height": 941,
+    "aspectRatio": 1.7768331562167907,
+    "usages": [
+      "public/index.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Compact Brisbane kitchen with timber cabinetry and an induction cooktop",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "compare-before.webp",
+    "imagePurpose": "Homepage comparison view A"
+  },
+  {
+    "file": "public/assets/img/extension-rear-1024.webp",
+    "width": 1024,
+    "height": 576,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian residential construction with exposed timber framing and roof trusses",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "extension-rear-1024.webp",
+    "imagePurpose": "Extension reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/extension-rear-1440.webp",
+    "width": 1440,
+    "height": 810,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian residential construction with exposed timber framing and roof trusses",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "extension-rear-1440.webp",
+    "imagePurpose": "Extension reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/extension-rear-640.webp",
+    "width": 640,
+    "height": 360,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian residential construction with exposed timber framing and roof trusses",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "extension-rear-640.webp",
+    "imagePurpose": "Extension reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/extension-rear.webp",
+    "width": 1672,
+    "height": 941,
+    "aspectRatio": 1.7768331562167907,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian residential construction with exposed timber framing and roof trusses",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "extension-rear.webp",
+    "imagePurpose": "Extension reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/hero-home-1024.webp",
+    "width": 1024,
+    "height": 1024,
+    "aspectRatio": 1,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane kitchen with pendant lights, stone counters and a timber floor",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "hero-home-1024.webp",
+    "imagePurpose": "Homepage hero (legacy)"
+  },
+  {
+    "file": "public/assets/img/hero-home-1440.webp",
+    "width": 1254,
+    "height": 1254,
+    "aspectRatio": 1,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane kitchen with pendant lights, stone counters and a timber floor",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "hero-home-1440.webp",
+    "imagePurpose": "Homepage hero (legacy)"
+  },
+  {
+    "file": "public/assets/img/hero-home-640.webp",
+    "width": 640,
+    "height": 640,
+    "aspectRatio": 1,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane kitchen with pendant lights, stone counters and a timber floor",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "hero-home-640.webp",
+    "imagePurpose": "Homepage hero (legacy)"
+  },
+  {
+    "file": "public/assets/img/hero-home.webp",
+    "width": 1254,
+    "height": 1254,
+    "aspectRatio": 1,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane kitchen with pendant lights, stone counters and a timber floor",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "hero-home.webp",
+    "imagePurpose": "Homepage hero (legacy)"
+  },
+  {
+    "file": "public/assets/img/inspo-bedroom-1024.webp",
+    "width": 1024,
+    "height": 576,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bedroom with timber bedside furniture, framed prints and blue cushions",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "inspo-bedroom-1024.webp",
+    "imagePurpose": "Bedroom reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/inspo-bedroom-1440.webp",
+    "width": 1440,
+    "height": 810,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bedroom with timber bedside furniture, framed prints and blue cushions",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "inspo-bedroom-1440.webp",
+    "imagePurpose": "Bedroom reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/inspo-bedroom-640.webp",
+    "width": 640,
+    "height": 360,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bedroom with timber bedside furniture, framed prints and blue cushions",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "inspo-bedroom-640.webp",
+    "imagePurpose": "Bedroom reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/inspo-bedroom.webp",
+    "width": 1672,
+    "height": 941,
+    "aspectRatio": 1.7768331562167907,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bedroom with timber bedside furniture, framed prints and blue cushions",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "inspo-bedroom.webp",
+    "imagePurpose": "Bedroom reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/inspo-entry-1024.webp",
+    "width": 1024,
+    "height": 1280,
+    "aspectRatio": 0.8,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian weatherboard house with a sheltered verandah and picket fence",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "inspo-entry-1024.webp",
+    "imagePurpose": "Entrance reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/inspo-entry-1440.webp",
+    "width": 1122,
+    "height": 1402,
+    "aspectRatio": 0.8002853067047075,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian weatherboard house with a sheltered verandah and picket fence",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "inspo-entry-1440.webp",
+    "imagePurpose": "Entrance reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/inspo-entry-640.webp",
+    "width": 640,
+    "height": 800,
+    "aspectRatio": 0.8,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian weatherboard house with a sheltered verandah and picket fence",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "inspo-entry-640.webp",
+    "imagePurpose": "Entrance reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/inspo-entry.webp",
+    "width": 1122,
+    "height": 1402,
+    "aspectRatio": 0.8002853067047075,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian weatherboard house with a sheltered verandah and picket fence",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "inspo-entry.webp",
+    "imagePurpose": "Entrance reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/inspo-materials-1024.webp",
+    "width": 1024,
+    "height": 1280,
+    "aspectRatio": 0.8,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Home study with a desk, notebooks and a woven chair",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "inspo-materials-1024.webp",
+    "imagePurpose": "Material reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/inspo-materials-1440.webp",
+    "width": 1122,
+    "height": 1402,
+    "aspectRatio": 0.8002853067047075,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Home study with a desk, notebooks and a woven chair",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "inspo-materials-1440.webp",
+    "imagePurpose": "Material reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/inspo-materials-640.webp",
+    "width": 640,
+    "height": 800,
+    "aspectRatio": 0.8,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Home study with a desk, notebooks and a woven chair",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "inspo-materials-640.webp",
+    "imagePurpose": "Material reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/inspo-materials.webp",
+    "width": 1122,
+    "height": 1402,
+    "aspectRatio": 0.8002853067047075,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Home study with a desk, notebooks and a woven chair",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "inspo-materials.webp",
+    "imagePurpose": "Material reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/inspo-outdoor-1024.webp",
+    "width": 1024,
+    "height": 576,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Dining room with timber beams, upholstered seating and garden-facing windows",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "inspo-outdoor-1024.webp",
+    "imagePurpose": "Outdoor reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/inspo-outdoor-1440.webp",
+    "width": 1440,
+    "height": 810,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Dining room with timber beams, upholstered seating and garden-facing windows",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "inspo-outdoor-1440.webp",
+    "imagePurpose": "Outdoor reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/inspo-outdoor-640.webp",
+    "width": 640,
+    "height": 360,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Dining room with timber beams, upholstered seating and garden-facing windows",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "inspo-outdoor-640.webp",
+    "imagePurpose": "Outdoor reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/inspo-outdoor.webp",
+    "width": 1672,
+    "height": 941,
+    "aspectRatio": 1.7768331562167907,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Dining room with timber beams, upholstered seating and garden-facing windows",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "inspo-outdoor.webp",
+    "imagePurpose": "Outdoor reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/kitchen-after-1024.webp",
+    "width": 1024,
+    "height": 576,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Country kitchen with a timber island, open shelving and large windows",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "kitchen-after-1024.webp",
+    "imagePurpose": "Kitchen reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/kitchen-after-1440.webp",
+    "width": 1440,
+    "height": 810,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Country kitchen with a timber island, open shelving and large windows",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "kitchen-after-1440.webp",
+    "imagePurpose": "Kitchen reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/kitchen-after-640.webp",
+    "width": 640,
+    "height": 360,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Country kitchen with a timber island, open shelving and large windows",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "kitchen-after-640.webp",
+    "imagePurpose": "Kitchen reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/kitchen-after.webp",
+    "width": 1672,
+    "height": 941,
+    "aspectRatio": 1.7768331562167907,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Country kitchen with a timber island, open shelving and large windows",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "kitchen-after.webp",
+    "imagePurpose": "Kitchen reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/coastal-bedroom-design-1024.avif",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bedroom with timber bedside furniture, framed prints and blue cushions",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "coastal-bedroom-design-1024.avif",
+    "imagePurpose": "Inspiration gallery - Bedroom"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/coastal-bedroom-design-1024.webp",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bedroom with timber bedside furniture, framed prints and blue cushions",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "coastal-bedroom-design-1024.webp",
+    "imagePurpose": "Inspiration gallery - Bedroom"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/coastal-bedroom-design-1280.avif",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bedroom with timber bedside furniture, framed prints and blue cushions",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "coastal-bedroom-design-1280.avif",
+    "imagePurpose": "Inspiration gallery - Bedroom"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/coastal-bedroom-design-1280.webp",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bedroom with timber bedside furniture, framed prints and blue cushions",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "coastal-bedroom-design-1280.webp",
+    "imagePurpose": "Inspiration gallery - Bedroom"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/coastal-bedroom-design-480.avif",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bedroom with timber bedside furniture, framed prints and blue cushions",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "coastal-bedroom-design-480.avif",
+    "imagePurpose": "Inspiration gallery - Bedroom"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/coastal-bedroom-design-480.webp",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bedroom with timber bedside furniture, framed prints and blue cushions",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "coastal-bedroom-design-480.webp",
+    "imagePurpose": "Inspiration gallery - Bedroom"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/coastal-bedroom-design-768.avif",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bedroom with timber bedside furniture, framed prints and blue cushions",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "coastal-bedroom-design-768.avif",
+    "imagePurpose": "Inspiration gallery - Bedroom"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/coastal-bedroom-design-768.webp",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bedroom with timber bedside furniture, framed prints and blue cushions",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "coastal-bedroom-design-768.webp",
+    "imagePurpose": "Inspiration gallery - Bedroom"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/coastal-bedroom-design.avif",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bedroom with timber bedside furniture, framed prints and blue cushions",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "coastal-bedroom-design.avif",
+    "imagePurpose": "Inspiration gallery - Bedroom"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/coastal-bedroom-design.webp",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Bedroom with timber bedside furniture, framed prints and blue cushions",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "coastal-bedroom-design.webp",
+    "imagePurpose": "Inspiration gallery - Bedroom"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/curved-staircase-interior-1024.avif",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Timber staircase beside a furnished living space and indoor plants",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "curved-staircase-interior-1024.avif",
+    "imagePurpose": "Inspiration gallery - Interiors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/curved-staircase-interior-1024.webp",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Timber staircase beside a furnished living space and indoor plants",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "curved-staircase-interior-1024.webp",
+    "imagePurpose": "Inspiration gallery - Interiors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/curved-staircase-interior-1280.avif",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Timber staircase beside a furnished living space and indoor plants",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "curved-staircase-interior-1280.avif",
+    "imagePurpose": "Inspiration gallery - Interiors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/curved-staircase-interior-1280.webp",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Timber staircase beside a furnished living space and indoor plants",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "curved-staircase-interior-1280.webp",
+    "imagePurpose": "Inspiration gallery - Interiors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/curved-staircase-interior-480.avif",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Timber staircase beside a furnished living space and indoor plants",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "curved-staircase-interior-480.avif",
+    "imagePurpose": "Inspiration gallery - Interiors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/curved-staircase-interior-480.webp",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Timber staircase beside a furnished living space and indoor plants",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "curved-staircase-interior-480.webp",
+    "imagePurpose": "Inspiration gallery - Interiors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/curved-staircase-interior-768.avif",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Timber staircase beside a furnished living space and indoor plants",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "curved-staircase-interior-768.avif",
+    "imagePurpose": "Inspiration gallery - Interiors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/curved-staircase-interior-768.webp",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Timber staircase beside a furnished living space and indoor plants",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "curved-staircase-interior-768.webp",
+    "imagePurpose": "Inspiration gallery - Interiors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/curved-staircase-interior.avif",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Timber staircase beside a furnished living space and indoor plants",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "curved-staircase-interior.avif",
+    "imagePurpose": "Inspiration gallery - Interiors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/curved-staircase-interior.webp",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Timber staircase beside a furnished living space and indoor plants",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "curved-staircase-interior.webp",
+    "imagePurpose": "Inspiration gallery - Interiors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/harbour-terrace-outdoor-living-1024.avif",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Dining room with timber beams, upholstered seating and garden-facing windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "harbour-terrace-outdoor-living-1024.avif",
+    "imagePurpose": "Inspiration gallery - Outdoor living"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/harbour-terrace-outdoor-living-1024.webp",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Dining room with timber beams, upholstered seating and garden-facing windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "harbour-terrace-outdoor-living-1024.webp",
+    "imagePurpose": "Inspiration gallery - Outdoor living"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/harbour-terrace-outdoor-living-1280.avif",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Dining room with timber beams, upholstered seating and garden-facing windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "harbour-terrace-outdoor-living-1280.avif",
+    "imagePurpose": "Inspiration gallery - Outdoor living"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/harbour-terrace-outdoor-living-1280.webp",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Dining room with timber beams, upholstered seating and garden-facing windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "harbour-terrace-outdoor-living-1280.webp",
+    "imagePurpose": "Inspiration gallery - Outdoor living"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/harbour-terrace-outdoor-living-480.avif",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Dining room with timber beams, upholstered seating and garden-facing windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "harbour-terrace-outdoor-living-480.avif",
+    "imagePurpose": "Inspiration gallery - Outdoor living"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/harbour-terrace-outdoor-living-480.webp",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Dining room with timber beams, upholstered seating and garden-facing windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "harbour-terrace-outdoor-living-480.webp",
+    "imagePurpose": "Inspiration gallery - Outdoor living"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/harbour-terrace-outdoor-living-768.avif",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Dining room with timber beams, upholstered seating and garden-facing windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "harbour-terrace-outdoor-living-768.avif",
+    "imagePurpose": "Inspiration gallery - Outdoor living"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/harbour-terrace-outdoor-living-768.webp",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Dining room with timber beams, upholstered seating and garden-facing windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "harbour-terrace-outdoor-living-768.webp",
+    "imagePurpose": "Inspiration gallery - Outdoor living"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/harbour-terrace-outdoor-living.avif",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Dining room with timber beams, upholstered seating and garden-facing windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "harbour-terrace-outdoor-living.avif",
+    "imagePurpose": "Inspiration gallery - Outdoor living"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/harbour-terrace-outdoor-living.webp",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Dining room with timber beams, upholstered seating and garden-facing windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "harbour-terrace-outdoor-living.webp",
+    "imagePurpose": "Inspiration gallery - Outdoor living"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/indoor-outdoor-home-extension-1024.avif",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/extensions.html",
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian residential construction with exposed timber framing and roof trusses",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "indoor-outdoor-home-extension-1024.avif",
+    "imagePurpose": "Extensions"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/indoor-outdoor-home-extension-1024.webp",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/extensions.html",
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian residential construction with exposed timber framing and roof trusses",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "indoor-outdoor-home-extension-1024.webp",
+    "imagePurpose": "Extensions"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/indoor-outdoor-home-extension-1280.avif",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/extensions.html",
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian residential construction with exposed timber framing and roof trusses",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "indoor-outdoor-home-extension-1280.avif",
+    "imagePurpose": "Extensions"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/indoor-outdoor-home-extension-1280.webp",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/extensions.html",
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian residential construction with exposed timber framing and roof trusses",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "indoor-outdoor-home-extension-1280.webp",
+    "imagePurpose": "Extensions"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/indoor-outdoor-home-extension-480.avif",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/extensions.html",
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian residential construction with exposed timber framing and roof trusses",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "indoor-outdoor-home-extension-480.avif",
+    "imagePurpose": "Extensions"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/indoor-outdoor-home-extension-480.webp",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/extensions.html",
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian residential construction with exposed timber framing and roof trusses",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "indoor-outdoor-home-extension-480.webp",
+    "imagePurpose": "Extensions"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/indoor-outdoor-home-extension-768.avif",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/extensions.html",
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian residential construction with exposed timber framing and roof trusses",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "indoor-outdoor-home-extension-768.avif",
+    "imagePurpose": "Extensions"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/indoor-outdoor-home-extension-768.webp",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/extensions.html",
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian residential construction with exposed timber framing and roof trusses",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "indoor-outdoor-home-extension-768.webp",
+    "imagePurpose": "Extensions"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/indoor-outdoor-home-extension.avif",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/extensions.html",
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian residential construction with exposed timber framing and roof trusses",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "indoor-outdoor-home-extension.avif",
+    "imagePurpose": "Extensions"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/indoor-outdoor-home-extension.webp",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/extensions.html",
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian residential construction with exposed timber framing and roof trusses",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "indoor-outdoor-home-extension.webp",
+    "imagePurpose": "Extensions"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-stone-bathroom-1024.avif",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/bathroom-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/calm-bathroom.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with a freestanding bath, tiled walls and a leafy plant",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-stone-bathroom-1024.avif",
+    "imagePurpose": "Bathroom renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-stone-bathroom-1024.webp",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/bathroom-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/calm-bathroom.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with a freestanding bath, tiled walls and a leafy plant",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-stone-bathroom-1024.webp",
+    "imagePurpose": "Bathroom renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-stone-bathroom-1280.avif",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/bathroom-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/calm-bathroom.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with a freestanding bath, tiled walls and a leafy plant",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-stone-bathroom-1280.avif",
+    "imagePurpose": "Bathroom renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-stone-bathroom-1280.webp",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/bathroom-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/calm-bathroom.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with a freestanding bath, tiled walls and a leafy plant",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-stone-bathroom-1280.webp",
+    "imagePurpose": "Bathroom renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-stone-bathroom-480.avif",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/bathroom-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/calm-bathroom.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with a freestanding bath, tiled walls and a leafy plant",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-stone-bathroom-480.avif",
+    "imagePurpose": "Bathroom renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-stone-bathroom-480.webp",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/bathroom-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/calm-bathroom.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with a freestanding bath, tiled walls and a leafy plant",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-stone-bathroom-480.webp",
+    "imagePurpose": "Bathroom renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-stone-bathroom-768.avif",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/bathroom-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/calm-bathroom.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with a freestanding bath, tiled walls and a leafy plant",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-stone-bathroom-768.avif",
+    "imagePurpose": "Bathroom renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-stone-bathroom-768.webp",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/bathroom-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/calm-bathroom.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with a freestanding bath, tiled walls and a leafy plant",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-stone-bathroom-768.webp",
+    "imagePurpose": "Bathroom renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-stone-bathroom.avif",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/bathroom-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/calm-bathroom.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with a freestanding bath, tiled walls and a leafy plant",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-stone-bathroom.avif",
+    "imagePurpose": "Bathroom renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-stone-bathroom.webp",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/bathroom-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/calm-bathroom.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with a freestanding bath, tiled walls and a leafy plant",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-stone-bathroom.webp",
+    "imagePurpose": "Bathroom renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-sydney-home-renovation-1024.avif",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane kitchen with pendant lights, stone counters and a timber floor",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-sydney-home-renovation-1024.avif",
+    "imagePurpose": "Homepage hero"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-sydney-home-renovation-1024.webp",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane kitchen with pendant lights, stone counters and a timber floor",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-sydney-home-renovation-1024.webp",
+    "imagePurpose": "Homepage hero"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-sydney-home-renovation-1280.avif",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane kitchen with pendant lights, stone counters and a timber floor",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-sydney-home-renovation-1280.avif",
+    "imagePurpose": "Homepage hero"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-sydney-home-renovation-1280.webp",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane kitchen with pendant lights, stone counters and a timber floor",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-sydney-home-renovation-1280.webp",
+    "imagePurpose": "Homepage hero"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-sydney-home-renovation-480.avif",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane kitchen with pendant lights, stone counters and a timber floor",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-sydney-home-renovation-480.avif",
+    "imagePurpose": "Homepage hero"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-sydney-home-renovation-480.webp",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane kitchen with pendant lights, stone counters and a timber floor",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-sydney-home-renovation-480.webp",
+    "imagePurpose": "Homepage hero"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-sydney-home-renovation-768.avif",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane kitchen with pendant lights, stone counters and a timber floor",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-sydney-home-renovation-768.avif",
+    "imagePurpose": "Homepage hero"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-sydney-home-renovation-768.webp",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane kitchen with pendant lights, stone counters and a timber floor",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-sydney-home-renovation-768.webp",
+    "imagePurpose": "Homepage hero"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-sydney-home-renovation.avif",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane kitchen with pendant lights, stone counters and a timber floor",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-sydney-home-renovation.avif",
+    "imagePurpose": "Homepage hero"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/luxury-sydney-home-renovation.webp",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane kitchen with pendant lights, stone counters and a timber floor",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "luxury-sydney-home-renovation.webp",
+    "imagePurpose": "Homepage hero"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/marble-double-vanity-bathroom-1024.avif",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with twin basins, wall-mounted taps and a wide mirror",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "marble-double-vanity-bathroom-1024.avif",
+    "imagePurpose": "Inspiration gallery - Bathrooms"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/marble-double-vanity-bathroom-1024.webp",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with twin basins, wall-mounted taps and a wide mirror",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "marble-double-vanity-bathroom-1024.webp",
+    "imagePurpose": "Inspiration gallery - Bathrooms"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/marble-double-vanity-bathroom-1280.avif",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with twin basins, wall-mounted taps and a wide mirror",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "marble-double-vanity-bathroom-1280.avif",
+    "imagePurpose": "Inspiration gallery - Bathrooms"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/marble-double-vanity-bathroom-1280.webp",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with twin basins, wall-mounted taps and a wide mirror",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "marble-double-vanity-bathroom-1280.webp",
+    "imagePurpose": "Inspiration gallery - Bathrooms"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/marble-double-vanity-bathroom-480.avif",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with twin basins, wall-mounted taps and a wide mirror",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "marble-double-vanity-bathroom-480.avif",
+    "imagePurpose": "Inspiration gallery - Bathrooms"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/marble-double-vanity-bathroom-480.webp",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with twin basins, wall-mounted taps and a wide mirror",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "marble-double-vanity-bathroom-480.webp",
+    "imagePurpose": "Inspiration gallery - Bathrooms"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/marble-double-vanity-bathroom-768.avif",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with twin basins, wall-mounted taps and a wide mirror",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "marble-double-vanity-bathroom-768.avif",
+    "imagePurpose": "Inspiration gallery - Bathrooms"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/marble-double-vanity-bathroom-768.webp",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with twin basins, wall-mounted taps and a wide mirror",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "marble-double-vanity-bathroom-768.webp",
+    "imagePurpose": "Inspiration gallery - Bathrooms"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/marble-double-vanity-bathroom.avif",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with twin basins, wall-mounted taps and a wide mirror",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "marble-double-vanity-bathroom.avif",
+    "imagePurpose": "Inspiration gallery - Bathrooms"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/marble-double-vanity-bathroom.webp",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Brisbane bathroom with twin basins, wall-mounted taps and a wide mirror",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "marble-double-vanity-bathroom.webp",
+    "imagePurpose": "Inspiration gallery - Bathrooms"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/mediterranean-modern-home-entrance-1024.avif",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian weatherboard house with a sheltered verandah and picket fence",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "mediterranean-modern-home-entrance-1024.avif",
+    "imagePurpose": "Inspiration gallery - Exteriors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/mediterranean-modern-home-entrance-1024.webp",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian weatherboard house with a sheltered verandah and picket fence",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "mediterranean-modern-home-entrance-1024.webp",
+    "imagePurpose": "Inspiration gallery - Exteriors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/mediterranean-modern-home-entrance-1280.avif",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian weatherboard house with a sheltered verandah and picket fence",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "mediterranean-modern-home-entrance-1280.avif",
+    "imagePurpose": "Inspiration gallery - Exteriors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/mediterranean-modern-home-entrance-1280.webp",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian weatherboard house with a sheltered verandah and picket fence",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "mediterranean-modern-home-entrance-1280.webp",
+    "imagePurpose": "Inspiration gallery - Exteriors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/mediterranean-modern-home-entrance-480.avif",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian weatherboard house with a sheltered verandah and picket fence",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "mediterranean-modern-home-entrance-480.avif",
+    "imagePurpose": "Inspiration gallery - Exteriors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/mediterranean-modern-home-entrance-480.webp",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian weatherboard house with a sheltered verandah and picket fence",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "mediterranean-modern-home-entrance-480.webp",
+    "imagePurpose": "Inspiration gallery - Exteriors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/mediterranean-modern-home-entrance-768.avif",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian weatherboard house with a sheltered verandah and picket fence",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "mediterranean-modern-home-entrance-768.avif",
+    "imagePurpose": "Inspiration gallery - Exteriors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/mediterranean-modern-home-entrance-768.webp",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian weatherboard house with a sheltered verandah and picket fence",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "mediterranean-modern-home-entrance-768.webp",
+    "imagePurpose": "Inspiration gallery - Exteriors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/mediterranean-modern-home-entrance.avif",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian weatherboard house with a sheltered verandah and picket fence",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "mediterranean-modern-home-entrance.avif",
+    "imagePurpose": "Inspiration gallery - Exteriors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/mediterranean-modern-home-entrance.webp",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Australian weatherboard house with a sheltered verandah and picket fence",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "mediterranean-modern-home-entrance.webp",
+    "imagePurpose": "Inspiration gallery - Exteriors"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/modern-sage-green-kitchen-1024.avif",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Country kitchen with a timber island, open shelving and large windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "modern-sage-green-kitchen-1024.avif",
+    "imagePurpose": "Kitchen renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/modern-sage-green-kitchen-1024.webp",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Country kitchen with a timber island, open shelving and large windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "modern-sage-green-kitchen-1024.webp",
+    "imagePurpose": "Kitchen renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/modern-sage-green-kitchen-1280.avif",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Country kitchen with a timber island, open shelving and large windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "modern-sage-green-kitchen-1280.avif",
+    "imagePurpose": "Kitchen renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/modern-sage-green-kitchen-1280.webp",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Country kitchen with a timber island, open shelving and large windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "modern-sage-green-kitchen-1280.webp",
+    "imagePurpose": "Kitchen renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/modern-sage-green-kitchen-480.avif",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Country kitchen with a timber island, open shelving and large windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "modern-sage-green-kitchen-480.avif",
+    "imagePurpose": "Kitchen renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/modern-sage-green-kitchen-480.webp",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Country kitchen with a timber island, open shelving and large windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "modern-sage-green-kitchen-480.webp",
+    "imagePurpose": "Kitchen renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/modern-sage-green-kitchen-768.avif",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Country kitchen with a timber island, open shelving and large windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "modern-sage-green-kitchen-768.avif",
+    "imagePurpose": "Kitchen renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/modern-sage-green-kitchen-768.webp",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Country kitchen with a timber island, open shelving and large windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "modern-sage-green-kitchen-768.webp",
+    "imagePurpose": "Kitchen renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/modern-sage-green-kitchen.avif",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Country kitchen with a timber island, open shelving and large windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "modern-sage-green-kitchen.avif",
+    "imagePurpose": "Kitchen renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/modern-sage-green-kitchen.webp",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/renovation-design-studio.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Country kitchen with a timber island, open shelving and large windows",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "modern-sage-green-kitchen.webp",
+    "imagePurpose": "Kitchen renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/renovation-design-consultation-1024.avif",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/about.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Home study with a desk, notebooks and a woven chair",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "renovation-design-consultation-1024.avif",
+    "imagePurpose": "Renovation Design Studio"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/renovation-design-consultation-1024.webp",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/about.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Home study with a desk, notebooks and a woven chair",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "renovation-design-consultation-1024.webp",
+    "imagePurpose": "Renovation Design Studio"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/renovation-design-consultation-1280.avif",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/about.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Home study with a desk, notebooks and a woven chair",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "renovation-design-consultation-1280.avif",
+    "imagePurpose": "Renovation Design Studio"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/renovation-design-consultation-1280.webp",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/about.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Home study with a desk, notebooks and a woven chair",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "renovation-design-consultation-1280.webp",
+    "imagePurpose": "Renovation Design Studio"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/renovation-design-consultation-480.avif",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/about.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Home study with a desk, notebooks and a woven chair",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "renovation-design-consultation-480.avif",
+    "imagePurpose": "Renovation Design Studio"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/renovation-design-consultation-480.webp",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/about.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Home study with a desk, notebooks and a woven chair",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "renovation-design-consultation-480.webp",
+    "imagePurpose": "Renovation Design Studio"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/renovation-design-consultation-768.avif",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/about.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Home study with a desk, notebooks and a woven chair",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "renovation-design-consultation-768.avif",
+    "imagePurpose": "Renovation Design Studio"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/renovation-design-consultation-768.webp",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/about.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Home study with a desk, notebooks and a woven chair",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "renovation-design-consultation-768.webp",
+    "imagePurpose": "Renovation Design Studio"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/renovation-design-consultation.avif",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/about.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Home study with a desk, notebooks and a woven chair",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "renovation-design-consultation.avif",
+    "imagePurpose": "Renovation Design Studio"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/renovation-design-consultation.webp",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/about.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Home study with a desk, notebooks and a woven chair",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "renovation-design-consultation.webp",
+    "imagePurpose": "Renovation Design Studio"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/warm-open-plan-home-renovation-1024.avif",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/home-renovations.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/concepts/connected-living.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Living and dining room with timber flooring and daylight from glazed doors",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "warm-open-plan-home-renovation-1024.avif",
+    "imagePurpose": "Whole-home renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/warm-open-plan-home-renovation-1024.webp",
+    "width": 1024,
+    "height": 768,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/home-renovations.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/concepts/connected-living.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Living and dining room with timber flooring and daylight from glazed doors",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "warm-open-plan-home-renovation-1024.webp",
+    "imagePurpose": "Whole-home renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/warm-open-plan-home-renovation-1280.avif",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/home-renovations.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/concepts/connected-living.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Living and dining room with timber flooring and daylight from glazed doors",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "warm-open-plan-home-renovation-1280.avif",
+    "imagePurpose": "Whole-home renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/warm-open-plan-home-renovation-1280.webp",
+    "width": 1280,
+    "height": 960,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/home-renovations.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/concepts/connected-living.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Living and dining room with timber flooring and daylight from glazed doors",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "warm-open-plan-home-renovation-1280.webp",
+    "imagePurpose": "Whole-home renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/warm-open-plan-home-renovation-480.avif",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/home-renovations.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/concepts/connected-living.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Living and dining room with timber flooring and daylight from glazed doors",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "warm-open-plan-home-renovation-480.avif",
+    "imagePurpose": "Whole-home renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/warm-open-plan-home-renovation-480.webp",
+    "width": 480,
+    "height": 360,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/home-renovations.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/concepts/connected-living.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Living and dining room with timber flooring and daylight from glazed doors",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "warm-open-plan-home-renovation-480.webp",
+    "imagePurpose": "Whole-home renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/warm-open-plan-home-renovation-768.avif",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/home-renovations.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/concepts/connected-living.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Living and dining room with timber flooring and daylight from glazed doors",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "warm-open-plan-home-renovation-768.avif",
+    "imagePurpose": "Whole-home renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/warm-open-plan-home-renovation-768.webp",
+    "width": 768,
+    "height": 576,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/home-renovations.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/concepts/connected-living.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Living and dining room with timber flooring and daylight from glazed doors",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "warm-open-plan-home-renovation-768.webp",
+    "imagePurpose": "Whole-home renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/warm-open-plan-home-renovation.avif",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/home-renovations.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/concepts/connected-living.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Living and dining room with timber flooring and daylight from glazed doors",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "warm-open-plan-home-renovation.avif",
+    "imagePurpose": "Whole-home renovations"
+  },
+  {
+    "file": "public/assets/img/renovation-concepts/warm-open-plan-home-renovation.webp",
+    "width": 1448,
+    "height": 1086,
+    "aspectRatio": 1.3333333333333333,
+    "usages": [
+      "public/home-renovations.html",
+      "public/inspiration.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/concepts/connected-living.html"
+    ],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Living and dining room with timber flooring and daylight from glazed doors",
+    "priority": "high",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "warm-open-plan-home-renovation.webp",
+    "imagePurpose": "Whole-home renovations"
+  },
+  {
+    "file": "public/assets/img/team/james-creswick-1122.webp",
+    "width": 1122,
+    "height": 1402,
+    "aspectRatio": 0.8002853067047075,
+    "usages": [
+      "public/about.html"
+    ],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/img/team/james-creswick-480.webp",
+    "width": 480,
+    "height": 600,
+    "aspectRatio": 0.8,
+    "usages": [
+      "public/about.html"
+    ],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/img/team/james-creswick-800.webp",
+    "width": 800,
+    "height": 1000,
+    "aspectRatio": 0.8,
+    "usages": [
+      "public/about.html"
+    ],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/img/team/mohammad-mohsini-1122.webp",
+    "width": 1122,
+    "height": 1402,
+    "aspectRatio": 0.8002853067047075,
+    "usages": [
+      "public/about.html"
+    ],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/img/team/mohammad-mohsini-480.webp",
+    "width": 480,
+    "height": 600,
+    "aspectRatio": 0.8,
+    "usages": [
+      "public/about.html"
+    ],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/img/team/mohammad-mohsini-800.webp",
+    "width": 800,
+    "height": 1000,
+    "aspectRatio": 0.8,
+    "usages": [
+      "public/about.html"
+    ],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/assets/img/whole-home-living-1024.webp",
+    "width": 1024,
+    "height": 576,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Living and dining room with timber flooring and daylight from glazed doors",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "whole-home-living-1024.webp",
+    "imagePurpose": "Living reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/whole-home-living-1440.webp",
+    "width": 1440,
+    "height": 810,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Living and dining room with timber flooring and daylight from glazed doors",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "whole-home-living-1440.webp",
+    "imagePurpose": "Living reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/whole-home-living-640.webp",
+    "width": 640,
+    "height": 360,
+    "aspectRatio": 1.7777777777777777,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Living and dining room with timber flooring and daylight from glazed doors",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "whole-home-living-640.webp",
+    "imagePurpose": "Living reference (legacy)"
+  },
+  {
+    "file": "public/assets/img/whole-home-living.webp",
+    "width": 1672,
+    "height": 941,
+    "aspectRatio": 1.7768331562167907,
+    "usages": [],
+    "purpose": "renovation photograph/concept",
+    "synthetic": "AI-generated; inspected local contact sheet",
+    "replacement": "Living and dining room with timber flooring and daylight from glazed doors",
+    "priority": "obsolete/unused derivative",
+    "component": "build_site.py:picture / site_experiences.py; assets manifests",
+    "currentFilename": "whole-home-living.webp",
+    "imagePurpose": "Living reference (legacy)"
+  },
+  {
+    "file": "public/assets/milestone-mark.webp",
+    "width": 480,
+    "height": 384,
+    "aspectRatio": 1.25,
+    "usages": [],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  },
+  {
+    "file": "public/favicon.ico",
+    "aspectRatio": null,
+    "usages": [
+      "public/404.html",
+      "public/about.html",
+      "public/approvals-guide.html",
+      "public/bathroom-renovation-cost.html",
+      "public/bathroom-renovations.html",
+      "public/booking.html",
+      "public/contact.html",
+      "public/estimate-disclaimer.html",
+      "public/extensions.html",
+      "public/home-renovations.html",
+      "public/index.html",
+      "public/inspiration.html",
+      "public/kitchen-renovations.html",
+      "public/plan-your-renovation.html",
+      "public/privacy.html",
+      "public/quote-audit.html",
+      "public/renovation-design-studio.html",
+      "public/services.html",
+      "public/terms.html",
+      "public/concepts/calm-bathroom.html",
+      "public/concepts/connected-living.html",
+      "public/concepts/warm-kitchen.html"
+    ],
+    "purpose": "protected brand/UI/team",
+    "synthetic": "preserve",
+    "replacement": "preserve",
+    "priority": "preserve",
+    "component": "shared brand or verified team component",
+    "imagePurpose": "protected brand/UI/team"
+  }
+]

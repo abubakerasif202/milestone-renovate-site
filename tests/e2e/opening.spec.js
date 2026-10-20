@@ -85,7 +85,7 @@ test('the completed opening preserves accessible navigation and image disclosure
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('/');
   await page.waitForTimeout(2100);
-  await expect(page.locator('.hero-chip')).toContainText('AI-GENERATED CONCEPT');
+  await expect(page.locator('.hero-chip')).toContainText('MILESTONE WORK');
   await page.getByRole('button', { name: 'Open navigation' }).click();
   await expect(page.locator('[data-menu]')).toHaveAttribute('aria-expanded', 'true');
   await page.keyboard.press('Escape');

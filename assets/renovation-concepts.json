@@ -9,705 +9,1377 @@
   ],
   "images": [
     {
-      "id": "living-hero",
-      "source": "incoming-images/renovation-concepts/warm_modern_living_space_with_garden_views.png",
-      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_13_28-1.png",
-      "filename": "luxury-sydney-home-renovation",
-      "width": 1448,
-      "height": 1086,
-      "status": "ai-generated-concept",
-      "alt": "AI architectural concept of a warm living space with stone finishes and garden views",
-      "placement": "Homepage hero",
-      "position": "50% 50%",
-      "variants": [
-        {
-          "width": 480,
-          "height": 360,
-          "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-480.webp",
-          "bytes": 32326,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-480.avif",
-            "bytes": 24542
-          }
-        },
-        {
-          "width": 768,
-          "height": 576,
-          "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-768.webp",
-          "bytes": 76138,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-768.avif",
-            "bytes": 57569
-          }
-        },
-        {
-          "width": 1024,
-          "height": 768,
-          "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-1024.webp",
-          "bytes": 124000,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-1024.avif",
-            "bytes": 95460
-          }
-        },
-        {
-          "width": 1280,
-          "height": 960,
-          "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-1280.webp",
-          "bytes": 177146,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation-1280.avif",
-            "bytes": 119173
-          }
-        },
-        {
-          "width": 1448,
-          "height": 1086,
-          "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation.webp",
-          "bytes": 218482,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/luxury-sydney-home-renovation.avif",
-            "bytes": 144910
-          }
-        }
-      ]
-    },
-    {
-      "id": "kitchen",
-      "source": "incoming-images/renovation-concepts/elegant_olive_green_kitchen_overlooking_water.png",
-      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_14_35-2.png",
-      "filename": "modern-sage-green-kitchen",
-      "width": 1448,
-      "height": 1086,
-      "status": "ai-generated-concept",
-      "alt": "AI architectural concept of an olive-green kitchen with a stone island and water views",
-      "placement": "Kitchen renovations",
-      "position": "50% 50%",
-      "variants": [
-        {
-          "width": 480,
-          "height": 360,
-          "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-480.webp",
-          "bytes": 20574,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-480.avif",
-            "bytes": 13062
-          }
-        },
-        {
-          "width": 768,
-          "height": 576,
-          "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-768.webp",
-          "bytes": 44424,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-768.avif",
-            "bytes": 26804
-          }
-        },
-        {
-          "width": 1024,
-          "height": 768,
-          "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-1024.webp",
-          "bytes": 70242,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-1024.avif",
-            "bytes": 42755
-          }
-        },
-        {
-          "width": 1280,
-          "height": 960,
-          "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-1280.webp",
-          "bytes": 98756,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen-1280.avif",
-            "bytes": 51284
-          }
-        },
-        {
-          "width": 1448,
-          "height": 1086,
-          "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen.webp",
-          "bytes": 118044,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/modern-sage-green-kitchen.avif",
-            "bytes": 61169
-          }
-        }
-      ]
-    },
-    {
-      "id": "bathroom",
-      "source": "incoming-images/renovation-concepts/serene_luxury_spa_bathroom_with_garden_views.png",
-      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_14_38-3.png",
-      "filename": "luxury-stone-bathroom",
-      "width": 1448,
-      "height": 1086,
-      "status": "ai-generated-concept",
-      "alt": "AI architectural concept of a stone spa bathroom with a freestanding bath and garden views",
-      "placement": "Bathroom renovations",
-      "position": "50% 50%",
-      "variants": [
-        {
-          "width": 480,
-          "height": 360,
-          "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-480.webp",
-          "bytes": 33514,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-480.avif",
-            "bytes": 25824
-          }
-        },
-        {
-          "width": 768,
-          "height": 576,
-          "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-768.webp",
-          "bytes": 76210,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-768.avif",
-            "bytes": 59498
-          }
-        },
-        {
-          "width": 1024,
-          "height": 768,
-          "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-1024.webp",
-          "bytes": 124036,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-1024.avif",
-            "bytes": 84893
-          }
-        },
-        {
-          "width": 1280,
-          "height": 960,
-          "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-1280.webp",
-          "bytes": 174282,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/luxury-stone-bathroom-1280.avif",
-            "bytes": 118318
-          }
-        },
-        {
-          "width": 1448,
-          "height": 1086,
-          "src": "/assets/img/renovation-concepts/luxury-stone-bathroom.webp",
-          "bytes": 209582,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/luxury-stone-bathroom.avif",
-            "bytes": 128462
-          }
-        }
-      ]
-    },
-    {
       "id": "extension",
-      "source": "incoming-images/renovation-concepts/golden_waterfront_indoor_outdoor_living.png",
-      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_14_42-4.png",
-      "filename": "indoor-outdoor-home-extension",
+      "source": "assets/photography/australian-residential-timber-framing.jpg",
+      "filename": "australian-residential-timber-framing",
       "width": 1448,
-      "height": 1086,
-      "status": "ai-generated-concept",
-      "alt": "AI architectural concept of connected indoor and outdoor living with waterfront views",
-      "placement": "Extensions",
-      "position": "55% 50%",
+      "height": 966,
+      "status": "licensed-inspiration-photograph",
+      "alt": "Australian residential construction with exposed timber framing and roof trusses",
+      "position": "50% 50%",
       "variants": [
         {
           "width": 480,
-          "height": 360,
-          "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-480.webp",
-          "bytes": 42734,
+          "height": 320,
+          "src": "/assets/img/photography/australian-residential-timber-framing-480.webp",
+          "bytes": 25602,
           "avif": {
-            "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-480.avif",
-            "bytes": 32353
+            "src": "/assets/img/photography/australian-residential-timber-framing-480.avif",
+            "bytes": 10870
           }
         },
         {
           "width": 768,
-          "height": 576,
-          "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-768.webp",
-          "bytes": 98764,
+          "height": 512,
+          "src": "/assets/img/photography/australian-residential-timber-framing-768.webp",
+          "bytes": 61718,
           "avif": {
-            "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-768.avif",
-            "bytes": 75079
+            "src": "/assets/img/photography/australian-residential-timber-framing-768.avif",
+            "bytes": 24470
           }
         },
         {
           "width": 1024,
-          "height": 768,
-          "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-1024.webp",
-          "bytes": 164216,
+          "height": 683,
+          "src": "/assets/img/photography/australian-residential-timber-framing-1024.webp",
+          "bytes": 101954,
           "avif": {
-            "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-1024.avif",
-            "bytes": 117719
+            "src": "/assets/img/photography/australian-residential-timber-framing-1024.avif",
+            "bytes": 42243
           }
         },
         {
           "width": 1280,
-          "height": 960,
-          "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-1280.webp",
-          "bytes": 236096,
+          "height": 854,
+          "src": "/assets/img/photography/australian-residential-timber-framing-1280.webp",
+          "bytes": 149600,
           "avif": {
-            "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension-1280.avif",
-            "bytes": 163598
+            "src": "/assets/img/photography/australian-residential-timber-framing-1280.avif",
+            "bytes": 60900
           }
         },
         {
           "width": 1448,
-          "height": 1086,
-          "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension.webp",
-          "bytes": 280724,
+          "height": 966,
+          "src": "/assets/img/photography/australian-residential-timber-framing.webp",
+          "bytes": 184500,
           "avif": {
-            "src": "/assets/img/renovation-concepts/indoor-outdoor-home-extension.avif",
-            "bytes": 174461
+            "src": "/assets/img/photography/australian-residential-timber-framing.avif",
+            "bytes": 76175
           }
         }
       ]
     },
     {
       "id": "workspace",
-      "source": "incoming-images/renovation-concepts/luxury_coastal_design_workspace.png",
-      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_14_44-5.png",
-      "filename": "renovation-design-consultation",
+      "source": "assets/photography/home-study-desk-planning.jpg",
+      "filename": "home-study-desk-planning",
       "width": 1448,
-      "height": 1086,
-      "status": "ai-generated-concept",
-      "alt": "AI architectural concept of a renovation planning table with material samples in a coastal interior",
-      "placement": "Renovation Design Studio",
-      "position": "50% 65%",
+      "height": 967,
+      "status": "licensed-inspiration-photograph",
+      "alt": "Home study with a desk, notebooks and a woven chair",
+      "position": "50% 50%",
       "variants": [
         {
           "width": 480,
-          "height": 360,
-          "src": "/assets/img/renovation-concepts/renovation-design-consultation-480.webp",
-          "bytes": 38294,
+          "height": 320,
+          "src": "/assets/img/photography/home-study-desk-planning-480.webp",
+          "bytes": 17218,
           "avif": {
-            "src": "/assets/img/renovation-concepts/renovation-design-consultation-480.avif",
-            "bytes": 27713
+            "src": "/assets/img/photography/home-study-desk-planning-480.avif",
+            "bytes": 7690
           }
         },
         {
           "width": 768,
-          "height": 576,
-          "src": "/assets/img/renovation-concepts/renovation-design-consultation-768.webp",
-          "bytes": 76012,
+          "height": 513,
+          "src": "/assets/img/photography/home-study-desk-planning-768.webp",
+          "bytes": 39714,
           "avif": {
-            "src": "/assets/img/renovation-concepts/renovation-design-consultation-768.avif",
-            "bytes": 48349
+            "src": "/assets/img/photography/home-study-desk-planning-768.avif",
+            "bytes": 16990
           }
         },
         {
           "width": 1024,
-          "height": 768,
-          "src": "/assets/img/renovation-concepts/renovation-design-consultation-1024.webp",
-          "bytes": 112590,
+          "height": 684,
+          "src": "/assets/img/photography/home-study-desk-planning-1024.webp",
+          "bytes": 61632,
           "avif": {
-            "src": "/assets/img/renovation-concepts/renovation-design-consultation-1024.avif",
-            "bytes": 72249
+            "src": "/assets/img/photography/home-study-desk-planning-1024.avif",
+            "bytes": 26897
           }
         },
         {
           "width": 1280,
-          "height": 960,
-          "src": "/assets/img/renovation-concepts/renovation-design-consultation-1280.webp",
-          "bytes": 149226,
+          "height": 854,
+          "src": "/assets/img/photography/home-study-desk-planning-1280.webp",
+          "bytes": 84142,
           "avif": {
-            "src": "/assets/img/renovation-concepts/renovation-design-consultation-1280.avif",
-            "bytes": 83618
+            "src": "/assets/img/photography/home-study-desk-planning-1280.avif",
+            "bytes": 37044
           }
         },
         {
           "width": 1448,
-          "height": 1086,
-          "src": "/assets/img/renovation-concepts/renovation-design-consultation.webp",
-          "bytes": 171028,
+          "height": 967,
+          "src": "/assets/img/photography/home-study-desk-planning.webp",
+          "bytes": 99736,
           "avif": {
-            "src": "/assets/img/renovation-concepts/renovation-design-consultation.avif",
-            "bytes": 98335
+            "src": "/assets/img/photography/home-study-desk-planning.avif",
+            "bytes": 44890
           }
         }
       ]
     },
     {
       "id": "whole-home",
-      "source": "incoming-images/renovation-concepts/golden_hour_luxury_open_plan_interior.png",
-      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_14_47-6.png",
-      "filename": "warm-open-plan-home-renovation",
+      "source": "assets/photography/living-dining-timber-floor.jpg",
+      "filename": "living-dining-timber-floor",
       "width": 1448,
-      "height": 1086,
-      "status": "ai-generated-concept",
-      "alt": "AI architectural concept of an open-plan living and dining interior in warm afternoon light",
-      "placement": "Whole-home renovations",
+      "height": 967,
+      "status": "licensed-inspiration-photograph",
+      "alt": "Living and dining room with timber flooring and daylight from glazed doors",
       "position": "50% 50%",
       "variants": [
         {
           "width": 480,
-          "height": 360,
-          "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-480.webp",
-          "bytes": 38526,
+          "height": 320,
+          "src": "/assets/img/photography/living-dining-timber-floor-480.webp",
+          "bytes": 14816,
           "avif": {
-            "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-480.avif",
-            "bytes": 29461
+            "src": "/assets/img/photography/living-dining-timber-floor-480.avif",
+            "bytes": 7468
           }
         },
         {
           "width": 768,
-          "height": 576,
-          "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-768.webp",
-          "bytes": 91102,
+          "height": 513,
+          "src": "/assets/img/photography/living-dining-timber-floor-768.webp",
+          "bytes": 29928,
           "avif": {
-            "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-768.avif",
-            "bytes": 81118
+            "src": "/assets/img/photography/living-dining-timber-floor-768.avif",
+            "bytes": 15070
           }
         },
         {
           "width": 1024,
-          "height": 768,
-          "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-1024.webp",
-          "bytes": 150086,
+          "height": 684,
+          "src": "/assets/img/photography/living-dining-timber-floor-1024.webp",
+          "bytes": 44722,
           "avif": {
-            "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-1024.avif",
-            "bytes": 112572
+            "src": "/assets/img/photography/living-dining-timber-floor-1024.avif",
+            "bytes": 21972
           }
         },
         {
           "width": 1280,
-          "height": 960,
-          "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-1280.webp",
-          "bytes": 216914,
+          "height": 854,
+          "src": "/assets/img/photography/living-dining-timber-floor-1280.webp",
+          "bytes": 61282,
           "avif": {
-            "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation-1280.avif",
-            "bytes": 157639
+            "src": "/assets/img/photography/living-dining-timber-floor-1280.avif",
+            "bytes": 29577
           }
         },
         {
           "width": 1448,
-          "height": 1086,
-          "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation.webp",
-          "bytes": 256760,
+          "height": 967,
+          "src": "/assets/img/photography/living-dining-timber-floor.webp",
+          "bytes": 73432,
           "avif": {
-            "src": "/assets/img/renovation-concepts/warm-open-plan-home-renovation.avif",
-            "bytes": 168790
+            "src": "/assets/img/photography/living-dining-timber-floor.avif",
+            "bytes": 35182
           }
         }
       ]
     },
     {
       "id": "bedroom",
-      "source": "incoming-images/renovation-concepts/sunlit_coastal_luxury_bedroom.png",
-      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_16_57-1.png",
-      "filename": "coastal-bedroom-design",
+      "source": "assets/photography/bedroom-timber-furniture-blue-cushions.jpg",
+      "filename": "bedroom-timber-furniture-blue-cushions",
       "width": 1448,
-      "height": 1086,
-      "status": "ai-generated-concept",
-      "alt": "AI architectural concept of a sunlit coastal bedroom with timber detailing and a garden outlook",
-      "placement": "Inspiration gallery - Bedroom",
+      "height": 967,
+      "status": "licensed-inspiration-photograph",
+      "alt": "Bedroom with timber bedside furniture, framed prints and blue cushions",
       "position": "50% 50%",
       "variants": [
         {
           "width": 480,
-          "height": 360,
-          "src": "/assets/img/renovation-concepts/coastal-bedroom-design-480.webp",
-          "bytes": 33484,
+          "height": 320,
+          "src": "/assets/img/photography/bedroom-timber-furniture-blue-cushions-480.webp",
+          "bytes": 19340,
           "avif": {
-            "src": "/assets/img/renovation-concepts/coastal-bedroom-design-480.avif",
-            "bytes": 25975
+            "src": "/assets/img/photography/bedroom-timber-furniture-blue-cushions-480.avif",
+            "bytes": 8451
           }
         },
         {
           "width": 768,
-          "height": 576,
-          "src": "/assets/img/renovation-concepts/coastal-bedroom-design-768.webp",
-          "bytes": 80834,
+          "height": 513,
+          "src": "/assets/img/photography/bedroom-timber-furniture-blue-cushions-768.webp",
+          "bytes": 45022,
           "avif": {
-            "src": "/assets/img/renovation-concepts/coastal-bedroom-design-768.avif",
-            "bytes": 63703
+            "src": "/assets/img/photography/bedroom-timber-furniture-blue-cushions-768.avif",
+            "bytes": 19241
           }
         },
         {
           "width": 1024,
-          "height": 768,
-          "src": "/assets/img/renovation-concepts/coastal-bedroom-design-1024.webp",
-          "bytes": 135002,
+          "height": 684,
+          "src": "/assets/img/photography/bedroom-timber-furniture-blue-cushions-1024.webp",
+          "bytes": 72822,
           "avif": {
-            "src": "/assets/img/renovation-concepts/coastal-bedroom-design-1024.avif",
-            "bytes": 103260
+            "src": "/assets/img/photography/bedroom-timber-furniture-blue-cushions-1024.avif",
+            "bytes": 30813
           }
         },
         {
           "width": 1280,
-          "height": 960,
-          "src": "/assets/img/renovation-concepts/coastal-bedroom-design-1280.webp",
-          "bytes": 194918,
+          "height": 854,
+          "src": "/assets/img/photography/bedroom-timber-furniture-blue-cushions-1280.webp",
+          "bytes": 102926,
           "avif": {
-            "src": "/assets/img/renovation-concepts/coastal-bedroom-design-1280.avif",
-            "bytes": 128423
+            "src": "/assets/img/photography/bedroom-timber-furniture-blue-cushions-1280.avif",
+            "bytes": 43451
           }
         },
         {
           "width": 1448,
-          "height": 1086,
-          "src": "/assets/img/renovation-concepts/coastal-bedroom-design.webp",
-          "bytes": 239934,
+          "height": 967,
+          "src": "/assets/img/photography/bedroom-timber-furniture-blue-cushions.webp",
+          "bytes": 125222,
           "avif": {
-            "src": "/assets/img/renovation-concepts/coastal-bedroom-design.avif",
-            "bytes": 157843
+            "src": "/assets/img/photography/bedroom-timber-furniture-blue-cushions.avif",
+            "bytes": 52503
           }
         }
       ]
     },
     {
       "id": "entrance",
-      "source": "incoming-images/renovation-concepts/golden_hour_mediterranean_modern_entrance.png",
-      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_17_01-2.png",
-      "filename": "mediterranean-modern-home-entrance",
+      "source": "assets/photography/australian-weatherboard-verandah.jpg",
+      "filename": "australian-weatherboard-verandah",
       "width": 1448,
-      "height": 1086,
-      "status": "ai-generated-concept",
-      "alt": "AI architectural concept of a Mediterranean-inspired entrance with stone cladding and landscaped planting",
-      "placement": "Inspiration gallery - Exteriors",
+      "height": 2030,
+      "status": "licensed-inspiration-photograph",
+      "alt": "Australian weatherboard house with a sheltered verandah and picket fence",
       "position": "50% 50%",
       "variants": [
         {
           "width": 480,
-          "height": 360,
-          "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-480.webp",
-          "bytes": 52950,
+          "height": 673,
+          "src": "/assets/img/photography/australian-weatherboard-verandah-480.webp",
+          "bytes": 27820,
           "avif": {
-            "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-480.avif",
-            "bytes": 46373
+            "src": "/assets/img/photography/australian-weatherboard-verandah-480.avif",
+            "bytes": 13879
           }
         },
         {
           "width": 768,
-          "height": 576,
-          "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-768.webp",
-          "bytes": 125808,
+          "height": 1077,
+          "src": "/assets/img/photography/australian-weatherboard-verandah-768.webp",
+          "bytes": 59570,
           "avif": {
-            "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-768.avif",
-            "bytes": 111370
+            "src": "/assets/img/photography/australian-weatherboard-verandah-768.avif",
+            "bytes": 28783
           }
         },
         {
           "width": 1024,
-          "height": 768,
-          "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-1024.webp",
-          "bytes": 208914,
+          "height": 1436,
+          "src": "/assets/img/photography/australian-weatherboard-verandah-1024.webp",
+          "bytes": 91856,
           "avif": {
-            "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-1024.avif",
-            "bytes": 181066
+            "src": "/assets/img/photography/australian-weatherboard-verandah-1024.avif",
+            "bytes": 44540
           }
         },
         {
           "width": 1280,
-          "height": 960,
-          "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-1280.webp",
-          "bytes": 295068,
+          "height": 1794,
+          "src": "/assets/img/photography/australian-weatherboard-verandah-1280.webp",
+          "bytes": 127924,
           "avif": {
-            "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance-1280.avif",
-            "bytes": 217846
+            "src": "/assets/img/photography/australian-weatherboard-verandah-1280.avif",
+            "bytes": 60721
           }
         },
         {
           "width": 1448,
-          "height": 1086,
-          "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance.webp",
-          "bytes": 356838,
+          "height": 2030,
+          "src": "/assets/img/photography/australian-weatherboard-verandah.webp",
+          "bytes": 155372,
           "avif": {
-            "src": "/assets/img/renovation-concepts/mediterranean-modern-home-entrance.avif",
-            "bytes": 251261
-          }
-        }
-      ]
-    },
-    {
-      "id": "vanity",
-      "source": "incoming-images/renovation-concepts/sunlit_marble_double_vanity.png",
-      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_17_05-3.png",
-      "filename": "marble-double-vanity-bathroom",
-      "width": 1448,
-      "height": 1086,
-      "status": "ai-generated-concept",
-      "alt": "AI architectural concept of a marble double vanity with brass fittings and timber cabinetry",
-      "placement": "Inspiration gallery - Bathrooms",
-      "position": "50% 55%",
-      "variants": [
-        {
-          "width": 480,
-          "height": 360,
-          "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-480.webp",
-          "bytes": 36930,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-480.avif",
-            "bytes": 27025
-          }
-        },
-        {
-          "width": 768,
-          "height": 576,
-          "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-768.webp",
-          "bytes": 74926,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-768.avif",
-            "bytes": 52053
-          }
-        },
-        {
-          "width": 1024,
-          "height": 768,
-          "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-1024.webp",
-          "bytes": 109900,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-1024.avif",
-            "bytes": 67098
-          }
-        },
-        {
-          "width": 1280,
-          "height": 960,
-          "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-1280.webp",
-          "bytes": 145806,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom-1280.avif",
-            "bytes": 86033
-          }
-        },
-        {
-          "width": 1448,
-          "height": 1086,
-          "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom.webp",
-          "bytes": 168592,
-          "avif": {
-            "src": "/assets/img/renovation-concepts/marble-double-vanity-bathroom.avif",
-            "bytes": 100741
+            "src": "/assets/img/photography/australian-weatherboard-verandah.avif",
+            "bytes": 73798
           }
         }
       ]
     },
     {
       "id": "staircase",
-      "source": "incoming-images/renovation-concepts/luxurious_curved_staircase_foyer.png",
-      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_17_07-4.png",
-      "filename": "curved-staircase-interior",
+      "source": "assets/photography/timber-staircase-living-room.jpg",
+      "filename": "timber-staircase-living-room",
       "width": 1448,
-      "height": 1086,
-      "status": "ai-generated-concept",
-      "alt": "AI architectural concept of a curved staircase foyer with sculptural lighting and stone finishes",
-      "placement": "Inspiration gallery - Interiors",
-      "position": "60% 45%",
+      "height": 967,
+      "status": "licensed-inspiration-photograph",
+      "alt": "Timber staircase beside a furnished living space and indoor plants",
+      "position": "50% 50%",
       "variants": [
         {
           "width": 480,
-          "height": 360,
-          "src": "/assets/img/renovation-concepts/curved-staircase-interior-480.webp",
-          "bytes": 27580,
+          "height": 320,
+          "src": "/assets/img/photography/timber-staircase-living-room-480.webp",
+          "bytes": 23074,
           "avif": {
-            "src": "/assets/img/renovation-concepts/curved-staircase-interior-480.avif",
-            "bytes": 20360
+            "src": "/assets/img/photography/timber-staircase-living-room-480.avif",
+            "bytes": 10607
           }
         },
         {
           "width": 768,
-          "height": 576,
-          "src": "/assets/img/renovation-concepts/curved-staircase-interior-768.webp",
-          "bytes": 60650,
+          "height": 513,
+          "src": "/assets/img/photography/timber-staircase-living-room-768.webp",
+          "bytes": 50134,
           "avif": {
-            "src": "/assets/img/renovation-concepts/curved-staircase-interior-768.avif",
-            "bytes": 43156
+            "src": "/assets/img/photography/timber-staircase-living-room-768.avif",
+            "bytes": 21681
           }
         },
         {
           "width": 1024,
-          "height": 768,
-          "src": "/assets/img/renovation-concepts/curved-staircase-interior-1024.webp",
-          "bytes": 98440,
+          "height": 684,
+          "src": "/assets/img/photography/timber-staircase-living-room-1024.webp",
+          "bytes": 77442,
           "avif": {
-            "src": "/assets/img/renovation-concepts/curved-staircase-interior-1024.avif",
-            "bytes": 69477
+            "src": "/assets/img/photography/timber-staircase-living-room-1024.avif",
+            "bytes": 34469
           }
         },
         {
           "width": 1280,
-          "height": 960,
-          "src": "/assets/img/renovation-concepts/curved-staircase-interior-1280.webp",
-          "bytes": 136304,
+          "height": 854,
+          "src": "/assets/img/photography/timber-staircase-living-room-1280.webp",
+          "bytes": 107742,
           "avif": {
-            "src": "/assets/img/renovation-concepts/curved-staircase-interior-1280.avif",
-            "bytes": 82260
+            "src": "/assets/img/photography/timber-staircase-living-room-1280.avif",
+            "bytes": 47912
           }
         },
         {
           "width": 1448,
-          "height": 1086,
-          "src": "/assets/img/renovation-concepts/curved-staircase-interior.webp",
-          "bytes": 163348,
+          "height": 967,
+          "src": "/assets/img/photography/timber-staircase-living-room.webp",
+          "bytes": 129526,
           "avif": {
-            "src": "/assets/img/renovation-concepts/curved-staircase-interior.avif",
-            "bytes": 99186
+            "src": "/assets/img/photography/timber-staircase-living-room.avif",
+            "bytes": 57739
           }
         }
       ]
     },
     {
       "id": "terrace",
-      "source": "incoming-images/renovation-concepts/golden_hour_harbour_terrace.png",
-      "originalFilename": "ChatGPT Image 11 Oct 2026, 17_17_11-5.png",
-      "filename": "harbour-terrace-outdoor-living",
+      "source": "assets/photography/dining-room-garden-windows.jpg",
+      "filename": "dining-room-garden-windows",
+      "width": 1448,
+      "height": 959,
+      "status": "licensed-inspiration-photograph",
+      "alt": "Dining room with timber beams, upholstered seating and garden-facing windows",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 318,
+          "src": "/assets/img/photography/dining-room-garden-windows-480.webp",
+          "bytes": 18910,
+          "avif": {
+            "src": "/assets/img/photography/dining-room-garden-windows-480.avif",
+            "bytes": 8791
+          }
+        },
+        {
+          "width": 768,
+          "height": 509,
+          "src": "/assets/img/photography/dining-room-garden-windows-768.webp",
+          "bytes": 42648,
+          "avif": {
+            "src": "/assets/img/photography/dining-room-garden-windows-768.avif",
+            "bytes": 19678
+          }
+        },
+        {
+          "width": 1024,
+          "height": 678,
+          "src": "/assets/img/photography/dining-room-garden-windows-1024.webp",
+          "bytes": 68978,
+          "avif": {
+            "src": "/assets/img/photography/dining-room-garden-windows-1024.avif",
+            "bytes": 31467
+          }
+        },
+        {
+          "width": 1280,
+          "height": 848,
+          "src": "/assets/img/photography/dining-room-garden-windows-1280.webp",
+          "bytes": 100294,
+          "avif": {
+            "src": "/assets/img/photography/dining-room-garden-windows-1280.avif",
+            "bytes": 46008
+          }
+        },
+        {
+          "width": 1448,
+          "height": 959,
+          "src": "/assets/img/photography/dining-room-garden-windows.webp",
+          "bytes": 125004,
+          "avif": {
+            "src": "/assets/img/photography/dining-room-garden-windows.avif",
+            "bytes": 56427
+          }
+        }
+      ]
+    },
+    {
+      "id": "compare-before",
+      "source": "assets/photography/brisbane-compact-kitchen-cabinetry.jpg",
+      "filename": "brisbane-compact-kitchen-cabinetry",
+      "width": 1448,
+      "height": 2164,
+      "status": "licensed-inspiration-photograph",
+      "alt": "Compact Brisbane kitchen with timber cabinetry and an induction cooktop",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 717,
+          "src": "/assets/img/photography/brisbane-compact-kitchen-cabinetry-480.webp",
+          "bytes": 23010,
+          "avif": {
+            "src": "/assets/img/photography/brisbane-compact-kitchen-cabinetry-480.avif",
+            "bytes": 11608
+          }
+        },
+        {
+          "width": 768,
+          "height": 1148,
+          "src": "/assets/img/photography/brisbane-compact-kitchen-cabinetry-768.webp",
+          "bytes": 51038,
+          "avif": {
+            "src": "/assets/img/photography/brisbane-compact-kitchen-cabinetry-768.avif",
+            "bytes": 23572
+          }
+        },
+        {
+          "width": 1024,
+          "height": 1530,
+          "src": "/assets/img/photography/brisbane-compact-kitchen-cabinetry-1024.webp",
+          "bytes": 89782,
+          "avif": {
+            "src": "/assets/img/photography/brisbane-compact-kitchen-cabinetry-1024.avif",
+            "bytes": 36741
+          }
+        },
+        {
+          "width": 1280,
+          "height": 1913,
+          "src": "/assets/img/photography/brisbane-compact-kitchen-cabinetry-1280.webp",
+          "bytes": 153448,
+          "avif": {
+            "src": "/assets/img/photography/brisbane-compact-kitchen-cabinetry-1280.avif",
+            "bytes": 53558
+          }
+        },
+        {
+          "width": 1448,
+          "height": 2164,
+          "src": "/assets/img/photography/brisbane-compact-kitchen-cabinetry.webp",
+          "bytes": 199076,
+          "avif": {
+            "src": "/assets/img/photography/brisbane-compact-kitchen-cabinetry.avif",
+            "bytes": 68015
+          }
+        }
+      ]
+    },
+    {
+      "id": "compare-after",
+      "source": "assets/photography/compact-kitchen-open-shelves.jpg",
+      "filename": "compact-kitchen-open-shelves",
+      "width": 1448,
+      "height": 967,
+      "status": "licensed-inspiration-photograph",
+      "alt": "Compact kitchen with white cabinetry, open shelves and a built-in microwave",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 320,
+          "src": "/assets/img/photography/compact-kitchen-open-shelves-480.webp",
+          "bytes": 11024,
+          "avif": {
+            "src": "/assets/img/photography/compact-kitchen-open-shelves-480.avif",
+            "bytes": 6363
+          }
+        },
+        {
+          "width": 768,
+          "height": 513,
+          "src": "/assets/img/photography/compact-kitchen-open-shelves-768.webp",
+          "bytes": 21826,
+          "avif": {
+            "src": "/assets/img/photography/compact-kitchen-open-shelves-768.avif",
+            "bytes": 11860
+          }
+        },
+        {
+          "width": 1024,
+          "height": 684,
+          "src": "/assets/img/photography/compact-kitchen-open-shelves-1024.webp",
+          "bytes": 32634,
+          "avif": {
+            "src": "/assets/img/photography/compact-kitchen-open-shelves-1024.avif",
+            "bytes": 17951
+          }
+        },
+        {
+          "width": 1280,
+          "height": 854,
+          "src": "/assets/img/photography/compact-kitchen-open-shelves-1280.webp",
+          "bytes": 44842,
+          "avif": {
+            "src": "/assets/img/photography/compact-kitchen-open-shelves-1280.avif",
+            "bytes": 24002
+          }
+        },
+        {
+          "width": 1448,
+          "height": 967,
+          "src": "/assets/img/photography/compact-kitchen-open-shelves.webp",
+          "bytes": 53040,
+          "avif": {
+            "src": "/assets/img/photography/compact-kitchen-open-shelves.avif",
+            "bytes": 28932
+          }
+        }
+      ]
+    },
+    {
+      "id": "craft",
+      "source": "assets/photography/carpentry-cutting-board-workshop.jpg",
+      "filename": "carpentry-cutting-board-workshop",
+      "width": 1448,
+      "height": 966,
+      "status": "licensed-inspiration-photograph",
+      "alt": "Hands guiding a cordless circular saw through a board in a workshop",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 320,
+          "src": "/assets/img/photography/carpentry-cutting-board-workshop-480.webp",
+          "bytes": 15404,
+          "avif": {
+            "src": "/assets/img/photography/carpentry-cutting-board-workshop-480.avif",
+            "bytes": 7745
+          }
+        },
+        {
+          "width": 768,
+          "height": 512,
+          "src": "/assets/img/photography/carpentry-cutting-board-workshop-768.webp",
+          "bytes": 32104,
+          "avif": {
+            "src": "/assets/img/photography/carpentry-cutting-board-workshop-768.avif",
+            "bytes": 15279
+          }
+        },
+        {
+          "width": 1024,
+          "height": 683,
+          "src": "/assets/img/photography/carpentry-cutting-board-workshop-1024.webp",
+          "bytes": 48434,
+          "avif": {
+            "src": "/assets/img/photography/carpentry-cutting-board-workshop-1024.avif",
+            "bytes": 23856
+          }
+        },
+        {
+          "width": 1280,
+          "height": 854,
+          "src": "/assets/img/photography/carpentry-cutting-board-workshop-1280.webp",
+          "bytes": 68296,
+          "avif": {
+            "src": "/assets/img/photography/carpentry-cutting-board-workshop-1280.avif",
+            "bytes": 34068
+          }
+        },
+        {
+          "width": 1448,
+          "height": 966,
+          "src": "/assets/img/photography/carpentry-cutting-board-workshop.webp",
+          "bytes": 82878,
+          "avif": {
+            "src": "/assets/img/photography/carpentry-cutting-board-workshop.avif",
+            "bytes": 40198
+          }
+        }
+      ]
+    },
+    {
+      "id": "living-hero",
+      "source": "assets/photography/milestone-timber-kitchen-stone-look-island.jpg",
+      "filename": "milestone-timber-kitchen-stone-look-island",
       "width": 1448,
       "height": 1086,
-      "status": "ai-generated-concept",
-      "alt": "AI architectural concept of a covered harbour-view terrace with outdoor dining and lounge seating",
-      "placement": "Inspiration gallery - Outdoor living",
+      "status": "owner-confirmed-milestone-work",
+      "alt": "Milestone kitchen with timber cabinetry, a veined island and pendant lights",
       "position": "50% 50%",
       "variants": [
         {
           "width": 480,
           "height": 360,
-          "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-480.webp",
-          "bytes": 44810,
+          "src": "/assets/img/photography/milestone-timber-kitchen-stone-look-island-480.webp",
+          "bytes": 16682,
           "avif": {
-            "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-480.avif",
-            "bytes": 34558
+            "src": "/assets/img/photography/milestone-timber-kitchen-stone-look-island-480.avif",
+            "bytes": 8165
           }
         },
         {
           "width": 768,
           "height": 576,
-          "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-768.webp",
-          "bytes": 102258,
+          "src": "/assets/img/photography/milestone-timber-kitchen-stone-look-island-768.webp",
+          "bytes": 39908,
           "avif": {
-            "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-768.avif",
-            "bytes": 75854
+            "src": "/assets/img/photography/milestone-timber-kitchen-stone-look-island-768.avif",
+            "bytes": 18067
           }
         },
         {
           "width": 1024,
           "height": 768,
-          "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-1024.webp",
-          "bytes": 165100,
+          "src": "/assets/img/photography/milestone-timber-kitchen-stone-look-island-1024.webp",
+          "bytes": 66818,
           "avif": {
-            "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-1024.avif",
-            "bytes": 121230
+            "src": "/assets/img/photography/milestone-timber-kitchen-stone-look-island-1024.avif",
+            "bytes": 29632
           }
         },
         {
           "width": 1280,
           "height": 960,
-          "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-1280.webp",
-          "bytes": 232434,
+          "src": "/assets/img/photography/milestone-timber-kitchen-stone-look-island-1280.webp",
+          "bytes": 98430,
           "avif": {
-            "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living-1280.avif",
-            "bytes": 155140
+            "src": "/assets/img/photography/milestone-timber-kitchen-stone-look-island-1280.avif",
+            "bytes": 43370
           }
         },
         {
           "width": 1448,
           "height": 1086,
-          "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living.webp",
-          "bytes": 278018,
+          "src": "/assets/img/photography/milestone-timber-kitchen-stone-look-island.webp",
+          "bytes": 120362,
           "avif": {
-            "src": "/assets/img/renovation-concepts/harbour-terrace-outdoor-living.avif",
-            "bytes": 177261
+            "src": "/assets/img/photography/milestone-timber-kitchen-stone-look-island.avif",
+            "bytes": 54114
+          }
+        }
+      ]
+    },
+    {
+      "id": "kitchen",
+      "source": "assets/photography/milestone-kitchen-worktop-splashback.jpg",
+      "filename": "milestone-kitchen-worktop-splashback",
+      "width": 1448,
+      "height": 1086,
+      "status": "owner-confirmed-milestone-work",
+      "alt": "Milestone kitchen worktop with a textured tiled splashback and timber overhead cabinets",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/photography/milestone-kitchen-worktop-splashback-480.webp",
+          "bytes": 17844,
+          "avif": {
+            "src": "/assets/img/photography/milestone-kitchen-worktop-splashback-480.avif",
+            "bytes": 8414
+          }
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/photography/milestone-kitchen-worktop-splashback-768.webp",
+          "bytes": 43632,
+          "avif": {
+            "src": "/assets/img/photography/milestone-kitchen-worktop-splashback-768.avif",
+            "bytes": 18627
+          }
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/photography/milestone-kitchen-worktop-splashback-1024.webp",
+          "bytes": 72032,
+          "avif": {
+            "src": "/assets/img/photography/milestone-kitchen-worktop-splashback-1024.avif",
+            "bytes": 30788
+          }
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/photography/milestone-kitchen-worktop-splashback-1280.webp",
+          "bytes": 102952,
+          "avif": {
+            "src": "/assets/img/photography/milestone-kitchen-worktop-splashback-1280.avif",
+            "bytes": 44909
+          }
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/photography/milestone-kitchen-worktop-splashback.webp",
+          "bytes": 125466,
+          "avif": {
+            "src": "/assets/img/photography/milestone-kitchen-worktop-splashback.avif",
+            "bytes": 55126
+          }
+        }
+      ]
+    },
+    {
+      "id": "bathroom",
+      "source": "assets/photography/milestone-bathroom-timber-vanity-walk-in-shower.jpg",
+      "filename": "milestone-bathroom-timber-vanity-walk-in-shower",
+      "width": 1448,
+      "height": 1086,
+      "status": "owner-confirmed-milestone-work",
+      "alt": "Milestone bathroom with a curved timber vanity, oval mirror and glazed shower",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/photography/milestone-bathroom-timber-vanity-walk-in-shower-480.webp",
+          "bytes": 12816,
+          "avif": {
+            "src": "/assets/img/photography/milestone-bathroom-timber-vanity-walk-in-shower-480.avif",
+            "bytes": 7197
+          }
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/photography/milestone-bathroom-timber-vanity-walk-in-shower-768.webp",
+          "bytes": 28922,
+          "avif": {
+            "src": "/assets/img/photography/milestone-bathroom-timber-vanity-walk-in-shower-768.avif",
+            "bytes": 14927
+          }
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/photography/milestone-bathroom-timber-vanity-walk-in-shower-1024.webp",
+          "bytes": 47196,
+          "avif": {
+            "src": "/assets/img/photography/milestone-bathroom-timber-vanity-walk-in-shower-1024.avif",
+            "bytes": 24235
+          }
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/photography/milestone-bathroom-timber-vanity-walk-in-shower-1280.webp",
+          "bytes": 68676,
+          "avif": {
+            "src": "/assets/img/photography/milestone-bathroom-timber-vanity-walk-in-shower-1280.avif",
+            "bytes": 35180
+          }
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/photography/milestone-bathroom-timber-vanity-walk-in-shower.webp",
+          "bytes": 84744,
+          "avif": {
+            "src": "/assets/img/photography/milestone-bathroom-timber-vanity-walk-in-shower.avif",
+            "bytes": 43645
+          }
+        }
+      ]
+    },
+    {
+      "id": "vanity",
+      "source": "assets/photography/milestone-double-basin-timber-vanity.jpg",
+      "filename": "milestone-double-basin-timber-vanity",
+      "width": 1448,
+      "height": 1086,
+      "status": "owner-confirmed-milestone-work",
+      "alt": "Milestone bathroom with a double-basin timber vanity and mirrored cabinets",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/photography/milestone-double-basin-timber-vanity-480.webp",
+          "bytes": 11532,
+          "avif": {
+            "src": "/assets/img/photography/milestone-double-basin-timber-vanity-480.avif",
+            "bytes": 6443
+          }
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/photography/milestone-double-basin-timber-vanity-768.webp",
+          "bytes": 26382,
+          "avif": {
+            "src": "/assets/img/photography/milestone-double-basin-timber-vanity-768.avif",
+            "bytes": 13362
+          }
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/photography/milestone-double-basin-timber-vanity-1024.webp",
+          "bytes": 43456,
+          "avif": {
+            "src": "/assets/img/photography/milestone-double-basin-timber-vanity-1024.avif",
+            "bytes": 21370
+          }
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/photography/milestone-double-basin-timber-vanity-1280.webp",
+          "bytes": 62456,
+          "avif": {
+            "src": "/assets/img/photography/milestone-double-basin-timber-vanity-1280.avif",
+            "bytes": 30365
+          }
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/photography/milestone-double-basin-timber-vanity.webp",
+          "bytes": 77064,
+          "avif": {
+            "src": "/assets/img/photography/milestone-double-basin-timber-vanity.avif",
+            "bytes": 37212
+          }
+        }
+      ]
+    },
+    {
+      "id": "detail",
+      "source": "assets/photography/milestone-curved-vanity-shower-detail.jpg",
+      "filename": "milestone-curved-vanity-shower-detail",
+      "width": 1448,
+      "height": 1086,
+      "status": "owner-confirmed-milestone-work",
+      "alt": "Milestone bathroom with a vessel basin, curved timber vanity and glass shower screen",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/photography/milestone-curved-vanity-shower-detail-480.webp",
+          "bytes": 10318,
+          "avif": {
+            "src": "/assets/img/photography/milestone-curved-vanity-shower-detail-480.avif",
+            "bytes": 5964
+          }
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/photography/milestone-curved-vanity-shower-detail-768.webp",
+          "bytes": 24046,
+          "avif": {
+            "src": "/assets/img/photography/milestone-curved-vanity-shower-detail-768.avif",
+            "bytes": 12743
+          }
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/photography/milestone-curved-vanity-shower-detail-1024.webp",
+          "bytes": 38018,
+          "avif": {
+            "src": "/assets/img/photography/milestone-curved-vanity-shower-detail-1024.avif",
+            "bytes": 20338
+          }
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/photography/milestone-curved-vanity-shower-detail-1280.webp",
+          "bytes": 54068,
+          "avif": {
+            "src": "/assets/img/photography/milestone-curved-vanity-shower-detail-1280.avif",
+            "bytes": 29303
+          }
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/photography/milestone-curved-vanity-shower-detail.webp",
+          "bytes": 65266,
+          "avif": {
+            "src": "/assets/img/photography/milestone-curved-vanity-shower-detail.avif",
+            "bytes": 35432
+          }
+        }
+      ]
+    },
+    {
+      "id": "laundry",
+      "source": "assets/photography/milestone-utility-sink-cabinetry.jpg",
+      "filename": "milestone-utility-sink-cabinetry",
+      "width": 1200,
+      "height": 1600,
+      "status": "owner-confirmed-milestone-work",
+      "alt": "Milestone utility space with a sink, tiled splashback and pale cabinetry",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 640,
+          "src": "/assets/img/photography/milestone-utility-sink-cabinetry-480.webp",
+          "bytes": 23670,
+          "avif": {
+            "src": "/assets/img/photography/milestone-utility-sink-cabinetry-480.avif",
+            "bytes": 11553
+          }
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "src": "/assets/img/photography/milestone-utility-sink-cabinetry-768.webp",
+          "bytes": 53394,
+          "avif": {
+            "src": "/assets/img/photography/milestone-utility-sink-cabinetry-768.avif",
+            "bytes": 24040
+          }
+        },
+        {
+          "width": 1024,
+          "height": 1365,
+          "src": "/assets/img/photography/milestone-utility-sink-cabinetry-1024.webp",
+          "bytes": 85782,
+          "avif": {
+            "src": "/assets/img/photography/milestone-utility-sink-cabinetry-1024.avif",
+            "bytes": 39667
+          }
+        },
+        {
+          "width": 1200,
+          "height": 1600,
+          "src": "/assets/img/photography/milestone-utility-sink-cabinetry.webp",
+          "bytes": 111728,
+          "avif": {
+            "src": "/assets/img/photography/milestone-utility-sink-cabinetry.avif",
+            "bytes": 52304
+          }
+        }
+      ]
+    },
+    {
+      "id": "construction",
+      "source": "assets/photography/milestone-shower-room-work-in-progress.jpg",
+      "filename": "milestone-shower-room-work-in-progress",
+      "width": 1200,
+      "height": 1600,
+      "status": "owner-confirmed-milestone-work",
+      "alt": "Milestone shower room in progress with wall preparation and floor tiling",
+      "position": "50% 75%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 640,
+          "src": "/assets/img/photography/milestone-shower-room-work-in-progress-480.webp",
+          "bytes": 13172,
+          "avif": {
+            "src": "/assets/img/photography/milestone-shower-room-work-in-progress-480.avif",
+            "bytes": 6324
+          }
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "src": "/assets/img/photography/milestone-shower-room-work-in-progress-768.webp",
+          "bytes": 53834,
+          "avif": {
+            "src": "/assets/img/photography/milestone-shower-room-work-in-progress-768.avif",
+            "bytes": 15826
+          }
+        },
+        {
+          "width": 1024,
+          "height": 1365,
+          "src": "/assets/img/photography/milestone-shower-room-work-in-progress-1024.webp",
+          "bytes": 115552,
+          "avif": {
+            "src": "/assets/img/photography/milestone-shower-room-work-in-progress-1024.avif",
+            "bytes": 33968
+          }
+        },
+        {
+          "width": 1200,
+          "height": 1600,
+          "src": "/assets/img/photography/milestone-shower-room-work-in-progress.webp",
+          "bytes": 181536,
+          "avif": {
+            "src": "/assets/img/photography/milestone-shower-room-work-in-progress.avif",
+            "bytes": 53388
+          }
+        }
+      ]
+    },
+    {
+      "id": "joinery",
+      "source": "assets/photography/milestone-timber-kitchen-cabinetry-detail.jpg",
+      "filename": "milestone-timber-kitchen-cabinetry-detail",
+      "width": 1200,
+      "height": 1600,
+      "status": "owner-confirmed-milestone-work",
+      "alt": "Milestone full-height timber cabinetry beside a pale worktop",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 640,
+          "src": "/assets/img/photography/milestone-timber-kitchen-cabinetry-detail-480.webp",
+          "bytes": 22850,
+          "avif": {
+            "src": "/assets/img/photography/milestone-timber-kitchen-cabinetry-detail-480.avif",
+            "bytes": 10796
+          }
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "src": "/assets/img/photography/milestone-timber-kitchen-cabinetry-detail-768.webp",
+          "bytes": 57482,
+          "avif": {
+            "src": "/assets/img/photography/milestone-timber-kitchen-cabinetry-detail-768.avif",
+            "bytes": 24758
+          }
+        },
+        {
+          "width": 1024,
+          "height": 1365,
+          "src": "/assets/img/photography/milestone-timber-kitchen-cabinetry-detail-1024.webp",
+          "bytes": 98256,
+          "avif": {
+            "src": "/assets/img/photography/milestone-timber-kitchen-cabinetry-detail-1024.avif",
+            "bytes": 42470
+          }
+        },
+        {
+          "width": 1200,
+          "height": 1600,
+          "src": "/assets/img/photography/milestone-timber-kitchen-cabinetry-detail.webp",
+          "bytes": 133260,
+          "avif": {
+            "src": "/assets/img/photography/milestone-timber-kitchen-cabinetry-detail.avif",
+            "bytes": 58271
+          }
+        }
+      ]
+    },
+    {
+      "id": "compact-bathroom",
+      "source": "assets/photography/milestone-compact-bathroom-vanity-shower.jpg",
+      "filename": "milestone-compact-bathroom-vanity-shower",
+      "width": 1448,
+      "height": 1086,
+      "status": "owner-confirmed-milestone-work",
+      "alt": "Milestone compact bathroom with a timber vanity and glazed shower",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/photography/milestone-compact-bathroom-vanity-shower-480.webp",
+          "bytes": 10640,
+          "avif": {
+            "src": "/assets/img/photography/milestone-compact-bathroom-vanity-shower-480.avif",
+            "bytes": 6263
+          }
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/photography/milestone-compact-bathroom-vanity-shower-768.webp",
+          "bytes": 23430,
+          "avif": {
+            "src": "/assets/img/photography/milestone-compact-bathroom-vanity-shower-768.avif",
+            "bytes": 12775
+          }
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/photography/milestone-compact-bathroom-vanity-shower-1024.webp",
+          "bytes": 37680,
+          "avif": {
+            "src": "/assets/img/photography/milestone-compact-bathroom-vanity-shower-1024.avif",
+            "bytes": 20369
+          }
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/photography/milestone-compact-bathroom-vanity-shower-1280.webp",
+          "bytes": 54854,
+          "avif": {
+            "src": "/assets/img/photography/milestone-compact-bathroom-vanity-shower-1280.avif",
+            "bytes": 29712
+          }
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/photography/milestone-compact-bathroom-vanity-shower.webp",
+          "bytes": 68140,
+          "avif": {
+            "src": "/assets/img/photography/milestone-compact-bathroom-vanity-shower.avif",
+            "bytes": 36869
+          }
+        }
+      ]
+    },
+    {
+      "id": "shower-tiling",
+      "source": "assets/photography/milestone-walk-in-shower-tiling.jpg",
+      "filename": "milestone-walk-in-shower-tiling",
+      "width": 1448,
+      "height": 1086,
+      "status": "owner-confirmed-milestone-work",
+      "alt": "Milestone tiled shower with a ceiling-mounted showerhead and glazed screen",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/photography/milestone-walk-in-shower-tiling-480.webp",
+          "bytes": 9948,
+          "avif": {
+            "src": "/assets/img/photography/milestone-walk-in-shower-tiling-480.avif",
+            "bytes": 5758
+          }
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/photography/milestone-walk-in-shower-tiling-768.webp",
+          "bytes": 22710,
+          "avif": {
+            "src": "/assets/img/photography/milestone-walk-in-shower-tiling-768.avif",
+            "bytes": 12841
+          }
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/photography/milestone-walk-in-shower-tiling-1024.webp",
+          "bytes": 38268,
+          "avif": {
+            "src": "/assets/img/photography/milestone-walk-in-shower-tiling-1024.avif",
+            "bytes": 20964
+          }
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/photography/milestone-walk-in-shower-tiling-1280.webp",
+          "bytes": 57066,
+          "avif": {
+            "src": "/assets/img/photography/milestone-walk-in-shower-tiling-1280.avif",
+            "bytes": 32177
+          }
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/photography/milestone-walk-in-shower-tiling.webp",
+          "bytes": 71028,
+          "avif": {
+            "src": "/assets/img/photography/milestone-walk-in-shower-tiling.avif",
+            "bytes": 40188
+          }
+        }
+      ]
+    },
+    {
+      "id": "bath-layout",
+      "source": "assets/photography/milestone-bathroom-bath-and-vanity.jpg",
+      "filename": "milestone-bathroom-bath-and-vanity",
+      "width": 1448,
+      "height": 1086,
+      "status": "owner-confirmed-milestone-work",
+      "alt": "Milestone bathroom with a bath, timber vanity and tall window",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 360,
+          "src": "/assets/img/photography/milestone-bathroom-bath-and-vanity-480.webp",
+          "bytes": 11582,
+          "avif": {
+            "src": "/assets/img/photography/milestone-bathroom-bath-and-vanity-480.avif",
+            "bytes": 6410
+          }
+        },
+        {
+          "width": 768,
+          "height": 576,
+          "src": "/assets/img/photography/milestone-bathroom-bath-and-vanity-768.webp",
+          "bytes": 25902,
+          "avif": {
+            "src": "/assets/img/photography/milestone-bathroom-bath-and-vanity-768.avif",
+            "bytes": 13732
+          }
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "src": "/assets/img/photography/milestone-bathroom-bath-and-vanity-1024.webp",
+          "bytes": 44690,
+          "avif": {
+            "src": "/assets/img/photography/milestone-bathroom-bath-and-vanity-1024.avif",
+            "bytes": 22477
+          }
+        },
+        {
+          "width": 1280,
+          "height": 960,
+          "src": "/assets/img/photography/milestone-bathroom-bath-and-vanity-1280.webp",
+          "bytes": 65610,
+          "avif": {
+            "src": "/assets/img/photography/milestone-bathroom-bath-and-vanity-1280.avif",
+            "bytes": 32542
+          }
+        },
+        {
+          "width": 1448,
+          "height": 1086,
+          "src": "/assets/img/photography/milestone-bathroom-bath-and-vanity.webp",
+          "bytes": 78882,
+          "avif": {
+            "src": "/assets/img/photography/milestone-bathroom-bath-and-vanity.avif",
+            "bytes": 40811
+          }
+        }
+      ]
+    },
+    {
+      "id": "site-floor",
+      "source": "assets/photography/milestone-bathroom-floor-work-in-progress.jpg",
+      "filename": "milestone-bathroom-floor-work-in-progress",
+      "width": 1200,
+      "height": 1600,
+      "status": "owner-confirmed-milestone-work",
+      "alt": "Milestone bathroom in progress with floor materials and wall preparation",
+      "position": "50% 75%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 640,
+          "src": "/assets/img/photography/milestone-bathroom-floor-work-in-progress-480.webp",
+          "bytes": 23852,
+          "avif": {
+            "src": "/assets/img/photography/milestone-bathroom-floor-work-in-progress-480.avif",
+            "bytes": 11798
+          }
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "src": "/assets/img/photography/milestone-bathroom-floor-work-in-progress-768.webp",
+          "bytes": 55482,
+          "avif": {
+            "src": "/assets/img/photography/milestone-bathroom-floor-work-in-progress-768.avif",
+            "bytes": 25533
+          }
+        },
+        {
+          "width": 1024,
+          "height": 1365,
+          "src": "/assets/img/photography/milestone-bathroom-floor-work-in-progress-1024.webp",
+          "bytes": 95308,
+          "avif": {
+            "src": "/assets/img/photography/milestone-bathroom-floor-work-in-progress-1024.avif",
+            "bytes": 43856
+          }
+        },
+        {
+          "width": 1200,
+          "height": 1600,
+          "src": "/assets/img/photography/milestone-bathroom-floor-work-in-progress.webp",
+          "bytes": 129462,
+          "avif": {
+            "src": "/assets/img/photography/milestone-bathroom-floor-work-in-progress.avif",
+            "bytes": 59819
+          }
+        }
+      ]
+    },
+    {
+      "id": "shower-preparation",
+      "source": "assets/photography/milestone-shower-wall-preparation.jpg",
+      "filename": "milestone-shower-wall-preparation",
+      "width": 1200,
+      "height": 1600,
+      "status": "owner-confirmed-milestone-work",
+      "alt": "Milestone shower enclosure in progress with coated walls and an unfinished floor",
+      "position": "50% 75%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 640,
+          "src": "/assets/img/photography/milestone-shower-wall-preparation-480.webp",
+          "bytes": 18102,
+          "avif": {
+            "src": "/assets/img/photography/milestone-shower-wall-preparation-480.avif",
+            "bytes": 8500
+          }
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "src": "/assets/img/photography/milestone-shower-wall-preparation-768.webp",
+          "bytes": 59738,
+          "avif": {
+            "src": "/assets/img/photography/milestone-shower-wall-preparation-768.avif",
+            "bytes": 19999
+          }
+        },
+        {
+          "width": 1024,
+          "height": 1365,
+          "src": "/assets/img/photography/milestone-shower-wall-preparation-1024.webp",
+          "bytes": 118192,
+          "avif": {
+            "src": "/assets/img/photography/milestone-shower-wall-preparation-1024.avif",
+            "bytes": 41517
+          }
+        },
+        {
+          "width": 1200,
+          "height": 1600,
+          "src": "/assets/img/photography/milestone-shower-wall-preparation.webp",
+          "bytes": 175308,
+          "avif": {
+            "src": "/assets/img/photography/milestone-shower-wall-preparation.avif",
+            "bytes": 61159
           }
         }
       ]

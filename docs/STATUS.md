@@ -1,4 +1,6 @@
-# Current status — verified 2026-10-13
+# Production status — verified 2026-10-13
+
+**Local photography update, 2026-10-19:** 13 owner-approved Milestone photographs plus 16 licensed inspiration photographs now replace the AI renovation imagery in this checkout. See [local validation](IMAGE-INTEGRATION-VALIDATION.md). This overhaul has not been pushed or deployed. Production statements below remain the historical 13 October verification.
 
 The single source for what is live, what was checked, and what is still open. Other docs link here instead of repeating test counts.
 

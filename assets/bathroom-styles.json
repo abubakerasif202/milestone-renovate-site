@@ -2,194 +2,279 @@
   "version": 1,
   "widths": [
     480,
-    768
+    768,
+    1448
   ],
   "images": [
     {
+      "id": "contemporary-australian",
+      "source": "assets/photography/bathroom-style-contemporary-australian-vanity.jpg",
+      "filename": "bathroom-style-contemporary-australian-vanity",
+      "width": 1448,
+      "height": 967,
+      "status": "licensed-inspiration-photograph",
+      "alt": "Bathroom with pale cabinetry, vessel basin and geometric floor tiles",
+      "position": "50% 50%",
+      "variants": [
+        {
+          "width": 480,
+          "height": 320,
+          "src": "/assets/img/photography/bathroom-style-contemporary-australian-vanity-480.webp",
+          "bytes": 7880,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-contemporary-australian-vanity-480.avif",
+            "bytes": 4663
+          }
+        },
+        {
+          "width": 768,
+          "height": 513,
+          "src": "/assets/img/photography/bathroom-style-contemporary-australian-vanity-768.webp",
+          "bytes": 17972,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-contemporary-australian-vanity-768.avif",
+            "bytes": 9396
+          }
+        },
+        {
+          "width": 1448,
+          "height": 967,
+          "src": "/assets/img/photography/bathroom-style-contemporary-australian-vanity.webp",
+          "bytes": 46942,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-contemporary-australian-vanity.avif",
+            "bytes": 23924
+          }
+        }
+      ],
       "style": "contemporary-australian",
       "label": "Contemporary Australian",
-      "summary": "Natural stone, timber and garden light.",
-      "source": "incoming-images/renovation-concepts/ChatGPT Image 11 Oct 2026, 18_15_47-4.png",
-      "filename": "bathroom-style-contemporary-australian",
-      "alt": "AI-generated concept of a contemporary Australian bathroom with a freestanding bath, garden-facing glazing, limestone walls and a timber vanity",
+      "summary": "pale cabinetry, vessel basin and geometric floor tiles."
+    },
+    {
+      "id": "industrial",
+      "source": "assets/photography/bathroom-style-industrial-concrete.jpg",
+      "filename": "bathroom-style-industrial-concrete",
+      "width": 1448,
+      "height": 1810,
+      "status": "licensed-inspiration-photograph",
+      "alt": "Bathroom with concrete-look tiles, dark shower fittings and a high window",
       "position": "50% 50%",
-      "width": 1122,
-      "height": 1402,
       "variants": [
         {
           "width": 480,
           "height": 600,
-          "src": "/assets/img/bathroom-styles/bathroom-style-contemporary-australian-480.webp",
-          "bytes": 42384
+          "src": "/assets/img/photography/bathroom-style-industrial-concrete-480.webp",
+          "bytes": 15226,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-industrial-concrete-480.avif",
+            "bytes": 7851
+          }
         },
         {
           "width": 768,
           "height": 960,
-          "src": "/assets/img/bathroom-styles/bathroom-style-contemporary-australian-768.webp",
-          "bytes": 96148
+          "src": "/assets/img/photography/bathroom-style-industrial-concrete-768.webp",
+          "bytes": 39268,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-industrial-concrete-768.avif",
+            "bytes": 17359
+          }
         },
         {
-          "width": 1122,
-          "height": 1402,
-          "src": "/assets/img/bathroom-styles/bathroom-style-contemporary-australian.webp",
-          "bytes": 167174
+          "width": 1448,
+          "height": 1810,
+          "src": "/assets/img/photography/bathroom-style-industrial-concrete.webp",
+          "bytes": 136402,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-industrial-concrete.avif",
+            "bytes": 65821
+          }
         }
-      ]
-    },
-    {
+      ],
       "style": "industrial",
       "label": "Industrial",
-      "summary": "Raw concrete, black steel and dark stone.",
-      "source": "incoming-images/renovation-concepts/ChatGPT Image 11 Oct 2026, 18_15_42-2.png",
-      "filename": "bathroom-style-industrial",
-      "alt": "AI-generated concept of an industrial bathroom with textured concrete walls, a black steel shower screen, a dark stone bath and a city-view window",
+      "summary": "concrete-look tiles, dark shower fittings and a high window."
+    },
+    {
+      "id": "mediterranean",
+      "source": "assets/photography/bathroom-style-mediterranean-warm-stone.jpg",
+      "filename": "bathroom-style-mediterranean-warm-stone",
+      "width": 1448,
+      "height": 966,
+      "status": "licensed-inspiration-photograph",
+      "alt": "Bathroom with warm stone tiles, a timber vanity and a leafy plant",
       "position": "50% 50%",
-      "width": 1122,
-      "height": 1402,
       "variants": [
         {
           "width": 480,
-          "height": 600,
-          "src": "/assets/img/bathroom-styles/bathroom-style-industrial-480.webp",
-          "bytes": 55094
+          "height": 320,
+          "src": "/assets/img/photography/bathroom-style-mediterranean-warm-stone-480.webp",
+          "bytes": 9102,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-mediterranean-warm-stone-480.avif",
+            "bytes": 5286
+          }
         },
         {
           "width": 768,
-          "height": 960,
-          "src": "/assets/img/bathroom-styles/bathroom-style-industrial-768.webp",
-          "bytes": 120970
+          "height": 512,
+          "src": "/assets/img/photography/bathroom-style-mediterranean-warm-stone-768.webp",
+          "bytes": 18034,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-mediterranean-warm-stone-768.avif",
+            "bytes": 10057
+          }
         },
         {
-          "width": 1122,
-          "height": 1402,
-          "src": "/assets/img/bathroom-styles/bathroom-style-industrial.webp",
-          "bytes": 209152
+          "width": 1448,
+          "height": 966,
+          "src": "/assets/img/photography/bathroom-style-mediterranean-warm-stone.webp",
+          "bytes": 42484,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-mediterranean-warm-stone.avif",
+            "bytes": 24086
+          }
         }
-      ]
-    },
-    {
+      ],
       "style": "mediterranean",
       "label": "Mediterranean",
-      "summary": "Plaster arches, travertine and warm sunlight.",
-      "source": "incoming-images/renovation-concepts/ChatGPT Image 11 Oct 2026, 18_15_44-3.png",
-      "filename": "bathroom-style-mediterranean",
-      "alt": "AI-generated concept of a Mediterranean bathroom with plaster arches, a travertine bath, terracotta flooring and an olive tree framing a sea view",
+      "summary": "warm stone tiles, a timber vanity and a leafy plant."
+    },
+    {
+      "id": "modern-luxury",
+      "source": "assets/photography/bathroom-style-modern-luxury-stone.jpg",
+      "filename": "bathroom-style-modern-luxury-stone",
+      "width": 1448,
+      "height": 2177,
+      "status": "licensed-inspiration-photograph",
+      "alt": "Bathroom with a dark stone basin, timber vanity and a large round mirror",
       "position": "50% 50%",
-      "width": 1122,
-      "height": 1402,
       "variants": [
         {
           "width": 480,
-          "height": 600,
-          "src": "/assets/img/bathroom-styles/bathroom-style-mediterranean-480.webp",
-          "bytes": 58040
+          "height": 721,
+          "src": "/assets/img/photography/bathroom-style-modern-luxury-stone-480.webp",
+          "bytes": 24668,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-modern-luxury-stone-480.avif",
+            "bytes": 12455
+          }
         },
         {
           "width": 768,
-          "height": 960,
-          "src": "/assets/img/bathroom-styles/bathroom-style-mediterranean-768.webp",
-          "bytes": 133170
+          "height": 1154,
+          "src": "/assets/img/photography/bathroom-style-modern-luxury-stone-768.webp",
+          "bytes": 64974,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-modern-luxury-stone-768.avif",
+            "bytes": 29118
+          }
         },
         {
-          "width": 1122,
-          "height": 1402,
-          "src": "/assets/img/bathroom-styles/bathroom-style-mediterranean.webp",
-          "bytes": 242072
+          "width": 1448,
+          "height": 2177,
+          "src": "/assets/img/photography/bathroom-style-modern-luxury-stone.webp",
+          "bytes": 255872,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-modern-luxury-stone.avif",
+            "bytes": 97458
+          }
         }
-      ]
-    },
-    {
+      ],
       "style": "modern-luxury",
       "label": "Modern Luxury",
-      "summary": "Polished marble, brass and dramatic feature lighting.",
-      "source": "incoming-images/renovation-concepts/ChatGPT Image 11 Oct 2026, 18_15_39-1.png",
-      "filename": "bathroom-style-modern-luxury",
-      "alt": "AI-generated concept of a luxury bathroom with a sculptural stone bath, black and cream marble, brass fittings, a fan-patterned feature wall and a crystal chandelier",
+      "summary": "a dark stone basin, timber vanity and a large round mirror."
+    },
+    {
+      "id": "timeless-classic",
+      "source": "assets/photography/bathroom-style-timeless-classic-green.jpg",
+      "filename": "bathroom-style-timeless-classic-green",
+      "width": 1448,
+      "height": 966,
+      "status": "licensed-inspiration-photograph",
+      "alt": "Bathroom with green panelled cabinetry, twin basins and brass taps",
       "position": "50% 50%",
-      "width": 1122,
-      "height": 1402,
       "variants": [
         {
           "width": 480,
-          "height": 600,
-          "src": "/assets/img/bathroom-styles/bathroom-style-modern-luxury-480.webp",
-          "bytes": 63994
+          "height": 320,
+          "src": "/assets/img/photography/bathroom-style-timeless-classic-green-480.webp",
+          "bytes": 6778,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-timeless-classic-green-480.avif",
+            "bytes": 4479
+          }
         },
         {
           "width": 768,
-          "height": 960,
-          "src": "/assets/img/bathroom-styles/bathroom-style-modern-luxury-768.webp",
-          "bytes": 138718
+          "height": 512,
+          "src": "/assets/img/photography/bathroom-style-timeless-classic-green-768.webp",
+          "bytes": 13048,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-timeless-classic-green-768.avif",
+            "bytes": 7922
+          }
         },
         {
-          "width": 1122,
-          "height": 1402,
-          "src": "/assets/img/bathroom-styles/bathroom-style-modern-luxury.webp",
-          "bytes": 240818
+          "width": 1448,
+          "height": 966,
+          "src": "/assets/img/photography/bathroom-style-timeless-classic-green.webp",
+          "bytes": 30654,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-timeless-classic-green.avif",
+            "bytes": 18091
+          }
         }
-      ]
-    },
-    {
+      ],
       "style": "timeless-classic",
       "label": "Timeless Classic",
-      "summary": "Panelled walls, brass fittings and traditional joinery.",
-      "source": "incoming-images/renovation-concepts/ChatGPT Image 11 Oct 2026, 18_15_48-5.png",
-      "filename": "bathroom-style-timeless-classic",
-      "alt": "AI-generated concept of a classic bathroom with decorative wall panelling, a freestanding bath, marble flooring, green cabinetry and brass fittings",
-      "position": "50% 50%",
-      "width": 1122,
-      "height": 1402,
-      "variants": [
-        {
-          "width": 480,
-          "height": 600,
-          "src": "/assets/img/bathroom-styles/bathroom-style-timeless-classic-480.webp",
-          "bytes": 43140
-        },
-        {
-          "width": 768,
-          "height": 960,
-          "src": "/assets/img/bathroom-styles/bathroom-style-timeless-classic-768.webp",
-          "bytes": 94296
-        },
-        {
-          "width": 1122,
-          "height": 1402,
-          "src": "/assets/img/bathroom-styles/bathroom-style-timeless-classic.webp",
-          "bytes": 161314
-        }
-      ]
+      "summary": "green panelled cabinetry, twin basins and brass taps."
     },
     {
-      "style": "scandinavian",
-      "label": "Scandinavian",
-      "summary": "Pale oak, soft light and clean minimal lines.",
-      "source": "incoming-images/renovation-concepts/ChatGPT Image 11 Oct 2026, 18_15_50-6.png",
-      "filename": "bathroom-style-scandinavian",
-      "alt": "AI-generated concept of a Scandinavian bathroom with a pale oak double vanity, white textured tiles, a glass walk-in shower and a woven jute rug",
+      "id": "scandinavian",
+      "source": "assets/photography/bathroom-style-scandinavian-timber.jpg",
+      "filename": "bathroom-style-scandinavian-timber",
+      "width": 1448,
+      "height": 966,
+      "status": "licensed-inspiration-photograph",
+      "alt": "Bathroom with two timber vanities, oval mirrors and light walls",
       "position": "50% 50%",
-      "width": 1122,
-      "height": 1402,
       "variants": [
         {
           "width": 480,
-          "height": 600,
-          "src": "/assets/img/bathroom-styles/bathroom-style-scandinavian-480.webp",
-          "bytes": 51590
+          "height": 320,
+          "src": "/assets/img/photography/bathroom-style-scandinavian-timber-480.webp",
+          "bytes": 8424,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-scandinavian-timber-480.avif",
+            "bytes": 5016
+          }
         },
         {
           "width": 768,
-          "height": 960,
-          "src": "/assets/img/bathroom-styles/bathroom-style-scandinavian-768.webp",
-          "bytes": 120534
+          "height": 512,
+          "src": "/assets/img/photography/bathroom-style-scandinavian-timber-768.webp",
+          "bytes": 16790,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-scandinavian-timber-768.avif",
+            "bytes": 9246
+          }
         },
         {
-          "width": 1122,
-          "height": 1402,
-          "src": "/assets/img/bathroom-styles/bathroom-style-scandinavian.webp",
-          "bytes": 221588
+          "width": 1448,
+          "height": 966,
+          "src": "/assets/img/photography/bathroom-style-scandinavian-timber.webp",
+          "bytes": 42494,
+          "avif": {
+            "src": "/assets/img/photography/bathroom-style-scandinavian-timber.avif",
+            "bytes": 22691
+          }
         }
-      ]
+      ],
+      "style": "scandinavian",
+      "label": "Scandinavian",
+      "summary": "two timber vanities, oval mirrors and light walls."
     }
   ]
 }

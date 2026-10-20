@@ -1,0 +1,112 @@
+[
+  {
+    "route": "/404",
+    "images": 3,
+    "cls": 0
+  },
+  {
+    "route": "/about",
+    "images": 6,
+    "cls": 0
+  },
+  {
+    "route": "/approvals-guide",
+    "images": 3,
+    "cls": 0
+  },
+  {
+    "route": "/bathroom-renovation-cost",
+    "images": 3,
+    "cls": 0
+  },
+  {
+    "route": "/bathroom-renovations",
+    "images": 7,
+    "cls": 0
+  },
+  {
+    "route": "/booking",
+    "images": 3,
+    "cls": 0
+  },
+  {
+    "route": "/concepts/calm-bathroom",
+    "images": 4,
+    "cls": 0
+  },
+  {
+    "route": "/concepts/connected-living",
+    "images": 4,
+    "cls": 0
+  },
+  {
+    "route": "/concepts/warm-kitchen",
+    "images": 4,
+    "cls": 0
+  },
+  {
+    "route": "/contact",
+    "images": 3,
+    "cls": 0
+  },
+  {
+    "route": "/estimate-disclaimer",
+    "images": 3,
+    "cls": 0
+  },
+  {
+    "route": "/extensions",
+    "images": 7,
+    "cls": 0
+  },
+  {
+    "route": "/home-renovations",
+    "images": 7,
+    "cls": 0
+  },
+  {
+    "route": "/",
+    "images": 18,
+    "cls": 0
+  },
+  {
+    "route": "/inspiration",
+    "images": 28,
+    "cls": 0
+  },
+  {
+    "route": "/kitchen-renovations",
+    "images": 7,
+    "cls": 0
+  },
+  {
+    "route": "/plan-your-renovation",
+    "images": 3,
+    "cls": 0.02530918611111111
+  },
+  {
+    "route": "/privacy",
+    "images": 3,
+    "cls": 0
+  },
+  {
+    "route": "/quote-audit",
+    "images": 3,
+    "cls": 0
+  },
+  {
+    "route": "/renovation-design-studio",
+    "images": 4,
+    "cls": 0
+  },
+  {
+    "route": "/services",
+    "images": 5,
+    "cls": 0
+  },
+  {
+    "route": "/terms",
+    "images": 3,
+    "cls": 0
+  }
+]

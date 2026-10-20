@@ -1,4 +1,4 @@
-import { PLANNER_CHOICES, PLANNER_FLAGS, RENOVATION_TYPES, FINISH_LEVELS, PLUMBING_CHANGES } from './estimate.js';
+import { PLANNER_CHOICES, PLANNER_FLAGS, RENOVATION_TYPES, FINISH_LEVELS, PLUMBING_CHANGES } from './planning-options.js';
 import { ESTIMATE_CHOICES, ESTIMATE_FLAGS } from './pricing-config.js';
 import { estimateProject, formatRange } from './price-estimate.js';
 

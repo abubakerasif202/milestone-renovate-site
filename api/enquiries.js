@@ -1,6 +1,6 @@
-import { createHandler, depsFromEnv } from '../lib/enquiry-handler.js';
+import { createHandler, depsFromEnv, calculatorDepsFromEnv } from '../lib/enquiry-handler.js';
 
 let cached;
 const getDeps = () => (cached ??= depsFromEnv());
 
-export default createHandler(getDeps);
+export default createHandler(getDeps, () => calculatorDepsFromEnv());

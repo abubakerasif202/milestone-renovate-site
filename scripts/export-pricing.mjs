@@ -1,3 +1,4 @@
+import { BATHROOM_MODEL } from '../public/js/lib/bathroom-calculator.js';
 // Prints the pricing configuration as JSON so build_site.py renders the public methodology from the same
 // single source of truth the calculator uses. Run by build_site.py; no arguments.
 import * as config from '../public/js/lib/pricing-config.js';
@@ -12,7 +13,7 @@ for (const project of Object.keys(config.TIER_SOURCES)) {
   }
 }
 process.stdout.write(JSON.stringify({
-  version: config.PRICING_VERSION, reviewed: config.PRICING_REVIEWED, gst: config.GST, sources: config.SOURCES, tiers,
-  sizes: config.BATHROOM_SIZES, adjustments: config.BATHROOM_ADJUSTMENTS, timelines: config.TIMELINES, tierLabels: config.TIERS_LABELS,
+  bathroomModel: BATHROOM_MODEL, version: config.PRICING_VERSION, reviewed: config.PRICING_REVIEWED, gst: config.GST, sources: config.SOURCES, tiers,
+  timelines: config.TIMELINES, tierLabels: config.TIERS_LABELS,
   contingency: config.CONTINGENCY, quoteOnly: config.QUOTE_ONLY_PROJECTS,
 }));

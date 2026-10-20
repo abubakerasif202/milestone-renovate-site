@@ -1,0 +1,30 @@
+{
+  "build": {
+    "pages": 23,
+    "remoteImages": false
+  },
+  "unitIntegration": {
+    "passed": 110,
+    "failed": 0
+  },
+  "fullBrowserRegression": {
+    "passed": 210,
+    "skipped": 8,
+    "failed": 0,
+    "minutes": 10.1
+  },
+  "finalCalculatorLegalBrowser": {
+    "passed": 24,
+    "failed": 0,
+    "seconds": 28.2
+  },
+  "imageValidation": {
+    "routes": 23,
+    "variants": 228,
+    "commercialUseRecords": 29,
+    "missingOrRemote": 0
+  },
+  "realEmailsSent": 0,
+  "liveDeliveryVerified": false,
+  "deploymentPerformed": false
+}
