@@ -1,41 +1,58 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 
 const pub = (f) => new URL(`../public/${f}`, import.meta.url);
 const html = (f) => readFileSync(pub(f), 'utf8');
 const pages = [...readdirSync(pub('')).filter((f) => f.endsWith('.html')), ...readdirSync(pub('concepts')).map((f) => `concepts/${f}`)];
 
-test('team section publishes three cards in order with the approved copy', () => {
+test('team section publishes the user-confirmed names, portrait mapping and factual copy', () => {
   const about = html('about.html');
   assert.match(about, /id="team"/);
   for (const text of ['MEET THE TEAM', 'A hands-on team. Thoughtful renovations.', 'Careful attention to detail.',
-    'Mohammad Mohsini', 'Construction &amp; Project Delivery', 'With 10 years of construction experience, Mohammad Mohsini',
-    'James Creswick', 'Renovation Specialist', 'James Creswick specialises in supporting renovation projects through thoughtful planning',
-    'Kamal Najafi',
-    'Good renovations begin with clear planning, practical experience and people who take responsibility for the details.']) {
+    'James Creswick', 'Kamala Najafi', 'Muhammad Mohsini',
+    'Meet James Creswick, Kamala Najafi and Muhammad Mohsini.']) {
     assert.ok(about.includes(text), text);
   }
   assert.equal((about.match(/class="team-card"/g) || []).length, 3);
   const at = (name) => about.indexOf(`<h3>${name}</h3>`);
-  assert.ok(at('James Creswick') > 0 && at('James Creswick') < at('Kamal Najafi') && at('Kamal Najafi') < at('Mohammad Mohsini'), 'order James, Kamal, Mohammad');
+  assert.ok(at('James Creswick') > 0 && at('James Creswick') < at('Kamala Najafi') && at('Kamala Najafi') < at('Muhammad Mohsini'), 'order James, Kamala, Muhammad');
   const cards = about.split('class="team-card"').slice(1).map((c) => c.split('</article>')[0]);
-  assert.match(cards[0], /team-role">Renovation Specialist</);
-  assert.match(cards[2], /team-role">Construction &amp; Project Delivery</);
-  assert.ok(cards[1].includes('<h3>Kamal Najafi</h3>'));
-  assert.doesNotMatch(cards[1], /team-role/);
-  assert.doesNotMatch(cards[1], /<p[ >]/);
-  assert.match(about, /alt="Portrait of Kamal Najafi"/);
-  assert.match(about, /alt="Portrait of Mohammad Mohsini, Construction &amp; Project Delivery at Milestone Renovate"/);
-  assert.match(about, /alt="Portrait of James Creswick, Renovation Specialist at Milestone Renovate"/);
+  assert.deepEqual(cards.map((card) => card.match(/src="([^"]+)"/)?.[1]), [
+    '/assets/img/team/james-creswick-800.webp',
+    '/assets/img/team/kamala-najafi-800.webp',
+    '/assets/img/team/muhammad-mohsini-800.webp',
+  ]);
+  assert.match(cards[0], /alt="James Creswick, smiling with light-brown hair in a green Milestone Development shirt"/);
+  assert.match(cards[1], /alt="Kamala Najafi, dark-haired and bearded in a green Milestone Renovate shirt"/);
+  assert.match(cards[2], /alt="Muhammad Mohsini, clean-shaven with dark hair in a green Milestone Renovate shirt"/);
+  assert.doesNotMatch(cards.join(' '), /team-role|years of .*experience|speciali[sz]es|builder-led|project delivery/i);
   assert.equal((about.match(/width="1122" height="1402"/g) || []).length, 3);
+
+  const ld = JSON.parse(about.match(/<script type="application\/ld\+json">(.*?)<\/script>/)[1]);
+  const people = ld['@graph'].filter((item) => item['@type'] === 'Person');
+  assert.deepEqual(people.map((person) => person.name), ['James Creswick', 'Kamala Najafi', 'Muhammad Mohsini']);
+  assert.deepEqual(people.map((person) => person.image), [
+    'https://milestonerenovate.com/assets/img/team/james-creswick-1122.webp',
+    'https://milestonerenovate.com/assets/img/team/kamala-najafi-1122.webp',
+    'https://milestonerenovate.com/assets/img/team/muhammad-mohsini-1122.webp',
+  ]);
 });
 
 test('portrait files are published and the full-size variant is the unmodified supplied image', () => {
-  for (const slug of ['james-creswick', 'kamal-najafi', 'mohammad-mohsini']) {
+  const confirmedPortraitHashes = {
+    'james-creswick': '321b78739b8c0af31fa100fbbc2d2ea6c331deb7331840009bca7d43e9482466',
+    'kamala-najafi': '688f0ac75f87bd3b023b9e46183177444baaf7f5e59a53e22feea7eb1e0826f4',
+    'muhammad-mohsini': 'fdb825c5754edda7c619a88df237b0c24c243c9eaf4168b2f7dd83839de9eb85',
+  };
+  for (const [slug, sha256] of Object.entries(confirmedPortraitHashes)) {
     for (const w of [480, 800, 1122]) assert.ok(existsSync(pub(`assets/img/team/${slug}-${w}.webp`)), `${slug}-${w}`);
-    assert.ok(readFileSync(pub(`assets/img/team/${slug}-1122.webp`)).equals(readFileSync(new URL(`../assets/team/${slug}.webp`, import.meta.url))));
+    const source = readFileSync(new URL(`../assets/team/${slug}.webp`, import.meta.url));
+    assert.equal(createHash('sha256').update(source).digest('hex'), sha256, `${slug} is the confirmed original portrait`);
+    assert.ok(readFileSync(pub(`assets/img/team/${slug}-1122.webp`)).equals(source));
   }
+  for (const stale of ['kamal-najafi', 'mohammad-mohsini']) for (const w of [480, 800, 1122]) assert.ok(!existsSync(pub(`assets/img/team/${stale}-${w}.webp`)), `${stale}-${w} is removed`);
 });
 
 test('removed extension, second-storey and approvals content is not published or linked', () => {

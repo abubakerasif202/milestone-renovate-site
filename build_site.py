@@ -224,6 +224,15 @@ def webpage_ld(title, description, slug, home=False, crumbs=None, service_info=N
 
     if crumbs:
         graph.append({'@type': 'BreadcrumbList', 'itemListElement': [{'@type': 'ListItem', 'position': i, 'name': n, 'item': SITE + u} for i, (n, u) in enumerate(crumbs, 1)]})
+    if slug == 'about':
+        graph.extend({
+            '@type': 'Person',
+            '@id': f'{url}#person-{person["slug"]}',
+            'name': person['name'],
+            'image': f'{SITE}/assets/img/team/{person["slug"]}-1122.webp',
+            'url': f'{url}#team',
+            'worksFor': {'@id': SITE + '/#organization'},
+        } for person in TEAM)
     return {'@context': 'https://schema.org', '@graph': graph}
 
 
@@ -267,14 +276,12 @@ SERVICES = [
 services_html = ''.join(f'<a href="{u}" class="service-row"><span>0{i}</span><div><h3>{escape(t)}</h3><p>{d}</p></div><span class="service-row-arrow" aria-hidden="true">↗</span></a>' for i, (t, u, d) in enumerate(SERVICES, 1))
 services = f'''<section class="inner-hero"><div class="wrap"><p class="eyebrow inverse">RENOVATION SERVICES</p><h1>Spaces made for <em>living.</em></h1><p>Whether you are changing one room or reshaping the way your entire home works, we start with your priorities.</p></div><div class="inner-hero-image">{picture('whole-home-living', 'Living and dining room with timber flooring and daylight from glazed doors', '', 'eager', '(max-width:870px) 100vw, 48vw', True)}</div></section><section class="section"><div class="wrap">{split_header('WHAT WE CAN EXPLORE', 'Considered solutions<br><em>for your home.</em>', 'We’ll work through the design questions, practical realities and construction considerations of each project.')}<div class="services-list">{services_html}</div><figure class="craft-reference"><div class="frame">{picture('craft', 'Carpentry in a workshop', sizes='(max-width:870px) 92vw, 60vw')}</div><figcaption>Craftsmanship reference · licensed stock photograph, not Milestone staff or work.</figcaption></figure></div></section><section class="section surface-alt"><div class="wrap intro-grid"><div>{kicker('NOT JUST A NEW LOOK')}<h2>Better spaces, <em>better everyday moments.</em></h2></div><div><p class="lead">A renovation should feel right to live in, not only good to look at.</p><p>Thoughtful layouts, durable materials, daylight, storage and the relationship between rooms all influence how a home feels after the work is finished.</p><a class="text-link" href="/plan-your-renovation">Plan your renovation <span aria-hidden="true">↗</span></a></div></div></section>{cta()}'''
 
-# Display order is fixed: James, Kamal, Mohammad. Role and bio are optional: leave them out rather than
-# invent one (Kamal's have not been supplied yet).
+# Display order and source-file names follow the user-confirmed portrait identities.
+# Roles and biographies are intentionally omitted because verified copy was not supplied.
 TEAM = [
-    dict(slug='james-creswick', name='James Creswick', role='Renovation Specialist',
-         bio='James Creswick specialises in supporting renovation projects through thoughtful planning, practical solutions and close attention to detail. He works with clients to understand their goals, consider the realities of the existing property and keep project coordination clear. His approach combines straightforward communication with a strong focus on achieving a considered, functional and high-quality result.'),
-    dict(slug='kamal-najafi', name='Kamal Najafi'),
-    dict(slug='mohammad-mohsini', name='Mohammad Mohsini', role='Construction & Project Delivery',
-         bio='With 10 years of construction experience, Mohammad Mohsini brings a hands-on, builder-led perspective to renovation projects. His approach centres on practical planning, quality workmanship, clear site coordination and transparent communication. From understanding the scope to managing the details of delivery, Mohammad is focused on helping clients move through their renovation with clarity and confidence.'),
+    dict(slug='james-creswick', name='James Creswick', alt='James Creswick, smiling with light-brown hair in a green Milestone Development shirt'),
+    dict(slug='kamala-najafi', name='Kamala Najafi', alt='Kamala Najafi, dark-haired and bearded in a green Milestone Renovate shirt'),
+    dict(slug='muhammad-mohsini', name='Muhammad Mohsini', alt='Muhammad Mohsini, clean-shaven with dark hair in a green Milestone Renovate shirt'),
 ]
 TEAM_WIDTHS = (480, 800, 1122)
 
@@ -285,16 +292,12 @@ def team_card(person):
     if missing:
         raise SystemExit(f'Team portrait variants missing ({", ".join(missing)}); run `npm run build:team`.')
     srcset = ', '.join(f"/assets/img/team/{person['slug']}-{n}.webp {n}w" for n in TEAM_WIDTHS)
-    role, bio = person.get('role'), person.get('bio')
-    alt = f"Portrait of {person['name']}" + (f", {role} at Milestone Renovate" if role else '')
-    role_html = f'<p class="team-role">{escape(role)}</p>' if role else ''
-    bio_html = f'<p>{escape(bio)}</p>' if bio else ''
-    return f'<article class="team-card"><div class="team-photo"><img src="/assets/img/team/{person["slug"]}-800.webp" srcset="{srcset}" sizes="(max-width:760px) min(92vw, 440px), (max-width:1020px) 46vw, 430px" width="1122" height="1402" loading="lazy" decoding="async" alt="{escape(alt, quote=True)}"></div><div class="team-body">{role_html}<h3>{escape(person["name"])}</h3>{bio_html}</div></article>'
+    return f'<article class="team-card"><div class="team-photo"><img src="/assets/img/team/{person["slug"]}-800.webp" srcset="{srcset}" sizes="(max-width:760px) min(92vw, 440px), (max-width:1020px) 46vw, 430px" width="1122" height="1402" loading="lazy" decoding="async" alt="{escape(person["alt"], quote=True)}"></div><div class="team-body"><h3>{escape(person["name"])}</h3></div></article>'
 
 
 def team_section():
     cards = ''.join(team_card(person) for person in TEAM)
-    intro = 'Good renovations begin with clear planning, practical experience and people who take responsibility for the details. Meet the people behind Milestone Renovate.'
+    intro = 'Meet James Creswick, Kamala Najafi and Muhammad Mohsini.'
     return f'<section class="section team-section" id="team" aria-labelledby="team-heading"><div class="wrap"><p class="eyebrow">MEET THE TEAM</p><h2 id="team-heading">A hands-on team. Thoughtful renovations. <em>Careful attention to detail.</em></h2><p class="team-intro">{intro}</p><div class="team-grid">{cards}</div></div></section>'
 
 
